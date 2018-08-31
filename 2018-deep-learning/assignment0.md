@@ -3,7 +3,7 @@ Deep Computer Vision and Language, Fall 2018
 Alvin Grissom II, Ursinus College
 
 
-# Assignment 0: Running a Keras Program
+# Assignment 0: Initial Setup
 
 The purpose of this assignment is for you to set up your environment and to ensure that you have a basic grasp of matrices and conditional probability.  It will give students a chance to practice using Python, the primary programming language for this course.  All code must be written in Python 3.  
 
