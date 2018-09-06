@@ -23,11 +23,19 @@ Let's implement the linear perceptron in Keras.  First, we need to import some l
 Recall that, in machine learning, the features are usually called X and the labels are usually called Y.  We have four variables here for the features and labels of our training and test data, respectively.
 
     (x_train, y_train), (x_test, y_test) = mnist.load_data()
-    
+        
 ###Understanding and Formatting the Data
 ![MNIST Image](https://upload.wikimedia.org/wikipedia/commons/2/27/MnistExamples.png "MNIST Image")
 
 MNIST images are grayscale, consisting of 28 x 28 = 784 pixel values in [0,255], representing the shade of a given pixel.  We can normalize these values to the range [0,1] by dividing the values by 255 if we like.  (This is left up to you to try).
+
+Let's flatten them to a 1D vector of length 784.
+
+    x_train = x_train.reshape(60000, 784)
+    x_test = x_test.reshape(10000, 784)
+    x_train = x_train.astype('float32')
+    x_test = x_test.astype('float32')
+
 
 We can then have one feature for each pixel in the range [0,1].  This is our X.  Our Y = {0, 1, 2, ..., 9}, representing the digit.  We can use a **one hot vector** encoding for this.  Keras does this for us.  We want to represent each of these classes as a *category*, not as a numeric value.
 
@@ -69,6 +77,8 @@ After taining, we **evaluate* to get our final accuracy on the test data.
 Try to increase the accuracy of your model:  Here are some things to try.  This is not an exhaustive list.  Different combinations of strategies may give surprising results.  
  
  1.  Normalize your training and test data to [0,1] by dividing by 255.
+    For example:
+        x_train /= 255
  2. Replace a linear activation function with a soft one ('logistic', 'softmax', etc.) function on another one.  You can find more in the Keras documentation.  Why might this help?
  3. Change the learning rate.
  4. (For the adventurous) Add more layers or dropout.
