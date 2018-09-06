@@ -3,13 +3,13 @@ Deep Computer Vision and Language, Fall 2018
 Alvin Grissom II, Ursinus College
 
 
-#Assignment 1: Classification
+# Assignment 1: Classification
 
 This exercise is designed to give you practice implementing a simple Keras program under the supervision of the instructor.
 
 For this exerise, we're going to classify the MNIST dataset.  MNIST consists have a number of handwritten numbers from 0-9.  We're going to create a perceptron algorithm to classify them.  Fortunately, Keras already provides the MNIST data as a Python library.  In the future, we will have to read the files ourselves.
 
-##Part 1: Linear Perceptron
+## Part 1: Linear Perceptron
 
 Let's implement the linear perceptron in Keras.  First, we need to import some libraries.  Numpy is our numerical library.  The `sequential` library allows us to build a neural network by stacking layers together.  We will come back to layers later.  
 
@@ -19,12 +19,12 @@ Let's implement the linear perceptron in Keras.  First, we need to import some l
     from keras.optimizers import SGD
     from keras.layers import Dense
 
-###Load the data.
+### Load the data.
 Recall that, in machine learning, the features are usually called X and the labels are usually called Y.  We have four variables here for the features and labels of our training and test data, respectively.
 
     (x_train, y_train), (x_test, y_test) = mnist.load_data()
         
-###Understanding and Formatting the Data
+### Understanding and Formatting the Data
 ![MNIST Image](https://upload.wikimedia.org/wikipedia/commons/2/27/MnistExamples.png "MNIST Image")
 
 MNIST images are grayscale, consisting of 28 x 28 = 784 pixel values in [0,255], representing the shade of a given pixel.  We can normalize these values to the range [0,1] by dividing the values by 255 if we like.  (This is left up to you to try).
@@ -42,7 +42,7 @@ We can then have one feature for each pixel in the range [0,1].  This is our X. 
     y_train = keras.utils.to_categorical(y_train, num_classes)
     y_test = keras.utils.to_categorical(y_test, num_classes)
 
-###Build the Model
+### Build the Model
 
 The `Sequential` interface of Keras allows you to stack layers with simple function calls.
 
@@ -56,7 +56,7 @@ We want a basic linear perceptron that maps has one feature for every pixel, wit
     metrics=['accuracy'])
 
 
-###Train the Model and Track Its Progress
+### Train the Model and Track Its Progress
 The `fit` function trains our model on the `x_train` and `y_train` data for a certain number of iterations (epochs).  The **validation** data* is some *held-out* data that tests our model's accuracy at each epoch.
 
 After taining, we **evaluate* to get our final accuracy on the test data.
@@ -72,7 +72,7 @@ After taining, we **evaluate* to get our final accuracy on the test data.
     
  How did it do?
 
-###Homework: Improve the Model
+### Homework: Improve the Model
  
 Try to increase the accuracy of your model:  Here are some things to try.  This is not an exhaustive list.  Different combinations of strategies may give surprising results.  
  
