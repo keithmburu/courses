@@ -20,7 +20,7 @@ Let's implement the linear perceptron in Keras.  First, we need to import some l
     from keras.layers import Dense
 
 ### Load the data.
-Recall that, in machine learning, the features are usually called X and the labels are usually called Y.  We have four variables here for the features and labels of our training and test data, respectively.
+Recall that, in machine learning, the features of an example are usually called **x** and the set of labels/classes is usually called *Y*.  We have four Python variables here for the set of all examples and labels of our training and test data, respectively.
 
     (x_train, y_train), (x_test, y_test) = mnist.load_data()
         
@@ -37,7 +37,7 @@ Let's flatten them to a 1D vector of length 784.
     x_test = x_test.astype('float32')
 
 
-We can then have one feature for each pixel in the range [0,1].  This is our *x* feature vector.  Our Y = {0, 1, 2, ..., 9}, representing the digit.  We can use a **one hot vector** encoding for this.  Keras does this for us.  We want to represent each of these classes as a *category*, not as a numeric value.
+We can then have one feature for each pixel in the range [0,1].  This is our *x* feature vector.  Our Y = {0, 1, 2, ..., 9}, representing the digit.  We can use a **one hot vector** encoding for this.  Keras does this for us.  We want to represent each of these classes as a *category* (or class label), not as a numeric value.
 
     y_train = keras.utils.to_categorical(y_train, num_classes)
     y_test = keras.utils.to_categorical(y_test, num_classes)
