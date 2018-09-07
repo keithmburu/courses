@@ -57,9 +57,9 @@ We want a basic linear perceptron that maps has one feature for every pixel, wit
 
 
 ### Train the Model and Track Its Progress
-The `fit` function trains our model on the `x_train` and `y_train` data for a certain number of iterations (epochs).  The **validation** data* is some *held-out* data that tests our model's accuracy at each epoch.
+The `fit` function trains our model on the `x_train` and `y_train` data for a certain number of iterations (epochs).  The **validation** data* is some *held-out* data that tests our model's accuracy at each epoch.  The batch size determine how many examples we consider at one time to modify our parameters.
 
-After taining, we **evaluate* to get our final accuracy on the test data.
+After taining, we **evaluate** to get our final accuracy on the test data.
 
     history = model.fit(x_train, y_train,
                     batch_size=batch_size,
