@@ -37,7 +37,7 @@ Let's flatten them to a 1D vector of length 784.
     x_test = x_test.astype('float32')
 
 
-We can then have one feature for each pixel in the range [0,1].  This is our *x* feature vector.  Our Y = {0, 1, 2, ..., 9}, representing the digit.  We can use a **one hot vector** encoding for this.  Keras does this for us.  We want to represent each of these classes as a *category* (or class label), not as a numeric value.
+We can then have one feature for each pixel.  This is our *x* feature vector.  Our Y = {0, 1, 2, ..., 9}, representing the digit.  We can use a **one hot vector** encoding for this.  Keras does this for us.  We want to represent each of these classes as a *category* (or class label), not as a numeric value.
 
     y_train = keras.utils.to_categorical(y_train, num_classes)
     y_test = keras.utils.to_categorical(y_test, num_classes)
