@@ -11,7 +11,7 @@ For this exerise, we're going to classify the MNIST dataset.  MNIST consists hav
 
 ## Part 1: Linear Perceptron
 
-Let's implement the linear perceptron in Keras.  First, we need to import some libraries.  Numpy is our numerical library.  The `sequential` library allows us to build a neural network by stacking layers together.  We will come back to layers later.  
+Let's implement the linear perceptron in Keras.  First, we need to import some libraries.  Numpy is our numerical library.  The `Sequential` library allows us to build a neural network by stacking layers together.  We will come back to layers later.  
 
     import numpy as np
     from keras.data import mnist
@@ -79,7 +79,7 @@ Try to increase the accuracy of your model:  Here are some things to try.  This 
  1.  Normalize your training and test data to [0,1] by dividing by 255.
     For example:
         `x_train /= 255`
- 2. Replace a linear activation function with a soft one ('logistic', 'softmax', etc.) function on another one.  You can find more in the Keras documentation.  Why might this help?
+ 2. Replace a linear activation function with a soft function ('logistic', 'softmax', etc.) function or some other one, such as ReLU.  You can find more in the Keras documentation.  Why might this help?
  3. Change the learning rate.
  4. (For the adventurous) Add more layers or dropout.
 
