@@ -5,9 +5,9 @@ Alvin Grissom II, Ursinus College
 
 # Assignment 1: Classification
 
-This exercise is designed to give you practice implementing a simple Keras program under the supervision of the instructor.
+This exercise is designed to give you practice implementing a simple Keras program.
 
-For this exerise, we're going to classify the MNIST dataset.  MNIST consists have a number of handwritten numbers from 0-9.  We're going to create a perceptron algorithm to classify them.  Fortunately, Keras already provides the MNIST data as a Python library.  In the future, we will have to read the files ourselves.
+For this exerise, we're going to classify the MNIST dataset.  MNIST consists of a number of handwritten numbers from 0-9.  We're going to create a perceptron algorithm to classify them.  Fortunately, Keras already provides the MNIST data as a Python library.  In the future, we will have to read the files ourselves.
 
 ## Part 1: Linear Perceptron
 
