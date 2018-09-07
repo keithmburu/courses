@@ -48,7 +48,7 @@ The `Sequential` interface of Keras allows you to stack layers with simple funct
 
     model = Sequential()
 
-We want a basic linear perceptron that maps has one feature for every pixel, with all of the features initialized to 0.  We want to find the best weights for our model with stochastic gradient descent (SGD) with a learning rate of 0.01.  We have ten classes.  Our input dimension needs to be the same as the number of neurons. Our **loss function** is mean squared error (MSE).  This can be changed.
+We want a basic linear perceptron that has one feature for every pixel, with all of the features initialized to 0.  We want to find the best weights for our model with stochastic gradient descent (SGD) with a learning rate of 0.01.  We have ten classes.  Our input dimension needs to be the same as the number of neurons. Our **loss function** is mean squared error (MSE).  This can be changed.
 
     model.add(Dense(10, activation='linear', input_shape=(784,)))
    
