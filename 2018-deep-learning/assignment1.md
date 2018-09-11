@@ -72,7 +72,7 @@ After taining, we **evaluate** to get our final accuracy on the test data.
     
  How did it do?
 
-### Homework: Improve the Model
+## Part 2: Improve the Model
  
 Try to increase the accuracy of your model:  Here are some things to try.  This is not an exhaustive list.  Different combinations of strategies may give surprising results.  
  
