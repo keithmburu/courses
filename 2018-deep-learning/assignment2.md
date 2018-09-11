@@ -91,7 +91,7 @@ The model as is attempts to use **wx** + *b* predict the correct class and fails
 
 In class, we discussed the **sigmoid** activation function, which we could use with some modifications.  It's also common to use the **softmax** activation function, which assigns each class a probability between 0 and 1, where all of the probabilities sum to 1.
 
-      model.compile(loss = 'softmax', ...
+      model.compile(activation = 'softmax', ...
 
 While we're changing code, we can also disambiguate our accuracy metric, by replacing 'accuracy' with 'cateogircal_accuracy'.  If we use the underspecified 'accuracy', Keras will guess whether we should use binary accuracy or multi-class accuracy, and it doesn't always guess correctly; so, it is best to avoid the ambiguity.  Using 'binary_accuracy' will give us an inflated accuracy score.      
 
