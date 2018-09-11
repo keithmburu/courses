@@ -82,7 +82,9 @@ We can make some basic modifications to our code from Assignment 0 to transform 
 
    
 
-This gives ia a single-layer model with 10 categorical classes and 784 input features and a linear **activation**, optimizing mean squared error.  As is, it yields about 10% accuracy, which is random, but you likely found that using different activations and/or loss functions raised the accuracy significantly.
+This gives ia a single-layer model with 10 categorical classes and 784 input features and a linear **activation**, which determines the output of a neuron.  Keras includes support for many [activation functions](https://keras.io/activations/).  Here, we are optimizing (minimizing) [mean squared error](https://en.wikipedia.org/wiki/Mean_squared_error), which is just the square of the difference between the true answer and the predicted answer.  This loss function is often used for linear regression. 
+
+  As is, our model yields about 10% accuracy, which is random, but you likely found that using different activations and/or loss functions raised the accuracy significantly. 
 
 The model as is attempts to use **wx** + *b* predict the correct class and fails miserably.  There are a number of problems with the initial architecture for this particular problem.  We can do significantly better adding a soft activation function in place of the linear one.
 
