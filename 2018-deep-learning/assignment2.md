@@ -3,7 +3,7 @@ Deep Computer Vision and Language, Fall 2018
 Alvin Grissom II, Ursinus College
 
 
-#Assignment 2: Adding Layers
+# Assignment 2: Adding Layers
 
 
 In the previous assignment, we created a single-layer neural network to perfrom 10-way classification using a one hot vector representation.  In this assignment, we will add multiple layers.
@@ -81,6 +81,7 @@ We can make some basic modifications to our code from Assignment 0 to transform 
     metrics=['accuracy'])
 
    
+
 
 This gives ia a single-layer model with 10 categorical classes and 784 input features and a linear **activation**, which determines the output of a neuron.  Keras includes support for many [activation functions](https://keras.io/activations/).  Here, we are optimizing (minimizing) [mean squared error](https://en.wikipedia.org/wiki/Mean_squared_error), which is just the square of the difference between the true answer and the predicted answer.  This loss function is often used for linear regression. 
 
