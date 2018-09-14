@@ -84,7 +84,7 @@ https://maker.pro/linux/tutorial/basic-linux-commands-for-beginners
 
 https://www.w3resource.com/linux-system-administration/i-o-redirection.php
 
-##Part 3: Writing and running a Python program
+## Part 3: Writing and running a Python program
 
 Python is interpreted, not compiled.  To ensure that Python is installed correctly, try typing `python3` at the command line.  You can exit with Ctrl+D.
 
