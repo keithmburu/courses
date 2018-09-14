@@ -1,5 +1,5 @@
 
-# Initial Setup
+# Getting Started
 
 The purpose of this document is to assist you in setting up your environment and to ensure that you have a basic grasp of the command line.
 
