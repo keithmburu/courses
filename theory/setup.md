@@ -44,8 +44,8 @@ Then open the Ubuntu command linen and complete the setup instructions under **U
         choco install pip
 
 4. Install Emacs, Git, OpenSSH, grep, and wget.
-    choco install unixutils.
 
+        choco install unixutils.
         choco install emacs
         choco install git
         choco install openssh
