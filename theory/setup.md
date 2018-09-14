@@ -1,9 +1,8 @@
 
 # Initial Setup
 
-The purpose of this assignment is for you to set up your environment and to ensure that you have a basic grasp of matrices and conditional probability.  It will give students a chance to practice using Python, the primary programming language for this course.  All code must be written in Python 3.  
+The purpose of this document is to assist you in setting up your environment and to ensure that you have a basic grasp of the command line.
 
-The starter code with the requiiste functions is provied as part of this assignment.
 
 ## Part 1: Environment Setup
 
