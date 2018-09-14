@@ -14,7 +14,7 @@ For this exerise, we're going to classify the MNIST dataset.  MNIST consists of 
 Let's implement the linear perceptron in Keras.  First, we need to import some libraries.  Numpy is our numerical library.  The `Sequential` library allows us to build a neural network by stacking layers together.  We will come back to layers later.  
 
     import numpy as np
-    from keras.data import mnist
+    from keras.datasets import mnist
     from keras.models import Sequential
     from keras.optimizers import SGD
     from keras.layers import Dense
