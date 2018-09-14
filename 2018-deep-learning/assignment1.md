@@ -79,7 +79,7 @@ Try to increase the accuracy of your model:  Here are some things to try.  This 
  1.  Normalize your training and test data to [0,1] by dividing by 255.
     For example:
         `x_train /= 255`
- 2. Replace a linear activation function with a soft function ('logistic', 'softmax', etc.) function or some other one, such as ReLU.  You can find more in the Keras documentation.  Why might this help?
+ 2. Replace a linear activation function with a soft ('logistic', 'softmax', etc.) function or some other one, such as ReLU.  You can find more in the Keras documentation.  Why might this help?
  3. Change the learning rate.
  4. (For the adventurous) Add more layers or dropout.
 
