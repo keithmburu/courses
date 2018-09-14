@@ -80,7 +80,7 @@ https://linuxsurvival.com/linux-more-command/
 
 https://maker.pro/linux/tutorial/basic-linux-commands-for-beginners
 
-
+https://www.w3resource.com/linux-system-administration/i-o-redirection.php
 
 ##Part 3: Writing and running a Python program
 
