@@ -114,7 +114,7 @@ Re-run the model, and you should find that these results are impressive.  Ponder
 
 Recall that the **sigmoid** assigns a probability to two possible classes, not three or more.  For this reason, the softmax activation is often used for multiclass problems. The **softmax** function is a generalization of the sigmoid for multiple classes.  For 2 classes, the softmax function reduces to the sigmoid function.
 
-We can use the sigmoid activation for multiple classes if we prefer, but we must be careful.  Our loss function needs to compatible with our activation in the output layer.  The sigmoid activation in the output layer requires that we use 'binary_crossentropy' for our loss.  For an explanation of why this is, see the following:
+We can use the sigmoid activation for multiple classes if we prefer, but we must be careful.  Our loss function needs to be compatible with our activation in the output layer.  The sigmoid activation in the output layer requires that we use 'binary_crossentropy' for our loss.  For an explanation of why this is, see the following:
 
 [https://www.depends-on-the-definition.com/guide-to-multi-label-classification-with-neural-networks/]()
 
