@@ -60,7 +60,7 @@ Then open the Ubuntu command linen and complete the setup instructions under **U
 ````shell
 sudo apt-get update
 sudo apt-get -y upgrade
-```
+````
 1. Install emacs.  On Ubuntu, this is:
 
         sudo apt-get install emacs
