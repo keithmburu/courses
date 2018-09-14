@@ -88,6 +88,6 @@ https://www.w3resource.com/linux-system-administration/i-o-redirection.php
 
 Python is interpreted, not compiled.  To ensure that Python is installed correctly, try typing `python3` at the command line.  You can exit with Ctrl+D.
 
-You'll need an editor to write and save your Python programs.  A relatively easy-to-use open source editor is [Atom](http://atom.io). A more advanced editor is Emacs, but it has a higher learning curve.
+You'll need an editor to write and save your Python programs.  A relatively easy-to-use graphical is [Atom](http://atom.io). A more advanced editor is Emacs, but it has a higher learning curve.
 
 Once you write a Python program, save it to a `.py` file and run it by typing `python3 helloworld.py`.
