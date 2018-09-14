@@ -56,6 +56,11 @@ Then open the Ubuntu command linen and complete the setup instructions under **U
 
 ### Ubuntu Linux
 
+2. Update the package database.
+````shell
+sudo apt-get update
+sudo apt-get -y upgrade
+```
 1. Install emacs.  On Ubuntu, this is:
 
         sudo apt-get install emacs
@@ -63,8 +68,6 @@ Then open the Ubuntu command linen and complete the setup instructions under **U
 2. Install Python 3 by running the following commands.
 
      ````shell
-     sudo apt-get update
-     sudo apt-get -y upgrade
      sudo apt-get install -y python3-pip
      sudo apt-get install build-essential libssl-dev libffi-dev python-dev
      ````
