@@ -10,7 +10,7 @@ In the previous assignment, we created a single-layer neural network to perfrom 
 
 ## Part 0: Install Packages
 
-First, we must ensure that we have all of the necessary packages: pydot and GraphViz. Assuming, you setup your system as described in Assignment 0, the following should work.  GraphViz is an open source visualization package, and pydot is a Python interface for it.
+First, we must ensure that we have all of the necessary packages: pydot and GraphViz. Assuming, you setup your system as described in Assignment 1, the following should work.  GraphViz is an open source visualization package, and pydot is a Python interface for it.
 
 ### Typesetting
 If you have not installed LaTeX, you should do so (perhaps while working through the rest of this assignment).  It is a large package, which will take a significant amount of time to download and install.  While you may use Markdown for this assignment, some future reports must be submitted as a PDF generated in LaTeX with the NIPS template.
