@@ -97,7 +97,7 @@ If you have an NVIDIA GPU and would like to use GPU acceleration (recommended):
         pip install tensorflow-gpu
         pip install keras
 
-##Part 3: Make sure Keras loads.
+## Part 3: Make sure Keras loads.
 
 
 1. Run `python3`.
