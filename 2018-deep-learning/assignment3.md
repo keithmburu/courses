@@ -45,7 +45,7 @@ If we like, we can call `print(history_dict.keys())` function to see its keys.  
 
 To visualize the learning process, we need to import `matplotlib`.
 
-​    import matplotlib.pyplot as plt
+    import matplotlib.pyplot as plt
 
 Now, let's plot the loss as a function of the number of epochs.
 
