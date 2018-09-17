@@ -12,7 +12,7 @@ Assignment 2 encouraged you to try various combinations of layers and activation
 
 For this assignment, we need to install matplotlib.
 
-`pip3 install matplotlib`
+    pip3 install matplotlib
 
 
 
