@@ -49,7 +49,7 @@ We recently discussed **word embeddings** in class.  Now, we'll use them to repr
 
 We could represent every word or character in our input vector using a one-hot-vector representation, and our classifier would learn to make predictions with this data.  For an example of this, see [Intro to text classification with Keras: automatically tagging Stack Overflow posts](https://cloud.google.com/blog/products/gcp/intro-to-text-classification-with-keras-automatically-tagging-stack-overflow-posts).  But storing these words would need a larges, parse matrix.  Instead, we typically use **word embeddings** if we have sufficient data. 
 
-Word embeddings are a relatively new innovation. The first implementation was released as a program called word2vec [(Mikilov, 2013)](https://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf), though there are now competing versions, e.g., GloVe [(Pennington et al. 2014)](https://nlp.stanford.edu/pubs/glove.pdf)
+Word embeddings are a relatively new innovation. The fir implementation was released as a program called word2vec [(Mikilov, 2013)](https://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf), though there are now competing versions, e.g., GloVe [(Pennington et al. 2014)](https://nlp.stanford.edu/pubs/glove.pdf)
 
 The idea is that we want to map our word vectors into a high dimensional space where similar words are close to each other and dissimilar words are farther away.  See [GloVe: Global Vectors for Word Representation](https://nlp.stanford.edu/projects/glove/). Further, words should be closer to each other *along the dimensions that make sense*.   For example, ideally, the word *king* should be close to the word *queen* along some implicit "status" dimension but far away along some implicit *gender* dimension. Word embedding algorithms do this by seeing which words tend to **co-occur**.  We'll come back to this later, but for now, think of word embeddings as a compact representation that encodes semantic relationships between words.  
 
@@ -62,7 +62,7 @@ model.add(Dense(128))
 model.add(Dense(1, activation='sigmoid'))
 ````
 
-It's possible to learn an embedding layer separately and even to use embedding layers that someone else has traine. In this code, we train the embedding layer with backpropagation as part of the overall training process.  Here, we aword embedding matrix of 128 dimensions.  We need to specify the `input_length` parameter when passing to a `Dense` layer.  Dense layers take one-dimensional inputs, so we flatten before passin git to a dense layer with 128 nodes.  Finally, we send it through a sigmoid activation layer.  
+It's possible to learn an embedding layer separately and even to use embedding layers that someone else has traines. In this code, we train the embedding layer with backpropagation as part of the overall training process.  Here, we aword embedding matrix of 128 dimensions.  We need to specify the `input_length` parameter when passing to a `Dense` layer.  Dense layers take one-dimensional inputs, so we flatten before passin git to a dense layer with 128 nodes.  Finally, we send it through a sigmoid activation layer.  
 
 ````python
 model.compile(loss='binary_crossentropy',
