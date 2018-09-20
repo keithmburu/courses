@@ -118,7 +118,7 @@ You may, of course, add more layers and modify other aspects of the model for a 
 
 Extra Credit (+10pts): Figure out how to use a pre-trained GloVe embedding layer instead of learning one from scratch and add this to your performance analysis.
 
-For this assignment, you may use some Keras example code to begin.   If you do this,  use Git to clone the Keras repository into a directory.  You can see this repository here: https://github.com/keras-team/keras.
+For this assignment, you may use some Keras example code, on which some of the code in this document is based, to begin.   If you do this,  use Git to clone the Keras repository into a directory.  You can see this repository here: https://github.com/keras-team/keras.
 
 Clone it to your local machine by typing:
 
