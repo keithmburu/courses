@@ -62,7 +62,7 @@ model.add(Dense(128))
 model.add(Dense(1, activation='sigmoid'))
 ````
 
-It's possible to learn an embedding layer separately and even to use embedding layers that someone else has traines. In this code, we train the embedding layer with backpropagation as part of the overall training process.  Here, we aword embedding matrix of 128 dimensions.  We need to specify the `input_length` parameter when passing to a `Dense` layer.  Dense layers take one-dimensional inputs, so we flatten before passin git to a dense layer with 128 nodes.  Finally, we send it through a sigmoid activation layer.  
+It's possible to learn an embedding layer separately and even to use embedding layers that someone else has traines. In this code, we train the embedding layer with backpropagation as part of the overall training process.  Here, we aword embedding matrix of 128 dimensions.  We need to specify the `input_length` parameter when passing to a `Dense` layer.  Dense layers take one-dimensional inputs, so we flatten before passing it to a dense layer with 128 nodes.  Finally, we send it through a sigmoid activation layer.  
 
 ````python
 model.compile(loss='binary_crossentropy',
@@ -87,7 +87,7 @@ Try it and see how it does. Since we have two classes, random guesses will give 
 
 ## Part 2: Sequence Classification
 
-Our previous model uses no order information.  Every word is isolated, and the nueral network uses this bag of words representation to make predictions.  Thus far, we've used these kinds orderless representations for every task..  But we know that language has order.  What if we could encode this order information explicitly in the model.  Recurrent neural networks allow us to do this.
+Our previous model uses no order information.  Every word is isolated, and the nueral network uses this bag of words representation to make predictions.  Thus far, we've used these kinds orderless representations for every task.  But we know that language has order.  What if we could encode this order information explicitly in the model.  Recurrent neural networks allow us to do this.
 
 A **recurrent neural network** (RNN), not to be confused with a recursive neural network, is a network with recursive units: this means that the output of the unit is passed back into itself.   Thus far, we have only looked at units which take an input vector **x**, combine it with some weights **W**, and then sent it through an activation function to produce the result.  These units have no **memory**.  But a recurrent unit preserves memory by passing its output back into itself.  With each recursive operation, this memory (weight) decays, meaning the the further "back in time" something is, the weaker its signal.  We'll study this in more detail soon.  The crux is that an RNNs allow us to model sequence data, such as that found in language, much better than a standard perceptron. 
 
@@ -100,7 +100,7 @@ model.add(GRU(128))
 model.add(Dense(1, activation='sigmoid'))
 ````
 
-And with that, our model can use sequence information much more effectively.  LSTMs are extremely popular in natural language processing because of their effectiveness in modeling sequences.  Recently, GRUs have gained more popularity, because they have been shown to have comparable performance to LSTMs on many tasks, but they take less time to train.  We will conver recurrent units in much more detail soon.
+And with that, our model can use sequence information much more effectively.  LSTMs are extremely popular in natural language processing because of their effectiveness in modeling sequences.  Recently, GRUs have gained more popularity, because they have been shown to have comparable performance to LSTMs on many tasks, but they take less time to train.  We will cover recurrent units in much more detail soon.
 
 ### Dropout 
 
