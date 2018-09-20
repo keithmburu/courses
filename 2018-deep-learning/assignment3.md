@@ -85,6 +85,6 @@ plt.imshow(x_train[0], cmap=plt.get_cmap('gray'))
 
 ## Part 2: Homework
 
-Keras provides a number of common optimization algorithms for minimizing loss: one example example SGD (which we have discussed), but there also several others.  We will discuss the differences in these later, but for this assignment, it is sufficient to experiment.
+Keras provides a number of common optimization algorithms for minimizing loss: one example example is stochastic gradient descent (SGD),which we have discussed, but there also several others.  We will discuss the differences in these later, but for this assignment, it is sufficient to experiment.
 
-For this assignment, use at least three different optimization algorithms on the MNIST data to investigate their effect on learning.  (You may add other data sets if you like, but it is not required).  Keep in mind that there are many variables at play: the learning rate, the depth of the network, the number of nodes, the number of epocs.  When drawing a conclusion, be sure to control for the appropriate variables.
+Use at least three different optimization algorithms on the MNIST data to investigate their effect on learning.  (You may add other data sets if you like, but it is not required).  Keep in mind that there are many variables at play: the learning rate, the depth of the network, the number of nodes, the number of epocs.  When drawing a conclusion, be sure to control for the appropriate variables.
