@@ -45,7 +45,7 @@ x_test = sequence.pad_sequences(x_test, maxlen=maxlen)
 
 "You shall know a word by the company it keeps." (Firth, 1957)
 
-We have no yet discussed **word embeddings**.  We will discuss this in more detail later, but I'll present the basic idea here. 
+We recently discussed **word embeddings** in class.  Now, we'll use them to represent our vocabulary.
 
 We could represent every word or character in our input vector using a one-hot-vector representation, and our classifier would learn to make predictions with this data.  For an example of this, see [Intro to text classification with Keras: automatically tagging Stack Overflow posts](https://cloud.google.com/blog/products/gcp/intro-to-text-classification-with-keras-automatically-tagging-stack-overflow-posts).  But storing these words would need a largesparse matrix.  Instead, we typically use **word embeddings** if we have sufficient data. 
 
