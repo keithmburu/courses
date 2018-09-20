@@ -34,7 +34,7 @@ In this code, `max_features` refers to the maximum number of words we can use fo
 
 #### Zero Padding
 
- When classifying images, we could assume that every image had the same dimensions.  Since we're using sequence data,  not all sentences are the same size and some may be shorter than `maxlen`.  This is a problem because our tensors expect data of a certain size.  The standard solution to this is to use **zero padding**.  This just means that we fill in any unused slots in our tensor with zeroes, making all of our examples the same size..
+ When classifying images, we could assume that every image had the same dimensions.  Since we're using sequence data,  not all sentences are the same size and some may be shorter than `maxlen`.  This is a problem because our tensors expect data of a certain size.  The standard solution to this is to use **zero padding**.  This just means that we fill in any unused slots in our tensor with zeroes, making all of our examples the same size.
 
 ````python
 x_train = sequence.pad_sequences(x_train, maxlen=maxlen)
