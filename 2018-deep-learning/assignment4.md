@@ -96,7 +96,7 @@ Two kinds of recursive nodes are **long short-term memory** (LSTM) units and **g
 ````python
 model = Sequential()
 model.add(Embedding(max_features, 128))
-model.add(GRU(128)
+model.add(GRU(128))
 model.add(Dense(1, activation='sigmoid'))
 ````
 
