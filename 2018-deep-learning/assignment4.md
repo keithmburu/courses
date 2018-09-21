@@ -62,7 +62,7 @@ model.add(Dense(128))
 model.add(Dense(1, activation='sigmoid'))
 ````
 
-It's possible to learn an embedding layer separately and even to use embedding layers that someone else has traines. In this code, we train the embedding layer with backpropagation as part of the overall training process.  Here, we aword embedding matrix of 128 dimensions.  We need to specify the `input_length` parameter when passing to a `Dense` layer.  Dense layers take one-dimensional inputs, so we flatten before passing it to a dense layer with 128 nodes.  Finally, we send it through a sigmoid activation layer.  
+It's possible to learn an embedding layer separately and even to use embedding layers that someone else has trained. In this code, we train the embedding layer with backpropagation as part of the overall training process.  Here, we aword embedding matrix of 128 dimensions.  We need to specify the `input_length` parameter when passing to a `Dense` layer.  Dense layers take one-dimensional inputs, so we flatten before passing it to a dense layer with 128 nodes.  Finally, we send it through a sigmoid activation layer.  
 
 ````python
 model.compile(loss='binary_crossentropy',
