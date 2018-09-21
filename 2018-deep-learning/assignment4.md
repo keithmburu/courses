@@ -87,7 +87,7 @@ Try it and see how it does. Since we have two classes, random guesses will give 
 
 ## Part 2: Sequence Classification
 
-Our previous model uses no order information.  Every word is isolated, and the nueral network uses this bag of words representation to make predictions.  Thus far, we've used these kinds orderless representations for every task.  But we know that language has order.  What if we could encode this order information explicitly in the model.  Recurrent neural networks allow us to do this.
+Our previous model uses no order information.  Every word is isolated, and the nueral network uses this bag of words representation to make predictions.  Thus far, we've used these kinds orderless representations for every task.  But we know that language has order.  What if we could encode this order information explicitly in the model?  Recurrent neural networks allow us to do this.
 
 A **recurrent neural network** (RNN), not to be confused with a recursive neural network, is a network with recursive units: this means that the output of the unit is passed back into itself.   Thus far, we have only looked at units which take an input vector **x**, combine it with some weights **W**, and then sent it through an activation function to produce the result.  These units have no **memory**.  But a recurrent unit preserves memory by passing its output back into itself.  With each recursive operation, this memory (weight) decays, meaning the the further "back in time" something is, the weaker its signal.  We'll study this in more detail soon.  The crux is that an RNNs allow us to model sequence data, such as that found in language, much better than a standard perceptron. 
 
