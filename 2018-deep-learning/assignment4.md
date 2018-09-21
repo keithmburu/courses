@@ -47,7 +47,7 @@ x_test = sequence.pad_sequences(x_test, maxlen=maxlen)
 
 We recently discussed **word embeddings** in class.  Now, we'll use them to represent our vocabulary.
 
-We could represent every word or character in our input vector using a one-hot-vector representation, and our classifier would learn to make predictions with this data.  For an example of this, see [Intro to text classification with Keras: automatically tagging Stack Overflow posts](https://cloud.google.com/blog/products/gcp/intro-to-text-classification-with-keras-automatically-tagging-stack-overflow-posts).  But storing these words would need a larges, parse matrix.  Instead, we typically use **word embeddings** if we have sufficient data. 
+We could represent every word or character in our input vector using a one-hot-vector representation, and our classifier would learn to make predictions with this data.  For an example of this, see [Intro to text classification with Keras: automatically tagging Stack Overflow posts](https://cloud.google.com/blog/products/gcp/intro-to-text-classification-with-keras-automatically-tagging-stack-overflow-posts).  But storing these words would need a large, sparse matrix.  Instead, we typically use **word embeddings** if we have sufficient data. 
 
 Word embeddings are a relatively new innovation. The fir implementation was released as a program called word2vec [(Mikilov, 2013)](https://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf), though there are now competing versions, e.g., GloVe [(Pennington et al. 2014)](https://nlp.stanford.edu/pubs/glove.pdf)
 
