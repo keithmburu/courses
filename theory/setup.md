@@ -28,8 +28,7 @@ On Windows, you have two recommended options; you don't need to do both: you can
 
 #### Option 1: Linux Subsystem for Windows
 
-To go this route, you will need to go to the Microsoft Store on Windows 10 and download a version of Linux.  This guide will assume that you use Ubuntu, but Debian and OpenSUSE are also options.  Doing this creates a functional Linux environment for Windows without need of a virtual machine, NVIDIA GPU owners cannot use GPU acceleration in this environment.
-
+To go this route, you will need to go to the Microsoft Store on Windows 10 and download a version of Linux.  This guide will assume that you use Ubuntu, but Debian and OpenSUSE are also options.  Doing this creates a functional Linux environment for Windows without need of a virtual machine.
 Follow the instructions here: https://docs.microsoft.com/en-us/windows/wsl/install-win10
 
 Then open the Ubuntu command linen and complete the setup instructions under **Unbuntu Linux** in this guide.  This environment does **not** support graphical user interfaces.
