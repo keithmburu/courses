@@ -49,7 +49,7 @@ Then open the Ubuntu command linen and complete the setup instructions under **U
         choco install git
         choco install openssh
         choco install grepwin
-        choco linstall wget
+        choco install wget
      
 
 
