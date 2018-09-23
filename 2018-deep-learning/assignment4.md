@@ -62,7 +62,7 @@ model.add(Dense(128))
 model.add(Dense(1, activation='sigmoid'))
 ````
 
-It's possible to learn an embedding layer separately and even to use embedding layers that someone else has trained. In this code, we train the embedding layer with backpropagation as part of the overall training process.  Here, we aword embedding matrix of 128 dimensions.  We need to specify the `input_length` parameter when passing to a `Dense` layer.  Dense layers take one-dimensional inputs, so we flatten before passing it to a dense layer with 128 nodes.  Finally, we send it through a sigmoid activation layer.  
+It's possible to learn an embedding layer separately and even to use embedding layers that someone else has trained. In this code, we train the embedding layer with backpropagation as part of the overall training process.  Here, we have a word embedding matrix of 128 dimensions.  We need to specify the `input_length` parameter when passing to a `Dense` layer.  Dense layers take one-dimensional inputs, so we flatten before passing it to a dense layer with 128 nodes.  Finally, we send it through a sigmoid activation layer.  
 
 ````python
 model.compile(loss='binary_crossentropy',
@@ -91,7 +91,7 @@ Our previous model uses no order information.  Every word is isolated, and the n
 
 A **recurrent neural network** (RNN), not to be confused with a recurrent neural network, is a network with recursive units: this means that the output of the unit is passed back into itself.   Thus far, we have only looked at units which take an input vector **x**, combine it with some weights **W**, and then sent it through an activation function to produce the result.  These units have no **memory**.  But a recurrent unit preserves memory by passing its output back into itself.  With each recursive operation, this memory (weight) decays, meaning the the further "back in time" something is, the weaker its signal.  We'll study this in more detail soon.  The crux is that an RNNs allow us to model sequence data, such as that found in language, much better than a standard perceptron. 
 
-Two kinds of recursive nodes are **long short-term memory** (LSTM) units and **gated recurrent units** (GRUs).  LSTMs were introduced in 1997 by [Sepp Hochreiter and Shmidinhuber](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.676.4320&rep=rep1&type=pdf) but didn't see widespread use until the last several years.  GRUs were introduced in 2014 by [Cho et al.](https://arxiv.org/pdf/1406.1078.pdf) for neural machine translation.  In our code, we can delete the `Dense` and its requisite `Flatten` operation and replace it with an `LSTM` or GRU layer.
+Two kinds of recursive nodes are **long short-term memory** (LSTM) units and **gated recurrent units** (GRUs).  LSTMs were introduced in 1997 by [Sepp Hochreiter and Shmidinhuber](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.676.4320&rep=rep1&type=pdf) but didn't see widespread use until the last several years.  GRUs were introduced in 2014 by [Cho et al.](https://arxiv.org/pdf/1406.1078.pdf) for neural machine translation.  In our code, we can delete the `Dense` and its requisite `Flatten` operation and replace it with an `LSTM` or `GRU` layer.
 
 ````python
 model = Sequential()
