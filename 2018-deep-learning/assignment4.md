@@ -114,7 +114,7 @@ Tackle the sentiment analysis task with three kinds of recurrent units.
 
 Analyze (1) the amount of time required to train, e.g., how well/stably/quickly it learns and converges (use graphs), and (2) the accuracy.  You should also include non-recurrent results as a baseline.  Also try changing the vocabulary size and using dropout.
 
-You may, of course, add more layers and modify other aspects of the model for a more thorough analysis.  Do some research online and write about why you think this is.  Detail whether these results are expected or not.
+You may, of course, add more layers and modify other aspects of the model for a more thorough analysis.  Detail whether your results are expected or not.
 
 Extra Credit (+10pts): Figure out how to use a pre-trained GloVe embedding layer instead of learning one from scratch and add this to your performance analysis.
 
