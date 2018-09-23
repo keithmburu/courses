@@ -1,4 +1,4 @@
-Deep Computer Vision and Language, Fall 2018
+Seminar in Deep Computer Vision and Language, Fall 2018
 
 Alvin Grissom II, Ursinus College
 
