@@ -13,7 +13,7 @@ You may need to type sudo (Unix) or csudo (Cmder) in front of these commands.
 
 
 
-1. Give context-free grammars that generate thre of the e following languages:
+1. Give context-free grammars that generate thre of three following languages:
 
 (Problem 2.4 in Sipser 1st edition)
 
