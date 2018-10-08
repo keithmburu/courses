@@ -32,7 +32,7 @@ While I will not help you code this midterm, I am willing to give feedback on re
 
 Your grade will be based on the overall content of your paper.  You may work with one other person (recommended,  especially if you don't have an NVIDIA GPU and someone else does), but if you do so, you **must document what each of you did**.
 
-A+ Range:  Same as A range paper with state-of-the-art results with a new method or a twek of an old method.
+A+ Range:  Same as A range paper with state-of-the-art results with a new method or a tweak to a previous method.
 
 A Range: Exceptionally written paper that does not necessarily achieve state-of-the-art results, but which provides thorough and logical analysis of results, related work, etc.  Uses graphs, tables, and formulas for clarity.  Contextualizes work in the current literature. Work is replicable from the paper.
 
