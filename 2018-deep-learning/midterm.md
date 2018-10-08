@@ -26,7 +26,7 @@ With the possible exception of some areas of Related Work and the Introduction, 
 
 Use appropriate, grammatical English for a scientific paper.
 
-While I will not help you code this midterm, I am willing to give feedback on report near-final report drafts if they are sent to me at a reasonable time (i.e., not immediately before the deadline).
+While I will not help you code this midterm, I am willing to give feedback on near-final report drafts if they are sent to me at a reasonable time (i.e., not immediately before the deadline).
 
 ### Grading
 
