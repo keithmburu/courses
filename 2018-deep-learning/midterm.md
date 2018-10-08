@@ -16,7 +16,7 @@ Your grade will be primarily based on the report that you write, but I will look
 
 Your goal is to achieve the highest accuracy possible on unseen (test) data.  If you do not manage to beat the best methods, your goal is to write a thorough analysis of what you tried and your results.  If you try something simple that outperforms something complicated, this is noteworthy.
 
-It is highly recommended that you cite previous work.  If you implement and/or improve upon some state-of-the-art method, this is even better.  **At a minimum**, you should run a basic convolutional neural network (CNN) baseline, which should get you  at least 80% accuracy on CIFAR, for example.  Ideally, you will run a more sophisticated model.  You are definitely **not** limited to techniques we have discussed in class.
+It is highly recommended that you cite previous work.  If you implement and/or improve upon some state-of-the-art method, this is even better.  **At a minimum**, you should run a basic convolutional neural network (CNN) baseline, which should get you  at least 80% accuracy on CIFAR, for example.  Ideally, your baseline will be a more sophisticated model.  You are definitely **not** limited to techniques we have discussed in class.
 
 ### Report
 
