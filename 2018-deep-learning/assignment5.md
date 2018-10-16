@@ -127,7 +127,7 @@ python3 -m sockeye.translate -m models > my_translations.txt
 
 Likewise, we can generate a number of sentences on the fly by redirecting both stdin and stdout.
 
-```script
+```shell
 python3 -m sockeye.translate -m models < my_test_data.txt > my_translations.txt
 ```
 
