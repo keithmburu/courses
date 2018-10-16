@@ -10,7 +10,7 @@ Alvin Grissom II
 
 Our assignments up until now have used Keras as an introductory framework, but there are several other popular frameworks available, including TensorFlow, PyTorch, DyNet, Deeplearning4j, and Chainer.  For this exercise, we'll use a neural machine translation called Sockeye.  If you like, you may use another package, such as NMT-Keras, OpenNMT, or lower-level code in some deep learning library.  
 
-We've spent a bit of time discussing sequence-to-sequence models and various extensions to them.  In this assignment, you'll get to play with them.  Due to our limited number of GPU machines, you may work with a partner on this project.  You will likely not finish in time if you attempt to use a CPU.   It is, however, reasonable to use a CPU for rapid prototyping on small datasets.
+We've spent a bit of time discussing sequence-to-sequence models and various extensions to them.  In this assignment, you'll get to play with them.  Due to our limited number of GPU machines, you may work with a partner or two on this project, but if you do, you must clearly describe what each person did in your report.  You will likely not finish in time if you attempt to use a CPU.   It is, however, reasonable to use a CPU for rapid prototyping on small datasets.
 
 
 
