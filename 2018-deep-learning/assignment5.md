@@ -147,4 +147,4 @@ Write a report using the NIPS template to addresses the following:
 4. Translate some other text (e.g., news or novel text) with your model and include some interesting examples of what the model does in your analysis.  You might consider [Project Gutenburg](https://www.gutenberg.org).
 5. Plot at least one attention graph (preferably more) that shows something interesting.  Why does the model seem to focus on certain parts?  Does it make sense?
 6. What is the takeaway from these experiments? (Conclusion)
-7. Bonus: Talk to your classmates and compare notes.  Include their reuslts in your analysis.
+7. Bonus: Talk to your classmates and compare notes.  Include their results in your analysis.
