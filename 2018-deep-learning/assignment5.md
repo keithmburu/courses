@@ -85,6 +85,10 @@ python3 -m sockeye.train\
 
 ```
 
+You can save it in a file called `train.sh` (or whatever you like) and run:
+```shell
+sh train.sh
+```
 Unfortunately, using a Transformer for both the encoder and the decoder causes our 6GB GTX 1060 to run out of memory.  If you have GPU with more RAM, however, you can use two Transformers.  If you like you can monitor GPU memory usage with:
 
 ```shell
