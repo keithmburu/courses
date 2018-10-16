@@ -115,7 +115,11 @@ Once the model has finished loading, you can try typing some text and pressing [
 
 We can redirect stdout to a file in the normal way:
 
+```shell
 python3 -m sockeye.translate -m models > my_translations.txt
+```
+
+
 
 Likewise, we can generate a number of sentences on the fly by redirecting both stdin and stdout.
 
