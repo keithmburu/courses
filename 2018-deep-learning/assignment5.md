@@ -142,12 +142,12 @@ Because Sockeye saves the best parameters on every epoch, you don't have to wait
 
 ## Assignment
 
-Write a report using the NIPS template to addresses the following:
+Write a report using the NIPS template which addresses the following:
 
 1. Describe what you're doing, the dataset, your motivation. (Introduction)
 2. Describe any preprocessing on the data you used and why you did it.
 3. Train and test your model with at least one architecture that performs reasonably.  Report all of the relevant details of the model and the perplexity and BLEU scores on the models that you used.
-4. Translate some other text (e.g., news or novel text) with your model and include some interesting examples of what the model does in your analysis.  You might consider [Project Gutenburg](https://www.gutenberg.org).
+4. Translate some other text (e.g., news or novel text) with your model and include some interesting examples of what the model does in your analysis.  You might consider using [Project Gutenburg](https://www.gutenberg.org) as a source.
 5. Plot at least one attention graph (preferably more) that shows something interesting.  Why does the model seem to focus on certain parts?  Does it make sense?
 6. What is the takeaway from these experiments? (Conclusion)
 7. Bonus: Talk to your classmates and compare notes.  Include their results in your analysis.
