@@ -58,7 +58,7 @@ Sockeye provides implementations of several popular translation model architectu
 
 **For those logging in remotely:**
 
-When you log out of a remote machine, everything you're running will stop, unless you take measures to prevent this.  One way is to use `nohup`, but I recommend using **tmux**, a terminal multiplexer. tmux will continue running your programs even if you lose your connection or log out.  It allows you to pick up exactly where you left off.  To run it, when you log into a remote machine, simply type `tmux`.
+When you log out of a remote machine, everything you're running will stop, unless you take measures to prevent this.  One way is to use `nohup`, but I recommend using **tmux**, a terminal multiplexer. tmux will continue running your programs even if you lose your connection or log out.  It allows you to pick up exactly where you left off.  To run it, when you log in to a remote machine, simply type `tmux`.
 
 If you lose your connection, simply log back in and type `tmux attach`.  You will return to exactly where you left off.  tmux also supports a number of other features, such as multiple terminals.
 
