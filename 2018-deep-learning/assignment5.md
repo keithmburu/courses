@@ -132,6 +132,7 @@ Likewise, we can generate a number of sentences on the fly by redirecting both s
 ```shell
 python3 -m sockeye.translate -m models < my_test_data.txt > my_translations.txt
 ```
+Of course, you must change `my_test_data.txt` to whatever source sentences you're using. 
 
 You can use [sacrebleu](https://github.com/awslabs/sockeye/tree/master/sockeye_contrib/sacrebleu) (or any other BLEU script) to evaluate the quality of the translations.  You can also visualize the attention weights in the model. See https://aws.amazon.com/blogs/machine-learning/train-neural-machine-translation-models-with-sockeye/.
 
