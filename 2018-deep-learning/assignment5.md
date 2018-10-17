@@ -62,6 +62,8 @@ When you log out of a remote machine, everything you're running will stop, unles
 
 If you lose your connection, simply log back in and type `tmux attach`.  You will return to exactly where you left off.  tmux also supports a number of other features, such as multiple terminals.
 
+See this article for a basic introduction: [](https://medium.com/actualize-network/a-minimalist-guide-to-tmux-13675fb160fa)
+
 ***
 
 I'm providing a basic script for training a model here:
