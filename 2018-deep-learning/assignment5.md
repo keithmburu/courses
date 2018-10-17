@@ -20,7 +20,7 @@ We've spent a bit of time discussing sequence-to-sequence models and various ext
 
 Note that if you're using one of our GPU-equipped machines, Sockeye is already installed and setup to use the GPU.
 
-If your system is arleady set up to use CUDA with your GPU, you'll need to install sockeye and the MXNet backend.  This guide assumes you're using CUDA 9.0.  If you're using 8.0, 9.1 or 9.2, you'll have to change the first command accordingly.  If you're installing the CPU version, you can skip the CUDA version of mxnet.
+If your system is arleady set up to use CUDA with your GPU, you'll need to install sockeye and the MXNet backend.  This guide assumes you're using CUDA 9.0.  If you're using 8.0, 9.1 or 9.2, you'll have to change the first command accordingly.  If you're installing the CPU version, you can skip the CUDA version of mxnet.  If you don't remember which version of CUDA you're using, you can check with `nvcc --version`
 
 ```shell
 pip install mxnet-cu90mkl
