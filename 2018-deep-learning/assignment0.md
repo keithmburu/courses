@@ -38,13 +38,14 @@ The macOS operating system includes a Unix subsystem accessible from the Termina
         choco install pip
         
 4.  Install Emacs, Git, OpenSSH, grep, and wget.
-    choco install unixutils.
+    choco install unxutils.
     
         choco install emacs
         choco install git
         choco install openssh
         choco install grepwin
-        choco linstall wget
+        choco install wget
+        choco install unxutils
         
 5.  Install CUDA and cuDNN.    
 
