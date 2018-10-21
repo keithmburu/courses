@@ -106,7 +106,6 @@ If you have an NVIDIA GPU and would like to use GPU acceleration (recommended):
    
 If there are no problems, you should get a message about using the TensorFlow backend.  You can then type Ctrl+D to exit.
 
-If you were successful, the program should finish 20 epochs in a couple of minutes and report accuracy aroun 98%.  Use output redirection to send the output of the program to a file named mnist_test.txt
 
 ## Part 4: Getting used to Python
 
