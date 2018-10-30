@@ -48,7 +48,7 @@ Each pair of files has the same sentence in two different languages (in this cas
 
 Training takes a long time.  I do not recommend attempting to complete this assignment without using a GPU.
 
-Sockeye provides implementations of several popular translation model architectures, including RNN and Transformer-based architectures.  It can be run from the command line.
+Sockeye provides implementations of several popular translation model architectures, including RNN, CNN, and Transformer-based architectures.  It can be run from the command line.
 
 ***
 
@@ -72,8 +72,8 @@ mkdir -p $MODEL_DIR
 python3 -m sockeye.train\
                        --source $DATA_DIR/shakespeare/sparknotes/merged/antony-and-cleopatra_modern.snt.aligned \
                        --target $DATA_DIR/shakespeare/sparknotes/merged/antony-and-cleopatra_original.snt.aligned \
-                       --encoder rnn \
-                       --decoder rnn \
+                       --encoder cnn \
+                       --decoder cnn \
                        --rnn-num-hidden 2 \
                        --validation-source $DATA_DIR/shakespeare/sparknotes/merged/antony-and-cleopatra_modern.snt.aligned \
                        --validation-target $DATA_DIR/shakespeare/sparknotes/merged/antony-and-cleopatra_original.snt.aligned \
