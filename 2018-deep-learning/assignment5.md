@@ -38,7 +38,7 @@ If using a word-based model, you'll want to ensure that punctuation is not consi
 
 Fortunately, the data are already available for us to use here: https://github.com/tokestermw/tensorflow-shakespeare, in the `data` subdirectory.
 
-You'll need to combine these files, preferably shuffle them, and split them into train, test, and dev sets.  You might find the Unix utilities `shuf` (or `gshuf`), `head`, `cat`, and `tail` useful for this purpose, but you can also use scikit-learn or write your own script following some [basic guidelines](https://cs230-stanford.github.io/train-dev-test-split.html): 
+You'll need to combine these files, preferably shuffle them, and split them into train, test, and dev sets.  You might find the Unix utilities `shuf` (or `gshuf`), `head`, `cat`, and `tail` useful for this purpose, but you can also use scikit-learn (**recommended**) or write your own script following some [basic guidelines](https://cs230-stanford.github.io/train-dev-test-split.html): 
 
 Each pair of files has the same sentence in two different languages (in this case, two different versions of English) on the same line.  
 
