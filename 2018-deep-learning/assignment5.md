@@ -24,7 +24,7 @@ If your system is arleady set up to use CUDA with your GPU, you'll need to insta
 
 ```shell
 pip install mxnet-cu90mkl
-pip install sockeye
+pip install sockeye --no-deps
 pip install mxboard
 pip install sacrebleu
 
