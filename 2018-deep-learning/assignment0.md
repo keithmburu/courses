@@ -38,13 +38,14 @@ The macOS operating system includes a Unix subsystem accessible from the Termina
         choco install pip
         
 4.  Install Emacs, Git, OpenSSH, grep, and wget.
-    choco install unixutils.
+    choco install unxutils.
     
         choco install emacs
         choco install git
         choco install openssh
         choco install grepwin
-        choco linstall wget
+        choco install wget
+        choco install unxutils
         
 5.  Install CUDA and cuDNN.    
 
@@ -105,7 +106,6 @@ If you have an NVIDIA GPU and would like to use GPU acceleration (recommended):
    
 If there are no problems, you should get a message about using the TensorFlow backend.  You can then type Ctrl+D to exit.
 
-If you were successful, the program should finish 20 epochs in a couple of minutes and report accuracy aroun 98%.  Use output redirection to send the output of the program to a file named mnist_test.txt
 
 ## Part 4: Getting used to Python
 

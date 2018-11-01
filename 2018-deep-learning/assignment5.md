@@ -10,7 +10,7 @@ Alvin Grissom II
 
 Our assignments up until now have used Keras as an introductory framework, but there are several other popular frameworks available, including TensorFlow, PyTorch, DyNet, Deeplearning4j, and Chainer.  For this exercise, we'll use a neural machine translation called Sockeye.  If you like, you may use another package, such as NMT-Keras, OpenNMT, or lower-level code in some deep learning library.  
 
-We've spent a bit of time discussing sequence-to-sequence models and various extensions to them.  In this assignment, you'll get to play with them.  Due to our limited number of GPU machines, you may work with a partner on this project.  You will likely not finish in time if you attempt to use a CPU.   It is, however, reasonable to use a CPU for rapid prototyping on small datasets.
+We've spent a bit of time discussing sequence-to-sequence models and various extensions to them.  In this assignment, you'll get to play with them.  Due to our limited number of GPU machines, you may work with a partner or two on this project, but if you do, you must clearly describe what each person did in your report.  You will likely not finish in time if you attempt to use a CPU.   It is, however, reasonable to use a CPU for rapid prototyping on small datasets.
 
 
 
@@ -18,13 +18,13 @@ We've spent a bit of time discussing sequence-to-sequence models and various ext
 
 ### Install Sockeye
 
-Note that if you're using one of our GPU-equipped machines, Sockeye is already installed and setup to use the GPU.
+Note that if you're using one of our GPU-equipped machines, Sockeye is already installed and set up to use the GPU.
 
-If your system is arleady set up to use CUDA with your GPU, you'll need to install sockeye and the MXNet backend.  This guide assumes you're using CUDA 9.0.  If you're using 8.0, 9.1 or 9.2, you'll have to change the first command accordingly.  If you're installing the CPU version, you can just install `sockeye` and `mxboard`.
+If your system is arleady set up to use CUDA with your GPU, you'll need to install sockeye and the MXNet backend.  This guide assumes you're using CUDA 9.0.  If you're using 8.0, 9.1 or 9.2, you'll have to change the first command accordingly.  If you're installing the CPU version, you can skip the CUDA version of mxnet.  If you don't remember which version of CUDA you're using, you can check with `nvcc --version`
 
 ```shell
 pip install mxnet-cu90mkl
-pip install sockeye
+pip install sockeye --no-deps
 pip install mxboard
 pip install sacrebleu
 
@@ -38,13 +38,9 @@ If using a word-based model, you'll want to ensure that punctuation is not consi
 
 Fortunately, the data are already available for us to use here: https://github.com/tokestermw/tensorflow-shakespeare, in the `data` subdirectory.
 
-You'll need to combine these files, preferably shuffle them, and split them into train, test, and dev sets.  You'll likely find the Unix utilities `shuf` (or `gshuf`), `head`, and `tail` useful for this purpose, but you can also use scikit-learn: 
+You'll need to combine these files, preferably shuffle them, and split them into train, test, and dev sets.  You might find the Unix utilities `shuf` (or `gshuf`), `head`, `cat`, and `tail` useful for this purpose, but you can also use scikit-learn (**recommended**) or write your own script following some [basic guidelines](https://cs230-stanford.github.io/train-dev-test-split.html): 
 
-http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html
-
-https://medium.com/themlblog/splitting-csv-into-train-and-test-data-1407a063dd74
-
-Each pair of files has the same sentence in two different languages (in this case, two different versions of English) on the same line.
+Each pair of files has the same sentence in two different languages (in this case, two different versions of English) on the same line.  
 
 
 
@@ -52,15 +48,17 @@ Each pair of files has the same sentence in two different languages (in this cas
 
 Training takes a long time.  I do not recommend attempting to complete this assignment without using a GPU.
 
-Sockeye provides implementations of several popular translation model architectures, including RNN and Transformer-based architectures.  It can be run from the command line.
+Sockeye provides implementations of several popular translation model architectures, including RNN, CNN, and Transformer-based architectures.  It can be run from the command line.
 
 ***
 
 **For those logging in remotely:**
 
-When you log out of a remote machine, everything you're running will stop, unless you take measures to prevent this.  One way is to use *nohup*, but I recommend using **tmux**, a terminal multiplexer. tmux will continue running your programs even if you lose your connection or log out.  It allows you to pick up exactly where you left off.  To run it, when you log into a remote machine, simply type `tmux`.
+When you log out of a remote machine, everything you're running will stop, unless you take measures to prevent this.  One way is to use `nohup`, but I recommend using **tmux**, a terminal multiplexer. tmux will continue running your programs even if you lose your connection or log out.  It allows you to pick up exactly where you left off.  To run it, when you log in to a remote machine, simply type `tmux`.
 
 If you lose your connection, simply log back in and type `tmux attach`.  You will return to exactly where you left off.  tmux also supports a number of other features, such as multiple terminals.
+
+See this article for a basic introduction: [https://medium.com/actualize-network/a-minimalist-guide-to-tmux-13675fb160fa](https://medium.com/actualize-network/a-minimalist-guide-to-tmux-13675fb160fa)
 
 ***
 
@@ -74,8 +72,8 @@ mkdir -p $MODEL_DIR
 python3 -m sockeye.train\
                        --source $DATA_DIR/shakespeare/sparknotes/merged/antony-and-cleopatra_modern.snt.aligned \
                        --target $DATA_DIR/shakespeare/sparknotes/merged/antony-and-cleopatra_original.snt.aligned \
-                       --encoder rnn \
-                       --decoder rnn \
+                       --encoder cnn \
+                       --decoder cnn \
                        --rnn-num-hidden 2 \
                        --validation-source $DATA_DIR/shakespeare/sparknotes/merged/antony-and-cleopatra_modern.snt.aligned \
                        --validation-target $DATA_DIR/shakespeare/sparknotes/merged/antony-and-cleopatra_original.snt.aligned \
@@ -85,6 +83,10 @@ python3 -m sockeye.train\
 
 ```
 
+You can save it in a file called `train.sh` (or whatever you like) and run:
+```shell
+sh train.sh
+```
 Unfortunately, using a Transformer for both the encoder and the decoder causes our 6GB GTX 1060 to run out of memory.  If you have GPU with more RAM, however, you can use two Transformers.  If you like you can monitor GPU memory usage with:
 
 ```shell
@@ -123,9 +125,10 @@ python3 -m sockeye.translate -m models > my_translations.txt
 
 Likewise, we can generate a number of sentences on the fly by redirecting both stdin and stdout.
 
-```script
+```shell
 python3 -m sockeye.translate -m models < my_test_data.txt > my_translations.txt
 ```
+Of course, you must change `my_test_data.txt` to whatever source sentences you're using. 
 
 You can use [sacrebleu](https://github.com/awslabs/sockeye/tree/master/sockeye_contrib/sacrebleu) (or any other BLEU script) to evaluate the quality of the translations.  You can also visualize the attention weights in the model. See https://aws.amazon.com/blogs/machine-learning/train-neural-machine-translation-models-with-sockeye/.
 
@@ -135,12 +138,12 @@ Because Sockeye saves the best parameters on every epoch, you don't have to wait
 
 ## Assignment
 
-Write a report using the NIPS template to addresses the following:
+Write a report using the NIPS template which addresses the following:
 
 1. Describe what you're doing, the dataset, your motivation. (Introduction)
 2. Describe any preprocessing on the data you used and why you did it.
 3. Train and test your model with at least one architecture that performs reasonably.  Report all of the relevant details of the model and the perplexity and BLEU scores on the models that you used.
-4. Translate some other text (e.g., news or novel text) with your model and include some interesting examples of what the model does in your analysis.  You might consider [Project Gutenburg](https://www.gutenberg.org).
+4. Translate some other text (e.g., news or novel text) with your model and include some interesting examples of what the model does in your analysis.  You might consider using [Project Gutenburg](https://www.gutenberg.org) as a source.
 5. Plot at least one attention graph (preferably more) that shows something interesting.  Why does the model seem to focus on certain parts?  Does it make sense?
 6. What is the takeaway from these experiments? (Conclusion)
-7. Bonus: Talk to your classmates and compare notes.  Include their reuslts in your analysis.
+7. Bonus: Talk to your classmates and compare notes.  Include their results in your analysis.
