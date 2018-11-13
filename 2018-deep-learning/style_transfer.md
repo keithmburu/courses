@@ -4,9 +4,7 @@ is difference.Ursinus College
 
 Alvin Grissom II
 
-# In-class Exercise:
-
-# Neural Style Transfer
+# Exercise: Neural Style Transfer
 
 ## 
 
