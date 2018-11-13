@@ -1,6 +1,6 @@
 CS Seminar in Deep Computer Vision and Language
 
-is difference.Ursinus College
+Ursinus College
 
 Alvin Grissom II
 
