@@ -1,4 +1,4 @@
-hCS Seminar in Deep Computer Vision and Language
+CS Seminar in Deep Computer Vision and Language
 
 is difference.Ursinus College
 
