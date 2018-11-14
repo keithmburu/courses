@@ -82,6 +82,12 @@ The Kolmogorov Complexity of Real Numbers https://core.ac.uk/download/pdf/811506
 
 Quantum Turing Machine https://www.researchgate.net/profile/Joachim_Draeger2/publication/317328824_Quantum_Turing_Machines/links/59325f430f7e9beee78ccfff/Quantum-Turing-Machines.pdf
 
+Sudoku as a SAT Problem https://app.cs.amherst.edu/~ccmcgeoch/cs34/papers/sudokusat.pdf
+
+The Othello Game on an n x n board is PSPACE-Complete https://ac.els-cdn.com/0304397594901317/1-s2.0-0304397594901317-main.pdf?_tid=0a986d00-d06c-4016-b4fb-660ce7a43776&acdnat=1542168372_53b6c98c6c14b83aaf7489efc2042a82 
+
+Mastermind is NP-Complete https://arxiv.org/pdf/cs/0512049.pdf
+
 ## Grading:
 
 A: A polished presentation that provides sufficient detail and background of the topic being presented, including the relevant citations to relevant work.  Provides context to the problem and why it is interesting and/or important.  Uses and explains formulas where appropriate without attempting to obfuscate.
