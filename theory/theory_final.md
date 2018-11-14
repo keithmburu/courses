@@ -1,6 +1,6 @@
 # Theory of Computing Final
 
-For the final project you will give a 10-15 minute presentation on an advanced topic in complexity or computability theory and submit a short report (at least 1.5 pages).  This may be an advanced topic from the textbook or a research paper.  You may work with up to two partners, but in this case, each person is expected to contribute roughly equally in the presentation.
+For the final project you will give a 10-15 minute presentation on an advanced topic in complexity or computability theory and submit a short report.  This may be an advanced topic from the textbook or a research paper.  You may work with up to two partners, but in this case, each person is expected to contribute roughly equally in the presentation.
 
 You may use PowerPoint and/or the chalkboard for your presentation.  If you use the chalkboard, you must submit to me your notes.
 
