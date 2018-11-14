@@ -70,7 +70,7 @@ Using QBF Solvers to Solve Games and Puzzles https://www.bc.edu/content/dam/bc1/
 
 Inequalities for Shannon Entropy and Kolmogorov Complexity https://ac.els-cdn.com/S002200009991677X/1-s2.0-S002200009991677X-main.pdf?_tid=5bb4a2cf-2d4d-4d7a-a045-3aaa4a180168&acdnat=1542143867_a669a0c25693a21e8492c3f1386f4fd2
 
-Using Shannon Entropy and Kolmogorov Complexity To Study the Communicative System and Cognitive Capacities in Ants https://onlinelibrary.wiley.com/doi/pdf/10.1002/%28SICI%291099-0526%28199611/12%292%3A2<37%3A%3AAID-CPLX8>3.0.CO%3B2-K
+Using Shannon Entropy and Kolmogorov Complexity To Study the Communicative System and Cognitive Capacities in Ants [https://onlinelibrary.wiley.com/doi/pdf/10.1002/%28SICI%291099-0526%28199611/12%292%3A2<37%3A%3AAID-CPLX8>3.0.CO%3B2-K]()
 
 Approximating the Smallest Grammar: Kolmogorov Complexity in Natural Models http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.126.9614&rep=rep1&type=pdf
 
