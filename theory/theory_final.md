@@ -80,6 +80,8 @@ Reconciling Data Compression and Kolmogorov complexity http://citeseerx.ist.psu.
 
 The Kolmogorov Complexity of Real Numbers https://core.ac.uk/download/pdf/81150613.pdf
 
+Quantum Turing Machine https://www.researchgate.net/profile/Joachim_Draeger2/publication/317328824_Quantum_Turing_Machines/links/59325f430f7e9beee78ccfff/Quantum-Turing-Machines.pdf
+
 ## Grading:
 
 A: A polished presentation that provides sufficient detail and background of the topic being presented, including the relevant citations to relevant work.  Provides context to the problem and why it is interesting and/or important.  Uses and explains formulas where appropriate without attempting to obfuscate.
