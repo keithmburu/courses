@@ -1,10 +1,12 @@
 # Theory of Computing Final
 
-For the final project you will give a 10-15 minute presentation on an advanced topic in complexity or computability theory. This may be an advanced topic from the textbook or a research paper.  You may work with up to two partners, but in this case, each person is expected to contribute roughly equally in the presentation.
+For the final project you will give a 10-15 minute presentation on an advanced topic in complexity or computability theory. This may be an advanced topic from the textbook or a research paper.  You may work with up to two partners, but in this case, each person is expected to contribute roughly equally in the presentation.  
 
 You may use PowerPoint and/or the chalkboard for your presentation.  If you use the chalkboard, you must submit to me your notes.
 
-Your presentation will be graded based on clarity, organization, and completeness.  Hastily assembled presentations will recieve a low grade.  Be sure to **provide context** for your presentation.  Do not assume that everyone know what you knw from studying your topic.  Make it **understandable** for someone with a reasonable knowledge of Theory of Computing (the entire class).  You won't understand everythign in your paper, but you are being tested on your ability to glean as much information as you can (from whatever sources you can find) to understand the topic well enough to explain it to someone else.  You're also being tested on your ability to present.
+Your presentation will be graded based on clarity, organization, and completeness.  Hastily assembled presentations will recieve a low grade.  Be sure to **provide context** for your presentation.  Do not assume that everyone know what you knw from studying your topic.  Make it **understandable** for someone with a reasonable knowledge of Theory of Computing (the entire class).  
+
+You likely won't understand everything in your paper or topic, but you are being tested on your ability to glean as much information as you can (from whatever sources you can find) to understand the topic well enough to explain the fundamentals to someone else.  You're also being tested on your ability to present.
 
 
 
