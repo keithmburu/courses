@@ -1,4 +1,4 @@
-# Theory of Computing Final
+# Theory of Computation Final
 
 For the final project you will give a 10-15 minute presentation on an advanced topic in complexity or computability theory. This may be an advanced topic from the textbook or a research paper.  You may work with up to two partners, but in this case, each person is expected to contribute roughly equally in the presentation.  
 
