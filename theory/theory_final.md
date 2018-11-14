@@ -46,8 +46,6 @@ The TSP phase transition https://ac.els-cdn.com/S0004370296000306/1-s2.0-S000437
 
 A note on the Entscheidungsproblem http://users.fit.cvut.cz/~staryja2/MIVYC/church-a-note-on-the-entscheidungsproblem.pdf
 
-Gödel's theorem: an incomplete guide to its use and abuse http://www.math.chalmers.se/~ulfp/Review/franzen.pdf
-
 On Alleged Refutations of Mechanism Using Godel's Incompleteness Results https://www.jstor.org/stable/pdf/2025144.pdf
 
 The church-turing 'thesis' as a special corollary of gödel's completeness theorem https://books.google.com/books?hl=en&lr=&id=2OPxCwAAQBAJ&oi=fnd&pg=PA77&dq=godel%27s+incompleteness+theorem+turing&ots=5ueWrtOs3F&sig=rmOSOcOLVWx4drFMCYQAcT_Y_LQ#v=onepage&q&f=false
