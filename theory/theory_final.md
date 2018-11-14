@@ -28,7 +28,7 @@ Interactive Proof and Arthur-Merlin Games https://courses.cs.washington.edu/cour
 
 The SAT-UNSAT Transition in the Adversarial SAT Problem https://arxiv.org/pdf/1310.0967.pdf
 
-Satisfiability as a Classification Problem https://s3.amazonaws.com/academia.edu.documents/30688596/classification.pdf?AWSAccessKeyId=AKIAIWOWYYGZ2Y53UL3A&Expires=1542136653&Signature=XTz5J%2FNZM5dvmbnzEWriwR0vKms%3D&response-content-disposition=inline%3B%20filename%3DSatisfiability_as_a_Classification_Probl.pdfA Case Study in the 
+Satisfiability as a Classification Problem https://s3.amazonaws.com/academia.edu.documents/30688596/classification.pdf?AWSAccessKeyId=AKIAIWOWYYGZ2Y53UL3A&Expires=1542136653&Signature=XTz5J%2FNZM5dvmbnzEWriwR0vKms%3D&response-content-disposition=inline%3B%20filename%3DSatisfiability_as_a_Classification_Probl.pdf A Case Study in the 
 
 Meta-Reasoning Procedure ND http://probability.ca/jeff/ftpdir/jteai.pdf
 
