@@ -42,7 +42,7 @@ Alternation http://courses.csail.mit.edu/6.841/spring09/scribe/lect08.pdf
 
 Alternation and the Computational Complexity of Logic Programs https://core.ac.uk/download/pdf/82670100.pdf
 
-The TSP phase transition [https://ac.els-cdn.com/S0004370296000306/1-s2.0-S0004370296000306-main.pdf?_tid=a61eec12-4653-4ec5-b36d-2d96e068e168&acdnat=1542133524_3cad34671b05d9af8bd4ee137e3cde60]()
+The TSP phase transition https://ac.els-cdn.com/S0004370296000306/1-s2.0-S0004370296000306-main.pdf?_tid=a61eec12-4653-4ec5-b36d-2d96e068e168&acdnat=1542133524_3cad34671b05d9af8bd4ee137e3cde60]
 
 A note on the Entscheidungsproblem http://users.fit.cvut.cz/~staryja2/MIVYC/church-a-note-on-the-entscheidungsproblem.pdf
 
