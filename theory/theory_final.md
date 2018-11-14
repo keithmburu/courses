@@ -12,6 +12,17 @@ The following are some potential papers with results or ideas that you might con
 
 **Your top five choices, and any group members, should be submitted to Canvas by the deadline.**
 
+## Grading:
+
+A: A polished presentation that provides sufficient detail and background of the topic being presented, including the relevant citations to relevant work.  Provides context to the problem and why it is interesting and/or important.  Uses and explains formulas where appropriate without attempting to obfuscate.
+
+B: Good presentation with some rough edges.  May have some grammatical and/or spelling errors.  Generally good coverage of topic but lacks detail and/or context.
+
+C: Presentation which attempts to address the topic, but may have mistakes and/or may be missing key details.  Is either too short or unfinished due to lack of time.  Has mistakes that show lack of basic understanding of the topic.
+
+D: Clearly rushed presentation with little detail or lazy presenntation.
+
+
 PRIMES is in P. http://annals.math.princeton.edu/2004/160-2/p12
 
 Solving SQL Constraints by Incremental Translation to SAT https://link.springer.com/chapter/10.1007/978-3-540-69052-8_70
