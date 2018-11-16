@@ -44,4 +44,3 @@ Try the same with one of Picasso's paintings.
 
 2. There are other parameters, as well.  In particular, try adjusting the content and style weight parameters.  These are weights on the loss function that determines how much of the content vs. the style to preserve.
 3. Try the same task with at least three other images (perhaps a personal photo?) and three other style sources and submit your results in a PDF with some basic qualitative analysis.    This does not need to be long.
-4. 
