@@ -18,7 +18,7 @@ This can be done using most of the tools we have developed so far in the semeste
 
 ## How it works
 
-Neural style transfer can work with the filters from any trained CNN.  We define two kinds of loss: **style loss** and **content loss**.  Out total loss is simply the sum of the style loss and the content loss.
+Neural style transfer can work with the filters from any trained CNN.  We define two kinds of loss: **style loss** and **content loss**.  Our total loss is simply the sum of the style loss and the content loss.
 
 The content loss uses activations from the layers closer to the input, which tend to capture local information, and the style loss uses activations from the layer immediately prior to the output, which sohuld theoretically have the most "general" information about the image.  After the transformation, the CNN should still be able to identify the same objects as before, but it should do so after performing various transformations.
 
