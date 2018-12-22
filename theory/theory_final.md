@@ -1,16 +1,20 @@
-# Theory of Computing Final
+# Theory of Computation Final
 
-For the final project you will give a 10-15 minute presentation on an advanced topic in complexity or computability theory and submit a short report (at least 1.5 pages).  This may be an advanced topic from the textbook or a research paper.  You may work with up to two partners, but in this case, each person is expected to contribute roughly equally in the presentation.
+For the final project you will give a 10-15 minute presentation on an advanced topic in complexity or computability theory. This may be an advanced topic from the textbook or a research paper.  You may work with up to two partners, but in this case, each person is expected to contribute roughly equally in the presentation.  
 
 You may use PowerPoint and/or the chalkboard for your presentation.  If you use the chalkboard, you must submit to me your notes.
 
-Your presentation will be graded based on clarity, organization, and completeness.  Hastily assembled presentations will recieve a low grade.  Be sure to **provide context** for your presentation.  Do not assume that everyone know what you knw from studying your topic.  Make it **understandable** for someone with a reasonable knowledge of Theory of Computing (the entire class).  You won't understand everythign in your paper, but you are being tested on your ability to glean as much information as you can (from whatever sources you can find) to understand the topic well enough to explain it to someone else.  You're also being tested on your ability to present.
+Your presentation will be graded based on clarity, organization, and completeness.  Hastily assembled presentations will recieve a low grade.  Be sure to **provide context** for your presentation.  Do not assume that everyone knows what you know from studying your topic.  Make it **understandable** for someone with a reasonable knowledge of Theory of Computing (the entire class).  
+
+You likely won't understand everything in your paper or topic, but you are being tested on your ability to glean as much information as you can (from whatever sources you can find) to understand the topic well enough to explain the fundamentals to someone else.  You're also being tested on your ability to present.
 
 
 
 The following are some potential papers with results or ideas that you might consider presenting.  If none of these interest you, the later chapters in the textbook, the [Complexity Zoo](https://complexityzoo.uwaterloo.ca/Complexity_Zoo), or the [Computational Complexity blog](https://blog.computationalcomplexity.org) may be of interest.  The philosophically minded may find some inspiration [here](https://plato.stanford.edu/entries/goedel-incompleteness/#GdeArgAgaMec) and [here](https://plato.stanford.edu/entries/turing/).
 
 **Your top five choices, and any group members, should be submitted to Canvas by the deadline.**
+
+# Sample of Topics
 
 PRIMES is in P. http://annals.math.princeton.edu/2004/160-2/p12
 
@@ -24,7 +28,7 @@ Interactive Proof and Arthur-Merlin Games https://courses.cs.washington.edu/cour
 
 The SAT-UNSAT Transition in the Adversarial SAT Problem https://arxiv.org/pdf/1310.0967.pdf
 
-Satisfiability as a Classification Problem https://s3.amazonaws.com/academia.edu.documents/30688596/classification.pdf?AWSAccessKeyId=AKIAIWOWYYGZ2Y53UL3A&Expires=1542136653&Signature=XTz5J%2FNZM5dvmbnzEWriwR0vKms%3D&response-content-disposition=inline%3B%20filename%3DSatisfiability_as_a_Classification_Probl.pdfA Case Study in the 
+Satisfiability as a Classification Problem https://s3.amazonaws.com/academia.edu.documents/30688596/classification.pdf?AWSAccessKeyId=AKIAIWOWYYGZ2Y53UL3A&Expires=1542136653&Signature=XTz5J%2FNZM5dvmbnzEWriwR0vKms%3D&response-content-disposition=inline%3B%20filename%3DSatisfiability_as_a_Classification_Probl.pdf A Case Study in the 
 
 Meta-Reasoning Procedure ND http://probability.ca/jeff/ftpdir/jteai.pdf
 
@@ -38,11 +42,9 @@ Alternation http://courses.csail.mit.edu/6.841/spring09/scribe/lect08.pdf
 
 Alternation and the Computational Complexity of Logic Programs https://core.ac.uk/download/pdf/82670100.pdf
 
-The TSP phase transition [https://ac.els-cdn.com/S0004370296000306/1-s2.0-S0004370296000306-main.pdf?_tid=a61eec12-4653-4ec5-b36d-2d96e068e168&acdnat=1542133524_3cad34671b05d9af8bd4ee137e3cde60]()
+The TSP phase transition https://ac.els-cdn.com/S0004370296000306/1-s2.0-S0004370296000306-main.pdf?_tid=a61eec12-4653-4ec5-b36d-2d96e068e168&acdnat=1542133524_3cad34671b05d9af8bd4ee137e3cde60]
 
 A note on the Entscheidungsproblem http://users.fit.cvut.cz/~staryja2/MIVYC/church-a-note-on-the-entscheidungsproblem.pdf
-
-Gödel's theorem: an incomplete guide to its use and abuse http://www.math.chalmers.se/~ulfp/Review/franzen.pdf
 
 On Alleged Refutations of Mechanism Using Godel's Incompleteness Results https://www.jstor.org/stable/pdf/2025144.pdf
 
@@ -64,17 +66,34 @@ Turing's O-machines, Searle, Penrose and the brain https://www.jstor.org/stable/
 
 Using QBF Solvers to Solve Games and Puzzles https://www.bc.edu/content/dam/bc1/schools/mcas/cs/pdf/honors-thesis/sample5.pdf
 
-Inequalities for Shannon Entropy and Kolmogorov Complexity [https://ac.els-cdn.com/S002200009991677X/1-s2.0-S002200009991677X-main.pdf?_tid=5bb4a2cf-2d4d-4d7a-a045-3aaa4a180168&acdnat=1542143867_a669a0c25693a21e8492c3f1386f4fd2]()
+Inequalities for Shannon Entropy and Kolmogorov Complexity https://ac.els-cdn.com/S002200009991677X/1-s2.0-S002200009991677X-main.pdf?_tid=5bb4a2cf-2d4d-4d7a-a045-3aaa4a180168&acdnat=1542143867_a669a0c25693a21e8492c3f1386f4fd2
 
-Using Shannon Entropy and Kolmogorov Complexity To Study the Communicative System and Cognitive Capacities in Ants[](https://onlinelibrary.wiley.com/doi/pdf/10.1002/%28SICI%291099-0526%28199611/12%292%3A2<37%3A%3AAID-CPLX8>3.0.CO%3B2-K)
+Using Shannon Entropy and Kolmogorov Complexity To Study the Communicative System and Cognitive Capacities in Ants https://pdfs.semanticscholar.org/1104/422fe103a7ef574bcd21d8a6f9475659a9cd.pdf
 
 Approximating the Smallest Grammar: Kolmogorov Complexity in Natural Models http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.126.9614&rep=rep1&type=pdf
 
-Quantum Kolmogorov complexity [](https://ac.els-cdn.com/S0022000001917659/1-s2.0-S0022000001917659-main.pdf?_tid=2ceafaa6-65e8-4376-b44f-d7c1c677d73b&acdnat=1542159386_028c800f4885879f2185e3e409269d87)
+Quantum Kolmogorov complexity https://ac.els-cdn.com/S0022000001917659/1-s2.0-S0022000001917659-main.pdf?_tid=2ceafaa6-65e8-4376-b44f-d7c1c677d73b&acdnat=1542159386_028c800f4885879f2185e3e409269d87
 
-Kolmogorov Complexity and Information Theory: With an Interpretation in Terms of Questions and Answers [](https://www.jstor.org/stable/pdf/40167357.pdf?casa_token=PNOo1SEmXFcAAAAA:k5nVMtk_pnGFeelo2WcbPHGn_xbNnyXozvZLwolFhoRxDBIkqsuURzV2_8PzkNXzGX7-48d1zBT5yLrVUJ2Pg6_COnJM00mdqv715gNDgr9TS4-LH1Y)
+Kolmogorov Complexity and Information Theory: With an Interpretation in Terms of Questions and Answers https://www.jstor.org/stable/pdf/40167357.pdf?casa_token=PNOo1SEmXFcAAAAA:k5nVMtk_pnGFeelo2WcbPHGn_xbNnyXozvZLwolFhoRxDBIkqsuURzV2_8PzkNXzGX7-48d1zBT5yLrVUJ2Pg6_COnJM00mdqv715gNDgr9TS4-LH1Y
 
 Reconciling Data Compression and Kolmogorov complexity http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.153.8897&rep=rep1&type=pdf
 
 The Kolmogorov Complexity of Real Numbers https://core.ac.uk/download/pdf/81150613.pdf
 
+Quantum Turing Machine https://www.researchgate.net/profile/Joachim_Draeger2/publication/317328824_Quantum_Turing_Machines/links/59325f430f7e9beee78ccfff/Quantum-Turing-Machines.pdf
+
+Sudoku as a SAT Problem https://app.cs.amherst.edu/~ccmcgeoch/cs34/papers/sudokusat.pdf
+
+The Othello Game on an n x n board is PSPACE-Complete https://ac.els-cdn.com/0304397594901317/1-s2.0-0304397594901317-main.pdf?_tid=0a986d00-d06c-4016-b4fb-660ce7a43776&acdnat=1542168372_53b6c98c6c14b83aaf7489efc2042a82 
+
+Mastermind is NP-Complete https://arxiv.org/pdf/cs/0512049.pdf
+
+## Grading:
+
+A: A polished presentation that provides sufficient detail and background of the topic being presented, including the relevant citations to relevant work.  Provides context to the problem and why it is interesting and/or important.  Uses and explains formulas where appropriate without attempting to obfuscate.
+
+B: Good presentation with some rough edges.  May have some grammatical and/or spelling errors.  Generally good coverage of topic but lacks detail and/or context.
+
+C: Presentation which attempts to address the topic, but may have mistakes and/or may be missing key details.  Is either too short or unfinished due to lack of time.  Has mistakes that show lack of basic understanding of the topic.
+
+D: Clearly rushed presentation with little detail or lazy presenntation.
