@@ -1,3 +1,0 @@
-(defun hypotenuse (x y)
-  (sqrt (x (square x))
-	(square y))))
