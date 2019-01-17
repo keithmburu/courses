@@ -1,0 +1,6 @@
+names = ((Alvin Grissom) (Alan Turing) (Ada Lovelace) (Alonzo Church))
+(defun get-name(name-list index)
+  (nth index name)
+  )
+
+get-name(names 0)
