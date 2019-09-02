@@ -1,6 +1,6 @@
-Week 2 Homework (50pts)
+Week 2 Homework (40pts)
 --
-This assignment is to be done in LaTeX or Markdown.  Numbered assignments are from [Bayesian Reasoning and Machine Learning by Barber](http://web4.cs.ucl.ac.uk/staff/D.Barber/pmwiki/pmwiki.php?n=Brml.HomePage)
+This assignment is to be done in LaTeX or Markdown. Numbered assignments are from [Bayesian Reasoning and Machine Learning by Barber](http://web4.cs.ucl.ac.uk/staff/D.Barber/pmwiki/pmwiki.php?n=Brml.HomePage). Earn 40 points will result in full credit, but it is possible to earn up to 50.
 
 1. (20 pts) 
  * (a) Exercise 10.1 
