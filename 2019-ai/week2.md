@@ -4,7 +4,7 @@ This assignment is to be done in LaTeX or Markdown.  Submit both a PDF and the s
 
 1. (20 pts) 
  * (a) Exercise 10.1 
- * (b) Suppose that instead of binary classes (> 60 or < 60), your data consists of a discrete set of ages, *A*, in [0,100] and probabilities *p* ∈ [0,1] for each age, respectively. Write an equation (with variables, not numbers) for the probability of people over age 60.  
+ * (b) Suppose that instead of binary classes (> 60 or < 60), your data consists of a discrete set of ages, *A*, in [0,100] and probabilities *p* ∈ [0,1] for each age, respectively. Write an equation (with variables, not numbers, except for the limits of the function) for the probability of people over age 60.  
 2. (20 pts) 
  * (a) Exercise 10.5
  * (b) Write a program to calculate the correct answer to problem (2) from the data (matrix) given.  Call it 2b.py
