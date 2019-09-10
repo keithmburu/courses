@@ -8,6 +8,7 @@ There are two versions of this paper: a shorter conference version with double c
 
 
 1.  Answer the following questions from the assigned paper.
+
     (a) What is a relevant feature, and how did this paper determine which features are "relevant?"  Do you agree with this?  Why?
 
     (b) For a binary classification, a false positive (FP) is a negative instance incorrectly classified positively, 
