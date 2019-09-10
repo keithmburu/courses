@@ -24,6 +24,6 @@ There are two versions of this paper: a shorter conference version with double c
     **Precision** measures how likely a model's positive predictions are to be correct: 
     TP / (TP + FP) = # correctly classified true examples / # examples model classified as true .  If we have too many false positives and not enough true positives, this score decreases.  We can trivially maximize this by by never guessing true, i.e., always guessing -1.  (For simplicity, say that if the denominator is 0, the precision is 1.)  
     
- Do TP and FP have meanings in a multiclass setting?
+ Do TP and FP have meanings in a multiclass setting? Explain.
     
     
