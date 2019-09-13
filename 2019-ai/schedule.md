@@ -14,4 +14,7 @@ Ursinus College
 | 9/5  | Vector Space Representation<br />Linear Perceptron  | Broussard Ch. 3-4<br /><br />[CIML Ch. 3](http://ciml.info/dl/v0_99/ciml-v0_99-ch03.pdf) | Discussion questions (Broussard 1-4) |
 | 9/10 | Logistic Regression                                 | Think Bayes Ch. 2<br />CIML Ch. 4                            | HW2 (Bayesian reasoning)             |
 | 9/12 | Logistic Regression,<br />Generalized Linear Models | Broussard Ch. 5-6<br /><br />CIML Ch. 7                      | Discussion questions (Broussard 5-6) </br> HW3 (Wed.) |
+| 9/17 | Gradient Descent, </br> Stochastic Gradient Descent | Broussard Ch. 5-6<br /><br />[[A.Ng's Notes Sec. 6-7](http://cs229.stanford.edu/notes/cs229-notes1.pdf)                      | Discussion questions (Broussard 5-6) |
+
+
 
