@@ -15,6 +15,7 @@ Ursinus College
 | 9/10 | Logistic Regression                                 | Think Bayes Ch. 2<br />CIML Ch. 4                            | HW2 (Bayesian reasoning)             |
 | 9/12 | Logistic Regression,<br />Generalized Linear Models | Broussard Ch. 5-6<br /><br />CIML Ch. 7                      | Discussion questions (Broussard 5-6) </br> HW3 (Wed.) |
 | 9/17 | Gradient Descent, </br> Stochastic Gradient Descent | Broussard Ch. 5-6<br /><br />[A. Ng's Logistic Regression Notes Sec. 1](http://cs229.stanford.edu/notes/cs229-notes1.pdf)                      | Discussion questions (Broussard 5-6) |         
-| 9/19 | SGD, In-class lab | Broussard Ch. 5-6<br /><br />A.Ng's Logistic Regression Notes Sec. 5-6                     |  HW4  |
+| 9/19 | SGD, In-class lab | A.Ng's Logistic Regression Notes Sec. 5-6                     |  HW4   |
+| 9/24 | Neural Networks |     Broussard Ch. 7                 |  HW5 (Wed.)  |
 
 
