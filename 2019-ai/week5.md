@@ -20,12 +20,12 @@ A. Read the following classic paper, which revolutionized machine translation in
 
 B.
 
-    (a) Graphically, what effect does the bias term have on the logistic function in logistic regression?
+(a) Graphically, what effect does the bias term have on the logistic function in logistic regression?
 
-    (b) Describe the difference(s) between stochastic gradient descent and gradient descent.
+(b) Describe the difference(s) between stochastic gradient descent and gradient descent.
 
-    (c) Given a convex problem surface, what do we use to find the direction of steepest ascent?
+(c) Given a convex problem surface, what do we use to find the direction of steepest ascent?
 
-    (d) Which beta terms can be skipped during the update stage of logistic regression with SGD?
+(d) Which beta terms can be skipped during the update stage of logistic regression with SGD?
 
-    (e) What are the elements of the gradient vector?  What do they represent in terms of optimization?
+(e) What are the elements of the gradient vector?  What do they represent in terms of optimization?
