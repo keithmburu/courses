@@ -1,6 +1,7 @@
 # Week 4 Homework
 --
 1. Answer the following questions from the paper you read last week.
+
 (a) Give an example of a set of *n*-grams for a word that are used in this work.    
 
 (b)  Describe the feature space and label space for this problem.
