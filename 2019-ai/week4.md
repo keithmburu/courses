@@ -18,9 +18,7 @@
 
 (h) What reason do the authors give for the inconclusive results of boosted SVMs?
 
-(i)  In statistics, features are called "dependent variables." In data mining, features are often called "attributes." 
-
-(j) What criterion is typically used to create splitting nodes in the C4.5 algorithm mentioned in this paper?  (2) What is its relationship to KL-divergence?  And (3), what is this metric's relationship to entropy?
+(i) What criterion is typically used to create splitting nodes in the C4.5 algorithm mentioned in this paper?  (2) What is its relationship to KL-divergence?  And (3), what is this metric's relationship to entropy?
 
 2. What is the loss function for a Naive Bayes classifier?  Explain why.
 
