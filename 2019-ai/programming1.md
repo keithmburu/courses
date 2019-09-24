@@ -14,7 +14,7 @@ Be advised that this assignment has multiple parts.  It is inadvisable to wait u
 * Convert the data to Vowpal Wabbit's format and run the same experiments with the loss function(s) of your choice, comparing the results.  
 * Up to 10 point bonus: Add smoothing.
 * Write a report according to the syllabus's guidelines.  Submit a zip (or tar.gz) file to Canvas with all of your materials.  
- 
+
  Your report should *at least* address the following:
  * What is the accuracy on the training data?
  * If you split the data into a training and a test set that is representative of the training set, what is the performance?
@@ -39,10 +39,17 @@ Hints for Implementation:
 You may implement the classifier however you wish, but you might find the following to be helpful:
 
 * The Python `csv` module.
-* The collections.defaultdict module.
+* The `collections.defaultdict` module.
  * You can make nested defaultdicts with the lambda operator.  For example:
 ```python
- my_2d_dict = defaultdict(lambda:defaultdict(float))  
- my_2d_dict[x][y] = 0.0
+from collections import defaultdict
+my_2d_dict = defaultdict(lambda:defaultdict(float))  
+my_2d_dict["a"][1] = 0.0
+```
+
+```python
+from collections import defaultdict
+my_3d_dict = defaultdict(lambda: defaultdict(lambda: defaultdict(int)))
+my_3d_dict["classA"][1][3.5] + =1
 ```
 
