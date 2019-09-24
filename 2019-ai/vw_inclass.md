@@ -81,7 +81,7 @@ We can test on our test data with the following command:
 vw --testonly -i sentiment.model --predictions predictions.txt  < test.vw
 ```
 
-This will feed our test data into our model and generate predictions.  We have to write our own program to calculate accuracy.
+This will feed our test data into our model and generate predictions.  We have to write our own program to calculate accuracy.  This loads our model `sentiment.model` from the previous step and outputs the predictions to `predictions.txt`.
 
 
 
@@ -114,3 +114,9 @@ Hints for VW:
 - Be sure to use `-t` during testing.  Otherwise, you will update the model while testing!
 
 - Include the commands you used for your VW runs in a script called run.sh
+
+- You can use the Unix command `shuf` (`gshuf` on macOS) to shuffle your files.
+
+  - On macOS, type `brew install coreutils` to install `gshuf`.
+
+  
