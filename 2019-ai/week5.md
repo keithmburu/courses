@@ -10,7 +10,7 @@ A. Read the following classic paper, which revolutionized machine translation in
 
 (e)  What are the prior and posterior in the first equation, and what do they signify?
 
-(f)  What is the formula that describes the process of selecting the "best sentence" in section 4?
+(f)  What is the formula that describes the process of selecting the "best sentence" in section 1?
 
 (g)  What are the parameters in the translation model, and how are they estimated?
 
