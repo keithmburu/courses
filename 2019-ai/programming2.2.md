@@ -73,7 +73,7 @@ In general, we want the simplest model that will give us good results on accurac
 
 Ultimately, what we're doing is trying to learn a set of weights in each layer, all at once, that will optimize some loss function, giving us better accuracy.  
 
-We can make some basic modifications to our code from Assignment 0 to transform it into a multi-layer neural network.  Recall that previously we defined our model in the following way:
+We can make some basic modifications to our code from Assignment 2.1 to transform it into a multi-layer neural network.  Recall that previously we defined our model in the following way:
 
     model.add(Dense(10, activation='linear', input_shape=(784,)))
     model.compile(loss = "mse",
