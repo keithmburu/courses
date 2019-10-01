@@ -87,7 +87,7 @@ This gives ia a single-layer model with 10 categorical classes and 784 input fea
 
   As is, our model yields about 10% accuracy, which is random, but you likely found that using different activations and/or loss functions raised the accuracy significantly. 
 
-The model as is attempts to use **wx** + *b* predict the correct class and fails miserably.  There are a number of problems with the initial architecture for this particular problem.  We can do significantly better adding a soft activation function in place of the linear one.
+The model as is attempts to use **wx** + *b* to predict the correct class and fails miserably.  There are a number of problems with the initial architecture for this particular problem.  We can do significantly better adding a soft activation function in place of the linear one.
 
 In class, we discussed the **sigmoid** activation function, which we could use with some modifications.  It's also common to use the **softmax** activation function, which assigns each class a probability between 0 and 1, where all of the probabilities sum to 1.
 
