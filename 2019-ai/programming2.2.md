@@ -3,7 +3,7 @@ Artificial Intelligence, Fall 2019
 Alvin Grissom II, Ursinus College
 
 
-# Assignment 2: Adding Layers
+# Assignment 2.2: Adding Layers
 
 
 In the previous part, we created a single-layer neural network to perfrom 10-way classification using a one hot vector representation.  In this assignment, we will add multiple layers.
