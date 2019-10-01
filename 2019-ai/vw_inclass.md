@@ -105,7 +105,7 @@ Hints for VW:
 
 - Vowpal Wabbit does not report accuracy, but you can output the guesses for each line with `--predictions ./predictions.txt` and write a short script to calculate this by comparing it to the test file.
 
-- Use `--oaa *n*` for more than two classes during training, where *n* is the number of classes.
+- Use `--oaa n` for more than two classes during training, where *n* is the number of classes.
 
 - VW classes (for more than two classes) must be integers (starting at 1).
 
