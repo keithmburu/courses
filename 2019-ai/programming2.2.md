@@ -24,7 +24,7 @@ If you are using Markdown (an easy typesetting language), you may find a special
    	pip3 install pydot
    	pip3 install ann_visualizer
 
- LaTeX:
+ LaTeX:cebook.com/
  Install the package from the [MacTeX web site](http://www.tug.org/mactex/)
    	
 ### Windows
@@ -116,7 +116,7 @@ Recall that the **sigmoid** assigns a probability to two possible classes, not t
 
 We can use the sigmoid activation for multiple classes if we prefer, but we must be careful.  Our loss function needs to be compatible with our activation in the output layer.  The sigmoid activation in the output layer requires that we use 'binary_crossentropy' for our loss.  For an explanation of why this is, see the following:
 
-[https://www.depends-on-the-definition.com/guide-to-multi-label-classification-with-neural-networks/]()
+https://www.depends-on-the-definition.com/guide-to-multi-label-classification-with-neural-networks/
 
 
 Our loss functions are all just different ways of measuring how wrong the model's guess is. In this case, binary cross-entropy measures the difference in (log) probability for each class, given the input.
@@ -129,7 +129,7 @@ Our loss functions are all just different ways of measuring how wrong the model'
 
 It's encouraging that a simple linear combination of pixel values yields such accurate results for a handwriting recognition task.  But if we want more expressivity -- if we would like to divide our data by something other than a flat hyperplane -- we need to add more layers to our network.
 
-The trick is that, by stacking linear perceptrons, we can learn non-linear separating functions.  First, let's visualize our model as it is.  Follow the instructions here: [https://keras.io/visualization/]()
+The trick is that, by stacking linear perceptrons, we can learn non-linear separating functions.  First, let's visualize our model as it is.  Follow the instructions here: https://keras.io/visualization
 
 
 
