@@ -136,7 +136,7 @@ The trick is that, by stacking linear perceptrons, we can learn non-linear separ
 If we open the PNG image file, we see a simple visual representation of the architecture of our model.  In this case, we have a single input layer which maps directly to the output layer: *y'*  = **wx** + *b*, where *y'* is the label guess.  Our layer is *Dense*, meaning that every input maps to the next layer: in the case, every input feature (pixel value) is used in predicting the label *y*.
 
 ### 2-Layer Network
-Let's add a layer to out network, changing the structure to look like this.
+Let's add a layer to our network, changing the structure to look like this.
 We can add a layer:
 
     model.add(Dense(5, activation='linear', input_shape=(784,)))
