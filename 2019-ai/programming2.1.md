@@ -48,7 +48,7 @@ The `Sequential` interface of Keras allows you to stack layers with simple funct
 
     model = Sequential()
 
-We want a basic linear perceptron that has one feature for every pixel, with all of the features initialized to 0.  We want to find the best weights for our model with stochastic gradient descent (SGD) with a learning rate of 0.01.  We have ten classes.  Our input dimension needs to be the same as the number of features. Our **loss function** is mean squared error (MSE).  **This can be changed.**
+We want a basic linear perceptron that has one feature for every pixel, with all of the features initialized to 0.  We want to find the best weights for our model with stochastic gradient descent (SGD) with a learning rate of 0.01.  We have ten classes.  Our input dimension needs to be the same as the number of features. Our **loss function** is mean squared error (MSE).  This can be changed.
 
     model.add(Dense(10, activation='linear', input_shape=(784,)))
    
@@ -71,6 +71,7 @@ After taining, we **evaluate** to get our final accuracy on the test data.
     print('Test accuracy:', score[1])
     
  How did it do?
+ 
 
 ## Part 2: Improve the Model
  
@@ -80,8 +81,7 @@ Try to increase the accuracy of your model:  Here are some things to try.  This 
     For example:
         `x_train /= 255`
  2. Replace a linear activation function with a soft ('logistic', 'softmax', etc.) function or some other one, such as ReLU.  You can find more in the Keras documentation.  Why might this help?
- 3. Change the learning rate.
- 4.  Change the loss function.
+ 3. Change the learning rate, loss function, batch size, etc.
  5. (For the adventurous) Add more layers or dropout.
 
 Write and submit a **short** report -- a table would be useful -- showing how various modifications affected your accuracy and why you think that this is.
