@@ -83,7 +83,7 @@ We can make some basic modifications to our code from Assignment 2.1 to transfor
    
 
 
-This gives ia a single-layer model with 10 categorical classes and 784 input features and a linear **activation**, which determines the output of a neuron.  Keras includes support for many [activation functions](https://keras.io/activations/).  Here, we are optimizing (minimizing) [mean squared error](https://en.wikipedia.org/wiki/Mean_squared_error), which is just the square of the difference between the true answer and the predicted answer.  This loss function is often used for linear regression. 
+This gives us a single-layer model with 10 categorical classes and 784 input features and a linear **activation**, which determines the output of a neuron.  Keras includes support for many [activation functions](https://keras.io/activations/).  Here, we are optimizing (minimizing) [mean squared error](https://en.wikipedia.org/wiki/Mean_squared_error), which is just the square of the difference between the true answer and the predicted answer.  This loss function is often used for linear regression. 
 
   As is, our model yields about 10% accuracy, which is random, but you likely found that using different activations and/or loss functions raised the accuracy significantly. 
 
