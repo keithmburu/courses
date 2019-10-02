@@ -81,6 +81,7 @@ Try to increase the accuracy of your model:  Here are some things to try.  This 
         `x_train /= 255`
  2. Replace a linear activation function with a soft ('logistic', 'softmax', etc.) function or some other one, such as ReLU.  You can find more in the Keras documentation.  Why might this help?
  3. Change the learning rate.
- 4. (For the adventurous) Add more layers or dropout.
+ 4.  Change the loss function.
+ 5. (For the adventurous) Add more layers or dropout.
 
 Write and submit a **short** report -- a table would be useful -- showing how various modifications affected your accuracy and why you think that this is.
