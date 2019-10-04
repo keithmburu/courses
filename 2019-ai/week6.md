@@ -3,7 +3,7 @@ Artificial Intelligence, Fall 2019
 Alvin Grissom II, Ursinus College
 
 
-# Assignment 3: Visualizing Learning
+# Weekly Homework 6: Visualizing Learning
 
 
 Assignment 2 encouraged you to try various combinations of layers and activations improve performance and to visualize the structure of your network..  In this assignment, we'll learn some basic techniques for monitoring how the model is performing on training and test data.
