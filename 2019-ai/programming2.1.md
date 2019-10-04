@@ -5,7 +5,7 @@ Alvin Grissom II, Ursinus College
 
 # Programming Assignment 2.1
 
-This exercise is designed to give you practice implementing a simple Keras program.  Keras a library for implementing cmachine learning architectures quickly.
+This exercise is designed to give you practice implementing a simple Keras program.  Keras a library for implementing machine learning architectures quickly.
 
 For this exerise, we're going to classify the MNIST dataset.  MNIST consists of a number of handwritten numbers from 0-9.  We're going to create a perceptron algorithm to classify them.  Fortunately, Keras already provides the MNIST data as a Python library.  In the future, we will have to read the files ourselves.
 
@@ -71,6 +71,7 @@ After taining, we **evaluate** to get our final accuracy on the test data.
     print('Test accuracy:', score[1])
     
  How did it do?
+ 
 
 ## Part 2: Improve the Model
  
@@ -80,7 +81,7 @@ Try to increase the accuracy of your model:  Here are some things to try.  This 
     For example:
         `x_train /= 255`
  2. Replace a linear activation function with a soft ('logistic', 'softmax', etc.) function or some other one, such as ReLU.  You can find more in the Keras documentation.  Why might this help?
- 3. Change the learning rate.
- 4. (For the adventurous) Add more layers or dropout.
+ 3. Change the learning rate, loss function, batch size, etc.
+ 5. (For the adventurous) Add more layers or dropout.
 
 Write and submit a **short** report -- a table would be useful -- showing how various modifications affected your accuracy and why you think that this is.

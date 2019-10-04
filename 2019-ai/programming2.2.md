@@ -3,7 +3,7 @@ Artificial Intelligence, Fall 2019
 Alvin Grissom II, Ursinus College
 
 
-# Assignment 2: Adding Layers
+# Assignment 2.2: Adding Layers
 
 
 In the previous part, we created a single-layer neural network to perfrom 10-way classification using a one hot vector representation.  In this assignment, we will add multiple layers.
@@ -13,7 +13,7 @@ In the previous part, we created a single-layer neural network to perfrom 10-way
 First, we must ensure that we have all of the necessary packages: pydot and GraphViz. Assuming, you setup your system as described in Assignment 1, the following should work.  GraphViz is an open source visualization package, and pydot is a Python interface for it.
 
 ### Typesetting
-If you have not installed LaTeX, you should do so (perhaps while working through the rest of this assignment).  It is a large package, which will take a significant amount of time to download and install.  While you may use Markdown for this assignment, some future reports must be submitted as a PDF generated in LaTeX with the NIPS template.
+If you have not installed LaTeX, you should do so (perhaps while working through the rest of this assignment) or use a service like Overleaf.  It is a large package, which will take a significant amount of time to download and install.  While you may use Markdown for this assignment, some future reports must be submitted as a PDF generated in LaTeX with the NIPS template.
 
 If you are using Markdown (an easy typesetting language), you may find a specialized editor helpful, such as [Typora](http://typora.io).  You can learn about Markdown syntax here: https://support.typora.io/Markdown-Reference
 
@@ -24,7 +24,7 @@ If you are using Markdown (an easy typesetting language), you may find a special
    	pip3 install pydot
    	pip3 install ann_visualizer
 
- LaTeX:
+ LaTeX:cebook.com/
  Install the package from the [MacTeX web site](http://www.tug.org/mactex/)
    	
 ### Windows
@@ -73,7 +73,7 @@ In general, we want the simplest model that will give us good results on accurac
 
 Ultimately, what we're doing is trying to learn a set of weights in each layer, all at once, that will optimize some loss function, giving us better accuracy.  
 
-We can make some basic modifications to our code from Assignment 0 to transform it into a multi-layer neural network.  Recall that previously we defined our model in the following way:
+We can make some basic modifications to our code from Assignment 2.1 to transform it into a multi-layer neural network.  Recall that previously we defined our model in the following way:
 
     model.add(Dense(10, activation='linear', input_shape=(784,)))
     model.compile(loss = "mse",
@@ -83,13 +83,13 @@ We can make some basic modifications to our code from Assignment 0 to transform 
    
 
 
-This gives ia a single-layer model with 10 categorical classes and 784 input features and a linear **activation**, which determines the output of a neuron.  Keras includes support for many [activation functions](https://keras.io/activations/).  Here, we are optimizing (minimizing) [mean squared error](https://en.wikipedia.org/wiki/Mean_squared_error), which is just the square of the difference between the true answer and the predicted answer.  This loss function is often used for linear regression. 
+This gives us a single-layer model with 10 categorical classes and 784 input features and a linear **activation**, which determines the output of a neuron.  Keras includes support for many [activation functions](https://keras.io/activations/).  Here, we are optimizing (minimizing) [mean squared error](https://en.wikipedia.org/wiki/Mean_squared_error), which is just the square of the difference between the true answer and the predicted answer.  This loss function is often used for linear regression. 
 
   As is, our model yields about 10% accuracy, which is random, but you likely found that using different activations and/or loss functions raised the accuracy significantly. 
 
-The model as is attempts to use **wx** + *b* predict the correct class and fails miserably.  There are a number of problems with the initial architecture for this particular problem.  We can do significantly better adding a soft activation function in place of the linear one.
+The model as is attempts to use **wx** + *b* to predict the correct class and fails miserably.  There are a number of problems with the initial architecture for this particular problem.  We can do significantly better adding a soft activation function in place of the linear one.
 
-In class, we discussed the **sigmoid** activation function, which we could use with some modifications.  It's also common to use the **softmax** activation function, which assigns each class a probability between 0 and 1, where all of the probabilities sum to 1.
+In class, we discussed the **sigmoid** activation function, which we could use with some modifications.  It's also common to use the **softmax** activation function, which assigns each class a probability between 0 and 1, where all of the probabilities sum to 1.  We typically use the softmax activation function when we're dealing with more than two classes.  You can find an explanation for this here: https://developers.google.com/machine-learning/crash-course/multi-class-neural-networks/softmax
 
       model.compile(activation = 'softmax', ...
 
@@ -116,7 +116,7 @@ Recall that the **sigmoid** assigns a probability to two possible classes, not t
 
 We can use the sigmoid activation for multiple classes if we prefer, but we must be careful.  Our loss function needs to be compatible with our activation in the output layer.  The sigmoid activation in the output layer requires that we use 'binary_crossentropy' for our loss.  For an explanation of why this is, see the following:
 
-[https://www.depends-on-the-definition.com/guide-to-multi-label-classification-with-neural-networks/]()
+https://www.depends-on-the-definition.com/guide-to-multi-label-classification-with-neural-networks/
 
 
 Our loss functions are all just different ways of measuring how wrong the model's guess is. In this case, binary cross-entropy measures the difference in (log) probability for each class, given the input.
@@ -129,14 +129,14 @@ Our loss functions are all just different ways of measuring how wrong the model'
 
 It's encouraging that a simple linear combination of pixel values yields such accurate results for a handwriting recognition task.  But if we want more expressivity -- if we would like to divide our data by something other than a flat hyperplane -- we need to add more layers to our network.
 
-The trick is that, by stacking linear perceptrons, we can learn non-linear separating functions.  First, let's visualize our model as it is.  Follow the instructions here: [https://keras.io/visualization/]()
+The trick is that, by stacking linear perceptrons, we can learn non-linear separating functions.  First, let's visualize our model as it is.  Follow the instructions here: https://keras.io/visualization
 
 
 
 If we open the PNG image file, we see a simple visual representation of the architecture of our model.  In this case, we have a single input layer which maps directly to the output layer: *y'*  = **wx** + *b*, where *y'* is the label guess.  Our layer is *Dense*, meaning that every input maps to the next layer: in the case, every input feature (pixel value) is used in predicting the label *y*.
 
 ### 2-Layer Network
-Let's add a layer to out network, changing the structure to look like this.
+Let's add a layer to our network, changing the structure to look like this.
 We can add a layer:
 
     model.add(Dense(5, activation='linear', input_shape=(784,)))
