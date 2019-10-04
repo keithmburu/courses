@@ -54,7 +54,7 @@ plt.plot(range(epochs), history_dict['loss'], label='Loss')
 
 ```
 
-If you're not familiar with the `range` keyword, take a moment to look it up.  Matplotlib's plot function has a number of optional arguments, but we're only using three here.  The first is a seuqnce of number from 0 to 4, one for each epoch.  The second is a list of five real numbers that give our cross-entropy loss.  The last argument will only be used if we have a legend.   We can plot what we have with `plt.show()`.
+If you're not familiar with the `range` keyword, take a moment to look it up.  Matplotlib's plot function has a number of optional arguments, but we're only using three here.  The first is a sequence of numbers from 0 to 4, one for each epoch.  The second is a list of five real numbers that give our cross-entropy loss.  The last argument will only be used if we have a legend.   We can plot what we have with `plt.show()`.
 
 Graphs should generally label the appropriate axes.  Let's do so and add a legend.
 
