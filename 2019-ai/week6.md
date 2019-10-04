@@ -22,7 +22,7 @@ Recall that we typically train our model on one set of data **training data** an
 
 ### Model Training History
 
-Let's look at the code for Assignment 2.  In particular, let's look at this line:
+Let's look at the code for Prorgamming Assignment 2.  In particular, let's look at this line:
 
 ```python
 history = model.fit(x_train, y_train,
