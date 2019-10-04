@@ -18,7 +18,7 @@ For this assignment, we need to install matplotlib.
 
 ## Part 1: Plot Loss and Accuracy
 
-Recall that we typically train our model on one set of data **training data** and test on some smaller set of **test data**.  It isn't enough to simply memorize the training data; we want to *generalize* to test data that the model hasn't yet seen, reducing our **generalization error**.  We also typically have some **development data** (also called **validation data** or dev set) which the model hasn't seen.  The dev set is test data that we use to tune our model. (We'll discuss hyperparameter tuning later.)  Keras automatically sets about some percentage of the training data as a dev set during training and reports the "validation accuracy."  A decription how to determine this is described in the Keras API documentation: [https://keras.io/models/sequential/]()
+Recall that we typically train our model on one set of data **training data** and test on some smaller set of **test data**.  It isn't enough to simply memorize the training data; we want to *generalize* to test data that the model hasn't yet seen, reducing our **generalization error**.  We also typically have some **development data** (also called **validation data** or dev set) which the model hasn't seen.  The dev set is test data that we use to tune our model. (We'll discuss hyperparameter tuning later.)  Keras automatically sets apart some percentage of the training data as a dev set during training and reports the "validation accuracy."  A decription how to determine this is described in the Keras API documentation: [https://keras.io/models/sequential/]()
 
 ### Model Training History
 
@@ -85,6 +85,6 @@ plt.imshow(x_train[0], cmap=plt.get_cmap('gray'))
 
 ## Part 2: Homework
 
-Keras provides a number of common optimization algorithms for minimizing loss: one example example is stochastic gradient descent (SGD),which we have discussed, but there also several others.  We will discuss the differences in these later, but for this assignment, it is sufficient to experiment.
+Keras provides a number of common optimization algorithms for minimizing loss: one example example is stochastic gradient descent (SGD), which we have discussed, but there also several others.  We will discuss the differences in these later, but for this assignment, it is sufficient to experiment.
 
 Use at least three different optimization algorithms on the MNIST data to investigate their effect on learning.  (You may add other data sets if you like, but it is not required).  Keep in mind that there are many variables at play: the learning rate, the depth of the network, the number of nodes, the number of epocs.  When drawing a conclusion, be sure to control for the appropriate variables.
