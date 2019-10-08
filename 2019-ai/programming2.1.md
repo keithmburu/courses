@@ -14,10 +14,10 @@ For this exerise, we're going to classify the MNIST dataset.  MNIST consists of 
 Let's implement the linear perceptron in Keras.  First, we need to import some libraries.  Numpy is our numerical library.  The `Sequential` library allows us to build a neural network by stacking layers together.  We will come back to layers later.  
 
     import numpy as np
-    from keras.datasets import mnist
-    from keras.models import Sequential
-    from keras.optimizers import SGD
-    from keras.layers import Dense
+    from tensorflow.keras.datasets import mnist
+    from tensorflow.keras.models import Sequential
+    from tensorflow.keras.optimizers import SGD
+    from tensorflow.keras.layers import Dense
 
 ### Load the data.
 Recall that, in machine learning, the features of an example are usually called **x** and the set of labels/classes is usually called *Y*.  We have four Python variables here for the set of all examples and labels of our training and test data, respectively.
@@ -39,8 +39,8 @@ Let's flatten them to a 1D vector of length 784.
 
 We can then have one feature for each pixel.  This is our *x* feature vector.  Our Y = {0, 1, 2, ..., 9}, representing the digit.  We can use a **one hot vector** encoding for this.  Keras does this for us.  We want to represent each of these classes as a *category* (or class label), not as a numeric value.
 
-    y_train = keras.utils.to_categorical(y_train, num_classes)
-    y_test = keras.utils.to_categorical(y_test, num_classes)
+    y_train = tensorflow.keras.utils.to_categorical(y_train, num_classes)
+    y_test = tensorflow.keras.utils.to_categorical(y_test, num_classes)
 
 ### Build the Model
 
