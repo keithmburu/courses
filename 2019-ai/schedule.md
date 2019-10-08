@@ -21,3 +21,4 @@ Ursinus College
 | 10/1 | Neural Networks                                              | Broussard Ch. 8, [CIML 10.1](http://ciml.info/dl/v0_99/ciml-v0_99-ch10.pdf) | Discussion questions </br> Programming 2 (Wed.) |
 | 10/3 | Neural Networks 2 | CIML 10.2 | Weekly HW 5 (Fri.) |
 | 10/8 | Backpropagation    | Benjamin (Introduction), [CIML 10.3](http://ciml.info/dl/v0_99/ciml-v0_99-ch10.pdf) | Benjamin Discussion questions |
+| 10/8 | Backpropagation    | Benjamin (Ch. 1), [CIML 10.4](http://ciml.info/dl/v0_99/ciml-v0_99-ch10.pdf) | Benjamin Discussion questions |
