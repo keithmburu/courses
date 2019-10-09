@@ -103,7 +103,7 @@ After each epoch, the model reports the [perplexity](https://en.wikipedia.org/wi
 
 ## Part 3: Translation and Evaluation
 
-Once you have traiend the model, you want to translate (**decode**) some new sentences on your test data.
+Once you have trained the model, you want to translate (**decode**) some new sentences on your test data.
 
 Sockeye provides an easy command for translating.
 
