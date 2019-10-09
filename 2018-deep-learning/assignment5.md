@@ -4,7 +4,7 @@ Ursinus College
 
 Alvin Grissom II
 
-# Asignment 5: Machine Translation
+# Assignment 5: Machine Translation
 
 
 
