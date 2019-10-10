@@ -10,7 +10,7 @@ In the previous part, we created a single-layer neural network to perfrom 10-way
 
 ## Part 0: Install Packages
 
-First, we must ensure that we have all of the necessary packages: pydot and GraphViz. Assuming, you setup your system as described in Assignment 1, the following should work.  GraphViz is an open source visualization package, and pydot is a Python interface for it.
+First, we must ensure that we have all of the necessary packages: pydot and GraphViz. Assuming you setup your system as described in Assignment 1, the following should work.  GraphViz is an open source visualization package, and pydot is a Python interface for it.
 
 ### Typesetting
 If you have not installed LaTeX, you should do so (perhaps while working through the rest of this assignment) or use a service like Overleaf.  It is a large package, which will take a significant amount of time to download and install.  While you may use Markdown for this assignment, some future reports must be submitted as a PDF generated in LaTeX with the NeurIPS template.
