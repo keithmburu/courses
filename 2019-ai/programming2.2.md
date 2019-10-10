@@ -24,7 +24,7 @@ If you are using Markdown (an easy typesetting language), you may find a special
    	pip3 install pydot
    	pip3 install ann_visualizer
 
- LaTeX:cebook.com/
+ LaTeX:
  Install the package from the [MacTeX web site](http://www.tug.org/mactex/)
    	
 ### Windows
