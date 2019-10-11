@@ -30,7 +30,7 @@ maxlen=50
 (X_train, y_train), (X_test, y_test) = imdb.load_data(num_words=max_features)
 ```
 
-In this code, `max_features` refers to the maximum number of words we can use for features in all of the data.  These data are already sorted by frequency, so, as is, the code will use the 100 most frequent words the entire dataset.  The `maxlen` variable refers to the maximum length, in words, of a given example.  
+In this code, `max_features` refers to the maximum number of words we can use for features in all of the data.  These data are already sorted by frequency, so, as is, the code will use the 500 most frequent words the entire dataset.  The `maxlen` variable refers to the maximum length, in words, of a given example.  
 
 #### Zero Padding
 
