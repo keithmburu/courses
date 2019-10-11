@@ -25,3 +25,4 @@ Ursinus College
 | 10/15 | No Class (Fall Break)   | -- |-- |
 | 10/10 | Word Embeddings    | Benjamin (Ch. 1), [CIML 10.4](http://ciml.info/dl/v0_99/ciml-v0_99-ch10.pdf) | Benjamin Discussion questions |
 | 10/17 | Word Embeddings, Sequence Models | Benjamin (Ch. 2), Word Embeddings Handout | HW6 (Mon.)
+| 10/22 | LSTMs, GRUs | Benjamin (Ch. 3), LSTM Handout, [Illustrated Guide to LSTMs](https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21) | Discussion
