@@ -1,4 +1,5 @@
 Artificial Intelligence
+
 Due October 31, 11:55pm.
 
 # Midterm Project
