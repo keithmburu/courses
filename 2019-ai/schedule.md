@@ -22,3 +22,6 @@ Ursinus College
 | 10/3 | Neural Networks 2 | CIML 10.2 | Weekly HW 5 (Fri.) |
 | 10/8 | Backpropagation, Text Encoding    | Benjamin (Introduction), [CIML 10.3](http://ciml.info/dl/v0_99/ciml-v0_99-ch10.pdf) | Benjamin Discussion questions |
 | 10/10 | Word Embeddings    | Benjamin (Ch. 1), [CIML 10.4](http://ciml.info/dl/v0_99/ciml-v0_99-ch10.pdf) | Benjamin Discussion questions |
+| 10/15 | No Class (Fall Break)   | -- |-- |
+| 10/10 | Word Embeddings    | Benjamin (Ch. 1), [CIML 10.4](http://ciml.info/dl/v0_99/ciml-v0_99-ch10.pdf) | Benjamin Discussion questions |
+| 10/17 | Word Embeddings, Sequence Models | Benjamin (Ch. 2), Word Embeddings Handout | HW6 (Mon.)
