@@ -3,7 +3,7 @@ Artificial Intelligence, Fall 2019
 Alvin Grissom II, Ursinus College
 
 
-# Assignment 4: Text Classification
+# Assignment 7: Text Classification
 
 In this assignment, we'll take a simple approach to **sentiment analysis**.  Sentiment analysis atttempts to classify the "sentiment" of text.  For example, the sentence, "I'm happy today" has a positive sentiment, while the sentiment of "I hate this weather" is negative.  The sentiment of "The chance of rain today is 40%" would be neutral.  
 
