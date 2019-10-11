@@ -104,7 +104,7 @@ And with that, our model can use sequence information much more effectively.  LS
 
 ### Dropout 
 
-In class, we've discussed dropout, a kind of **regularization**.  The purpose of the regularization is to reduce overfitting and increase generalizability.  Intuitively, if we randomly remove some percentage of the nodes in our network during training, these nodes  learn to depend less on the adjacent nodes, leading them to "evolve" to be stronger on their own.  We can add a `dropout=0.2` parameter to our GRU layer to use this.  There's also a `recurrent_dropout` option, which does the same for the recurrent unit itself.
+In class, we've briefly discussed [dropout](http://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf), a kind of **regularization**.  The purpose of the regularization is to reduce overfitting and increase generalizability.  Intuitively, if we randomly remove some percentage of the nodes in our network during training, these nodes  learn to depend less on the adjacent nodes, leading them to "evolve" to be stronger on their own.  We can add a `dropout=0.2` parameter to our GRU layer to use this.  There's also a `recurrent_dropout` option, which does the same for the recurrent unit itself.
 
 ## Part 3: Assignment
 
