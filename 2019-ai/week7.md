@@ -93,7 +93,7 @@ A **recurrent neural network** (RNN), not to be confused with a recursive neural
 
 Two kinds of recursive nodes are **long short-term memory** (LSTM) units and **gated recurrent units** (GRUs).  LSTMs were introduced in 1997 by [Sepp Hochreiter and Shmidinhuber](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.676.4320&rep=rep1&type=pdf) but didn't see widespread use until the last several years.  GRUs were introduced in 2014 by [Cho et al.](https://arxiv.org/pdf/1406.1078.pdf) for neural machine translation.  In our code, we can delete the `Dense` and its requisite `Flatten` operation and replace it with an `LSTM` or `GRU` layer.
 
-*Note: If you are using GPU-accelerated TensorFlow, you can replace GRU and LSTM with CuDNNGRU and CuDNNLSTM in your code for much faster performance. Dont' forget to change your imports, as well.*
+*Note: If you are using GPU-accelerated TensorFlow, you can replace GRU and LSTM with CuDNNGRU and CuDNNLSTM, respectively, in your code for much faster performance. Don't forget to change your imports, as well.*
 
 ````python
 model = Sequential()
