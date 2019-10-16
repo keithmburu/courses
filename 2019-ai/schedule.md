@@ -26,4 +26,7 @@ Ursinus College
 | 10/10 | Word Embeddings    | Benjamin (Ch. 1), [CIML 10.4](http://ciml.info/dl/v0_99/ciml-v0_99-ch10.pdf) | Benjamin Discussion questions |
 | 10/17 | Word Embeddings, Sequence Models | Benjamin (Ch. 2), Word Embeddings Handout | HW6 (Mon.)
 | 10/22 | LSTMs, GRUs | Benjamin (Ch. 3), LSTM Handout, [Illustrated Guide to LSTMs](https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21) | Discussion
-| 10/24 | Convolutionala Neural Networks | [AI in 2019: Year in Review](https://medium.com/@AINowInstitute/ai-in-2019-a-year-in-review-c1eba5107127),  CNN Handout | TBD
+| 10/24 | Convolutional Neural Networks | [AI in 2019: Year in Review](https://medium.com/@AINowInstitute/ai-in-2019-a-year-in-review-c1eba5107127),  CNN Handout | TBD
+| 10/29 | Neural Machine Translation | TBD | TBD
+| 10/31 | Reinforcement Learning | TBD | TBD
+
