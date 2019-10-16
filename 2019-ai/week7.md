@@ -132,6 +132,7 @@ This will copy the contents of this directory to your computer.  We're specifica
 
 Open this file in your favorite editor.  
 
+If you're getting a ValueError, this StackOverflow post might be helpful: https://stackoverflow.com/questions/55890813/how-to-fix-object-arrays-cannot-be-loaded-when-allow-pickle-false-for-imdb-loa
 
 
 
