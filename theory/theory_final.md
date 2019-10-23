@@ -96,4 +96,4 @@ B: Good presentation with some rough edges.  May have some grammatical and/or sp
 
 C: Presentation which attempts to address the topic, but may have mistakes and/or may be missing key details.  Is either too short or unfinished due to lack of time.  Has mistakes that show lack of basic understanding of the topic.
 
-D: Clearly rushed presentation with little detail or lazy presenntation.
+D: Clearly rushed presentation with little detail or lazy presentation.
