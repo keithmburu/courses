@@ -10,7 +10,16 @@ Recently, we've discussed and used word embeddings.  For this exercise, we'll ge
    pip3 install ftfy
    ```
 
-2. I've provided some code for training a Word2Vec model and querying the most similar terms.  You just need to provide a text file.  You might try downloading one from Project Gutenberg.  https://www.gutenberg.org/ebooks/35013. I've also provided code.  Download the plain text (UTF-8)  file.  You can also download the pretrained Google News embeddings here: https://github.com/mmihaltz/word2vec-GoogleNews-vectors, which you can load with the following line:
+2. I've provided some basic code for training a Word2Vec model and querying the most similar terms. You can find it here:
+https://github.com/acgrissom/courses/tree/master/2019-ai/code/w2v_inclass
+
+The easiest way to retrieve all of these files is to use `git`, but you can download them manually if you prefer.
+
+```shell
+git clone https://github.com/acgrissom/courses
+```
+
+You just need to provide a text file.  You might try downloading one from Project Gutenberg.  https://www.gutenberg.org/ebooks/35013. I've also provided code.  Download the plain text (UTF-8)  file.  You can also download the pretrained Google News embeddings here: https://github.com/mmihaltz/word2vec-GoogleNews-vectors, which you can load with the following line:
 
 ```python
 model = gensim.models.Word2Vec.load_word2vec_format('./GoogleNews-vectors-negative300.bin', binary=True)  
