@@ -1,6 +1,6 @@
-Artificial Intelligence
+Deep Computer Vision and Language
+Due November 25, 2019
 
-Due October 31, 11:55pm.
 
 # Midterm Project
 
@@ -32,7 +32,7 @@ While I will not help you code this midterm, I am willing to give feedback on ne
 
 Your grade will be based on the overall content of your paper.  You may work with one other person (recommended,  especially if you don't have an NVIDIA GPU and someone else does), but if you do so, you **must document what each of you did**.
 
-A+ Range:  Same as A range paper with state-of-the-art results with a new method or a tweak to a previous method.
+A+ Range:  Same as A range paper with near state-of-the-art results with a new method or a tweak to a previous method.
 
 A Range: Exceptionally written paper that does not necessarily achieve state-of-the-art results, but which provides thorough and logical analysis of results, related work, etc.  Uses graphs, tables, and formulas for clarity.  Contextualizes work in the current literature. Work is replicable from the paper.
 
@@ -54,19 +54,18 @@ D range: Paper is badly written with half-done experiments, but there is some sa
 1. Write the skeleton of your paper first, or while your first experiments are running, so that you won't be stuck trying to write everything at the last second.  
 2. Use a GPU machine.
 3. Work with someone else.
-4.  Use graphs and/or diagrams to describe models and results.
+4. Use graphs and/or diagrams to describe models and results. Check out the `seaborn` package.
 5. Use formulas where appropriate to make explicit what your models are doing.  Use other research papers as a guide.
-6. Write in the present tense and try to make you sentences compact and readable.  You want to be clear.
+6. Write in the present tense and try to make you sentences concise and readable.  You want to be clear.
 7. Use bold and italics where necessary for emphasis and clarity.
 8. Use subsections where appropriate.
 9. Define your terms.  If you use an abbreviation, use parentheses before using it again.  For example, "Generative adversarial networks (GANs) are used for..." 
-10. Except where actually necessary, avoid modals like "would," "could," "can," etc.  Sometimes, they're useful, but often they're superfluous.
-11. Run your experiments multiple times to make sure that your results aren't a fluke.
-12. Document your hyper parameters, preprocessing, etc., so that someone reading your paper can replicate your work.
-13. If you find that you're running out of time, don't keep running far-fetched experiments; focus instead on the writing.
-14. This should be obvious, but if your dev set accuracy is still increasing, you're not finished training.
-15.  Describe your dataset.  In general, don't assume that the person reading your paper knows what you do.
-16. **Start early**.  There will be no extensions.
+10. Run your experiments multiple times to make sure that your results aren't a fluke.
+11. Document your hyper parameters, preprocessing, etc., so that someone reading your paper can replicate your work.
+12. If you find that you're running out of time, don't keep running far-fetched experiments; focus instead on the writing.
+13. This should be obvious, but if your dev set accuracy is still increasing, you're not finished training.
+14.  Describe your dataset.  In general, don't assume that the person reading your paper knows what you do.
+15. **Start early**.  There will be no extensions.
 
 
 
