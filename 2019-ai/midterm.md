@@ -1,4 +1,4 @@
-Deep Computer Vision and Language
+Artificial Intelligence
 Due November 25, 2019
 
 
