@@ -23,3 +23,5 @@ If you use the Google News embeddings, you can skip steps (1) and (2).
 3. Query the model and look for the most similar words to some interesting terms.  By default, the package will use [cosine similarity](https://www.machinelearningplus.com/nlp/cosine-similarity/) as a distance metric, but it is possible to use others.
 4. For examples of the kinds of functions `gensim` provides (analogy generation, similar owrds, etc.), go here: https://radimrehurek.com/gensim/models/keyedvectors.html
 
+
+Previously, we've talked about gender, ethnic, and other biases that are recapitulated in word embeddings.  Can you think of any others? Try them and write about what you find.
