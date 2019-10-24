@@ -20,7 +20,7 @@ It is highly recommended that you cite previous work.  If you implement and/or i
 
 ### Report
 
-Your report should be written in LaTeX, using the NIPS template.  You should have, at least, sections that roughly correspond to the following: Introduction, Related Work,  Approach/Model Description, Results, Analysis, and Conclusion.  Do not use filler to take up space.   This is a waste of everyone's time and bad writing.  I will not consider space when grading, but content.  Use other scientific papers as examples.
+Your report should be written in LaTeX, using the NeurIPS template, or Markdown.  You should have, at least, sections that roughly correspond to the following: Introduction, Related Work,  Approach/Model Description, Results, Analysis, and Conclusion.  Do not use filler to take up space.   This is a waste of everyone's time and bad writing.  I will not consider space when grading, but content.  Use other scientific papers as examples.
 
 With the possible exception of some areas of Related Work and the Introduction, write nearly everything in the present tense.  It will be awkward at first, but you'll get used to it.  "We implement as a baseline a convolutional neural network (CNN) ..."  
 
