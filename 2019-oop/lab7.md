@@ -54,7 +54,7 @@ It's easy to find others by searching the web for what you want to do and adding
 2. Implement the code for `get_hyperlink()`.  For example, if the first hyperlink were the Ursinus link above, the function should return a `string` with the followng contents:
 
 ```
-Link Name:
+Link Name: Ursinus
 Location: http://www.ursinus.edu
 ```
 
