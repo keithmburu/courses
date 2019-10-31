@@ -24,7 +24,17 @@ This creates a clickable hyperlink which will take you to Ursinus's web page, di
 
 ## Provided Code
 
-I've provided you with some starter code, `extractor.h` and `extractor.cpp`.  Study them to get a sense of what's going on, and ask questions during the lab if you're unsure about something.  I've also provided some code for extracting the title from a web page.  Study it to understand how it works.
+I've provided you with some starter code, `extractor.h` and `extractor.cpp`.  Study them to get a sense of what's going on, and ask questions during the lab if you're unsure about something.  I've also provided some code for extracting the title from a web page.  Study it to understand how it works.  You can find it here:
+
+https://github.com/acgrissom/courses/tree/master/2019-oop/code/http_extract
+
+The easiest way to download the code is to do a `git clone`
+
+```bash
+git clone https://github.com/acgrissom/courses/
+```
+
+
 
 This code uses two C++ string library functions, `find()` and `substr()`.  You may use others.
 
