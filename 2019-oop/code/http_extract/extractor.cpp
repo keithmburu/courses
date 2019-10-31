@@ -25,7 +25,7 @@ std::string HTMLDocument::to_lower_case(std::string text) {
 }
 
 
-std::string HTMLDocument::get_title() {
+std::string HTMLDocument::get_title() const {
   std::string title = "";
   std::size_t title_start = original_text.find("<title>");
   std::size_t title_end = original_text.find("</title>");
