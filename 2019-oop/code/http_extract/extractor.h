@@ -2,9 +2,9 @@
 class HTMLDocument {
  public:
   HTMLDocument(std::string original_text);
-  std::string get_title();
-  std::string get_filtered_text();
-  std::string get_hyperlink(); /* TODO: Returns the first hyperlink in a web page */
+  std::string get_title() const;
+  std::string get_filtered_text() const;
+  std::string get_hyperlink() const; /* TODO: Returns the first hyperlink in a web page */
 
   
  private:
