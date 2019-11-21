@@ -3,7 +3,7 @@
 This lab will introduce you to debugging C/C++ programs with GDB.  To compile a program for debugging, we ad the `-g` flag to `gcc`.  For example, to compile a file `myfile.cpp`into an executable file called `myprog` in debug mode, we type:
 
 ```bash
-gcc -g myfile.cpp -o myprog
+g++ -g myfile.cpp -o myprog
 ```
 
 To begin debugging, type:
@@ -72,4 +72,3 @@ GDB is a powerful tool, and this only scratches the surface.  You can also run G
 ## Assignment
 
 Use GDB to fix `buggy2.cpp`.
-
