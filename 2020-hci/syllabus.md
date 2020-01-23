@@ -1,12 +1,16 @@
-Human Computer Interaction, Spring 2020
+Human-Computer Interaction, Spring 2020, Ursinus College
 
-Instructor: Alvin Grissom II
+Instructor: Alvin Grissom II, Ph.D.
+
+Office Hours: Tuesday, Thursday 11:45-12:45, 4:25-5:00, and by appointment
 
 # Syllabus
 
-In addition to providing a standard introduction introduction to human-computer interaction (HCI), covering its history, theory, research methods, and practice, students will gain hands-on experience designing and implementing systems that require careful design.  We will also interrogate recent trends in the relationship between humans and computers, including the prevalance of surveillance systems and addictive technologies by critically reading and discussing both material used by practitioners and theoretical work critiquing these approaches. 
+Human-Computer Interaction (HCI) is a broad, interdisciplinary field spanning psychology, ethics, public policy, and several other fields.  Unlike many other computer science classes, which focus mostly on implementation, the majority of this course takes a broader, human-centered view of technology and develops the vocabulary and analytical tools to understand, evaluate, and create technology with which humans must interact.
 
-This course has substantial writing and discussion components, whereby students critically analyze user HCI paradigms and human interaction with designed objects in the real world.  Students are expected to come to class prepared to discuss these topics. There will be a significant project component that requires students to undertake either a small HCI research study or build a non-traditional user interface. 
+In addition to providing a standard introduction introduction to human-computer (HCI), covering its history, theory, research methods, and practice, students will gain hands-on experience designing and implementing systems that require careful design.  We will also interrogate recent trends in the evolution of  the relationship between humans and computers, including the prevalance of surveillance systems and addictive technologies, by critically reading and discussing both material used by practitioners and theoretical work critiquing these approaches. 
+
+This course has substantial writing and discussion components, whereby students critically analyze user HCI paradigms and human interaction with designed objects in the real world.  Students are expected to come to class prepared to discuss these topics. There will be a significant project component that requires students to undertake either a small HCI research study or build a non-traditional user interface.  In addition, each student must sign up to lead discussions on book chapters from Zuboff's *The Age of Surveillance Capitalism,* which we will read and discuss throughout the semester.  By engaging with this influential work, students will follow and evaluate and long, complex argument over the course of the semester.  We will also *critically* read the popular Eyal's *Hooked: How to Build Habit-forming Products,* a popular guide used by professionals for designing "habit-forming" applications, directly engaging with current paradigms driving user interaction.  We will read these texts in conversation with the fundmental theory and vocabulary of HCI and with current events.
 
 
 
@@ -15,18 +19,30 @@ This course has substantial writing and discussion components, whereby students 
 Planned topics* include the following.
 
 - History
-- Accessibility
-- Search
-- Interaction Design and User Interfaces (touch, voice, virtual reality)
-- Addiction
-- Surveillance
-- Cognition and Language
-- Research Methods/Evaluation
-- Current Events and HCI
-   
-   **Materials**
 
-*The Age of Surveillance Capitalism*, by Shoshana Zuboff
+- Accessibility
+
+- Search
+
+- Interaction Design and User Interfaces (including touch, voice, virtual reality)
+
+- Addiction
+
+- Ethics
+
+- Surveillance
+
+- Cognition and Language
+
+- Research Methods/Evaluation
+
+- Current Events and HCI
+
+  
+
+**Materials**
+
+The Age of Surveillance Capitalism*, by Shoshana Zuboff
 
 *Hooked: How to Build Habit-forming Products, by Nir Eyal*
 
@@ -84,7 +100,7 @@ Every week, students are expected to submit analytical reflections incorporating
 
 **Midterm**
 
-This course will have one midterm that covers concepts from the course up to that point.
+This course will have one midterm that covers fundamental HCI concepts.
 
 Expected legitimate absences for the midterm must be approved by me at least two weeks in advance.
 
@@ -156,8 +172,6 @@ Attendance is mandatory, and attendance will be taken. More than five unexcused 
 
 
 
-
-
 **Class Cancellation Policy:**
 
 Class will be cancelled if the college calls an Inclement Weather Day. The hotline is 610.409.3700 and KYW (AM 1060); the closing number is 429. Should class be cancelled for this or any other reason, I will contact the class via e-mail and/or Canvas. Assignment due dates are unaffected by weather.
@@ -169,7 +183,7 @@ Very rarely, the professor may need to reschedule class due to professional trav
 **Grading**
 
 - Components of the final grade are as follows:
-- Class Participation (including discussions and surveys) 10%
+- Class Discussions 20%
 - Homework Assignments 20%
 - Midterm 15%
 - Quizzes 10%
@@ -177,14 +191,6 @@ Very rarely, the professor may need to reschedule class due to professional trav
 - Final Project 30%
 
 There will be no dropped grades.
-
-
-
-**Extra Credit**
-
-There may be ways to earn extra credit. One easy way is to give a 5-10 minute presentation about something interesting in HCI at the beginning of class.
-
-It is possible to earn extra credit by going above and beyond the expectations of an assignment. All extra credit is at my discretion.
 
 
 
