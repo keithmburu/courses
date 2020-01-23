@@ -1,15 +1,15 @@
 Human-Computer Interaction, Spring 2020
 
-Schedule of Topics
+Schedule of Topics (Draft)
 
  
 
-Schedule subject to change as class progresses.  Where applicable, you may choose to **either** read A readings or B readings
+Schedule subject to change as class progresses.  
 
 | Day  | Readings Due                                                 | Topic                                                        | In Class Exercises | Assignments Due                                              |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------ | ------------------------------------------------------------ |
 | 1/23 | [It’s not you. Phones are designed to be addicting.](https://www.vox.com/2018/2/27/17053758/phone-addictive-design-google-apple) | Introduction, History                                        |                    | --                                                           |
-| 1/27 | Nyal (Intro) <br /><br />A: MacKenzie Ch. 1<br />B: [Schalk, Z. Humans in Control: Thoughts on the Past, Present and Future of HCI](https://blogs.commons.georgetown.edu/cctp-797-fall2013/archives/807) | History                                                      |                    |                                                              |
+| 1/27 | Nyal (Intro) <br /><br /> MacKenzie Ch. 1<br />or [Schalk, Z. Humans in Control: Thoughts on the Past, Present and Future of HCI](https://blogs.commons.georgetown.edu/cctp-797-fall2013/archives/807) | History                                                      |                    |                                                              |
 | 1/30 | A: MaKenzie Ch. 2-2.4, Nyal (Ch. 1)                          | Human Factors: Perception, Memory, Cognition<br />           |                    |                                                              |
 | 2/4  | A: MacKenzie Ch. 2.5-2.7,  Nyal (Ch. 2 ), [EU mulls five-year ban on facial recognition tech in public areas](https://www.reuters.com/article/us-eu-ai/eu-mulls-five-year-ban-on-facial-recognition-tech-in-public-areas-idUSKBN1ZF2QL)<br /> | Human Factors: Language, Entropy, Input, Attention           | Quiz (Terminology) |                                                              |
 | 2/6  | Zuboff (Intro), [Fresh Cambridge Analytica leak ‘shows global manipulation is out of control](https://www.theguardian.com/uk-news/2020/jan/04/cambridge-analytica-data-leak-global-election-manipulation') | Interaction: Controls, Spacial Relations, Natural vs. Learned Relationships, Metaphors |                    | [Attend Surveillance Capitalism talk](https://www.ursinus.edu/calendar/event_id/17789/view/event) (2/5) |
