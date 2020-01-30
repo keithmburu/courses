@@ -6,11 +6,11 @@ Schedule of Topics (Draft)
 
 Schedule subject to change as class progresses.  Where applicable, you may choose to **either** read A readings or B readings
 
-| Day  | Readings                                                     | Topic                                                  | In Class Exercises                    | Assignments Due                                              |
+| Day  | Readings Due                                                 | Topic                                                  | In Class Exercises                    | Assignments Due                                              |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------- | ------------------------------------------------------------ |
 | 1/23 | --                                                           | Introduction, Linked Lists, Stacks, Queues             |                                       | --                                                           |
 | 1/27 | Chapter 1-1.2 (as needed for review)<br />Ch. 1.3            | Dijkstra's Two Stack Algorithm, Analysis of Algorithms | HW solutions                          | 1.1.3, 1.1.11, 1.3.7                                         |
-| 1/30 | Ch. 1.3 (pp. 126-130,  147-153),<br />Kearns (Introduction)  | Analysis of Algorithms,<br />Algorithmic Ethics        | HW Solutions,<br />Ethics discussion  |                                                              |
+| 1/30 | Ch. 1.3 (pp. 126-130,  147-153),<br />Kearns (Introduction)  | Analysis of Algorithms,<br />Algorithmic Ethics        | HW Solutions,<br />Ethics discussion  | 1.3.18, 1.3.22, 1.3.23, 1.3.31                               |
 | 2/4  | Ch. 1.4                                                      | Binary Search, Analysis of Algorithms                  | HW Solutions                          | 1.4.5,1.4.6, 1.4.12, 1.4.33                                  |
 | 2/6  | Java Threads                                                 | Inductive Proofs, Matrix Multiplication                | HW Solutions                          | <br />[Attend Surveillance Capitalism talk](https://www.ursinus.edu/calendar/event_id/17789/view/event) (2/5) |
 | 2/11 | Sedgewick pp. Ch. 2.1 (pp. 248-257)                          | Elementary Sorts                                       | HW Solutions,<br />Reading discussion | 1.4.12                                                       |
