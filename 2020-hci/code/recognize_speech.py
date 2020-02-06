@@ -1,24 +1,3 @@
-"""
-***Linux Only***
-Note that this will not work in WSL, which does not support audio.
-sudo apt update
-sudo apt-get install python-pyaudio python3-pyaudio
-See https://pypi.org/project/SpeechRecognition/ 
-*************
-***Mac Only***
-sudo xcode-select --install
-brew install portaudio
-
-https://towardsdatascience.com/building-a-simple-voice-assistant-for-your-mac-in-python-62247543b626
-
-***All Platforms***
-pip3 install --upgrade pip
-pip3 install pyaudio
-pip3 install pyttsx3
-pip3 install speechrecognition
-pip3 install pocketsphinx (optional: for offline voice recognition)
-
-"""
 import speech_recognition as sr
 import pyttsx3
 import sys

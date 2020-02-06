@@ -1,5 +1,7 @@
 Human-Computer Interaction
 
+Human-Computer Interaction
+
 Spring 2020
 
 
@@ -52,9 +54,46 @@ You will demonstrate your projects in class after the due date.
 * Address Book
 * Others (must be approved)
 * Text editor/dictation app, with the ability to edit, delete, etc.
-* Write computer programs
+* Write computer programs with voice
 
+## Setup Instructions to Run Code:
 
+1. For macOS:
+
+   ```bash
+   sudo xcode-select --install
+   brew install portaudio
+   ```
+
+   For Linux:
+   See https://pypi.org/project/SpeechRecognition/ for troubleshooting.
+
+   ```bash
+   sudo apt update
+   sudo apt-get install python-pyaudio python3-pyaudio
+   
+   ```
+
+   For Windows:
+
+   Download and PyAudio for your platform from here: https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio
+
+   Assuming you're using 64-bit Python 3.7,in the same directory containing the wheel, run:
+
+   ```bash
+   pip3 install PyAudio‑0.2.11‑cp37‑cp37m‑win_amd64.whl
+   ```
+
+2. On all platforms
+
+   ```bash
+   pip3 install --upgrade pip
+   pip3 install pyttsx3
+   pip3 install speechrecognition
+   pip3 install pocketsphinx (optional)
+   ```
+
+   You may need to use `pip` instead of `pip3` or `--user` if you do not have elevated privileges.
 
 ## Other Resources
 
