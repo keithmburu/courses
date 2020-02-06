@@ -28,7 +28,7 @@ You will demonstrate your projects in class after the due date.
 
   * Contrasts with alternative UIs (e.g., using text-based or graphical input). (5 pts)
 
-  * Report describe possible improvements (5 pts)
+  * Describe possible improvements (5 pts)
 
   * Report is formatted well, reasonably grammatical, organized into appropriate sections (5pts)
 
