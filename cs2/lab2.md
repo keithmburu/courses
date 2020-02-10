@@ -24,7 +24,7 @@ Show your lab to the professor or the TA when it is completed.
 
 ## References
 
-[S.M. Abramov and B.M. Quine. A formula for pi involving nestedradicals](https://arxiv.org/pdf/1610.07713.pdf)
+[S.M. Abramov and B.M. Quine. A formula for pi involving nested radicals](https://arxiv.org/pdf/1610.07713.pdf)
 
 [Vieta's Formula for Pi: ProofWiki](https://arxiv.org/pdf/1610.07713.pdf)
 
