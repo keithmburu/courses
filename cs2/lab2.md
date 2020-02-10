@@ -16,7 +16,7 @@ $$
 
 
 
-This infinite radical is derived from [Viète's formula](https://en.wikipedia.org/wiki/Vi%C3%A8te%27s_formula), which has several variations. We can approximate the limite by repeating the radical *n* number of times, where *n* is sufficiently large.  In practice, *n* need not be very large to converge to $\pi$.  Start small and work your way up.
+This infinite radical is derived from [Viète's formula](https://en.wikipedia.org/wiki/Vi%C3%A8te%27s_formula), which has several variations. We can approximate the limit by repeating the radical *n* number of times, where *n* is sufficiently large.  In practice, *n* need not be very large to converge to $\pi$.  Start small and work your way up.
 
 
 
