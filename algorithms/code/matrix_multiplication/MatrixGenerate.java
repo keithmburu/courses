@@ -13,8 +13,9 @@ public class MatrixGenerate implements Runnable {
 
 
     public static void main(String[] args) {
-	demo();
-	System.exit(0);
+	//demo();
+	//System.exit(0);
+	
 	if(args.length < 2) {
 	    System.err.println("Usage: java MatrixGenerate [numRows] [numCols]");
 	    System.exit(1);
