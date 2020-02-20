@@ -54,7 +54,7 @@ public class MatrixGenerate implements Runnable {
      * Prints matrix to the screen
      * @param matrix the matrix to be printed
      **/
-    public static void printMatrix(int[][] matrix) {
+    public static void printMatrix(final int[][] matrix) {
 	for(int i = 0; i < matrix.length; i++) {
 	    System.out.println(Arrays.toString(matrix[i]));
 	}
@@ -77,7 +77,7 @@ public class MatrixGenerate implements Runnable {
      * @param cols number of columns
      * @return the matrix generated
      **/
-    public static final int[][] generateRandomMatrix(int rows, int cols) {
+    public static final int[][] generateRandomMatrix(final int rows, final int cols) {
 	int[][] matrix = new int[rows][cols];
 	for(int i = 0; i < rows; i++) {
 	    for(int j = 0; j < cols; j++) {
@@ -93,7 +93,7 @@ public class MatrixGenerate implements Runnable {
      * @param cols number of columns
      * @return the matrix generated
      **/
-    public static final int[][] generateRandomMatrixThreaded(int rows, int cols) {
+    public static final int[][] generateRandomMatrixThreaded(final int rows, final int cols) {
 
 	int[][] newMatrix = new int[rows][cols];
 	//ExecutorService executor = Executors.newWorkStealingPool(4);
