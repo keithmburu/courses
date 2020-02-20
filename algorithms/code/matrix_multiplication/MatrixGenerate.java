@@ -1,7 +1,7 @@
-import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
+import java.util.Arrays;
 
 /** @author Alvin Grissom II
  * Example code for generating random matrices and timing the generation.
@@ -93,7 +93,6 @@ public class MatrixGenerate implements Runnable {
      * @param cols number of columns
      * @return the matrix generated
      **/
-
     public static final int[][] generateRandomMatrixThreaded(int rows, int cols) {
 
 	int[][] newMatrix = new int[rows][cols];
