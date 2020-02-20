@@ -44,7 +44,7 @@ public class MatrixGenerate implements Runnable {
      * @param i number of rows
      * @param j number of columns
      **/
-    public MatrixGenerate(int[][] matrix, int i, int j) {
+    public MatrixGenerate(final int[][] matrix, final int i, final int j) {
 	this.i = i;
 	this.j = j;
 	this.matrix = matrix;
@@ -61,6 +61,9 @@ public class MatrixGenerate implements Runnable {
 	System.out.println();
     }
 
+    /**
+     * Demonstrates generation and multiplication of matrices.
+     **/
     public static void demo() {
 	System.err.println("Generating matrices.");
 	int[][] a = generateRandomMatrix(1000, 1000);
