@@ -134,6 +134,10 @@ You've been provided with the following:
 
 * `MatrixMultiply.class`, a complete, compiled implementation of Parts 1 and 2 that uses the number of logical CPU cores on your machine to determine the number of threads. This can be run with 
   `java MyMatrixMultiply`.  **You can also call my version of the functions described above from your code to ensure that your answers are correct.**
-*  `MatrixGenerate.java` A complete, naïve implementation of random matrix generation using both single-threaded and multi-threaded approaches.  (The included multi-threaded implementation is slow.)
-* This document.
+  
+* `MatrixGenerate.java` A complete, naïve implementation of random matrix generation using both single-threaded and multi-threaded approaches.  (The included multi-threaded implementation is slow.)
+
+  Included can be downloaded from here: https://github.com/acgrissom/courses/tree/master/algorithms/code/matrix_multiplication
+
+  
 
