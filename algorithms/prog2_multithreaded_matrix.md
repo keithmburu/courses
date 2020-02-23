@@ -7,7 +7,7 @@ With the proliferation of computers and other devices with multiple CPU cores, n
 
 This assignment has several parts. 
 
-## Part 1: Matrix Multiplication (10 pts)
+## Part 1: Matrix Multiplication (10 points)
 
 Given two matrices of arbitrary size (*n* rows and *m* columns), compute their product.
 
@@ -25,9 +25,9 @@ For example, $$ \begin{bmatrix}
 139 & 154 \\
 \end{bmatrix}.$$
 
-The naïve, iterative $O(n^3)$ algorithm for matrix multiplication is straightforward to implement by following the pseudocode, which is available on the Wikipedia page.. We will assume that the multipled matrices have the correct dimensions.
+The naïve, iterative $O(n^3)$ algorithm for matrix multiplication is straightforward to implement by following the pseudocode, which is available on the Wikipedia page. We will assume that the multipled matrices have the correct dimensions.
 
-To begin, implement the following function, which takes two matrices, represented by two two-dimensional arrays, `a`, and `b`, and return their product.  Ensure that this works correctly before moving to the next part.
+To begin, implement the following function, which takes two matrices, represented by two two-dimensional arrays, `a`, and `b`, and returns their product.  Ensure that this works correctly before moving to the next part.
 
 ```java
 public static int[]] multiply(final int[][] a, final int[][] b)
@@ -35,14 +35,14 @@ public static int[]] multiply(final int[][] a, final int[][] b)
 
 This method is static because it does not depend on a class state.  Place this function in a class called `MyMatrixMultiply`.
 
-## Part 2: Parallel Matrix Multiplication
+## Part 2: Parallel Matrix Multiplication (20 points)
 
-There are several ways of parallelizing matrix multiplication.  One such algorithm is described in the aforementioned Wikipedia page.  One of the simplest ways is to decouple the innermost loop, wherein the dot product of a given row and column is calculated, and allow the threads to do this work independent of the main thread.
+There are several ways of parallelizing matrix multiplication.  One such algorithm is described in the aforementioned Wikipedia page.  One of the simplest ways is to decouple the innermost loop, wherein the dot product of a given row and column is calculated, allowing the threads to do this work independent of the main thread.
 
 In the same class, `MyMatrixMultiply`, implement the following function:
 
 ```java
-public static int[] multiplyThreaded(int[][] a, int[][] b)
+public static int[] multiplyThreaded(final int[][] a, final int[][] b)
 ```
 
 To write a basic multithreaded program, you'll have to implement the `Runnable` interface, which stipulates that you implement the `void run()` method.  This method executes when a thread is spawned.  While it's possible to manage threads manually, it's easier for this algorithm to use an `ExecutorService` to manage the threads.
@@ -50,7 +50,10 @@ To write a basic multithreaded program, you'll have to implement the `Runnable` 
 I recommend writing a separate function:
 
 ```java
-public static int dotProd(int[][] a, int[]] b, int i, int j)
+public static int dotProd(final int[][] a,
+                          final int[]] b,
+                          final int i,
+                          final int j)
 ```
 
 This function can be used for computing the value for a given element in the resultant matrix.  The `i` and `j` can be set when the class is instantiated in the constructor:
@@ -75,7 +78,7 @@ In addition, I've provided you with parallelized code to generate mrandom matric
 
 Your report should be submitted in PDF format, written in $\LaTeX$ or Markdown.
 
-1. Describe your algorithm with a reasonable style of pseudocode.  I recommend the `algorithmic` or `algorithmicx` package in LaTex.  If you use something like Typora for Markdown, you can create reasonable pseudocode by following this method: https://github.com/typora/typora-issues/issues/860
+1. Describe your algorithm with a reasonable style of pseudocode.  I recommend the `algorithmic` or `algorithmicx` package in $$\LaTeX$$.  If you use something like Typora for Markdown, you can create reasonable pseudocode by following the following method or use the `pseudocode` language in a code fence: https://github.com/typora/typora-issues/issues/860
 
 2. Experimentally profile your algorithms using the provided code to randomly generate matrices of various sizes. (Do not count the generation step in your profiling.) While this isn't a perfect test on systems that run multiple processes at once (which steal CPU time), as the number of operations grows, we should see a substantial difference between the time each algorithm takes. **Make sure that you run your program on matrices sufficiently large.** It's reasonable to start with extremely small matrices and go into hundreds of thousands of rows and columns.  Is there an approximate function/ratio for the speedup of using multithreading?
 
@@ -83,7 +86,7 @@ Your report should be submitted in PDF format, written in $\LaTeX$ or Markdown.
 
 3. Describe any issues you had in your implementation and how you resolved them, if you did.  Speculate about the causes.
 
-4. Note how many CPU cores your computer has.  If you don't know, you can use the following in Java to get the total number of logical cores.
+4. Note how many CPU cores your computer has.  If you don't know, you can use the following in Java to get the total number of logical cores.  This may differ from the number of physical cores.
 
    ```java
    int cores = Runtime.getRuntime().availableProcessors();
@@ -97,7 +100,7 @@ Your report should be submitted in PDF format, written in $\LaTeX$ or Markdown.
 * Can you change the slow random matrix generation such that the multithreaded approach is faster than the single-threaded approach.
 * Analyze the performance as a function of the number of threads, in addition to the size of the matrices.
 
-## Part 5: Board Participation (5 points)
+## Part 5: Board Participation (Optional: 5 points)
 
 Post questions and try to answer each other's questions on Canvas.  Do not post code.  
 
@@ -131,6 +134,6 @@ You've been provided with the following:
 
 * `MatrixMultiply.class`, a complete, compiled implementation of Parts 1 and 2 that uses the number of logical CPU cores on your machine to determine the number of threads. This can be run with 
   `java MyMatrixMultiply`.
-*  `MatrixGenerate.java` A complete, naïve implementation of random matrix generation using both single-threaded and multi-threaded approaches.  (The multi-threaded approach is slow.)
-* This document
+*  `MatrixGenerate.java` A complete, naïve implementation of random matrix generation using both single-threaded and multi-threaded approaches.  (The included multi-threaded implementation is slow.)
+* This document.
 
