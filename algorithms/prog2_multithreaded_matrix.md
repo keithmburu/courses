@@ -30,7 +30,7 @@ The naïve, iterative $O(n^3)$ algorithm for matrix multiplication is straightfo
 To begin, implement the following function, which takes two matrices, represented by two two-dimensional arrays, `a`, and `b`, and returns their product.  Ensure that this works correctly before moving to the next part.
 
 ```java
-public static int[]] multiply(final int[][] a, final int[][] b)
+public static int[][] multiply(final int[][] a, final int[][] b)
 ```
 
 This method is static because it does not depend on a class state.  Place this function in a class called `MyMatrixMultiply`.
@@ -42,7 +42,7 @@ There are several ways of parallelizing matrix multiplication.  One such algorit
 In the same class, `MyMatrixMultiply`, implement the following function:
 
 ```java
-public static int[] multiplyThreaded(final int[][] a, final int[][] b)
+public static int[][] multiplyThreaded(final int[][] a, final int[][] b)
 ```
 
 To write a basic multithreaded program, you'll have to implement the `Runnable` interface, which stipulates that you implement the `void run()` method.  This method executes when a thread is spawned.  While it's possible to manage threads manually, it's easier for this algorithm to use an `ExecutorService` to manage the threads.
