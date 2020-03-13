@@ -42,8 +42,8 @@ public class MatrixGenerate implements Runnable {
     /**
      * Constructor that sets the internal variables for the matrix to be generated
      * @param matrix a 2D array, representing a matrix
-     * @param i number of rows
-     * @param j number of columns
+     * @param i the row for which this instance generates a random value
+     * @param j the column for which this instance generates a random value
      **/
     public MatrixGenerate(final int[][] matrix, final int i, final int j) {
 	this.i = i;
