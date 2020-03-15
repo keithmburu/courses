@@ -4,7 +4,7 @@ Spring 2020
 
 Ursinus College
 
-#Homework 1: Linked List and Inheritance
+#Homework 2: Linked List and Inheritance
 
 
 
