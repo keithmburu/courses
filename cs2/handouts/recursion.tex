@@ -1,0 +1,104 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{times}
+\usepackage[normalem]{ulem}
+\usepackage{fancyhdr,graphicx,amsmath,amssymb, mathtools, scrextend, titlesec, enumitem}
+\usepackage[cache=false]{minted}
+\include{pythonlisting}
+
+\title{Recursion}
+\author{Alvin Grissom II}
+\begin{document}
+\maketitle
+
+\textbf{Recursion} occurs when something is defined in terms of
+itself. Consider following program which computes $\sum_{i=1}^{10} x$.
+\begin{minted}[linenos, mathescape, obeytabs=true, gobble=2, frame=lines]{java}
+    class RecursiveSum {
+        public static void main(String[] args) {
+            System.out.println(sum(10));
+        }
+        
+        public static int sum(int num) {
+            if(num == 0) {
+	            return 0;
+            }
+            return num + sum(num - 1);
+        }
+    }
+\end{minted}
+In this example, the function \texttt{sum} calls itself and passes the
+result to the new call.  On line 3, \texttt{sum} is passed the value
+10.  On line 6, \texttt{prev} is set to 10.  The condition on line 7
+evaluates to \texttt{false}; so, we move to line 10.  On line 10, we
+add \texttt{prev}, which is 10, to \texttt{sum(prev - 1)}, which
+repeats the process, starting with 9.
+
+As a result, we end up with \texttt{sum(10) + sum(9) + sum(8) + sum(7)
+  + } $\dots$ \texttt{+ sum(1) + sum(0)}.  Here, \texttt{sum(0)} is
+called our \textbf{base case}, because it tells us when to stop.
+Without a base case, we would continue to call this function
+indefinitely, until we ran out of memory.
+
+Now, let's run through the calculation: We know the
+\texttt{sum(0)}$=0$, by definition (lines 7-9).  What about
+\texttt{sum(1)}?  Line 10 tells us that
+\texttt{sum(1)}$=$\texttt{sum(0)}$+1$. So, what is \texttt{sum(2)}?
+\texttt{sum(2)}$=2 + sum(1).$ \texttt{sum(3) = 3 + sum(2)}.  And so
+on.  Expanding this, we get:
+$$sum(n) = n + sum(n-1)$$ 
+$$sum(n-1) = n - 1 + sum(n-2)$$ 
+$$sum(n-2) = n - 2 + sum(n-3)$$ 
+And so on. \\
+
+If we work this down to \texttt{sum(0)}, we get:
+
+$0+(0 + 1) + (2 + (0 + 1)) + (3 + (2 + (0 + 1))) + (4 +(3 + (2 + (0 + 1)))) +\dots = 55$.
+
+\textbf{Inside of the Computer}
+
+Computer memory is divided into sections that programs can access for
+different purposes.  For now, we're going to concerns ourselves
+primarily with the \textbf{stack}.  In the Java Virtual Machine (JVM),
+we have \textbf{heap} space, which is where objects are stored.
+Whenever you create a class, it is stored on the heap.  Think of a
+"heap" of unordered space, from which the computer grabs available
+memory.  The \textbf{stack}, however, is a last-in first-out (LIFO)
+data structure.  The first item to be placed on the stack is the last
+one to be removed.
+
+Functions are placed on the stack, as are primitive variables they
+contain.  When you execute a function---for example, \texttt{sum}---it
+is placed on the stack in the order in which it was executed. Let's
+call it \texttt{sum}$_0$.  If you call \texttt{sum} again, another
+call to sum is placed on top of it.  Let's call it \texttt{sum}$_1$.
+Since \texttt{sum}$_1$ depends on \texttt{sum}$_0$, \texttt{sum}$_0$
+can't complete until \texttt{sum}$_1$ does.  If there's a
+\texttt{sum}$_2$, \texttt{sum}$_1$ must wait for it to finish
+(return).
+
+This is true of any function called from another function.
+%\pagebreak
+
+\begin{minted}[linenos, mathescape, obeytabs=true, gobble=2, frame=lines]{java}
+    class StackFunction {
+        public void function1() {
+            function2();
+    	    return;
+        }
+    
+        public void function2() {
+        	return;
+        }
+    }
+\end{minted}
+
+In this code, \texttt{function2()} is called from
+\texttt{function1()}.  So, \texttt{function1()} is placed on the stack
+first.  Then, \texttt{function2()}---which depends on
+\texttt{function1()} is called; so, it's placed on the stack next.
+When \texttt{function2()} completes, its removed from the stack, and
+only \texttt{function1()} remains.  At that point,
+\texttt{function1()} can complete, and then it is removed from the
+stack.
+\end{document}

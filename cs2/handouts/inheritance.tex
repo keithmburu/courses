@@ -1,0 +1,85 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{times}
+\usepackage[normalem]{ulem}
+\usepackage{fancyhdr,graphicx,amsmath,amssymb, mathtools, scrextend, titlesec, enumitem}
+\usepackage[cache=false]{minted}
+
+
+\title{Inheritance and Abstract Classes}
+\author{Alvin Grissom II}
+\begin{document}
+\maketitle
+
+\textbf{Inheritance} is a feature of object-oriented programming (OOP) whereby classes inherit structure and variables from another class.  In the class, the class that inherits is called a \textbf{subclass} or \textbf{child class}, and the class from which others are inheriting is called the \textbf{superclass} or \textbf{parent class}.
+\begin{minted}[linenos, mathescape, obeytabs=true, gobble=2, frame=lines]{java}
+    public class Cat {
+        private String name;
+        private int age;
+        
+        public Cat(String name, int age) {
+        	this.name = name;
+            this.age = age;
+        }	       
+        public void setName(String name) {
+        	this.age = age;
+        }        
+        public String getName() {
+        	return this.name;
+        }
+        public int setAge() {
+        	return this.age;
+        }
+    }
+
+    public class MuskCat extends Cat {
+    	public MuskCat(String name) {
+        	super(name, age);
+        }
+        public void doMagic() {
+        	System.out.println(getName() + " flaps its wings.");
+        }
+    }
+\end{minted}
+
+In the previous code, \texttt{MuskCat} inherits from \texttt{Cat}.  While the methods of \texttt{Cat} are \texttt{private}, and thus invisible to \texttt{MuskCat}, its \textbf{accessor methods} are \texttt{public} and thus available to any subclass, including \texttt{MuskCat}.  
+
+In the previous example, the \texttt{MuskCat} constructor, just calls the constructor of its superclass with the \texttt{super} keyword, and \texttt{doMagic()} calls the superclass's \texttt{getMagic()} method.
+
+\begin{minted}[linenos, mathescape, obeytabs=true, gobble=2, frame=lines]{java}
+    	Cat muskCat = new MuskCat("Myau", 1000);
+\end{minted}
+
+The previous code creates a new \texttt{MuskCat} named Myau that's 1,000 years old.  Since all \texttt{MuskCat}s are \texttt[Cat]s, this is valid.  But since the variable is of type \texttt{Cat}, a more general time, we can assign it to be some other \texttt{Cat}, as well, even after it has been instantiated as a \texttt{MuskCat}.  But only \texttt{MuskCat}s can \texttt{doMagic()}.
+
+Java also has \textbf{abstract classes}.  An \texttt{abstract class} need not provide full function implementations.  You have the option of providing merely \textit{definitions}.  If you only provide function \textit{definitions}, every subclass of the abstract class must implement the missing implementations.  Abstract classes can provide some default function implementations, however, and these will be inherited.  Abstract classes cannot be inherited directly.
+\begin{minted}[linenos, mathescape, obeytabs=true, frame=lines]{java}
+    public abstract class MagicAnimal {
+    	private String name;
+        public abstract void doMagic(String name);
+        public void setName(String name) {
+        	this.name = name;
+        }      
+        public String getName() {
+        	return this.name;
+        }
+    } 
+    public class MuskCat extends MagicAnimal {
+    	public void doMagic(String name) {
+        	System.out.println(name + " does magic.");
+        }   
+    }
+\end{minted}
+
+In the above code, the \texttt{abstract class MagicAnimal} exists primarily as a template for other classes to \texttt{extend} it.  \texttt{MuskCat} \textbf{must} have a fully-implemented \texttt{doMagic(String)} method, because the its parent class has an abstract method of that name.
+
+We can never write \texttt{MagicAnimal a = new MagicAnimal("Myau")}, because abstract classes can never be instantiated directly.  We can, however, write this:
+
+\begin{minted}[linenos, mathescape, obeytabs=true, frame=lines]{java}
+   MagicAnimal m = new MuskCat("Myau");
+\end{minted}
+On the right-hand side, we now have a ``real'' class, \texttt{MuskCat}, so this code is valid.  
+
+Java also has \textbf{interfaces}, which are like abstract classes, but they cannot have default behavior; they only have method definitions, and instead of \texttt{extends}, they use the \texttt{implements} keyword.
+
+\end{document}

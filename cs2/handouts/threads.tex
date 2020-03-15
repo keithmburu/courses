@@ -1,0 +1,110 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{times}
+\usepackage[normalem]{ulem}
+\usepackage{fancyhdr,graphicx,amsmath,amssymb, mathtools, scrextend, titlesec, enumitem,}
+\usepackage[cache=false]{minted}
+
+
+\title{Threads}
+\author{Alvin Grissom II}
+\begin{document}
+\maketitle
+
+\textbf{Threads} allow for multiple operations to be run simultaneously.
+\begin{minted}[linenos, mathescape, obeytabs=true, frame=lines]{java}
+public class ThreadedNums implements Runnable {
+     int i, j;
+     public static void main(String[] args) {
+        ThreadedNums tNums = new ThreadedNums(1,10);
+        ThreadedNums tNums2 = new ThreadedNums(500,510);
+        Thread thread1 = new Thread(tNums);
+        Thread thread2 = new Thread(tNums2);
+        thread1.start();
+        thread2.start();
+    }
+    public ThreadedNums(int start, int end) {
+        this.i = start;
+        this.j = end;
+    }
+    public void run() {
+        while(i < j) {
+            System.out.print(i + " ");
+            i++;
+        }
+    }
+}
+\end{minted}
+The program prints the numbers from 1 to 9 and 500 to 509.  First,
+notice that we create two \texttt{ThreadedNums} objects:
+\texttt{tNums} and \texttt{tNums2}.  The object tNums prints 1-9,
+while \texttt{tNums2} prints 500-509.  Then we instantiate two Thread
+objects and pass tNums and tNums2 into the Thread's constructor as an
+argument.  We can do this only because we implemented
+\texttt{Runnable}.  Finally, we start the threads by calling their
+respective \texttt{start()} methods.
+
+Output may vary, but the following output is one possibility: 1 2 3 4
+5 6 500 501 7 502 8 9 503 504 505 506 507 508 509 The numbers are
+clearly out of order, with 7, 8, and 9 appearing between those in the
+500 series.  This is possible, because \texttt{tNums1} and
+\texttt{tNums2} are executing simultaneously; thus, their respective
+for loops are also executing concurrently.  The output, then, is a
+conglomeration of the two.  When the \texttt{start()} method of a
+thread is called, the code placed in the overridden run() method is
+executed, and the code in the calling thread---in this case,
+\texttt{main()}---continues as the thread runs in the background.
+
+It is also possible to put a thread to "sleep," but calling its
+sleep(int time) method, which causes the thread to cease executing for
+a certain number of milliseconds.
+
+Often, in computer programs, we desire that the program work on more
+than one task simultaneously.  This is called concurrency, and it is
+accomplished using threads.
+
+A thread is part of a program which is working on a task.  Most simple
+Java programs have only one thread: the main thread, which executes
+the code sequentially.  It is possible, however, and often necessary
+to work on more than one task at a time.  This requires multithreaded
+programming.  In multithreaded programming, several parts of a program
+can run simultaneously, without having to wait for the other sections
+to complete their tasks.
+
+ First, consider the following unthreaded Java program: 
+
+\begin{minted}[linenos, mathescape, obeytabs=true, frame=lines]{java}
+public class PrintNums {
+    public static void main(String[] args) {
+        for(int i = 0; i < 10; i++) {
+            System.out.print(i + " ");
+        }
+        for(int j = 500; j < 520; j++) {
+            System.out.print(j + " ");
+        }
+    }
+}
+
+\end{minted}
+\textbf{Waiting for Threads to Finish}
+
+ Sometimes, we may want to wait for a thread or threads to finish
+ before continuing.  For example, we may have delegated parts of a
+ task to multiple threads and intend to combine the results when they
+ all finish.  Fortunately, Java provides a straightforward way to do
+ this, with the \texttt{join()} function in the \texttt{Thread} class.
+ 
+\begin{minted}[linenos, mathescape, obeytabs=true, frame=lines]{java}
+Threads t = new Thread(tNums);
+t.start();
+t.join();
+\end{minted}
+
+The call to \texttt{join()} stops the execution of the current program
+to wait until \texttt{t} has finished.  By extension, if you call
+\texttt{join()} on all of your threads, your program will wait for all
+of them to complete before continuing.
+
+There's much more than can be said about threads.  This sheet only
+serves as an introduction.
+\end{document}
