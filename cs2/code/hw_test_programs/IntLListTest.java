@@ -5,7 +5,7 @@ public class IntLListTest {
     public static boolean testAdd(LinkedList<Integer> a, IntLList iv, int val) {
 	a.add(val);
 	iv.add(val);
-
+	
 	if(iv.toString().equals(a.toString())) {
 	    System.out.println("add(" + val + ") passed.");
 	    return true;
@@ -84,8 +84,6 @@ public class IntLListTest {
 		return false;
 	    }
 
-
-
 	try {
 	    System.err.println("Testing class  hierarchy of IntArrayList");
 	    IntList il = new IntArrayList(3);
@@ -95,8 +93,6 @@ public class IntLListTest {
 	    return false;
 	}
 
-
-	
 	try {
 	    System.err.println("Testing class  hierarchy of IntLList");
 	    IntList il = new IntLList();
@@ -151,11 +147,8 @@ public class IntLListTest {
 	    return false;
 	}
 	
-
-	
 	return true;
     }
-
 
 
     public static void main(String[] args) {
