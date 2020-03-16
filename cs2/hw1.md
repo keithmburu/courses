@@ -4,7 +4,7 @@ Spring 2020
 
 Ursinus College
 
-#Homework 1: IntVector
+# Homework 1: IntVector
 
 
 
