@@ -33,7 +33,7 @@ We can seet a *breakpoint* with the `break` command.  This tells the debugger to
 
 This will break at line 12.  Type `run`.
 
-We brek in the `main()` function on line 12.  We can now examine the memory.
+We break in the `main()` function on line 12.  We can now examine the memory.
 
 ```
 (gdb) print primes
