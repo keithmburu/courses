@@ -8,15 +8,25 @@ Ursinus College
 
 
 
-You will implement a linked list of integers called IntLList. You will also implement a class structure that accommodates your previous assignment. Rename your previous class to `IntArrayList` and rename the filename to `IntArrayList.java`. Create a parent class of both IntLList and IntArrayList called IntList.
+You will implement a linked list of integers called IntLList. You will
+also implement a class structure that accommodates your previous
+assignment. Rename your previous class to `IntArrayList` and rename
+the filename to `IntArrayList.java`. Create a parent class of both
+IntLList and IntArrayList called IntList.
 
 `IntList` will implement the functions that apply to any list.
 
-You will implement the following functions in a public class, called `IntList`. The other two classes, `IntLList` and `IntArrayList` will extend it. The functions common to both subclasses will be implemented as abstract classes in `IntList`.
+You will implement the following `abstract` methods in a public class,
+called `IntList`. The other two classes, `IntLList` and `IntArrayList`
+will extend it. The functions with implementations common to both
+subclasses will be implemented as non-abstract classes in `IntList`.
 
-For this assignment, it is not necessary or recommended that you use an IDE, such as NetBeans.
+For this assignment, it is not necessary or recommended that you use
+an IDE, such as NetBeans.
 
-You will write the followeding `abstract` methods in `abstract class IntList` and implemented fully in its children `IntLList` and `IntArrayList`.
+You will write the followeding `abstract` methods in `abstract class
+IntList` and implemented fully in its children `IntLList` and
+`IntArrayList`.
 
 ```java
 /**
