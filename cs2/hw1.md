@@ -85,6 +85,6 @@ Likewise, in a basic array, one cannot "delete'' elements.  Again, the size of t
 
 ## What to submit
 
-Submit a `tar.gz` file with your `IntVector.java` file in a directory named `lastname\_firstname` (with your actual last and first name).  So, when you decompress the file, there should be a directory with your files therein.
+Submit a `tar.gz` file with your `IntVector.java` file in a directory named `lastname_firstname` (with your actual last and first name).  So, when you decompress the file, there should be a directory with your files therein.
 
 Your program *must* run if compiled with `javac` and run with `java` from the command line. 

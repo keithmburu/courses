@@ -76,6 +76,6 @@ public boolean isEmpty();
 
 ## What to submit
 
-Submit a `tar.gz` file with all of your Java files file in a directory named `lastname\_firstname` (with your actual last and first name).  So, when you decompress the file, there should be a directory with your files therein and nothing else.
+Submit a `tar.gz` file with all of your Java files file in a directory named `lastname_firstname` (with your actual last and first name).  So, when you decompress the file, there should be a directory with your files therein and nothing else.
 
 Your program *must* run if compiled with `javac` and run with `java` from the command line. 
