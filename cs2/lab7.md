@@ -13,7 +13,7 @@ For example, to display the title of a web page, which would appear in the title
 <title>My Web Page</title>
 ```
 
-The opening tag `<title>` has a closing tag `</title>, and the text between the opening and closing tags displays the title.
+The opening tag `<title>` has a closing tag `</title>`, and the text between the opening and closing tags displays the title.
 
 To create a [hyperlink](), which you can click, you would type the following:
 
@@ -25,9 +25,7 @@ This creates a clickable hyperlink which will take you to Ursinus's web page, di
 
 ## Provided Code
 
-I've provided you with some starter code, `extractor.h` and `extractor.cpp`.  Study them to get a sense of what's going on, and ask questions during the lab if you're unsure about something.  I've also provided some code for extracting the title from a web page.  Study it to understand how it works.  You can find it here:
-
-https://github.com/acgrissom/courses/tree/master/2019-oop/code/http_extract
+I've provided you with some starter code, `extractor.h` and `extractor.cpp`.  Study them to get a sense of what's going on, and ask questions during the lab if you're unsure about something.  I've also provided some code for extracting the title from a web page.  Study it to understand how it works.  
 
 The easiest way to download the code is to do a `git clone`
 
