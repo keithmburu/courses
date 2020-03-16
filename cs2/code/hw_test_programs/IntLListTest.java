@@ -146,7 +146,7 @@ public class IntLListTest {
 	    
 	}
 	catch(Exception e) {
-	    System.err.println("Failed to case IntLList to IntList with error:");
+	    System.err.println("Failed to cast IntLList to IntList with error:");
 	    System.err.println(e.getMessage());
 	    return false;
 	}
