@@ -25,7 +25,7 @@ Type `run` (or just `r`).
 
 The program will run and exit successfully, but the output will not be what we want.  Let's examine the program with GDB.
 
-We can seet a *breakpoint* with the `break` command.  This tells the debugger to halt execution at this point so that we can examine the state of the program.
+We can set a *breakpoint* with the `break` command.  This tells the debugger to halt execution at this point so that we can examine the state of the program.
 
 ```
 (gdb) break buggy1.cpp:12
