@@ -40,7 +40,7 @@ At first, it will appear that you are starting from scratch.  But if you type th
 tmux attach
 ```
 
-Running `tmux attach` "attaches" your still-running session, allowing you to pick up exactly where you left off.  If you don't the `attach` argument, you will create a new, separate session that runs alongside the one you've already opened.  This is not recommended as you're just learning how this works.  You can list other tmux sessions with the follwing commnad:
+Running `tmux attach` "attaches" your still-running session, allowing you to pick up exactly where you left off.  If you don't add the `attach` argument, you will create a new, separate session that runs alongside the one you've already opened.  This is not recommended as you're just learning how this works.  You can list other tmux sessions with the follwing commnad:
 
 ```bash
 tmux list-sessions
