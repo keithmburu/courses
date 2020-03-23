@@ -30,7 +30,7 @@ Windows users can also use [PuTTY](https://www.putty.org/) if they prefer.
 
 The program `tmux` is what's known as a **terminal multiplexer**, which allows one to work in several terminal sessions at once.  It's installed on the server.  This program has many features, but we're going to focus on just one: the ability to keep programs running even if you disconnect from the server, and the ability to pick up exactly where you left off.
 
-To run tmux for the first time, *after you've connected to the server*, run the `tmux` command.  You'll see a screen that know has a bar at the bottom with some information, showing that you are inside of a tmux session.  As long as you are in this session, you don't have to worry about disconnecting or closing the window.  You can always pick up where you left off.
+To run tmux for the first time, *after you've connected to the server*, run the `tmux` command.  You'll see a screen that now has a bar at the bottom with some information, showing that you are inside of a tmux session.  As long as you are in this session, you don't have to worry about disconnecting or closing the window.  You can always pick up where you left off.
 
 To show this, try running `emacs`.  Then close the terminal window to disconnect from the server.  Afterwards, open the terminal again and reconnect with `ssh`.
 
