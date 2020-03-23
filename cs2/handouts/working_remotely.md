@@ -46,7 +46,7 @@ Running `tmux attach` "attaches" your still-running session, allowing you to pic
 tmux list-sessions
 ```
 
-You can exist a session by typng `exit` inside of it or by using the `kill-session` argument.
+You can exit a session by typng `exit` inside of it or by using the `kill-session` argument.
 
 The `tmux` program has many other features, such as splitting the window in to multiple frames, each with its own console session. For more information, see the links below.
 
