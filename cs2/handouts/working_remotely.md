@@ -54,7 +54,7 @@ The `tmux` program has many other features, such as splitting the window in to m
 
 ##  Useful Commands
 
-When sharing a computational resource with other uses (in this case, your fellow students), it's often useful to know who else if using resources.  If you're testing the performance of an algorithm, for example, it's important to know whether another user is running a test simultaneously.
+When sharing a computational resource with other users (in this case, your fellow students), it's often useful to know who else if using resources.  If you're testing the performance of an algorithm, for example, it's important to know whether another user is running a test simultaneously.
 
 The `top` command lists the processes currently using the most resources on the machine and who is running it. You can also observe the top processes for a specific user with 
 
