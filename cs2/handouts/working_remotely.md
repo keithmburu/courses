@@ -66,7 +66,7 @@ where `username` is the user's user name that you're interested in.  If, for som
 
 ###  Transfering Files
 
-If you need to transfer your code between your personal computer and the serve, you can use either `sftp` or Secure Copy `scp`.
+If you need to transfer your code between your personal computer and the server, you can use either `sftp` or Secure Copy `scp`.
 
 The `scp` command functions much like the `cp` command, but it allows you to copy to a remote server's location. For example:
 
