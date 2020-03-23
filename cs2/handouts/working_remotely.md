@@ -56,13 +56,13 @@ The `tmux` program has many other features, such as splitting the window in to m
 
 When sharing a computational resource with other users (in this case, your fellow students), it's often useful to know who else if using resources.  If you're testing the performance of an algorithm, for example, it's important to know whether another user is running a test simultaneously.
 
-The `top` command lists the processes currently using the most resources on the machine and who is running it. You can also observe the top processes for a specific user with 
+The `top` command lists the processes currently using the most resources on the machine and who is running them. You can also observe the top processes for a specific user with 
 
 ```bash
 top -u username
 ```
 
-where `username` is the user's user name that you're interested in.  If, for some reason, you need to brows the web, you can use w3m, either as a standalone program or inside of emacs.  Or you can use `browsh`, which is a terminal front-end for FireFox with mouse support. See [browsh commands](https://www.brow.sh/docs/keybindings/).
+where `username` is the user's user name that you're interested in.  If, for some reason, you need to browse the web, you can use w3m, either as a standalone program or inside of emacs.  Or you can use `browsh`, which is a terminal front-end for FireFox with mouse support. See [browsh commands](https://www.brow.sh/docs/keybindings/).
 
 ###  Transfering Files
 
