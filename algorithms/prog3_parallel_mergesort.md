@@ -38,7 +38,7 @@ You can do this with the [varargs](https://www.geeksforgeeks.org/variable-argume
 
 ###  Part 3: (20 pts): Report
 
-Write a report with aa grapah showing the input size (of random numbers) vs. time. As usual, time should be on the  y-axis and the input size on the x-axis for both threaded and multithreaded approaches (with varying numbers of threads).   What was the speedup? Document any issues you may have had in your implementation.  You should try this **at least** up to 10,000,000 numbers.  Did you verify that the results were the same? 
+Write a report with a graph showing the input size (of random numbers) vs. time. As usual, time should be on the  y-axis and the input size on the x-axis for both threaded and multithreaded approaches (with varying numbers of threads).   What was the speedup? Document any issues you may have had in your implementation.  You should try this **at least** up to 10,000,000 numbers.  Did you verify that the results were the same? 
 
 For larger numbers, you may run into heap space issues if you naively read in your file.  If you're using a shared machine, make sure that no one else is running this experiment at the same time.
 
