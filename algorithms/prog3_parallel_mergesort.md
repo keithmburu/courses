@@ -18,7 +18,15 @@ I've also provided you with the basic, functioning, non-parallel MegeSort Java f
 
 For this assignment, you will use the Java **fork-join** framework.  This framework was added to Java 7 and it greatly simplifies multithreaded tasks which can be formulated recursively.  The paradigm itself is more general and is not limited to Java programs.  In Java, most of the management of the threads is done by the fork-join library itself; the programmer can therefore focus on writing the program recursively.
 
-There are more advanced features of this paradigm, but the simplest way to use fork-join for MergeSort is to extend `java.util.concurrent.RecursiveAction`.  This will require that you implement `public void compute()`.  This function is analogous to `run()` in `Runnable`.
+There are more advanced features of this paradigm, but the simplest way to use fork-join for MergeSort is to extend `java.util.concurrent.RecursiveAction`.  This will require that you implement `public void compute()`.  This function is analogous to `run()` in `Runnable`. Your class definition will look like this:
+
+```java
+public class MMergeSort extends RecursiveAction {
+  //
+}
+```
+
+
 
 **Forking** happens when one instance of your class creates another instance of itself to solve a subproblem.  For MergeSort, the subproblems are clear: sorting the left and right halves of your array.  Thus, your `compute()` function should be extremely simple.
 
