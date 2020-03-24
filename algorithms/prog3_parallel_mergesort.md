@@ -4,7 +4,7 @@ Spring 2020
 
 #  Multithreaded MergeSort with Fork-Join
 
-For this assignment, you will take an implementation of the MergeSort algorithm and parallelize it.  The MergeSort algorithm itself is particularly elegant and simple.  We'll base this assignment on a web implementation.[^footnote] You've been provided with some [starter code](https://github.com/acgrissom/courses/tree/master/algorithms/code/parallel_mergesort).
+For this assignment, you will take an implementation of the MergeSort algorithm and parallelize it.  The MergeSort algorithm itself is particularly elegant and simple.  We'll base this assignment on a web implementation.[^1] You've been provided with some [starter code](https://github.com/acgrissom/courses/tree/master/algorithms/code/parallel_mergesort).
 
 This assignment is designed to be educational but not particularly verbose; so, don't make it more complicated than it is.  If you're writing a copious amounts of code for the required sections, you're doing something wrong.
 
@@ -53,7 +53,7 @@ For larger numbers, you may run into heap space issues if you naively read in yo
 3. Your report, written in Markdown or LaTeX, as a PDF.
 4. Instructions on how to run your code in a README.md
 
-[^footnote]: https://www.baeldung.com/java-merge-sort
+[^1]: https://www.baeldung.com/java-merge-sort
 
 
 
