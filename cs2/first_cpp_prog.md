@@ -27,9 +27,11 @@ Header guards prevent files from being included multiple times.  In your `lab2.h
 Compile the program with `g++`.
 
 ```
-g++ lab2.cpp -o lab2
+g++ lab2.cpp -o lab2 -std=c++11
 ```
 
-Also read through lecture 4 of the MIT OCW lecture notes, and be prepared with questions.
+The `-=std=c++11` flag ensures that you're using C++ 11, which is the version I'll assume you're using when grading your assignments.
+
+Also read through lecture 4 of the MIT OCW lecture notes, and be prepared with questions.  Note that modern C++ includes a `string` type, so it's no longer necessary to use pure character arrays to represent strings.
 
 https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-096-introduction-to-c-january-iap-2011/lecture-notes/
