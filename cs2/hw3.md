@@ -41,6 +41,10 @@ Submit to Canvas a file in the format `lastname_firstname.tar.gz` with your `.cp
 
 You may want to complete the debugging lab before working on this assignment.  In addition to the course notes, you may find the following references useful:
 
+
+
+https://www.cprogramming.com/tutorial/java/syntax-differences-java-c++.html
+
 http://faculty.cs.niu.edu/~mcmahon/CS241/c241man/node90.html
 
 https://www.w3schools.com/cpp/
