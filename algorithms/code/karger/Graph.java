@@ -112,30 +112,6 @@ public class Graph {
     {
 	//read from stdin
 	Graph graph = generateGraphFromText();
-	//         // 0------1 
-        // | \    | 
-        // |   \  | 
-        // |     \| 
-        // 2------3   */
-	// int V = 4;  // vertices in graph
-	// int E = 5;  // edges in graph
-	// Graph graph = new Graph(V, E);
-
-	// // add edge 0-1
-	// graph.edges.add(new Edge(0, 1));
-
-	// // add edge 0-2
-	// graph.edges.add(new Edge(0, 2));
-	
-	// // add edge 0-3
-	// graph.edges.add(new Edge(0, 3));
-
-	// // add edge 1-3
-	// graph.edges.add(new Edge(1, 3));
-	    
-	// // add edge 2-3
-	// graph.edges.add(new Edge(2, 3));
-
     }
 
     /**
