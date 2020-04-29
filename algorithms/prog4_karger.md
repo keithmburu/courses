@@ -108,10 +108,12 @@ function karger(G, t):
 		G = contract(G)
 	return cut
 
-cuts =[]
+
 function mincut(G):
-	for i in [0...tn^2]:
+	cuts =[]
+	for i in [0...cn^2]:
 		cut = karger(copy(G), 2)
+		cuts[i] = cut
 	return min(cuts);
 ```
 
@@ -156,11 +158,12 @@ function fastMincut(G):
 		cut = mincut(copy(G)) //run until 2 vertices (1 edge) uncontracted
 	else
 		t = G.|V|/sqrt(2) + 1
-		//run mincut n - n*sqrt(2) times, twice
-		G1 = fastMincut(copy(G), t)
-        G2 = fastMincut(copy(G), t))
+		//run mincut until t nodes remain, twice
+		G1 = karger(copy(G), t)
+        G2 = karger(copy(G), t))
         cut = min(G1.cut, G2.cut)
-	return cut
+        cuts[i] = cut
+	return min(cuts)
 ```
 
 The `fastMincut` function makes two copies of the graph with each recursive call--first 2, then 4, 8, etc--, just as in Merge Sort.  As the graph contracts, we increase the number of copies of each of the smaller graphs through the recursion, i.e., the number of copies of the graph is inversely proportional to the graph's size at a given step.  Since the probability of failure is increased when the graph is smaller, by having multiple copies of the graph, we can counter this, increasing the probability that one of the copies finds the mincut.  See [Section 1.2 here](https://courses.cs.washington.edu/courses/cse521/16sp/521-lecture-1.pdf).  The end result is an $O(n^2 \log^3 {n})$ algorithm, a vast improvement over the original algorithm.
@@ -209,11 +212,11 @@ For the parallelized algorithm, you'll need to store all of the min-cuts of the 
 
 ### Implement Karger-Stein  (30pts)
 
-* Write the function `fastKarger()`.  This function is almost exactly the same as `karger()`.
+* Write the function `fastKarger()`.  This function is almost exactly the same as `karger()`, but instead of stopping at 2 it stops at t.  (You may simply modify the original function.  In the pseudocode above, it is simply called `karger()`).
 
 * Then write the function `fastMincut()`. Remember to use copies of the graph and not the original.
 
-* Parallelize `fastMintcut()`.  You can do this by extending `RecursiveAction` and calling `fastMinCut()` inside of `compute()`, which you must override.  (Recall that `compute()` is used by classes that extend`RecursiveAction` but `run()` is used by classes that implement `Runnable`.)  Just as in the Merge Sort assignment, you can call `invokeAll()`.  If you prefer, you may write `fastMincut()` and `mincut` in different Java files and classes.  You can use the same `ConcurrencySkipList` to store the min-cuts and share it among the threads.
+* Parallelize `fastMintcut()`.  You can do this by extending `RecursiveAction` and calling `fastMinCut()` inside of `compute()`, which you must override.  (Recall that `compute()` is used by classes that extend`RecursiveAction` but `run()` is used by classes that implement `Runnable`.)  Just as in the Merge Sort assignment, you can call `invokeAll()`.  If you prefer, you may write `fastMincut()` and `mincut` in different Java files and classes.  You can use the same `ConcurrencySkipList` to store the cuts and share it among the threads.
 
 ### Report (30pts)
 
