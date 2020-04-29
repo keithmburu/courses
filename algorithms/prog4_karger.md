@@ -97,20 +97,20 @@ Karger's Algorithm finds min-cuts by repeatedly shrinking the graph through edge
 
 If we run the algorithm for $k$ iterations, the probability of success is $\left(\frac{2}{n(n-1)}\right)^k$; so,  the probability of failure is $\left(1 -\frac{2}{n(n-1)}\right)^k$. 
 
-Thus, if we run the algorithm $\frac{n(n-1)}{2}$ times, the probability of failure is $\left(1 -\frac{2}{n(n-1)}\right)^{\frac{n(n-1)}{2}}\leq \frac{1}{e}$.   Therefore, if we run the algorithm $\frac{n (n – 1)}{2}\ln n$ times, the probability of failure is less than or equal to $\left(\frac{1}{e}\right)^{\ln n} = \frac{1}{n}$.  Thus, running Karger's algorithm $O(n^2 \log n)$ times produces a minimum cut with a probability approaching 1. (See ["The Success Probability"](https://web.stanford.edu/class/archive/cs/cs161/cs161.1138/lectures/11/Small11.pdf).)
+Thus, if we run the algorithm $\frac{n(n-1)}{2}$ times, the probability of failure is $\left(1 -\frac{2}{n(n-1)}\right)^{\frac{n(n-1)}{2}}\leq \frac{1}{e}$.   Therefore, if we run the algorithm $\frac{n (n – 1)}{2}\ln n$ times, the probability of failure is less than or equal to $\left(\frac{1}{e}\right)^{\ln n} = \frac{1}{n}$.  As a result, running Karger's algorithm $O(n^2 \log n)$ times produces a minimum cut with a probability approaching 1. (See ["The Success Probability"](https://web.stanford.edu/class/archive/cs/cs161/cs161.1138/lectures/11/Small11.pdf).)
 
-In practical terms, if we run the algorithm to completion $cn^2$ times, where $c$ is some constant, i.e., $O(n^2)$, we  will almost certainly find the minimum cut.  Since one run of Karger's algorithm can be implemented in $O(n^2)$ time, if we run it $O(n^2 \log n)$ times, the total runtime is on the order of $O(n^4 \log n)$. 
+In practical terms, if we run the algorithm to completion $cn^2$ times, where $c$ is some constant, i.e., $O(n^2)$ times, we  will almost certainly find the minimum cut.  Since one run of Karger's algorithm can be implemented in $O(n^2)$ time, if we run it $O(n^2 \log n)$ times, the total runtime is on the order of $O(n^4 \log n)$. 
 
 ```pseudocode
 function karger(G, t):
-	cut = infinity
 	while G.|V| > t:
 		G = contract(G)
-	return cut
+	return G.|E|
 
 
 function mincut(G):
 	cuts =[]
+	n = G.|V|
 	for i in [0...cn^2]:
 		cut = karger(copy(G), 2)
 		cuts[i] = cut
@@ -155,7 +155,8 @@ The Karger-Stein algorithm is an improved version of Karger's Algorithm that ach
 function fastMincut(G):
 	cut = infinity
 	if G.|V| < 6:
-		cut = mincut(copy(G)) //run until 2 vertices (1 edge) uncontracted
+		cut = mincut(copy(G)) 
+		//run normal mincut on small graph
 	else
 		t = G.|V|/sqrt(2) + 1
 		//run mincut until t nodes remain, twice
@@ -175,8 +176,7 @@ The `fastMincut` function makes two copies of the graph with each recursive call
 
 Parallelization of Karger's algorithm is simple.  As [Karger and Stein note](https://dl.acm.org/doi/pdf/10.1145/234533.234534)  in Section 6.3 of their paper:
 
-> Parallelizing the previous algorithms is simple. To generate the permutation, given a list of edges, we
-> simply assign one processor to each edge and have it generate the (approximately) exponentially distributed score for that edge in polylogarithmic time. We then use a parallel sorting algorithm on the resulting scores.
+> Parallelizing the previous algorithms is simple. To generate the permutation, given a list of edges, we simply assign one processor to each edge and have it generate the (approximately) exponentially distributed score for that edge in polylogarithmic time. We then use a parallel sorting algorithm on the resulting scores.
 
 In practical terms for a multi-core machine, since each instance of `contract` uses its own copy of the graph, we can run simply assign each run of `mincut` its own thread.   
 
@@ -198,7 +198,7 @@ The current implementation assumes an unweighted graph (in which all edges have 
 
 Much of the code here is irrelevant to the assignment, so feel free to ignore the gritty details of the union-find implementation of edge contraction.  What you need to know is that each `Graph` has a `vertices` variable that is decremented whenever a contraction is done, but the number of contracted edges is local to the `karger()` function (independent of the graph).
 
-Currently, the algorithm only runs once once, yielding a low probability of success.  It needs to run $tn^2$ times, where $t$ is some constant, to achieve a high probability of success.  To do this, write the appropriate loop inside of a function called `mincut(Graph g)`.
+Currently, the algorithm only runs once once, yielding a low probability of success.  It needs to run $cn^2$ times, where $c$ is some constant, to achieve a high probability of success.  To do this, write the appropriate loop inside of a function called `mincut(Graph g)`.
 
 Remember to work with a *copy* of the original graph by using the provided copy constructor.  Each `Graph` object stores a copy of its vertex contraction history.   
 
