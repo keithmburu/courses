@@ -184,13 +184,15 @@ Parallelization of the Karger-Stein algorithm can be done in the fork-join frame
 
 This assignment is 100 points, but it is possible to earn more.
 
-You have been provided with Java code for the basic Karger's algorithm (using a [version written in C at GeeksforGeeks](https://www.geeksforgeeks.org/kargers-algorithm-for-minimum-cut-set-1-introduction-and-implementation/)  as a reference -- see the link for a basic explanation of the logic, but it's not necessary to understand the details of the contraction implementation for this assignment.)  
+You have been provided with Java code for the basic Karger's algorithm (using a [version written in C at GeeksforGeeks](https://www.geeksforgeeks.org/kargers-algorithm-for-minimum-cut-set-1-introduction-and-implementation/)  as a reference -- see the link for a basic explanation of the logic, but it's not necessary to understand the details of the contraction implementation for this assignment.)  Run it on one of the provided graphs to get a feel for what to expect.
 
+### Add support for edge-weighted graphs. (10pts)
 
+The current implementation assumes an unweighted graph (in which all edges have a weight of 1).  The `Edge` class already stores the weight data for the graph read in from `stdin`.  Instead of counting removed edges, sum up removed weights.  This is a one-line change.
 
 ### Implement `mincut()` (20pts)
 
-Much of the code here is irrelevant to the assignment, so feel free to ignore the gritty details of the union-find implementation of edge contraction.  What you need to know is that each `Graph` has a `vertices` variable that is decremented whenever a contraction is done, but the number of contracted edges is local to the `fastKarger()` function (independent of the graph).
+Much of the code here is irrelevant to the assignment, so feel free to ignore the gritty details of the union-find implementation of edge contraction.  What you need to know is that each `Graph` has a `vertices` variable that is decremented whenever a contraction is done, but the number of contracted edges is local to the `karger()` function (independent of the graph).
 
 Currently, the algorithm only runs once once, yielding a low probability of success.  It needs to run $tn^2$ times, where $t$ is some constant, to achieve a high probability of success.  To do this, write the appropriate loop inside of a function called `mincut(Graph g)`.
 
@@ -198,19 +200,20 @@ Remember to work with a *copy* of the original graph by using the provided copy 
 
 ### Parallelize `mincut()` (20pts)
 
-As in the matrix multiplication assignment, this is easily parallelizable by simply running each instance of `mincut()` in its own thread.  Modify the class so that it `implements Runnable` and override the `run()` method, which should just call `mincut()` with the appropriate arguments (which should be passed in to the constructor).  
+As in the matrix multiplication assignment, this is easily parallelizable by simply running each instance of `mincut()` in its own thread and waiting for them all to complete with `join()` or an `Executor`.  Modify the class so that it `implements Runnable` and override the `run()` method, which should just call `mincut()` with the appropriate arguments (which should be passed in to the constructor).  
 
 #### Retrieving the values
 
 For the parallelized algorithm, you'll need to store all of the min-cuts of the various runs of `mincut()` and eventually print out the smallest one.  There are several ways of tackling this, but using an `ArrayList` is not recommended, since they are not thread safe by default. Fortunately, Java provides a thread-safe list that will keep all of the items sorted, called [java.util.concurrent.ConcurrencySkipList](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ConcurrentSkipListSet.html).  Just keep a reference to this list in every instance of the class and add the smallest cut of each run once it has completed.  The minimum of all of these runs will be the min-cut (provided that the algorithm was successful).  It's also possible to use a basic array by designating each element in the array to store the smallest cut for a given instance, but this is more complicated.
 
-### Add support for edge-weighted graphs. (10pts)
-
-The current implementation assumes an unweighted graph (in which all edges have a weight of 1).  The `Edge` class already stores the weight data for the graph.  Instead of counting removed edges, you need to sum up removed weights.  This is an extremely simple change.
 
 ### Implement Karger-Stein  (30pts)
 
-Write the function `fastMincut()`.  You can do this by extending `RecursiveAction` and calling `fastMinCut` inside of `compute()`, which you must override.  (Recall that `compute()` is used by classes that extend`RecursiveAction` but `run()` is used by classes that implement `Runnable`.)  Just as in the Merge Sort assignment, you can call `invokeAll()`.  If you prefer, you may write `fastMincut()` and `mincut` in different Java files and classes.  You can use the same `ConcurrencySkipList` to store the min-cuts.
+* Write the function `fastKarger()`.  This function is almost exactly the same as `karger()`.
+
+* Then write the function `fastMincut()`. Remember to use copies of the graph and not the original.
+
+* Parallelize `fastMintcut()`.  You can do this by extending `RecursiveAction` and calling `fastMinCut()` inside of `compute()`, which you must override.  (Recall that `compute()` is used by classes that extend`RecursiveAction` but `run()` is used by classes that implement `Runnable`.)  Just as in the Merge Sort assignment, you can call `invokeAll()`.  If you prefer, you may write `fastMincut()` and `mincut` in different Java files and classes.  You can use the same `ConcurrencySkipList` to store the min-cuts and share it among the threads.
 
 ### Report (30pts)
 
