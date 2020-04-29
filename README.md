@@ -1,1 +1,1 @@
-Assignments can be exported to PDF with equations with [Typora](typora.io).
+Assignments can be exported to PDF with equations and figures with [Typora](http://typora.io).
