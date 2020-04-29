@@ -153,7 +153,7 @@ The Karger-Stein algorithm is an improved version of Karger's Algorithm that ach
 
 ```pseudocode
 function fastMincut(G):
-	G.cut = infinity
+	cut = infinity
 	if G.|V| < 6:
 		cut = mincut(copy(G)) //run until 2 vertices (1 edge) uncontracted
 	else
@@ -162,10 +162,9 @@ function fastMincut(G):
 		G1 = karger(copy(G), t)
 		G2 = karger(copy(G), t)
 		cut1 = fastMincut(copy(G1))
-        cut1 = fastMincut(copy(G2))
+        cut2 = fastMincut(copy(G2))
         cut = min(cut1, cut2)
-        cuts[i] = cut
-	return min(cuts)
+	return cut
 ```
 
 The `fastMincut` function makes two copies of the graph with each recursive call--first 2, then 4, 8, etc--, just as in Merge Sort.  As the graph contracts, we increase the number of copies of each of the smaller graphs through the recursion, i.e., the number of copies of the graph is inversely proportional to the graph's size at a given step.  Since the probability of failure is increased when the graph is smaller, by having multiple copies of the graph, we can counter this, increasing the probability that one of the copies finds the mincut.  See [Section 1.2 here](https://courses.cs.washington.edu/courses/cse521/16sp/521-lecture-1.pdf).  The end result is an $O(n^2 \log^3 {n})$ algorithm, a vast improvement over the original algorithm.
