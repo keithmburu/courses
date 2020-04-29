@@ -1,6 +1,8 @@
 Data Structure and Algorithms
 
-Ursinus College, Spring 2019
+Ursinus College, Spring 2020
+
+Alvin Grissom II
 
 # Programming Assignment 4: Karger-Stein Algorithm for Min-cut
 
