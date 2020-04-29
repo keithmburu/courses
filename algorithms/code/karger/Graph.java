@@ -3,16 +3,52 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
 public class Graph {
-    final int V, E; //original number of vertices and edges
-    final List<Edge> edges; //graph defined by edges
-    List<Subset> subsets;
-    int vertices; //vertices remaining after contraction
-    
+    private final int V, E; //original number of vertices and edges
+    private final List<Edge> edges; //graph defined by edges
+    private List<Subset> subsets;
+    private int vertices; //vertices remaining after contraction
+
     public Graph (int V, int E) {
 	this.V = V;
 	this.E = E;
+	this.vertices = V;
 	this.edges = new ArrayList<Edge>(E);
 	this.subsets = new ArrayList<Subset>(V); 
+    }
+
+    public int getOriginalVertexCount() {
+	return V;
+    }
+
+    public int getOriginalEdgesCount() {
+	return E;
+    }
+
+    public List<Edge> getEdges() {
+	return edges;
+    }
+
+    public List<Subset> getSubsets() {
+	return subsets;
+    }
+
+
+    /**
+     * Decreases number of vertices after contraction.
+     **/
+    public void decrementVertexCount() {
+	vertices--;
+    }
+
+    /**
+     * Returns count of vertices afer contraction
+     **/
+    public int getCurrentVertexCount() {
+	return vertices;
+    }
+
+    public void setCurrentVertexCount(int vertices) {
+	this.vertices = vertices;
     }
 
     /**
@@ -23,6 +59,7 @@ public class Graph {
     public Graph(Graph o) {
 	this.V = o.V;
 	this.E = o.E;
+	this.vertices = o.getCurrentVertexCount();
 	this.edges = new ArrayList<Edge>(E);
 	for(Subset s : o.subsets) {
 	    this.subsets.add(new Subset(s));

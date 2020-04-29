@@ -18,7 +18,7 @@ public class Karger extends RecursiveAction {
     }
 
     public void compute() {
-	//TODO
+	//TODO for parallel Karger-Stein
     }
     
     public static void main(String[] args) {
@@ -29,7 +29,7 @@ public class Karger extends RecursiveAction {
     }
 
     public void run() {
-	//TODO
+	//TODO for parallel Karger
     }
 
 
@@ -48,55 +48,37 @@ public class Karger extends RecursiveAction {
 
 
     /**
-     * Karger
+     * Runs one iteration
+     * Karger's algorithm down to t vertices.
+     * Unless you intend to modify original graph,
+     * it is recommended that you copy the graph 
+     * before calling.
+     * @param graph graph that will be contracted
+     * @return cut weight after run
      **/
+
     public static double fastKarger(Graph g, double t) {
-	List<Edge> edges = g.edges;
-	
-	// Create V subsets for single vertices
-	for (int v = 0; v < g.V; v++) {
-	    g.subsets.add(new Subset());
-	    g.subsets.get(v).parent = v;
-	    g.subsets.get(v).rank = 0;
-	}
-	//initialize contracted verices count
-	g.vertices = g.V;
-	
-	while (g.vertices > t) {
-	    // Pick a random edge from all edges
-	    int i = (int)(Math.random() * g.E);
-	    
-	    // Find vertices (or sets) of two corners of current edge
-	    int subset1 = Subset.find(g.subsets, edges.get(i).s());
-	    int subset2 = Subset.find(g.subsets, edges.get(i).t());
-	    if (subset1 == subset2) {
-		continue;
-	    }
-	    else {
-		g.vertices--; //count removed vertices
-		//merge vertices of contracted edge
-		Subset.union(g.subsets, subset1, subset2);
-	    }
-	}
-	
-	double cutedges = 0D;
-	for (int i = 0; i < g.E; i++) {
-	    int subset1 = Subset.find(g.subsets, g.edges.get(i).s());
-	    int subset2 = Subset.find(g.subsets, g.edges.get(i).t());
-	    if (subset1 != subset2) {
-		cutedges++; //TODO: chanage to handle weights
-	    } 
-	}
-	return cutedges;
-	
+	double cutWeight = Double.POSITIVE_INFINITY;
+	//TODO: Implement this function.  Exactly the same
+	// as karger(), but stops at t vertices.
+	return cutWeight;
     }
-	
+
+    /**
+     * Runs one iteration
+     * Karger's algorithm down to 2 vertices.
+     * Unless you intend to modify original graph,
+     * it is recommended that you copy the graph 
+     * before calling.
+     * @param graph graph that will be contracted
+     * @return cut weight
+     **/
     public static double karger(Graph graph) {
 	// Get data of given graph
-	int V = graph.V;
-	int E = graph.E;
-	List<Edge> edges = graph.edges;	
-	List<Subset> subsets = graph.subsets;
+	int V = graph.getOriginalVertexCount();
+	int E = graph.getOriginalEdgesCount();
+	List<Edge> edges = graph.getEdges();	
+	List<Subset> subsets = graph.getSubsets();
 	
 	for (int v = 0; v < V; v++) {
 	    subsets.add(new Subset());
@@ -104,8 +86,8 @@ public class Karger extends RecursiveAction {
 	    subsets.get(v).rank = 0;
 	}
 	
-	graph.vertices = V;    
-	while (graph.vertices > 2) {
+	graph.setCurrentVertexCount(V);    
+	while (graph.getCurrentVertexCount() > 2) {
 	    // Pick a random edge
 	    int i = (int)(Math.random() * E);
 	    
@@ -115,22 +97,22 @@ public class Karger extends RecursiveAction {
 	    if (subset1 == subset2) {
 		continue;
 	    } else {
-		graph.vertices--;
+		graph.decrementVertexCount();
 		Subset.union(subsets, subset1, subset2);
 	    }
 	} //while
 	
 
-	double cutedges = 0D;
+	double cutEdges = 0D;
 	for (int i = 0; i < E; i++) {
 	    int subset1 = Subset.find(subsets, edges.get(i).s());
 	    int subset2 = Subset.find(subsets, edges.get(i).t());
 	    if (subset1 != subset2) {
-		cutedges++; //TODO: change to handle weights
+		cutEdges++; //TODO: change to handle weights
 
 	    } 
 	}
-	return cutedges;
+	return cutEdges;
     }
 }
 
