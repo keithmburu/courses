@@ -160,8 +160,10 @@ function fastMincut(G):
 		t = G.|V|/sqrt(2) + 1
 		//run mincut until t nodes remain, twice
 		G1 = karger(copy(G), t)
-        G2 = karger(copy(G), t))
-        cut = min(G1.cut, G2.cut)
+		G2 = karger(copy(G), t)
+		cut1 = fastMincut(copy(G1))
+        cut1 = fastMincut(copy(G2))
+        cut = min(cut1, cut2)
         cuts[i] = cut
 	return min(cuts)
 ```
