@@ -57,20 +57,20 @@ public class Graph {
      * @param o original graph
      **/
     public Graph(Graph o) {
-	this.V = o.V;
-	this.E = o.E;
+	this.V = o.getOriginalVertexCount();
+	this.E = o.getOriginalEdgesCount();
 	this.vertices = o.getCurrentVertexCount();
 	this.edges = new ArrayList<Edge>(E);
-	for(Subset s : o.subsets) {
+	for(Subset s : o.getSubsets()) {
 	    this.subsets.add(new Subset(s));
 	}
-	for(Edge e : o.edges) {
+	for(Edge e : o.getEdges()) {
 	    this.edges.add(new Edge(e));
 	}
     }
 
     /**
-     * Generae new graph from stdin
+     * Generate new graph from stdin
      * @return new graph
      **/
     public static Graph  generateGraphFromText() {
