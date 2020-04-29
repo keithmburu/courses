@@ -47,7 +47,7 @@ graph LR
 	
 ```
 
-Another possible cut is $\{a, b\}$ and $\{b, d\}$, which has  a value of 3.
+Another possible cut is $\{a, c\}$ and $\{b, d\}$, which has  a value of 3.
 
 ```mermaid
 graph LR
