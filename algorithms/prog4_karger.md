@@ -163,8 +163,8 @@ function fastMincut(G):
 		G1 = karger(copy(G), t)
 		G2 = karger(copy(G), t)
 		cut1 = fastMincut(copy(G1))
-        cut2 = fastMincut(copy(G2))
-        cut = min(cut1, cut2)
+		cut2 = fastMincut(copy(G2))
+	        cut = min(cut1, cut2)
 	return cut
 ```
 
