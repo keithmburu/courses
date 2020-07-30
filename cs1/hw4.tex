@@ -1,0 +1,227 @@
+\documentclass[10pt]{article}
+
+ \usepackage[margin=1in]{geometry} 
+
+\usepackage{amsmath,amsthm,amssymb,amsfonts, listings, hyperref}
+
+\usepackage{lmodern}
+
+\usepackage{minted}
+
+\newcommand{\N}{\mathbb{N}}
+
+\newcommand{\Z}{\mathbb{Z}}
+
+ 
+
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+
+
+ 
+
+\begin{document}
+
+ 
+
+
+
+\title{CS174: Midterm Project}
+
+\author{Alvin Grissom II}
+
+\maketitle
+
+You will implement a program that computes statistics on a Question Answering data set.  Question answering (QA) is a fundamental problem in artificial intelligence (AI) and computational linguistics.  For this assignment, we won't be answering questions.  Instead, we'll just collect data on some Wikipedia articles associated with them.
+
+ \begin{problem}{1}
+
+ \textbf{Get the Data and Split It (10pts)}
+
+ Go to \url{https://cs.umd.edu/~miyyer/qblearn/} and download the 31MB file.  It is a tar.gz (GZIP) file.  You may be familiar with ZIP (compressed) files.  GZIP is another compression format. To unzip it, type
+
+ \begin{minted}[obeytabs, mathescape, gobble=2]{bash}
+
+  tar -xvf [filename]
+
+\end{minted}
+
+
+
+Navigate to the wiki directory.  You'll see some text files with Wikipedia documents.  First, combine all of these into one file.  You may recall that the \texttt{cat} command (for con\textbf{cat}enate) combines files.  For example, 
+
+ \begin{minted}[obeytabs, mathescape, gobble=2]{bash}
+
+    cat a.txt b.txt c.txt > combined.txt
+
+\end{minted}
+
+will print out these files in succession.  But we need to insert a new line between each file.  
+
+For more information on \texttt{cat}, \texttt{tar}, or other Unix programs, you can type, for example:
+
+ \begin{minted}[obeytabs, mathescape, gobble=2]{bash}
+
+    cat --help
+
+\end{minted}
+
+
+
+The Unix terminal (bash) has its own scripting language, and this can do that for us.  You can type the following on the command line. (On OSX, you \texttt{may} have to delete the \texttt{\textbackslash\"}.)
+
+
+
+\begin{minted}{bash}
+
+    for f in \"*.txt\"; do cat $f; echo; done
+
+\end{minted}
+
+Save it in a file called \textit{combine\_files.sh}.  You can run this file by typing 
+
+ \begin{minted}[obeytabs, mathescape, gobble=2]{bash}
+
+    sh combine_files.sh
+
+\end{minted}
+
+This is called a \textbf{shell script}. 
+
+Modify this script to output to a single file containing all of the text.  Name the new file \texttt{all\_wiki.txt}
+
+\end{problem}
+
+\begin{problem}{Part 2} 
+
+\textbf{Data Cleaning (30pts)}
+
+Write a Java class, called Normalize.java, or C++ program, called normalize, that lower-cases every word and removes punctuation.  Consider the following code:  
+
+\begin{minted}[linenos, mathescape, gobble=2, frame=lines]{java}
+
+    String s = ``This is a typical, un-normalized string.'';
+
+    s = s.toLowerCase(); //lower-cases everything in s
+
+    s = s.replaceAll(``[^a-zA-Z ]'', "); //removes all non-alphanumeric characters
+
+\end{minted}
+
+Call your new, cleaned file \texttt{wiki\_clean.txt}.
+
+
+
+\textbf{Bonus (10pts)} In your program remove words from this stop words list:\url{https://github.com/Alir3z4/stop-words/blob/master/english.txt}.
+
+\end{problem}
+
+
+
+\begin{problem}{Part 3}
+
+\textbf{Collecting Statistics (30pts)}
+
+A HashMap is a data structure that has a \textit{key} and a \textit{value}.  The key allows you to look up the value associated with that key.  You can think of it as storing ordered pairs.  Unlike lists and arrays, \textit{maps} are unordered, but they typically provide fast access to the data that they store. In C++, you would use an \texttt{unordered_map}.
+
+
+
+For example:
+
+\begin{minted}[linenos, obeytabs, mathescape,gobble=2, frame=lines]{java}
+
+    HashMap<String,Integer> myMap = new HashMap<>();
+
+    myMap.put(``hello'',1);
+
+    myMap.put(``goodbye'',23);
+
+    System.out.println(myMap.get(``hello''));
+
+\end{minted}
+
+\end{problem}
+
+ 
+
+ In this code segment, the key is a String, and the value is an Integer.  On the second line, we insert the pair (``hello'',1) into the HashMap.  This is called a \textbf{map} because it \textit{maps} the key (``hello'') to the value (1).  On the third line, we retrieve the value by querying the map with the key ``hello'' and print it.  This will print ``1'' to the screen.  The key must be of the same type as the first argument in the angled brackets of the HashMap definition (in this case, ``String''), and the value must be the same type of that in the second position.  This HashMap maps Strings $\rightarrow$ Integers.
+
+ 
+
+ Write a Java program to count the number of times each word appears in \textit{wiki\_clean.txt}.  Your output should print out the word, a tab, and the number of times it appears.  For example:
+
+ 
+
+\begin{minted}[obeytabs, mathescape, gobble=2]{bash}
+
+  the200
+
+  a50
+
+  that 27
+
+\end{minted}
+
+
+
+Output this to \texttt{all\_counts.tsv}.
+
+(TSV stands for ``tab-separated file,'' as opposed to ``comma-separated file'' (CSV).)
+
+Your numbers will be different, and your list will be longer.  If you need to iterate over your HashMap, you can use the HashMap's \texttt{entrySet()} method with the \textbf{for-each loop}.  The \texttt{entrySet()} method returns the set of keys from the HashMap.\footnote{A \textbf{set} is the same as a mathematical set.  It contains no duplicates and no order, but you can iterate over it.}
+
+\begin{minted}[linenos, obeytabs, mathescape,gobble=2, frame=lines]{java}
+
+    import java.util.HashMap;
+
+    import java.util.Set;
+
+    class HashToSet {
+
+        public static void main(String[] args) {
+
+            HashMap h = new HashMap<String, Integer>();
+
+            h.put(``word1'', 1);
+
+            System.out.println(h.get(``word1''));
+
+            Set<String> keys = h.keySet();
+
+            for(String key: keys) {
+
+                System.out.println(key + ``:'' + h.get(key));
+
+            }
+
+        }
+
+    }
+
+\end{minted}
+
+
+
+\begin{problem}{Part 4} 
+
+\textbf{Comparing Word Frequency Distributions (20pts)}
+
+Pick at least three individual Wikipedia files that are interesting to you, repeat this process, and compare their word distributions to each other and to that of the whole dataset.  Include with your submission a PDF or Markdown file that explains interesting patterns in what you found.  \textbf{Bonus (10pts)}.  Include graphs in your PDF that illustrate these differences.
+
+\end{problem}
+
+\begin{problem}{Part 5} 
+
+\textbf{Automation (10pts)}
+
+Create a new bash script, called \textit{run.sh}, which reproduces everything you did to get the final result.  You only need to type the commands, in order, exactly as you ran them in your run.sh file.  In the end, it should generate a all of the intermediate files and \textit{all\_counts.tsv}.
+
+
+
+Upload your .java and .sh files to canvas. \textbf{Do not} upload your dataset or output files.  I should be able to generate them by running your scripts from the wiki directory.
+
+\end{problem}
+
+\end{document}
