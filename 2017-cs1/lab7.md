@@ -12,7 +12,7 @@ In this lab, you will write some simple rules to identify whether a  word is a n
 
 Do **not** write a lot of rules that simply enumerate the words themselves. Instead, use the `startsWith()`, `endsWith()` (and other?)[ String functions ](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html) to use as few rules as possible.  Look for patterns in the words that you can exploit.  The goal, as in science, is simplicity and generalizability. 
 
-Hint: the order in which you use your if-statements, if-else  statements, and else-statements can make be differences in accuracy. 
+Hint: the order in which you use your if-statements, if-else  statements, and else-statements can make large differences in accuracy. 
 
 Can you beat your classmates on accuracy? I encourage you to work in groups to get the accuracy as high as possible. It can often be  helpful to go to the board to try to figure this stuff out as a team.
 
