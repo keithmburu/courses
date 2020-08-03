@@ -1,0 +1,39 @@
+# Topic Modeling
+
+**Topic modeling** is an unsupervised way of characterizing text in terms of the likelihood of certain words.  We can characterize a document or a set of documents in terms of a set of "topics." A **topic** is a probability distribution over words.  Given some vocabulary $V$ of words, a topic assigns a probability to each word.  The topic itself is the probability distribution.  We assume that the text, which we'll call a **document** (though it could be something shorter, like a sentence) was generated from these topics.  A **topic model** is a probability distribution over topics -- a probability distribution of probability distributions.  The idea is that a topic gives some sense of the importance of each word in describing the content of a document; so, if the word "life" has a probability of 60%, the "topic" described by a distribution should be 60% "life"-related.  
+
+## Latent Dirichlet Allocation
+
+Topic modeling is also known as **latent Dirichlet allocation** (LDA).  ("Dirichlet" is pronounced "dirish-lay").  This is because its is built on the **Dirichlet distribution**.  LDA is a **hierarchical Bayesian model**.  It's "hierarchical" because a distribution gives rise to another distribution.  In statistical language, we *sample* a probability distribution from a probability distribution.  The distribution we're sample *from* (the topic model) is a distribution whose events are themselves distributions (topics), whose events are words.  Thus, there are three levels to this hierarchical sampling.  
+
+The **Dirichlet distribution** is a distribution of distributions.  For several reasons, including mathematical convenicne, Dirichlet distributions are often used as Bayesian priors.  We discussed priors in previous sections, but here, instead of just being a number, our prior is an entire distribution.  This means that the prior itself is probabilistic, not deterministic.  Often, we think in terms of a fixed prior: for example, we might count the number of blue balls in a jar and divide by the total number of all balls in a jar to calculate the prior probability of picking a blue ball from the jar randomly.  But what if we don't know exactly what the jar looks like, or exactly what its contents are?  What if, instead, we know that the balls tend to have certain distributions of blue versus red balls with certain probabilities?  We could model this as a prior distribution and sample from it a large number of times to estimate our total probability.   This is a simulation that we run for a while and examine the results of.  This is a generative model, where the results of the model come from successive distribution samplings.  Topic modeling is a bag of words model that does not consider any order, so we'll call a document $\mathbf{w}$ (for a vector of words), since a document is just a set of words.   You can represent a single word $w$ as a vector in which one unique value is set to $1$ and the rest are $0$.  (When using neural networks, this is called the "one-hot-vector" representation of words.) 
+
+**Generative modeling** tells a probabilistic story about how our data comes to be, and we tell this story in terms of probability distributions being sampled from other distributions.  The idea here is that there is some probabilistic process that gives rise to our data; this is the "generative story."  Of course, the real world consists of more than probability distributions, which are just a way of modeling events based on frequency, but if the story is a good model, it can still be useful.  We want these generative stories to produce results consistent with the actual data.   The generative story told in LDA describes how *topics*  give rise to our *documents*.
+
+The Dirichlet distribution is a family of distributions, parametrized by a hyperparameter vector $\mathbf{\alpha}$ of positive real numbers, and we write it as $\text{Dir}(\mathbf{\alpha})$.  The chosen $\alpha$ terms change the nature of the distribution; we'll discuss this later. The simple version of the generative story of how our corpus of documents comes to be, given a vocabulary size of $N$ words is the following:
+
+1. Sample a distribution of topics $\theta$ from $\text{Dir}(\mathbf{\alpha})$.
+
+2. For each of the N words $w_n$:
+   
+   a.  Sample a topic distribution $z_n$ from $\text{Multinomial}(\mathbf{\theta})$:
+   
+   b.  Sample a word $w_n$ from the topic distribution $z_n$.
+
+Recall that the multinomial distribution is a generalization of the binomial distribution, which models events whose probabilities are not influenced by previous events, e.g., coin flips. Binomial distributions model only two possible events (heads or tails); multinomial distributions model more (sides of a die).  So, sampling from a multinomial distribution implies that what we sampled previously has no effect on what we're sampling currently: in this case, we're sampling entire distributions over topics.  The probability of the topic is determined by the distribution it's being sampled from, i.e., the distribution generating it. First, we sample our distribution of topics; then we sample $N$ topics from this distribution, and from each topic distribution we sample a word.  If we wanted to be even more generative, we could sample $N$, the number of words, as the first step. In fact, the original paper does this, but I've left this out for simplicity, and we can treat $N$ as a hyperparameter if we know the number of topics we'd like in advance.  
+
+Of course, the topics are not speficied in the documents.  They are an abstract concept that we have created to tell our story.  We *assume* that these topics exist as part of the process of generatiing the documents we observe.  The topics are *unobserved*, that is, **latent.**  We'll have to perform some inferential tricks to uncover them.
+
+### The Dirichlet Distribution
+
+Our entire generative story begins with the Dirichlet distribution, which births our other distributions.  The Dirichlet is also known as the Multivariate Beta distribution, because the Dirichlet is a multivarible generalization of the Beta distribution in the same way that the multinomial is a generalization of the binomial.  Another way of saying this is that a Dirichlet in which $\mathbf{\alpha}$ has two values is a Beta.  The **concentration and distribution parameter** $\mathbf{\alpha}=(\alpha_1,\cdots, \alpha_n)$ is a vector of weights.  Each $\alpha_i$ corresponds to a $\theta_i$.  The values in $\mathbf{\alpha}$ determine how the events (distributions $\theta_i$ to be sampled) are distributed.  The values of $\alpha$ make the Dirichlet distribution more uniform or more skewed.  
+
+Let's consider the usual, symmetric case where  the values  of $\mathbf{\alpha}$ are all equal. Lower values of $\alpha$ mean that the distributions (topics) produced by the Dirichlet will be more sparse/uniform, where each word is equally likely. Higher values will make the distributions more dense, with some words more probable than others.
+
+In the case where every $$\alpha_i=1$, the prior will be entirely uniform in terms of the topics. If we use a higher $\alpha_i>1$, the t
+
+To understand this, consider how the Dirichlet can be visualized.
+
+The Dirichlet is multidimensional and can be visualized as a **simplex**, a multidimensional triangle or pyramid.  Each event to be sampled is a point on this simplex, and $\mathbf{\alpha}$ governs how they are distributed around it.  If all values in $\mathbf{\alpha}$ are the same, the distribution is called a **symmetric Dirichlet distribution**.  This means that each event is equally likely, as each event has the same probability mass.  Geometrically, this means that there shouldn't be any clusters where the points appear.  
+
+The *magnitude* of the values in $\mathbf{\alpha}$ determines where these points appear in the simplex.
