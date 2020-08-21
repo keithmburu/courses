@@ -8,7 +8,7 @@ Spring 2020
 
 # Semester Project
 
-Note: Due to this course unexpectedly being moved online, the one of the planned planned homework assignments has been combined with the final project. 
+Note: Due to this course unexpectedly being moved online, one of the planned planned homework assignments has been combined with the final project. 
 
 
 
