@@ -1,6 +1,6 @@
 Human-Computer Interaction
 
-Ursinug College
+Ursinus College
 
 Spring 2020
 
