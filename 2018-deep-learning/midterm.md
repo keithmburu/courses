@@ -64,7 +64,7 @@ D range: Paper is badly written with half-done experiments, but there is some sa
 11. Run your experiments multiple times to make sure that your results aren't a fluke.
 12. Document your hyper parameters, preprocessing, etc., so that someone reading your paper can replicate your work.
 13. If you find that you're running out of time, don't keep running far-fetched experiments; focus instead on the writing.
-14. This should be obvious, but if your dev set accuracy is still increasing, you're not finished training.
+14.If your dev set accuracy is still increasing, you're probably not finished training.
 15.  Describe your dataset.  In general, don't assume that the person reading your paper knows what you do.
 16. **Start early**.  There will be no extensions.
 
