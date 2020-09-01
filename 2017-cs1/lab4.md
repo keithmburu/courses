@@ -4,7 +4,7 @@ In this lab, you will continuously prompt the user to input words  from stdin. Y
 
 Your program must work with words that have both even and odd numbers of letters.
 
-BONUS: If the word is not an palinrome, print out the location of the first character mismatch after the comma.
+BONUS: If the word is not an palindrome, print out the location of the first character mismatch after the comma.
 
 For example: aabba has its first mismatch at position 1. So, you would print the following to stdout:
 
