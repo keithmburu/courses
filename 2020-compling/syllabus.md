@@ -28,7 +28,7 @@ In addition to the these topics, a significant portion of the course involves a 
 
 Throughout the semester, we will also read and discuss the book *Race After Technology*, by Ruha Benjamin, giving students the opportunity to wrestle with the implications of the technologies about which they will learn in the course.
 
-## Course Structure
+### Course Structure
 
 Due to the coronavirus pandemic, this course will be entirely online.  The course will also be largely "flipped."  This means that, prior to class time, students are expected to watch lectures and complete the required readings.  During the lecture time, then, students will come prepared with questions, which will be submitted beforehand.  Participation in the class discussion board will also be mandatory.  The course [schedule](schedule.md) is preliminary and subject to change as the semester progresses.
 
@@ -37,6 +37,8 @@ If students cannot attend lectures due to circumstances beyond their control, th
 ### Assignment Submission
 
 Assignments will be submitted to Moodle unless otherwise specified. Assignments not conforming to the specified guidelines will be returned ungraded, and a late penalty will be applied.
+
+All written assignments and reports must be written in Markdown or LaTeX.  The final project report must be written in LaTeX using a template for a major computational linguistics venue (ACL, EMNLP, Computational Linguistics, etc.).
 
 ### Late Policy
 
