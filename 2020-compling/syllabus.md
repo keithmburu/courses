@@ -14,6 +14,8 @@ Labs: Tuesday, 1:00-2:00 p.m. and 2:30-3:30 p.m.
 
 Texts: Race After Technology, by Ruha Benjamin; Speech and Language Processing, by Dan Jurafsky and James Martin
 
+Zoom URL: https://haverford.zoom.us/j/99742229426
+
 ---
 
 ## Course Description
@@ -46,7 +48,24 @@ Students are free to e-mail me for any reason.  However, professors receive too 
 
 ### Academic Honesty
 
-Some projects will be group-based, and all students are expected to substantially contribute  For individual assignments, students' work should be their own.  While it is natural to consult online sources, students should not copy source code or attempt to find solutions online.  Students should are required to either ask or answer at least one question per assignment on Piazza.
+Some projects will be group-based, and all students are expected to substantially contribute.  For individual assignments, students' work should be their own.  While it is natural to consult online sources, students should not copy source code or attempt to find solutions online.  Students are required to either ask or answer at least one question per assignment on Piazza.
+
+### Grading
+
+There are multiple categories for assignments, and certain assignments will be worth more than others in each category.  The points are divided as follows:
+
+| Category      | Percentage |
+| ------------- | ---------- |
+| Homework      | 35%        |
+| Midterm       | 15%        |
+| Participation | 10%        |
+| Final Project | 40%        |
+
+Participation includes participation in the online discussion board, participation during class lectures, and participation in in-class discussion.
+
+### Other
+
+Students who require accommodations of any kind should inform me in writing, preferably at the beginning of the semester.  Likewise, I encourage students who would like me to know their preferred pronouns or any other crucial information to inform me at the beginning of the semester.
 
 
 
