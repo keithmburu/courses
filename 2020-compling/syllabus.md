@@ -54,13 +54,13 @@ Some projects will be group-based, and all students are expected to substantiall
 
 There are multiple categories for assignments, and certain assignments will be worth more than others in each category.  The points are divided as follows:
 
-| Category          |      |      |
-| ----------------- | ---- | ---- |
-| Homework and Labs | 25%  |      |
-| Midterm           | 15%  |      |
-| Participation     | 10%  |      |
-| Final Project     | 50%  |      |
-|                   |      |      |
+| Category          | PERCENTAGE |      |
+| ----------------- | ---------- | ---- |
+| Homework and Labs | 25%        |      |
+| Midterm           | 15%        |      |
+| Participation     | 10%        |      |
+| Final Project     | 50%        |      |
+|                   |            |      |
 
 Participation includes participation in the online discussion board, participation during class lectures, and participation in in-class discussion.  
 
