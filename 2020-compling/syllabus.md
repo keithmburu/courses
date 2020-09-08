@@ -8,6 +8,8 @@ Haverford College
 
 Professor: Alvin Grissom II
 
+TLI Consulatant: Ebony Graham
+
 Lectures: Tuesday, Friday 9:30-11:00 a.m.
 
 Labs: Tuesday, 1:00-2:00 p.m. and 2:30-3:30 p.m.
@@ -46,7 +48,7 @@ All assignments are due on the day specified in Moodle.  Assignments submitted l
 
 ### Communication
 
-Students are free to e-mail me for any reason.  However, professors receive too much e-mail, and the best way to receive a fast response and jump to the front of the line is to contact me through Piazza.  I will check Piazza for student mail at 4:30pm every weekday. In general, messages received after 5pm on Friday or during holidays will be checked the next business day.   Students may also schedule one-on-one time through audio/video chat or through text-based live chatting, based on their preference.
+Students are free to e-mail me for any reason.  However, professors receive too much e-mail, and the best way to receive a fast response and jump to the front of the line is to contact me through [Piazza](http://www.piazza.com).  I will check Piazza for student mail at 4:30pm every weekday. In general, messages received after 5pm on Friday or during holidays will be checked the next business day.   Students may also schedule one-on-one time through audio/video chat or through text-based live chatting, based on their preference.  **Students are strongly encouraged to ask general questions on the message board instead of by e-mailing me directly.** This allows all students to benefit from the dialogue.
 
 ### Academic Honesty
 
