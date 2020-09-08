@@ -12,7 +12,7 @@ Lectures: Tuesday, Friday 9:30-11:00 a.m.
 
 Labs: Tuesday, 1:00-2:00 p.m. and 2:30-3:30 p.m.
 
-Texts: Race After Technology, by Ruha Benjamin; Speech and Language Processing, by Dan Jurafsky and James Martin
+Texts: [Race After Technology](https://www.wiley.com/en-us/Race+After+Technology:+Abolitionist+Tools+for+the+New+Jim+Code-p-9781509526437), by Ruha Benjamin; [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp3/), by Dan Jurafsky and James Martin
 
 Zoom URL: https://haverford.zoom.us/j/99742229426
 
@@ -20,7 +20,7 @@ Zoom URL: https://haverford.zoom.us/j/99742229426
 
 ## Course Description
 
-This course provides a standard introduction to the fundamental concepts and techniques of modern computational linguistics theory and practice of computational linguistics research.  Linguistics is the study -- often the scientific study -- of language.  Computer science is the science of computing.  Computational linguistics is a broad, interdisciplinary field that overlaps significantly with cognitive science, artificial intelligence and machine learning, information theory, and probability and statistics, and other fields.  
+This course provides a standard introduction to the fundamental concepts and techniques of modern computational linguistics theory and practice of computational linguistics research.  Linguistics is the study -- often the scientific study -- of language.  Computer science is the science of computing.  Computational linguistics is a broad, interdisciplinary field that overlaps significantly with cognitive science, artificial intelligence and machine learning, information theory, probability and statistics, computational social science, and other fields.  
 
 In this course, we will cover the fundamental mathematics of probability and linear algebra necessary for modern machine learning approaches to computational linguistics and natural processing, and the material is heavily weighted toward hands-on projects.  We will also cover some fundamentals of linguistic inquiry.  Topics include fundamentals of probability and statistics, linear algebra, and information theory; linear models, regular expressions; neural networks; recursive neural networks; latent variable and graphical models; topic models; parsing and tagging; machine translation; word embeddings; semantics fundamentals; ethics, fairness, societal, and social issues; information retrieval; machine translation; and research fundamentals.  
 
@@ -30,7 +30,7 @@ Throughout the semester, we will also read and discuss the book *Race After Tech
 
 ### Course Structure
 
-Due to the coronavirus pandemic, this course will be entirely online.  The course will also be largely "flipped."  This means that, prior to class time, students are expected to watch lectures and complete the required readings.  During the lecture time, then, students will come prepared with questions, which will be submitted beforehand.  Participation in the class discussion board will also be mandatory.  The course [schedule](schedule.md) is preliminary and subject to change as the semester progresses.
+Due to the coronavirus pandemic, this course will be entirely online.  The course will also be somewhat (not entirely) "flipped."  This means that, prior to class time, students are expected to watch lectures and complete the required readings.  During the lecture time, then, students will come prepared with questions, which will be submitted beforehand.  Participation in the class discussion board will also be mandatory.  The course [schedule](schedule.md) is preliminary and subject to change as the semester progresses.  Some lectures may not be flipped (such as the first ones).
 
 If students cannot attend lectures due to circumstances beyond their control, they should notify the professor so that we can find an alternative arrangement.
 
@@ -56,13 +56,13 @@ Some projects will be group-based, and all students are expected to substantiall
 
 There are multiple categories for assignments, and certain assignments will be worth more than others in each category.  The points are divided as follows:
 
-| Category          | PERCENTAGE |      |
-| ----------------- | ---------- | ---- |
-| Homework and Labs | 25%        |      |
-| Midterm           | 15%        |      |
-| Participation     | 10%        |      |
-| Final Project     | 50%        |      |
-|                   |            |      |
+| Category          | Percentage |
+| ----------------- | ---------- |
+| Homework and Labs | 25%        |
+| Midterm           | 15%        |
+| Participation     | 10%        |
+| Final Project     | 50%        |
+|                   |            |
 
 Participation includes participation in the online discussion board, participation during class lectures, and participation in in-class discussion.  
 
