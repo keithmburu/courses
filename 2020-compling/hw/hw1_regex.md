@@ -64,4 +64,6 @@ This means that if I run:
 tar xvf grissom_alvin_hw1.tar.gz
 ```
 
-a directory called `grissom_alvin` should be created, and it should contain the files for your submission.  Be sure to test this before you submit.
+a directory called `grissom_alvin` should be created, and it should contain the files for your submission.  To do this, your files need to place your files in the directory first and then compress the directory.  See this link for examples: https://www.educative.io/edpresso/how-to-gzip-a-directory-in-linux
+
+Be sure to test this before you submit.
