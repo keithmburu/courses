@@ -26,7 +26,7 @@ Regular expressions, however, provide a convenient syntax for describing the pat
 
 The concatenation symbol is usually omitted.  Every language has an **alphabet**, $\Sigma$, a set of symbols allowed in the language.  For the empty string, we'll use $\epsilon$, a lower-case epsilon.  
 
-Let's examine some examples of simple languages.  We'll use parentheses to block off substrings.  Each symbol is actually a set of symbols, but we'll leave off the set symbols for convenience and readability.  For example, $a$ is $\{a\}$, and $a^*$ is $\{a\}^*$. 
+Let's examine some examples of simple languages.  We'll use parentheses to block off substrings.  Each letter is actually set of symbols, but we'll omit the braces for convenience and readability.  For example, $a$ is $\{a\}$, and $a^*$ is $\{a\}^*$. 
 
 | Regular Language    | Examples                             | Description                                   |
 | ------------------- | ------------------------------------ | --------------------------------------------- |
@@ -116,7 +116,7 @@ With NFAs, there only has to exist one possible path of acceptance.  Whenever th
 1. Follow the first epsilon transition.
 2. Consume the first $a$, taking us to state 2.
 3. Consume the first $b$, taking us to state 3.
-4. Follow the epsilon transition back to 2 and repeat step 3 consume the next two b's.
+4. Follow the epsilon transition back to 2 and repeat step 3 to consume the next two b's.
 5. Follow the epsilon transition to the accepting state.
 
 If we cannot reach the accepting state, the string is outside of the language and not recognized by the NFA.  The set of languages recognizable by NFAs, DFAs, and regular languages are equivalent.  Thus, if it's possible to create a regular expression for a set of strings, it's possible to create an NFA for it and vice versa. 
