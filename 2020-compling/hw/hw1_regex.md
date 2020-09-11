@@ -6,29 +6,12 @@ Due Friday, September 18
 
 Topics: Regular expressions (Lecture Notes, J&M 2.1), Levenshtein distance (J&M 2.5), Lemmatization and Stemming (J&M 2.4), Tokenization (2.4.1), I/O redirection
 
-1. (10 points) Using either nltk in Python 3 or `grep`, complete 2.1 and 2.2 from J&M.   You may use any resources you find useful, in the textbook or elsewhere, for doing this.  
-
-   *Note: If you are working on your own computer, you can install nltk by following [these instructions](https://www.nltk.org/install.html). In brief:*
-
-   ```bash
-   sudo pip3 install nltk
-   ```
-
-   *After pip has finished, run `python3` and at the prompt type:*
-
-   ```python
-   import nltk
-   nltk.download()
-   ```
-
-   *When prompted for which packages to install, type* `all`. 
-
-   *When it has finished installing, type Ctrl-D to exit.*
+1. (10 points) Using either Python 3 or `grep`, complete 2.1 and 2.2 from J&M.   You may use any resources you find useful, in the textbook or elsewhere, for doing this.  
 
    
 
    (10 points) In a PDF file, created in $\LaTeX$ or [Markdown](https://www.markdownguide.org/tools/typora/), concisely answer the following questions.  You are encouraged but not required to use outside sources for these questions, but if you do, cite them.
-
+   
 2. 1. (5 points) What are some uses of edit distance outside of human language?  
    2. (5 points) When might one prefer lemmatization over stemming and vice versa?
    3. (5 points) Tokenization is easy for languages that use spaces.  How might it work for unsegmented languages, such as Chinese or Japanese?
@@ -56,7 +39,7 @@ Topics: Regular expressions (Lecture Notes, J&M 2.1), Levenshtein distance (J&M 
 
    For part (2), include your PDF file.
 
-**Submit all of your files to Piazza in a `familyname_givenname_hw1.tar.gz` file containing a directory called familyname_givenname (except with your actual names)**.
+**Submit all of your files to Moodle in a `familyname_givenname_hw1.tar.gz` file containing a directory called familyname_givenname (except with your actual names)**.
 
 This means that if I run:
 
