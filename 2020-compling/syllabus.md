@@ -38,7 +38,7 @@ If students cannot attend lectures due to circumstances beyond their control, th
 
 ### Assignment Submission
 
-Assignments will be submitted to Piazza unless otherwise specified. Assignments not conforming to the specified guidelines will be returned ungraded, and a late penalty will be applied.
+Assignments will be submitted to Moodle unless otherwise specified. Assignments not conforming to the specified guidelines will be returned ungraded, and a late penalty will be applied.
 
 All written assignments and reports must be written in Markdown or LaTeX.  The final project report must be written in LaTeX using a template for a major computational linguistics venue (ACL, EMNLP, Computational Linguistics, etc.).
 
