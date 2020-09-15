@@ -6,7 +6,7 @@ The purpose of this program is to (1) give students practice using Python and (2
 
 Write the following Python program.  If you do not finish during the lab time, complete it as a homework assignment. This lab is worth 5 points.  You may find the code in [lab1.py](code/lab1.py) to be useful.
 
-1. Draw the probabilistic finite state machine represented by the following probabilities.  For this lab, you may simply draw it and take a photo, but you may want to use this as an opportunity to learn to easily create graphs with [Mermaid](https://support.typora.io/Draw-Diagrams-With-Markdown/), which is integrated into Typora, or some other tool to generate graphs, such as GraphViz).
+1. Draw the probabilistic finite state machine represented by the following probabilities.  For this lab, you may simply draw it and take a photo, but you may want to use this as an opportunity to learn to easily create graphs with [Mermaid](https://support.typora.io/Draw-Diagrams-With-Markdown/), which is integrated into Typora, or some other tool to generate graphs, such as GraphViz.
 
 - The first letter is always "I".
 
