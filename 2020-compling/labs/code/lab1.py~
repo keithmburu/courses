@@ -1,0 +1,14 @@
+import sys
+import random
+
+def main():
+    flip_coin()
+
+def flip_coin(prob_success=0.5):
+    rand_num random.uniform()
+    if rand_num < prob_success:
+        return true
+    return false
+    
+if __name__ == "__main__":
+    main()
