@@ -41,7 +41,7 @@ While all assignments in this course can in principle be completed on one's home
 
 3. To connect to the lab machines, you will need to set up the Haverford VPN on your home computer(s) and log in.  Follow the instructions here: https://iitskb.sites.haverford.edu/knowledge-base/installing-the-vpn-client/
 
-   I recommend only using the VPN when you are working remotely and disconnecting afterwards.  If you're using an operating system not listed here, let me know.
+   I recommend only using the VPN when you are working remotely and disconnecting afterwards.  If you're using an operating system not listed here, let me know.  **Bryn Mawr students will have to apply for VPN access.**
 
    
 
@@ -73,9 +73,11 @@ This may take some time.
 
 If you do not already have one, request a [GitHub Student Developer Pack](https://education.github.com/pack).  If you do not wish to sign up for this, let me know, and we will find an alternative arrangement.
 
-## Extra 
+## More Local Setup
 
-If you'd like to create an environment more amenable to working on your personal computer, you can do the following on your local machine.
+If you'd like to create an environment more amenable to working on your personal computer, you can do the following on your local machine, but it is not required.
+
+Unless you intend to do all of your written work on a service such as Overleaf, I highly recommend installing LaTeX and downloading [Typora](http://typora.io) or [Mark Text](https://marktext.app/).
 
 ### macOS 
 
@@ -88,6 +90,7 @@ The macOS operating system includes a Unix subsystem accessible from  the Termin
     brew install wget
     brew install emacs
     brew install grep
+    brew install tmux
    ```
 
 2. Installing Python 3 should also install pip.  Proceed to Part 2.
@@ -96,12 +99,13 @@ The macOS operating system includes a Unix subsystem accessible from  the Termin
 
 ### Ubuntu Linux (including WSL)
 
-1. Install emacs.  On Ubuntu, this is:
+1. Install utilities.  On Ubuntu, this is:
 
    ```bash
    sudo apt install emacs
    sudo apt install git
    sudo apt install python3-pip
+   sudo apt install tmux
    ```
 
 ## 
@@ -117,8 +121,6 @@ pip3 install seaborn
 ```
 
 On some systems, you may have to use `pip` instead of `pip3`.
-
-### 
 
 ### macOS
 
