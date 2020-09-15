@@ -2,7 +2,7 @@ Computational Linguistics, Fall 2020
 
 # Lab 1: Markov Text Generation
 
-Write the following Python program.  If you do not finish during the lab time, complete it as a homework assignment.
+Write the following Python program.  If you do not finish during the lab time, complete it as a homework assignment. This lab is worth 5 points.
 
 1. Draw the probabilistic finite state machine represented by the following probabilities.  For this lab, you may simply draw it and take a photo, but you may want to use this as an opportunity to learn to easily create graphs with [Mermaid](https://support.typora.io/Draw-Diagrams-With-Markdown/) (or some other tool, such as GraphViz).
 
@@ -25,4 +25,10 @@ Write the following Python program.  If you do not finish during the lab time, c
 - P(I | !) = 0.2
 - P(! | !) = 0.1
 
-2. Write a Python program that outputs the result of this Markov model. The program will output 100 letters per line, on 10 lines.  It will output *nothing else*.
+2. Write a Python program that outputs the result of this Markov model. The program will output 100 letters per line, on 10 lines.  It will output *nothing else*.  You can access `stdin` and `stdout` streams directly by importing from `sys`, which will allow you to print without newlines.  Alternatively, you can use `print` with an extra optional argument. 
+
+   ```python
+   print("a string", end = '')
+   ```
+
+   
