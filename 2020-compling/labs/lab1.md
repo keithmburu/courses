@@ -28,7 +28,7 @@ Write the following Python program.  If you do not finish during the lab time, c
 
 - P(I | L) = 1
 
-- P(_ | I) = 20
+- P(_ | I) = 0.2
 
 - P(N | I) = 0.25
 
@@ -45,6 +45,13 @@ Write the following Python program.  If you do not finish during the lab time, c
 - P(I | !) = 0.2
 
 - P(! | !) = 0.1
+
+  ```mermaid
+  graph LR
+  I((I))--1-->blank((blank))
+  ```
+
+  
 
 2. Write a Python program that outputs the result of this Markov model. The program will output 100 letters per line, on 10 lines.  It will output *nothing else*.  You can access `stdin` and `stdout` streams directly by importing from `sys`, which will allow you to print without newlines.  Alternatively, you can use `print` with an extra optional argument. 
 
