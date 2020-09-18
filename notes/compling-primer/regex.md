@@ -39,7 +39,6 @@ Let's examine some examples of simple languages.  We'll use parentheses to block
 | $L_7 = a \cup bb*$  | a, b, bb, bbb                        | a or 1 or more b's                            |
 | $L_8 =L_1\cup L_2$  | a, ab                                | a or ab                                       |
 | $L_9 = L_8^*$       | {$\epsilon$, a, ab, aab, aba, ababa} | Strings from {a, ab} repeated 0 or more times |
-|                     |                                      |                                               |
 
 These three operations are sufficient to construct any regular expression that recognizes a particular language.  However, we often use a few others as shorthand to make simpler syntax possible.  The most common addition is the $^+$ operation.  $A^+$ indicates that A can be repeated one or more times.  For example, language $L_7$ would be simpler and more readable with the + operator, $a \cup b^+$.  We also use superscripts to refer to a set being repeated a certain number of times.  For example, $a^5$ is $aaaaa$.
 
@@ -48,16 +47,16 @@ Many programming languages -- including Java, Perl, and Python -- support regula
 For example, in `grep`, we can use `[0-9]` to refer to the set of digits $\{0,1, 2, \ldots, 9\}$.  To match our date string above, we might first try something like this:
 
 ```
-[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]"
+"[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]"
 ```
 
 But there are more shortcuts we can use to indicate multiple concatenations in grep syntax.
 
 ````
-[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}"
+"[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}"
 ````
 
-Or suppose that we want to capture a bit of English **morphology**.  Morphology, among other things, is concerned with inflections in language.  Let's take, as an example the word "compute."  Related words include *computer*, *computing*, *computation*, and *computational*.  Let's write a regular expression that would match all of these words but as few others as possible.
+Or suppose that we want to capture a bit of English **morphology**.  Morphology, among other things, is concerned with inflections in language.  Let's take as an example the word "compute."  Related words include *computer*, *computing*, *computation*, and *computational*.  Let's write a regular expression that would match all of these words but as few others as possible.
 
 ```
 "comput(er|ation|ational)"

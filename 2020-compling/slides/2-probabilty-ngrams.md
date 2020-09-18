@@ -1,5 +1,5 @@
 ---
-marp: true
+marp: false
 theme: default
 class:
 - invert
@@ -8,7 +8,7 @@ footer: Computational Linguistics, Fall 2020\nAlvin Grissom II, Haverford Colleg
 
 ---
 # Language Modeling and Probability
-2020-9-11
+2020-9-18
 
 ---
 # Probability
@@ -104,12 +104,14 @@ $$P(e = 1) = \frac{count(1)}{count(1) + count(2) + count(3)} \\
 # Probability
 
 <img src="images/die.png" alt="die" width="200"/>
+
 - Question: Which is greater, $P(HHHHH)$ or $P(HHTHH)$?
 
 ---
 # Probability
 
 <img src="images/die.png" alt="die" width="200"/>
+
 - Question: Which is greater, $P(HHHHH)$ or $P(HHTHH)$?
 - Since the events are independent, they're equal
 
@@ -188,7 +190,7 @@ $$
 
 - Some words are more likely to come after others
 
--When we make independence assumptions, we call it a **bag of words** model
+- When we make independence assumptions, we call it a **bag of words** model
 
 - We can do better
 
@@ -279,9 +281,10 @@ $$
 - Another way of looking at it
 $$
 P(\textrm{science}\vert \textrm{computer}) = \frac{P(\textrm{computer science})}{P(\textrm{computer})} \\
-= \frac{\frac{C(\textrm{computer science})}{C(\textrm{all words})}}{\frac{C(\textrm{computer})}{C(\textrm{all words})}} \\
+= \frac{\frac{C(\textrm{computer science})}{C(\textrm{all bigrams})}}{\frac{C(\textrm{computer *})}{C(\textrm{all bigrams})}} \\
 = \frac{C(\textrm{computer science})}{C(\textrm{computer})}
 $$
+where $$*$$ refers to any word.
 
 
 ---
@@ -373,3 +376,34 @@ $$
 P(\textrm{<s> colorless kumquat ideas sleep furiously</s>})$$ 
 is estimated by 
 $$P(\textrm{colorless}\vert \textrm{<s>})P(\textrm{kumquat} \vert \textrm{colorless})P(\textrm{ideas}\vert \textrm{kumquat})P(\textrm{sleep}\vert \textrm{ideas})P(\textrm{furiously} \vert \textrm{sleep})P(\textrm{</s>}\vert\textrm{sleep}).$$
+
+---
+# Smoothing
+- Zeroes are a problem!
+- Also called **pseudocounting**
+
+---
+# Smoothing
+- Suppose "inexorably" never appears.
+- Then $P(\text{inexorably)}) = 0$
+- How can we deal with this?
+
+---
+# Smoothing
+$$
+\frac{C(w)}{C(\textrm{all words})},
+$$
+
+becomes
+
+$$
+\frac{C(w) + 1}{C(\textrm{all words}) + |V|}.
+$$
+
+---
+# Smoothing
+In general,
+$$
+\frac{C(w)+\alpha}{C(\textrm{all words}) + \alpha |V|}
+$$
+where $\alpha < 1$
