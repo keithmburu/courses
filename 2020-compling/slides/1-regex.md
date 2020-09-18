@@ -1,5 +1,5 @@
 ---
-marp: true
+marp: false
 theme: default
 class:
 - invert
@@ -162,6 +162,7 @@ class 2 orange
 ---
 # Finite State Automata
  NFA for language $ab^*$
+
 <center>
 <div class="mermaid">
 stateDiagram-v2
