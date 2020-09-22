@@ -29,7 +29,7 @@ for line in lines:
 
 If we print out a line, say `line[2]`, we can verify that the text is, indeed, English text.
 
-We can use `join()` to join to concatenate all of the lines by a character, in this case a space.  We'll also convert everything to lower case with `lower()`.
+We can use `join()` to concatenate all of the lines by a character, in this case a space.  We'll also convert everything to lower case with `lower()`.
 
 ```python
 all_text = ' '.join(lines).lower()
@@ -52,7 +52,7 @@ In my case, there are 188634 distinct tokens.
 We can use the `FreqDist` (frequency distribution) class to count each token.
 
 ```python
-fd = FreqDist(all_text)
+fd = FreqDist(tokens)
 fd.most_common(10)
 ```
 
@@ -60,7 +60,7 @@ We can also use `RegexpTokenizer()` instead of `word_tokenizer()` if we have a r
 
 ```python
 tokenizer = RegexpTokenizer('\w+')
-tokens = tokenizer.tokenize(all_text)
+tokens = tokenizer.word_tokenize(all_text)
 ```
 
 When building a `FreqDist` object, we can also index it like a `dict` and change or query the counts manually.  For example:
