@@ -93,7 +93,7 @@ In your submission to Moodle, answer:
 
 Answer:
 
-1.  How many words **types** and **tokens** are in the lower cased version of your corpus?  
+1.  After removing punctuation and stop words, how many words **types** and **tokens** are in the lower cased version of your corpus?  
 
 2. Modify the code to examine the top *n* bigrams and trigrams.  (The number is up to you.)  Can you garner any insights by observing the most frequent unigrams and bigrams?   You can either use `nltk.util.bigrams` and `nltk.util.trigrams` or write the code for extracting bigrams and trigrams manually.  How do the results change when lemmatizing all of the tokens with the [WordNet](https://wordnet.princeton.edu/) lemmatizer?  You can do this in one line with a Python list comprehension or use a for-loop.
 
