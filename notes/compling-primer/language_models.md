@@ -112,20 +112,22 @@ But what if they're not independent?  That is, what if assuming $e_1$ changes th
 
 ### $n$-grams
 
-In the context of computational linguistics and NLP, the "given" here usually to refers to a *sequence*.  Sentences are sequential: one word follows another. In this view of language, we can view words in a sentence as being *generated* by previous words with some probability.  We know that the probability of "science," $P(\textrm{science})$, is $\frac{count(\textrm{science})}{count(\textrm{all words})}$. But what of the probability of "science" given that the previous word is "computer", $P(\textrm{science}\vert \textrm{computer})$?  This is the probability that the *next* word is "science," given that the current word is "computer," i.e., how likely is the word "science" to be generated from the **context** "computer?"
+In the context of computational linguistics and NLP, the "given" here usually to refers to a *sequence*.  Sentences are sequential: one word follows another. In this view of language, we can view words in a sentence as being *generated* by previous words with some probability. We know that the probability of "science," $P(\textrm{science})$, is $\frac{count(\textrm{science})}{count(\textrm{all words})}$. But what of the probability of "science" given that the previous word is "computer", $P(\textrm{science}\vert \textrm{computer})$?  This is the probability that the *next* word is "science," given that the current word is "computer," i.e., how likely is the word "science" to be generated from the **context** "computer?"
 
 This is given by 
 $$
 P(\textrm{science}\vert \textrm{computer}) = \frac{count(\textrm{computer science})}{count(\textrm{computer})}.
 $$
-This is the fraction of occurrences of "computer science" to the occurrences of just "computer."  This is answering the question, Of the instances of "computer," how many of them are followed by "science?" 
+This **relative frequency** is the fraction of occurrences of "computer science" to the occurrences of just "computer."  This is answering the question, Of the instances of "computer," what proportion of them is followed by "science?" 
 
 We can approach this another way.   $P(\textrm{science}\vert \textrm{computer}) = \frac{P(\textrm{computer science})}{P(\textrm{computer})}$ gives us the same result.  Let $C$ be the count of a word. In this case,
 $$
 P(\textrm{science}\vert \textrm{computer}) = \frac{P(\textrm{computer science})}{P(\textrm{computer})} \\
-= \frac{\frac{C(\textrm{computer science})}{C(\textrm{all words})}}{\frac{C(\textrm{computer})}{C(\textrm{all words})}} \\
+= \frac{\frac{C(\textrm{computer science})}{C(\textrm{all bigrams})}}{\frac{C(\textrm{computer})}{C(\textrm{all bigrams})}} \\
 = \frac{C(\textrm{computer science})}{C(\textrm{computer})}
 $$
+Note that $C(\text{computer})$ is the same as $C(\text{computer *)}$, where $*$ represents any word, i.e., the count of "computer" followed by any other word -- all of the bigrams starting with "computer."
+
 More generally, given words $w_1, w_2$,
 $$
 P(w_2\vert w_1) = \frac{C(w_1, w_2)}{C(w_1)} = \frac{P(w_1, w_2)}{P(w_1)}
@@ -138,7 +140,7 @@ Fundamentally, the problem we have is one of **data sparsity**.  Even in a corpu
 
 In any corpus that exists, we can be reasonably confident that the joint probability $P(\textrm{colorless kumquat ideas sleep furiously}) = 0$.  To deal with this, we loosen our definition of probability by making some (linguistically unjustified) **independence assumptions.**  In particular, we assume that a limited context determines the probability of the next word.   Models making such independence assumptions are known as **Markov models** because they have the **Markov property** of using a limited history to determine the probability of a word.  In NLP parlance, these are called **language models**, The term "language model" was once virtually synonymous with such probabilistic $n$-gram models, but more recently the term has been used to describe sequential neural network models, as well, which we will discuss later.
 
-We can employ Markov assumptions to decompose the probability of a string into smaller $n$-gram probabilities.  We'll pad the sentence with a dummy word  $\texttt{<s>}$  at the beginning, so that we can calculate the probability that "colorless" is the first word.  We'll also pad on the right with an $\texttt{</s>}$ to model the end of the sentence.  If we don't include this special "word," our probability distribution will not correctly model sentences sentence length, since there will be no notion of the end of the sentence.
+We can employ Markov assumptions to decompose the probability of a string into smaller $n$-gram probabilities.  We'll pad the sentence with a dummy word  $\texttt{<s>}$  at the beginning, so that we can calculate the probability that "colorless" is the first word.  We'll also pad on the right with an $\texttt{</s>}$ to model the end of the sentence.  If we don't include this special "word," our probability distribution will not correctly model sentences sentence length, since there will be no notion of the end of the sentence.  The first term is $P(\texttt{<s>})$, but since every sentence starts with $\texttt{<s>}$, $P(\texttt{<s>})$ will always be 1 we; so, we'll leave it off to save space.
 
  If we're using a bigram model, $P(\textrm{<s> colorless kumquat ideas sleep furiously</s>}) $ is estimated by $P(\textrm{colorless}\vert \textrm{<s>})P(\textrm{kumquat} \vert \textrm{colorless})P(\textrm{ideas}\vert \textrm{kumquat})P(\textrm{sleep}\vert \textrm{ideas})P(\textrm{furiously} \vert \textrm{sleep})P(\textrm{</s>}\vert\textrm{sleep}).$
 
@@ -148,7 +150,7 @@ In this bigram formulation, we have a series of independent conditional probabil
 
 If we have sufficient data, a larger $n$ for the $n$-gram model will generally produce more accurate probability estimates.  But the larger the $n$, the more likely one of the $n$-gram probabilities will be zero.  If just one term is zero, the entire product is zero.  For this reason, all $n$-gram models used for applications use some kind of smoothing.  **Smoothing**, also called a pseudocounting, is how we deal with 0 probability events.  
 
-Suppose that the word "inexorably" never appears in our data.  In such a case, $P(\textrm{inexorably})=0$ and the probability of any bigram containing the word "inexorably" will also be 0, zeroing out the probability of any phrase containing the word.  The simplest way of dealing with this is to add 1 to the count of any word in your vocabulary.  (This vocabulary must be specified in advance.) So, words that do not appear will have a count of 1.  This is called Laplace smoothing or Add-1 smoothing. This means that we will also artificially inflate the total count of words by the size of the vocabulary, since we're adding an extra count for each word.  Where as the count of a word $w$ in an unsmoothed model is
+Suppose that the word "inexorably" never appears in our data.  In such a case, $P(\textrm{inexorably})=0$ and the probability of any bigram containing the word "inexorably" will also be 0, zeroing out the probability of any phrase containing the word.  The simplest way of dealing with this is to add 1 to the count of any word in your vocabulary.  (This vocabulary must be specified in advance, and we often have a special dummy word `<UNK>` for presumably rare words that don't appear in our training corpus.) So, words that do not appear will have a count of 1.  This is called Laplace smoothing or Add-1 smoothing. This means that we will also artificially inflate the total count of words by the size of the vocabulary, since we're adding an extra count for each word.  Where as the count of a word $w$ in an unsmoothed model is
 $$
 \frac{C(w)}{C(\textrm{all words})},
 $$
@@ -165,4 +167,31 @@ $$
 Add-1 smoothing, then, is the special case where $\alpha=1$.
 
 There are more sophisticated smoothing methods, such as **Kneser-Ney smoothing** and **Pitman-Yor** smoothing.  The former performs very well and is often used in practice, while the latter performs slightly better but takes a long time to train.  Both use an effective method of zero-mitigation called **backoff**, which falls back on lower-order  $n$-grams when a full $n$-gram does not occur in the corpus.  A more recent algorithm, called Stupid Backoff, is simpler than both of these methods and converges to their performance on extremely large data.  At least for language modeling benchmarks, simple models such as Stupid Backoff often perform as well as more sophisticated models if enough data is used to train them. 
+
+ ### A Markov Graphical Model
+
+We can visualize conditional probabilities as a **graphical model**.  For a Markov model, its a  kind of probabilistic finite state machine wherein each of the transition arcs has a probability.  Each state will emit a word.  Let's consider a simple model.  We can write the conditional probabilities as a matrix where the rows represent the starting word/state, and the columns represent the next word/state, or we can write it as a probabilistic finite state machine.
+
+```mermaid
+graph LR
+	S((START))--0.8-->A((the))--0.3-->B((quick))--0.5-->C((brown))--0.8-->D((fox))
+	S--0.2-->B
+	B--0.5-->D
+	A--0.4-->C
+	C--0.2-->B
+	A--0.3-->D
+```
+
+
+
+
+
+In our probabilistic finite state machine, at every step, the conditional probabilities must sum to 1; they're valid probability distributions, called **conditional distributions**.
+
+For $P(\text{quick}\vert {the})$, we just look at the appropriate arc and see that it's 0.3.  We could also calculate it with Bayes's Rule if we had access to the raw counts.  To calculate the probability of a sequence, we would just multiply the values in the along the arcs.  The probability of "the quick brown fox" is
+$$
+P(\text{the}\vert\text{start}) P(\text{quick}\vert{the})P(\text{brown}\vert\text{quick})P(\text{fox}\vert{brown})\\
+= .8\times.3\times.5\times.8 = .096.
+$$
+At every arc, we flip a coin or roll a die biased according to the probabilities of the given choices.  If we do this, we will get "the quick brown fox" approximately 9.6% of the time, and the more trials we have -- the more samples we take -- the closer to 9.6 the numbers will converge.
 

@@ -83,19 +83,19 @@ $$
 p^y(1-p)^{1-y}=y\sigma(\mathbf{w}\cdot\mathbf{x}+b)^y(1-\sigma(\mathbf{w}\cdot\mathbf{x}+b))^{1-y}.
 $$
 
-Taking the logarithm yield
+Taking the logarithm yields
 
 $$
 y\log p + (1-y)\log(1-p)= y\log\sigma(\mathbf{w}\cdot\mathbf{x}) + (1-y)(1- \log\sigma(\mathbf{w}\cdot\mathbf{x}+b)),
 $$
-which is, in fact, our **log likelihood** of a correct answer.  Optimizing this is called.   We can sum this up over all of the data to measure ,
+which is, in fact, our **log likelihood** of a correct answer.   We can sum this up over all of the data to measure ,
 $$
 \begin{align}
 \mathscr{L}(\mathbf{x})=&\sum_{(\mathbf{x},y)\in D} [y\log p + (1-y)\log(1-p)]\\
 =& \sum_{(\mathbf{x},y)\in D} [y\log\sigma(\mathbf{w}\cdot\mathbf{x}) + (1-y)(1- \log\sigma(\mathbf{w}\cdot\mathbf{x}+b))],
 \end{align}
 $$
-which is in fact our objective function, the function we're trying to optimize.  The **loss function** for logistic regression is just the negative of this value, the **negative log likelihood**. 
+which is our objective function, the function we're trying to optimize.  The **loss function** for logistic regression is just the negative of this value, the **negative log likelihood**. 
 
 
 
@@ -129,7 +129,7 @@ Machine learning is largely about optimizing some loss function or **objective f
 
 ### Review: The Derivative
 
-Recall that a derivative is just a slope, or rate of change.  Given a line $y=mx+b$, if $m=\frac{\Delta y}{\Delta x}=3/4$, the this is the slope, and we know that we're doing up at a rate of three $y$ units for every four $x$ units.  If all we have is a graph, we can simply measure the line to calculate the slope.  This doens't work for smooth curves, because the slope is constantly changing.  For these, we want to measure $\frac{\Delta y}{\Delta{x}}$ at a single point.  We can think of these ase two points arbitrarily close together -- taking the slope after zooming in to a single point, or as taking the slope of a line tangent to this point.  We call this $\frac{dy}{dx}$ or $f'(x)$.  For simple functions, there's a simple rule for calculataing derivatives.  For example, if $f(x)=x^2$, its derivative $f'(x)=x^3/3$, which is a function that gives us the slope at $x$.  For functions of more than two dimensions, we can differentiate along one dimension at a time, which gives of the rate of change along one particular dimension.  This is accomplished by keeping all of the variables constant except for the variable we're differentiating.  This is a partial derivative.  In a 3D plot, this corresponds to keeping, say the values of $x$ and $y$ constant but varying $z$.  The numerical value of the slope for smooth curves is only valid at a specific point.  So, we can think of a partial derivative equation as giving us the slope across one dimension that can be anything (say, $x$) when we know the other coordinates (say, $y$ and $z$).  To estimate the slope across an arbitrary portion of the graph, we can chose two coordinates across the non-varying dimensions and average their slopes.
+Recall that a derivative is just a slope, or rate of change.  Given a line $y=mx+b$, if $m=\frac{\Delta y}{\Delta x}=3/4$, the this is the slope, and we know that we're doing up at a rate of three $y$ units for every four $x$ units.  If all we have is a graph, we can simply measure the line to calculate the slope.  This doesn't work for smooth curves, because the slope is constantly changing.  For these, we want to measure $\frac{\Delta y}{\Delta{x}}$ at a single point.  We can think of these as two points arbitrarily close together -- taking the slope after zooming in to a single point, or as taking the slope of a line tangent to this point.  We call this $\frac{dy}{dx}$ or $f'(x)$.  For simple functions, there's a simple rule for calculating derivatives.  For example, if $f(x)=x^2$, its derivative $f'(x)=x^3/3$, which is a function that gives us the slope at $x$.  For functions of more than two dimensions, we can differentiate along one dimension at a time, which gives of the rate of change along one particular dimension.  This is accomplished by keeping all of the variables constant except for the variable we're differentiating.  This is a partial derivative.  In a 3D plot, this corresponds to keeping, say the values of $x$ and $y$ constant but varying $z$.  The numerical value of the slope for smooth curves is only valid at a specific point.  So, we can think of a partial derivative equation as giving us the slope across one dimension that can be anything (say, $x$) when we know the other coordinates (say, $y$ and $z$).  To estimate the slope across an arbitrary portion of the graph, we can chose two coordinates across the non-varying dimensions and average their slopes.
 
 For a partial derivative of the function $f$ with respect to $x$, where $x$ varies, we can write $\frac{\partial f}{\partial{x}}$.  For the derivative with respect to $y$, we can write $\frac{\partial f}{\partial{y}}$.  Sometimes the $f$ is omitted, and we're left with $\frac{\partial}{\partial y}$.  For non-partial derivatives, we typically use $\frac{dy}{dx}$, and this cursive "d" for the differential (referring to $\frac{\Delta y}{\Delta x}$ ) is analogous, variously pronounced "dee," "del," "partial," etc.    The formal reading is "the partial derivative of $f$ with respect to $x$," but "dee $f$ over dee $x$" will do.
 
@@ -143,8 +143,9 @@ $$
 \end{bmatrix}.
 $$
 
+The gradient describes a direction within an $n$-dimensional space; the elements are just numbers -- slopes.  Each element in the vector describes one dimension of this direction. This direction is the **direction of steepest ascent**.  In other words, if you move in the direction of the gradient, you will climb the hill of the function fastest.  It is the optimal way to climb the curve.  It may not be obvious why this is.  One way of thinking about it is this: each partial derivative is the slope of the curve along a single dimension.  If we were only looking at function of one variable, say, $f(x) = x^2$ what would be the fastest rate we could ascend the curve? It would be the slope at that point. We couldn't possibly traverse this curve faster than its slope.  In a function of multiple variables, this is also true: we can't possibly ascend a function along one dimension faster than the slope of that dimension. 
 
-The gradient describes a direction within an $n$-dimensional space; the elements are just numbers -- slopes.  Each element in the vector describes one dimension of this direction. This direction is the **direction of steepest ascent**.  In other words, if you move in the direction of the gradient, you will climb the hill of the function fastest.  It is the optimal way to climb the curve.  It may not be obvious why this is.  One way of thinking about it is this: each partial derivative is the slope of the curve along a single dimension.  If we were only looking at function of one variable, say, $f(x) = x^2$ what would be the fastest rate we could ascend the curve? It would be the slope at that point. We couldn't possibly traverse this curve faster than its slope.  In a function of multiple variables, this is also true: we can't possibly ascend a function along one dimension faster than the slope of that dimension. Now, consider two dimensions $x$ and $y$. We can't ascend along $x$ faster than the slope of $x$; neither can we ascend along $y$ at a rate greater than the slope of $y$.  What is the maximum possible rate of ascent on the curve with dimensions $x$ and $y$? It would have to be bound by some combination of the slopes along both $x$ and $y$ dimensions.  But what combination specifically?  We want to take a step in the direction that's a result of moving in each dimension *proportional to its steepness*.  We want a kind of *weighted* merging of each composite direction based on how helpful the direction is for climbing this hill, where the movement in each dimension is scaled according to how helpful it us in helping us accomplish this.  The gradient can be thought of, conceptually, as a vector of "weights" for each dimension, which, when combined, give us a direction. Since these "weights" are exactly the steepness of the corresponding dimension (the maximum ascent in this direction), taken together, we have the direction of steepest ascent.  
+Now, consider two dimensions $x$ and $y$. We can't ascend along $x$ faster than the slope of $x$; neither can we ascend along $y$ at a rate greater than the slope of $y$.  What is the maximum possible rate of ascent on the curve with dimensions $x$ and $y$? It would have to be bound by some combination of the slopes along both $x$ and $y$ dimensions.  But what combination specifically?  We want to take a step in the direction that's a result of moving in each dimension *proportional to its steepness*.  We want a kind of *weighted* merging of each composite direction based on how helpful the direction is for climbing this hill, where the movement in each dimension is scaled according to how helpful it us in helping us accomplish this.  The gradient can be thought of, conceptually, as a vector of "weights" for each dimension, which, when combined, give us a direction. Since these "weights" are exactly the steepness of the corresponding dimension (the maximum ascent in this direction), taken together, we have the direction of steepest ascent.  
 
 Another way of looking at this is to look at an alternate definition of the gradient, given by
 
@@ -180,9 +181,9 @@ $$
 \end{bmatrix}
 \end{align}
 $$
-where $\mathbf{i},\mathbf{j},\mathbf{k}$ are the unit vectors -- vectors of length 1 -- for the $x,y,x$ axes, respectively.  Remember that when adding directional vectors, the resulting direction is a combination of the individual directions and magnitudes.  In this case, the unit vectors $\mathbf{i,j,k}$ point along only a single dimension. The partial derivatives are just scalar values -- numbers -- and inded they are scaling the unit vectors (what I somewhat abusively called "weighting" earlier).  Through simple vector arithmetic, we recover the original gradient, this time represented as a column vector instead of a row vector.  
+where $\mathbf{i},\mathbf{j},\mathbf{k}$ are the unit vectors -- vectors of length 1 -- for the $x,y,z$ axes, respectively.  Remember that when adding directional vectors, the resulting direction is a combination of the individual directions and magnitudes.  In this case, the unit vectors $\mathbf{i,j,k}$ point along only a single dimension. The partial derivatives are just scalar values -- numbers -- and indeed they are scaling the unit vectors (what I somewhat abusively called "weighting" earlier).  Through simple vector arithmetic, we recover the original gradient, this time represented as a column vector instead of a row vector.  
 
-The magnitude or **Euclidean norm** (also called the Euclidean distance, 2-norm,  or $\ell ^2$ norm) of this gradient $|\nabla f|$ is the rate of change of this direction on the surface.  The gradient is just a vector, and like any other vector, it points in some direction.  Since the length of each element in the gradient is just the distance from the origin to where it ends (its terminal point), we can just use a multi-variable generalization of the the distance formula for lines (itself just an application of the Pythagorean theorem, $(\Delta x)^2 + (\Delta y)^2 = c^2$), as with any other vector, to find its distance.  It's easy to visualize this in two dimensions since the the line segment described by any two points is the hypoteneuse of a triangle with its opposite and adjacent sides the line segments of moving along only the $x$ and $y$ dimensions, respectively. Likewise, in three dimensions we have three line segments (or vectors emanating from the origin, in this case) to consider, so we just add another parameter.  For two parameters, for example, the magnitude of the gradient is   
+The magnitude or **Euclidean norm** (also called the Euclidean distance, 2-norm,  or $\ell ^2$ norm) of this gradient $|\nabla f|$ is the rate of change of this direction on the surface.  The gradient is just a vector, and like any other vector, it points in some direction.  Since the length of each element in the gradient is just the distance from the origin to where it ends (its terminal point), we can just use a multi-variable generalization of the the distance formula for lines (itself just an application of the Pythagorean theorem, $(\Delta x)^2 + (\Delta y)^2 = c^2$), as with any other vector, to find its distance.  It's easy to visualize this in two dimensions since the the line segment described by any two points is the hypotenuse of a triangle with its opposite and adjacent sides the line segments of moving along only the $x$ and $y$ dimensions, respectively. Likewise, in three dimensions we have three line segments (or vectors emanating from the origin, in this case) to consider, so we just add another parameter.  For two parameters, for example, the magnitude of the gradient is   
 $$
 |\nabla f(x,y)|= \sqrt{\left(\frac{\partial f}{\partial x}\right)^2+\left(\frac{\partial f}{\partial y}\right)^2}.
 $$
@@ -196,6 +197,8 @@ In general, a **norm** is a function that returns the size of a vector according
 $$
 \|\mathbf{x}\|_p=(|x_1|^p+|x_2|^p+\cdots+|x_n|^p)^{1/p}.
 $$
+
+In this case, $p=2$, so we get a square root, or the Pythagorean theorem.
 
 ### Gradient Descent
 
@@ -212,20 +215,22 @@ This should look familiar.  It is our update rule without the learning rate.  Fo
 $$
 (y-p)x_i
 $$
-This tells how we should change our weights.  We can scale the step size with our by adding a learning rate to scale the step size.  Since we change *all* of the weights according to this rule after making a prediction $p$, this learning rate $\eta$ must be the same for all weights, which brings us back to our update rule for a single example
+This tells how we should change our weights.  We can scale the step size by adding a learning rate to scale the step size.  Since we change *all* of the weights according to this rule after making a prediction $p$, this learning rate $\eta$ must be the same for all weights, which brings us back to our update rule for a single example:
 $$
 \begin{align}
 w_i &:= w_i +\eta(y-p)x_i\\
 w_i &:= w_i + \eta \nabla f
 \end{align}
 $$
-Therefore, our "intuitive" update rule is exactly the gradient, scaled by a learning rate. This is why logistic regression guarantees that we will converge towrad the optimal weights if the step size is sufficiently small.  
+Therefore, our "intuitive" update rule is exactly the gradient, scaled by a learning rate. This is why logistic regression guarantees that we will converge toward the optimal weights if the step size is sufficiently small.  
 
 ### Stochastic Gradient Descent
 
-Note that in the full version of gradient descent (from the perspective of minimizing the loss) or gradient ascent (from the perspective of maximizing the likelihood), we take modify the weights only after calculating the loss over all of the data.  This is very slow for large data, so no one does this.  Instead, we use **stochastic gradient descent** (SGD).  The word "stochastic" indicates that there is some randomness in the process.  
+Note that in the full version of gradient descent (from the perspective of minimizing the loss) or gradient ascent (from the perspective of maximizing the likelihood), we modify the weights only after calculating the loss over all of the data.  This means that, $N$ steps of gradient descent requires $N$ passes over *all* of the data.  This is very slow for large data, so no one does this.  Instead, we use **stochastic gradient descent** (SGD).  The word "stochastic" indicates that there is some randomness in the process.  
 
-In stochastic gradient descent, instead of going over all of the data, we look at one example at a time and modify all of the weights.  These examples are theoretically picked at random, so, over time, we still converge at the minimum.  It's also possible to use **mini-batching**, where instead of updating based on the loss of one example, we update based on the average loss of $n$ examples.
+In stochastic gradient descent, instead of going over all of the data, we look at one example at a time and modify all of the weights.  These examples are theoretically picked at random, so, over time, we still converge at the minimum.  This is the algorithm I've described here. 
+
+It's also possible to use **mini-batching**, where instead of updating based on the loss on one example, we update based on the average loss of $n$ examples.
 
 As we've seen from the simple pseudocode, it's possible to write a fully-functional version of logistic regression with SGD without understanding any of this, but grasping these fundamental concepts is important for understanding neural networks.
 

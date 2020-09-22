@@ -10,7 +10,7 @@ Topics: Regular expressions (Lecture Notes, J&M 2.1), Levenshtein distance (J&M 
 
    
 
-   (10 points) In a PDF file, created in $\LaTeX$ or [Markdown](https://www.markdownguide.org/tools/typora/), concisely answer the following questions.  You are encouraged but not required to use outside sources for these questions, but if you do, cite them.
+   (15 points) In a PDF file, created in $\LaTeX$ or [Markdown](https://www.markdownguide.org/tools/typora/), concisely answer the following questions.  You are encouraged but not required to use outside sources for these questions, but if you do, cite them.
    
 2. 1. (5 points) What are some uses of edit distance outside of human language?  
    2. (5 points) When might one prefer lemmatization over stemming and vice versa?
