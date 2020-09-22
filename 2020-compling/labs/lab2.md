@@ -38,7 +38,7 @@ all_text = ' '.join(lines).lower()
 And we can tokenize the text into words.
 
 ```python
-tokens = nltk.tokenize(all_text)
+tokens = nltk.word_tokenize(all_text)
 ```
 
 To determine the number of tokens, we can just query the length of the list.
@@ -60,7 +60,7 @@ We can also use `RegexpTokenizer()` instead of `word_tokenizer()` if we have a r
 
 ```python
 tokenizer = RegexpTokenizer('\w+')
-tokens = tokenizer.word_tokenize(all_text)
+tokens = tokenizer.tokenize(all_text)
 ```
 
 When building a `FreqDist` object, we can also index it like a `dict` and change or query the counts manually.  For example:
@@ -79,7 +79,7 @@ english_stopwords = stopwords.words('english')
 filtered_tokens = [w for w in tokens if w not in english_stopwords]
 ```
 
-Line 3 uses a Python list comprehension to filter the stop words out.  A list comprehension in Python creates a new list that obeys the predicates inside the brackets--in this case, $\{w\vert w \in \text{tokens} \land \lnot(w \in \text{english_stopwords} \}$. The order is preserved because this is executing a for-loop linearly through the list.  However, this is **extremely** slow, due to each check requiring an iteration through 179 English stopwords.  We can improve this by first copying the stop words list into a Python set, which is backed by a hash table, giving $O(1)$ lookup time.
+Line 3 uses a Python list comprehension to filter the stop words out.  A list comprehension in Python creates a new list that obeys the predicates inside the brackets--in this case, $\{w\vert w \in \text{tokens} \land \lnot(w \in \text{english_stopwords})\}$. The order is preserved because this is executing a for-loop linearly through the list.  However, this is **extremely** slow, due to each check requiring an iteration through 179 English stop words.  We can improve this by first copying the stop words list into a Python set, which is backed by a hash table, giving $O(1)$ lookup time.
 
 ```python
 stopwords_set = set(english_stopwords)
@@ -91,8 +91,6 @@ Now our results should be more interesting and obtaining them reasonably quick.
 
 In your submission to Moodle, answer:
 
-Answer:
-
 1.  After removing punctuation and stop words, how many words **types** and **tokens** are in the lower cased version of your corpus?  
 
 2. Modify the code to examine the top *n* bigrams and trigrams.  (The number is up to you.)  Can you garner any insights by observing the most frequent unigrams and bigrams?   You can either use `nltk.util.bigrams` and `nltk.util.trigrams` or write the code for extracting bigrams and trigrams manually.  How do the results change when lemmatizing all of the tokens with the [WordNet](https://wordnet.princeton.edu/) lemmatizer?  You can do this in one line with a Python list comprehension or use a for-loop.
@@ -100,7 +98,7 @@ Answer:
    ```python
    from nltk.stem import WordNetLemmatizer
    lemmatizer = WordNetLemmatizer()
-   lemmatize('better') #returns 'good'
+   lemmatizer.lemmatize('computerize') 
    ```
 
    
