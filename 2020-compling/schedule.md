@@ -1,4 +1,4 @@
-FeeComputational Linguistics, Fall 2020
+Computational Linguistics, Fall 2020
 
 Haverford College
 
