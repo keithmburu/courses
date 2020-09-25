@@ -72,14 +72,14 @@ $$
 
 - The correct labels are called **gold standard** labels.
 
--By looking at these labels, we want to **fit** the model to the data, making predictions on *unseen* test data
+- By looking at these labels, we want to **fit** the model to the data, making predictions on *unseen* test data
 
 ---
 # Review: The Perceptron
 - We know that $y=mx+b$ represents a line in two-dimensional real number space -- what mathematicians call $\mathbb{R}^2$ 
 - The $m$ represents the slope of the line, while $b$ is the $y$-intercept -- how much the line is shifted up or down.  We'll use $w$ instead of $m$.
 
--   In linear algebra and statistics parlance, the $w$ coefficient is known as a **weight**.  
+-  In linear algebra and statistics parlance, the $w$ coefficient is known as a **weight**.  
 
 ---
 # The Perceptron
@@ -149,7 +149,7 @@ $$
         if not sign(y) == sign(prediction):
             for each w in weights:
                 w = w + y * x
-                b = b + y * x
+            b = b + y * x
 ```
 ## Update Rule for Weights
 $$
@@ -197,7 +197,7 @@ f(t)=
 \begin{cases}
 1 & \text{if }  t > 0\\
 0 & \text{otherwise}
-\end{cases}
+f\end{cases}
 $$
 <p>
 <img src ="images/Activation_binary_step.svg" style="width:700px" align="right">
@@ -211,7 +211,7 @@ $$
 \sigma(t) = \frac{e^t}{1 + e^t} =\frac{1}{1+e^{-t}}.
 $$
 <p>
-<img src ="images/logistic_curve.svg" style="width:700px" align="right">
+<img src ="images/logistic_curve.svg" style="width:600px" align="right">
 <!-- Image source: wikipedia. https://en.wikipedia.org/wiki/Activation_function-->
 
 ---

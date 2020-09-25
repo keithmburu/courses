@@ -85,7 +85,7 @@ The learning algorithm sets the weights $\mathbf{w}$ in Equation $\ref{perceptro
         if not sign(y) == sign(prediction):
             for each w in weights:
                 w = w + y * x
-                b = b + y * x
+            b = b + y * x
 ```
 
 If the prediction was correct, we do nothing.  We only modify weights when the algorithm makes a mistake, at which point we modify the weights corresponding to the features/words that appear in the example so that they're either more positive or negative, whichever is closer to the true answer.  This means that if, in the next example, we see any of the words again that appeared in the example that the model classified incorrectly, these weights will be closer to the correct class $y$.  As the model repeats this **update rule** over all of the training data, perhaps for multiple iterations, we eventually quiesce at weights that, on average, give us the best fit we can hope for with a linear hyperplane and this feature representation. (Some data cannot be separated by a hyperplane.)  
