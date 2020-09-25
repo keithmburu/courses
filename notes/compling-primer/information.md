@@ -1,0 +1,3 @@
+# Information
+
+Information theory plays in important role in many approaches to computational linguistics, espeically apporaching involving machine learning.  The word "information" has a number of related meanings in both colloquial and specizlied contexts, all of which have a few things in common: We can rank somehting as more informative than something else.  Information can be transmitted.  Information can be lost. The specific notion of information we'll refer to here is **Shannon information**, discovered by Claude Shannon in the 1950s'.  This formalism allows us    

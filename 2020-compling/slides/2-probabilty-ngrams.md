@@ -105,14 +105,14 @@ $$P(e = 1) = \frac{count(1)}{count(1) + count(2) + count(3)} \\
 
 <img src="images/die.png" alt="die" width="200"/>
 
-- Question: Which is greater, $P(HHHHH)$ or $P(HHTHH)$?
+- Which is greater, $P(HHHHH)$ or $P(HHTHH)$?
 
 ---
 # Probability
 
 <img src="images/die.png" alt="die" width="200"/>
 
-- Question: Which is greater, $P(HHHHH)$ or $P(HHTHH)$?
+- Which is greater, $P(HHHHH)$ or $P(HHTHH)$?
 - Since the events are independent, they're equal
 
 ---

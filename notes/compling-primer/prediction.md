@@ -1,3 +1,7 @@
+Computational Linguistics Primer (Draft)
+
+Alvin Grissom II
+
 # Training and Prediction
 
 Fundamental in modern machine learning approaches to computational linguistics is **prediction**.  Given some data---say, a sentence---we would like to predict something about them.  As a simple example, suppose that we have a collection of product reviews and we would like to predict based on the text of the reviews whether the review is positive or negative.  This is a **classification** task, a fundamental task in machine learning.
@@ -6,7 +10,7 @@ For simplicity, let's assume that we have a corpus of reviews in which each revi
 
 ## Splitting the Data
 
-Let's suppose we have a modest 1,000  labeled reviews.  We'll set aside 10% of them as our **test set** to see how well we can can predict and another 10% as our **development set** (dev set), which we'll use for testing and tweaking our model while we're working on it.  The remaining 80% will be our **training set**, which we'll use for algorithmically creating our model.  Before spliting these data into subsets, we'll shuffle the examples to increase the likelihood that the three sets are sufficiently representative of the entire dataset.  Otherwise, we might train a more biased model, if the unrandomized data exhibit a pattern.  For example, if the positive reviews are in the first half of the dataset file and the negative reviews are in the second half, but we use the last 20% for testing, we will only test on negative reviews and we will train on significantly more positive reviews than negative reviews.  Usually, we want to have an equal nubmer of each class in at least the test and development sets if at all possible, though there may be situations when it's preferable for the data to reflect an assumed distribution of the data in reality.  
+Let's suppose we have a modest 1,000  labeled reviews.  We'll set aside 10% of them as our **test set** to see how well we can can predict and another 10% as our **development set** (dev set), which we'll use for testing and tweaking our model while we're working on it.  The remaining 80% will be our **training set**, which we'll use for algorithmically creating our model.  Before splitting these data into subsets, we'll shuffle the examples to increase the likelihood that the three sets are sufficiently representative of the entire dataset.  Otherwise, we might train a more biased model, if the unrandomized data exhibit a pattern.  For example, if the positive reviews are in the first half of the dataset file and the negative reviews are in the second half, but we use the last 20% for testing, we will only test on negative reviews and we will train on significantly more positive reviews than negative reviews.  Usually, we want to have an equal number of each class in at least the test and development sets if at all possible, though there may be situations when it's preferable for the data to reflect an assumed distribution of the data in reality.  
 
 In general, we should **not** look at our test set.  Our goal is **generalization** from our training data to unseen data, and evaluation on the test set should show evidence of this generalization.  If we look at the test data, it's cheating, because the data are no longer unseen.  It's possible, even if unconsciously, to explicitly engineer a model that will exploit features in the test set, artificially driving up accuracy and creating the illusion of a generalizable model.  
 
@@ -92,7 +96,7 @@ w_i := w_i + yx_i.
 $$
 If word $x$ doesn't appear, its value is 0, leaving its corresponding weight unchanged.
 
-There is no absolute stopping criteria. We want the algorithm to stop when it is no longer learning. This may manifest itself as a lack of improvement in training data accuracy or by the weights vasillating between the same values for an extended number of iterations.
+There is no absolute stopping criteria. We want the algorithm to stop when it is no longer learning. This may manifest itself as a lack of improvement in training data accuracy or by the weights vacillating between the same values for an extended number of iterations.
 
 Recall that we're using **binary features** in this model that can only be $1$ or $0$.  If a word appears, the corresponding feature $x_i$ is 1; otherwise, it is 0.  The algorithm, as written, can therefore only modify weights by 1 unit at a time.  This limits the kinds of hyperplanes that the model can find, since all of the elements in the weight vector $\mathbf{w}$ will be integers.  We say that this model has a **learning rate** or **step size** of 1 because each weight value changes in increments of 1.  We can change this by adding a **hyperparameter** -- a parameter that isn't learned but set in advance -- which we'll call $\eta$ (eta). We'll replace $w := w+yx$ with and an upate rule that allows us to scale the learning rate:
 $$
