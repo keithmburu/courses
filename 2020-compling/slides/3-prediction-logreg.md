@@ -7,8 +7,8 @@ paginate: true
 footer: Computational Linguistics, Fall 2020\nAlvin Grissom II, Haverford College
 
 ---
-# Prediction and the Perceptron
-2020-9-22
+# Prediction and Logistic Regression
+2020-9-25
 
 ---
 # Prediction
@@ -269,7 +269,7 @@ function train(x, y, learning_rate):
         p = predict(x)
         for each w in weights:
             w = w + learning_rate * (y - p) * x
-            b = b + learning_rate * (y - p) * x
+        b = b + learning_rate * (y - p) * x
 ```
 * In perceptron, update is entirely determined by learning rate $\eta$.
 * In logistic regression, update is determined by learning rate $\eta$ *and how wrong you were*, $y-p$
@@ -298,7 +298,7 @@ $$
 \frac{P(y=1)}{1-P(y=1)} = \frac{P(y = 1)}{P(y = 0)}
 $$
 * Monotonic transformation of probabilities
-* Maps probabilities from $[0,1]$ to $[-\infty,\infty]$
+* Maps probabilities from $[0,1]$ to $[0,\infty]$
     * Reverse of what logistic function does
 * Ex: if $P(y=1) = .75$, then $P(y=0) = .25$. 
     * Odds of class 1 is .75/.25, or 3 to 1.
@@ -321,7 +321,7 @@ $$
     y\log p + (1-y)\log(1-p)
     $$
     $$
-    = y\log\sigma(\mathbf{w}\cdot\mathbf{x}) + (1-y)(1- \log\sigma(\mathbf{w}\cdot\mathbf{x}+b)),
+    = y\log\sigma(\mathbf{w}\cdot\mathbf{x}+b) + (1-y)(1- \log\sigma(\mathbf{w}\cdot\mathbf{x}+b)),
     $$
     which is the **log likelihood** of a correct answer.
 
@@ -370,7 +370,7 @@ if $m=\frac{\Delta y}{\Delta x}=3/4$, this is the slope.
 ## Partial Derivatives
 
 
-* Given functions of more than one variable, rate of change alone one dimension, assuming other ones held constant
+* Given functions of more than one variable, rate of change along one dimension, assuming other ones held constant
     * For $f(x, y)$, when differentiating along $x$ axis, treat *y* as a constant
     * Written as $\frac{\partial f}{\partial{x}}$, $\frac{\partial f}{\partial{y}}$, etc.
 <p>    
@@ -469,7 +469,7 @@ $$
 # Optimization
 ## Gradient
 * The magnitude of the gradient $|\nabla f|$ is the **Euclidean distance**,  **Euclidean norm** or $\ell^2$ norm
-* Same distance formula we learned in high school or sooner
+* Same distance formula we learned in high school or earlier
 $$
 |\nabla f(x,y)|= \sqrt{\left(\frac{\partial f}{\partial x}\right)^2+\left(\frac{\partial f}{\partial y}\right)^2}. 
 $$
@@ -543,7 +543,7 @@ $$(y-p)x_i$$
 $$
 \begin{align}
 w_i &:= w_i +\eta(y-p)x_i\\
-w_i &:= w_i + \eta \nabla f
+w_i &:= w_i + \eta \nabla \mathscr{L}
 \end{align}
 $$
 
@@ -553,11 +553,11 @@ $$
 $$
 \begin{align}
 w_i &:= w_i +\eta(y-p)x_i\\
-w_i &:= w_i + \eta \nabla f
+w_i &:= w_i + \eta \nabla \mathscr{L}
 \end{align}
 $$
 
-* The loss function's derivative is our update rule, changes weight $w_i$ by the gradient given by th example!
+* The loss function's derivative is our update rule, changes weight $w_i$ by the gradient given by the example!
 * The learning rate $\eta$ is a **hyperparameter** that determines how big of a step we take in the direction of given by the gradient
 
 ---
@@ -578,5 +578,5 @@ $$
 # Optimization
 ## Stochastic Gradient Descent
 * Full gradient descent requires going over all training data for one update
-* Insterad, we use **stochastic** gradient descent (SGD), which uses a single example from training data to update all parameters on one iteration
+* Instead, we use **stochastic** gradient descent (SGD), which uses a single example from training data to update all parameters on one iteration
 * Understanding logistic regression and SGD is crucial for understanding more complex algorithms
