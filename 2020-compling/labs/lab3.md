@@ -11,4 +11,4 @@ In addition to your code (no need to compress it), turn in a *short* report desc
 3. Does there appear to be a relationship between training data size and accuracy?
 
 
-
+Submit the lab to Moodle, as usual, before the next lab time.
