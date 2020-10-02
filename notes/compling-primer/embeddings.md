@@ -4,17 +4,9 @@ Alvin Grissom II
 
 # Word Embeddings
 
-
-
 ## Distributional Semantics
 
-
-
-
-
 One method of defining the meaning of words is through logical form, such as first-order logic and lambda calculus.  This is formal semantics or logical semantics.  Another approach is to define words in terms of their relationships to other words.  The latter approach is central to the notional of **distributional semantics**, which follows from the **distributional hypothesis**, which is that words with similar meanings tend t occur in similar contexts.  This was articulated by scientists as early as the 1940s.
-
-
 
 ## Co-occurrence Matrix
 
@@ -42,8 +34,6 @@ which is just the dot product of the two vectors normalized by their length.  Th
 
 Co-occurrence matrices were also the basis of other techniques, such as latent semantic analysis (LSA), also called latent semantic indexing (LSI).  In LSA's co-occurrence matrix, however, the rows are words and the columns are documents.  LSA uses a linear algebra technique known as singular value decomposition (SVD) to reduce the size of the matrix while maintaining the similarity information.  There is a probabilistic version known as probabilistic LSA (PLSA, PLSI) based on Bayesian statistics, which is the basis of topic models.  
 
-
-
 ## word2Vec
 
 
@@ -60,13 +50,7 @@ The word2vec CBOW algorithm doesn't create a co-occurrence matrix; instead, it t
 $$
 P(\text{fox}|\text{quick}), P(\text{fox|brown}), P(\text{fox}|\text{jumped}), P(\text{fox}|\text{over})
 $$
-are calculated individually.
-
-
-$$
-P(\text{fox}|\text{quick, brown, jumped, over}).
-$$
-But this is not a binary classification problem.  So, instead, we formulate it as
+But since this isn't a binary classification problem, we formulate it as:
 $$
 P(\text{true}|t=\text{fox}; c=\text{quick}), P(\text{true}|t=\text{fox}; \text{c=brown})\text{, etc.}
 $$
@@ -93,8 +77,6 @@ The other major approach of word2vec is the **skip-gram** algorithm . A **skip-g
 
 
 When training word2vec word embeddings, there are a number of hyperparameters, most notably the context window size, the particular algorithm (CBOW or skip-gram), and the number of dimensions.  The dimensionality of the vector space constrains what can be represented, but a dimensionality too large may be too sparse.
-
-
 
 ## Applications
 
