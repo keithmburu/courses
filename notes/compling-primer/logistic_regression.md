@@ -4,7 +4,7 @@ Alvin Grissom II
 
 # Logistic Regression
 
-Note: All images are sourced from Wikipedia.
+Note: All images are, for the moment, sourced from Wikipedia.
 
 For all of its elegance, one weakness of the perceptron algorithm is its tendency to **overfit** the training data.  This is due in part to the fact that the activation $a$ is the pure result of a linear combination, meaning that $a$ is in principle unbounded.  While we can force hard constraints on either the weights or the activations manually, we might hope that there were a more principled way of constraining the activations.  
 
@@ -17,6 +17,12 @@ f(t)=
 \end{cases}
 $$
 <img src="../../2020-compling/slides/images/Activation_binary_step.svg" alt="Step function graph. Source: wikipedia" style="zoom:150%;" />
+
+Another way of writing this is
+$$
+f(t) = \unicode{x1D7D9}[t > 0],
+$$
+where $\unicode{x1D7D9}[]$ is the binary indicator function which returns 1 if the condition inside the brackets is met and 0 otherwise.
 
 This is a binary step activation function that forces all predictions to be either 1 or 0.   This achieves our goal of constraining our outputs (which we could also accomplish by normalizing the inputs), but we lose all information about the confidence in our prediction.  Concretely, the input of the function will be $\mathbf{w}\cdot\mathbf{x} + b$.  If this value is positive, the output is 1; otherwise it is 0.  Usually, we would like, however, to have a probability of our prediction, not just 1 or 0.
 
@@ -240,7 +246,7 @@ This tells us  how we should change our weights.  We can scale the step size by 
 $$
 \begin{align}
 w_i &:= w_i +\eta(y-p)x_i\\
-w_i &:= w_i + \eta \nabla f
+w_i &:= w_i + \eta \nabla \mathscr{L}
 \end{align}
 $$
 Therefore, our "intuitive" update rule is exactly the gradient, scaled by a learning rate. This is why this logistic regression optimization algorithm guarantees that we will converge toward the optimal weights if the step size is sufficiently small.  
@@ -255,3 +261,29 @@ It's also possible to use **mini-batching**, where instead of updating based on 
 
 As we've seen from the simple pseudocode, it's possible to write a fully-functional version of logistic regression with SGD without understanding any of this, but grasping these fundamental concepts is important for understanding neural networks.
 
+## Regularization
+
+Regularization is the process of adding information to prevent overfitting.  Recall that overfitting occurs when our model fits the training data extremely well but that the model doesn't generalize.  In linear models, like perceptron and logistic regression, this tends to occur when the model learns to use features that are, in fact, just noise, or when a few features are given outsized importance--that is, weights with extremely high magnitude--in the model.  While logistic regression is less prone to overfitting than perceptron, it is still an issue.  The most obviously overfit models are those which achieve low error on the training data but perform poorly on the test data.  A model with a sufficiently large number of parameters can sometimes effectively "memorize" the training data without any substantial ability to generalize beyond it.  In predictive settings, our goal is to reduce our **generalization error**, not just our learning error: we want to perform well on unseen test data.
+
+Regularization is commonly used to reduce overfitting.  The two most common types in NLP are $\ell^1$ and $\ell^2$ regularization, the names of which refer to the corresponding norms they employ.  Both involve a minor addition to the loss function that reduces the weights for certain features, making it of the form:
+$$
+\begin{align}
+\mathscr{L}_{Reg}(\mathbf{x})=&\sum_{(\mathbf{x},y)\in D} [y\log p + (1-y)\log(1-p)] + \lambda\sum_{(\mathbf{x},y)\in D}R(\mathbf{x}, b)\\
+=& \sum_{(\mathbf{x},y)\in D} [y\log\sigma(\mathbf{w}\cdot\mathbf{x}) + (1-y)(1- \log\sigma(\mathbf{w}\cdot\mathbf{x}+b))]
+\\&+ \lambda\sum_{(\mathbf{x},y)\in D}\ell(\mathbf{x}, b),
+\end{align}
+$$
+ where $\ell(\mathbf{x}, b)$ is a function that takes the weights as input and returns a regularization term that discounts large weights.  The $\lambda$ is a hyperparameter that determines how much weight we'll give the regularization term.  This general form of regularization is called Tikhonov regularization, whereby we add a scaled term to the objective function.
+
+### $\ell^1$ Regression
+
+The $\ell^1$ regression technique is also called **Lasso regression**.  The "Lasso" here is an acronym for Last Absolute Shrinkage and Selection Operator.  To implement Lasso regression, we modify our loss function
+$$
+\begin{align}
+\mathscr{L}_{\ell^1} &= \sum_{(\mathbf{x},y)\in D} [y\log\sigma(\mathbf{w}\cdot\mathbf{x}) + (1-y)(1- \log\sigma(\mathbf{w}\cdot\mathbf{x}+b))]\\
+&+\lambda\sum_{(\mathbf{x},y)\in D}\lVert\mathbf{w}\rVert,
+\end{align}
+$$
+where the final term takes the $\\\ell^1$ norm of the weight vector.  Recall that the $\ell^1$ norm just takes the absolute value of every term in the vector and adds them.  As usual, when considering a single example, just remove the summations. In the end, you end up adding to the overall score the absolute values of all of the weights summed together and scaled by $\lambda$.  This has the effect of decreasing the
+
+ In general, we want a model that conforms to the principle of Occam's razor: a model which is as complex as necessary and no more.  

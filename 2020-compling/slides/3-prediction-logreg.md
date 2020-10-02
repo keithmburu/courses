@@ -289,7 +289,7 @@ function train(x, y, learning_rate):
 $$
 \underset{y}{\text{argmax}}\text{ }P(y|\textbf{x};\textbf{w})
 $$
-* I.e., maximize the probability that, it chooses the correct class, $y$.
+* I.e., maximize the probability that it chooses the correct class, $y$.
 * Only two possible classes, 1 or 0, so $P(y) = 1-P(\lnot y)$
 ---
 # Logistic Regression Loss Function

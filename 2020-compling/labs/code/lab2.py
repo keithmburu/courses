@@ -15,6 +15,8 @@ tokenizer = nltk.RegexpTokenizer('\w+')
 tokens = tokenizer.tokenize(all_text)
 sys.stderr.write('Finding bigrams...' + '\n')
 bigrams = nltk.bigrams(tokens)
+for b in bigrams:
+    print(b)
 #tokens = nltk.word_tokenize(all_text)
 
 english_stopwords = stopwords.words('english')
