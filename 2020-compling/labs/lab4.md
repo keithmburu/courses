@@ -14,7 +14,7 @@ You may use any corpus for this assignment, e.g., Project Gutenberg, but you may
 corpus = nltk.corpus.gutenberg.sents('melville-moby_dick.txt') #read all sentences
 ```
 
-Now, we can use Gensim to create word2vec embeddings with the default parameters.   Since this is a small corpus, it won't take long.
+Now, we can use Gensim to create word2vec embeddings with the default parameters.   Since this is a small corpus, it won't take long.  Be sure to lower-case everything.  Stripping punctuation is also recommended, but not required for this lab.
 
 ```python
 model = gensim.models.Word2Vec(corpus)
