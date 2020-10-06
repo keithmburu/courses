@@ -1,51 +1,52 @@
-# Neural Networks
+Computational Linguistics Primer (Draft)
+
+Alvin Grissom II
+
+# Multi-class Linear Classification and Neural Networks
+
+The perceptron and logistic regression are the foundation of what we call neural networks.  **Neural networks** are the result of stacking two or more layers perceptron or perceptron-like classifiers, sending the output of one layer to the inputs of the next layer, before finally making a prediction.  The term "neural network" once referred to stacked linear models, e.g., the multi-layer perceptron (MLP). But the term is now vague and refers to many very different classes of models.  What they have in common is that they stack simpler classifiers to produce a result and use stochastic gradient descent or some similar algorithm to learn to fit the training data.  
 
 
 
-We've discussed the linear classifiers the perceptron, its cousin logistic regression, and, at a high level, the mathematics undergirding their ability to learn to classify data.  Through gradient descent, these algorithms are guaranteed to change their parameters such that they improve the classification performance on the training data since their loss functions are convex.  They have one major limitation, however: they are linear classifiers, meaning that they are ultimately defining a line (or hyperplane) to separate the data into classes.  This fundamentally limits its ability to classify data: if the data aren't **linearly separable**, it's impossible for the classifier to perfectly classify the data.  In practice, this may not be a problem.  In logistic regression, for example, we are still increasing the probability of classifying the examples correctly as we walk down the loss function, even if it's ultimately impossible to classify all of the data correctly.  It might even be an advantage in some cases, as we're less likely to memorize data if we're constrained to linear separating functions.  This is the Occam's Razor principle.  A simple separating function will usually generalize better than a complex, contoured one.
+## Multi-class Classification
+
+### One-vs-all 
+
+Before we discuss  neural networks, let's first discuss how we might tackle classification tasks for more than two classes.  All of the classifiers we've discussed until now have been strictly binary, but most problems cannot be framed in this way.  There are several heuristic methods for dealing with this. One such method, called one-vs-all or one-against-all classification, trains multiple classifiers to predict from $k$ classes.  More specifically, the one-vs-all method trains $k-1$ classifiers.  For each classifier, the positive class is one of the $k$ classes, while the negative class is *everything else*; hence the name. At test time, we use each of the classifiers to make a prediction for its positive class.  We rank each classifier's prediction for the class is represents and ultimately predict the class with the highest probability.  One disadvantage to this approach is that it does produce a probability distribution over all classes, since each classifier is trained independently, but it often works well in practice.  There are other methods, such as all-vs-all (also called one-vs-one) classification and error-correcting codes.
 
 
 
- Even so, there are data on which, if we could find a curve -- or a contoured surface -- instead of just a plane to separate the data, we could classify the data more accurately. Neural networks enable this. In fact, neural networks are known as **universal function approximators** because, in principle, there are no constraints on the kinds of functions they can discover.  While there are often connections made between neural networks and neurons in the brain, let us dispense with this notion for now and view it as we would any other algorithm, because that is what it is.
+### Maximum Entropy Classification
+
+One-vs-one is conceptually similar to one-vs-all.  we train $k(k-1)/2$ classifiers, training a binary classifier to compare each class to every other class.  The maximum entropy  (**MaxEnt**) or **softmax** classification technique uses a similar idea.  MaxEnt is another  name for **multinomial logistic regression**, i.e., logistic regression that can handle more than two classes by use of a sigmoid-like activation function that handles more than two classes.   MaxEnt learns a set of weights $\mathbf{w_i}$ for each of the $k$ classes.
+$$
+\text{softmax}(z_i)=\frac{e^{z_i}}{\sum_{i=j}^k e^{z_i}},
+$$
+
+
+whose input $z_i=\mathbf{w_i}\cdot \mathbf{x}+b_i$, where $\mathbf{w_i}$ is the vector of weights learned for a particular class.   This computes $P(y=i|\mathbf{w_i}, b_i; \mathbf{x})$, the probability that the correct class is $y$ given this classes weights and the current feature values.   The denominator is a normalizing term that makes our probabilities sum to 1.  We can learn the independent weights by minimizing the loss of the independent weights jointly with stochastic gradient descent.  Note that if the number of classes $k=2$, the softmax function reduces to the logistic function.
 
 
 
-## Feed-forward neural networks
-
-A **neural network** consists of two or more **layers** of simpler models.  The simplest kind of neural network is a **feed-forward neural network**, so called because the outputs of one layer are fed into the inputs of the next layer.  One of the simplest feed-forward neural networks is the **multi-layer perceptron**.  It is, simply, three or more perceptrons stacked, where the output of one perceptron layer is sent to the input of another layer, and the final layer makes the final prediction.  You can have one or more perceptron on each layer.  
-
-```
-TODO MLP graphic
-
-```
+### Feed-forward Neural Networks
 
 
 
-You can think of a single-layer perceptron as a simple neural network, but usually we reserve the term "neural network" for those with multiple layers.  Though the perceptron is a linear model, when we stack two or more of them together, we can model non-linear decision boundaries.  In practice, usually we use some kind of sigmoid or other activation function in each of the component perceptrons. Each perceptron (or logistic regression, or whatever) is called a **neuron** in a neural network.  We learned that a single perceptron produces on output which may then be passed through some activation function.  Usually, we use a smooth activation function.  Suppose that we have the simplest possible MLP, with two layers of one neuron each.  When the first layer makes a prediction, its output isn't the final prediction; it's just an intermediate real number that is fed into the second layer.  The input to the neuron in the perceptron in the second layer is then the value of the output of the precious layer.  This final layer then outputs another real number, which is the actual prediction.  We call the first perceptron layer the **hidden layer**, because its contents don't actually make any predictions.  We refer to the final layer as the **output layer**, because it generates the outputs -- the predictions.  The inputs to the first perceptron layer is called the **input layer**. This terminology is a bit confusing, because this "layer" is not a perceptron; it just consists of the feature values: the $$\mathbf{x}$$ vector.
+We can think of logistic regression and linear perceptron both as extremely simple neural networks if we simply change the terminology.  Let's consider  logistic regression.  We have an three layers: an input layer, a hidden layer, and an output layer.  The **input layer**, typically represented by $\mathbf{x}$, refers to the feature values.  Recall that these inputs are then fed into the classifier, which assigns a weight to each feature, takes the dot product of the weights and features, and sends them through the sigmoid function.  The classifier consists of the weights $$\mathbf{w} + b$$ and a function, and a means of converting them into a prediction, i.e., by taking $\sigma({\mathbf{w\cdot x + b})}$ .  We'll call this classifier (logistic regression) a **neuron** (or node, or unit), which, in this case, comprise our **hidden layer**.   It produces an prediction, $\hat{y}$, which we hope is closer to the actual answer $y$ than not.  We'll now call this the **output layer**.   Based on the error, or difference, between the correct answer $y$ and the predicted answer $\hat{y}$,  we learn the weights via stochastic gradient descent, which we will now call **backpropagation**.
 
+We generally reserve neural networks and the associated terms above for multi-layered networks, not for single perceptrons and logistic regressions, but it's helpful to introduce these concepts in relation to concepts with which you're already familiar. 
 
+The most fundamental kind of neural network, of which the MLP is an example, is the **feed-forward neural network**, in which one layer feeds in to another layer, with no cycles, until a prediction is made by the final layer.  The feed-forward neural network consists of an input layer, one or more hidden layers, and an output layer. 
 
-Ultimately, a perceptron is just a set of weights $\mathbf{w}$; so, when we refer to the "hidden layer", we're in fact just referring to the weights on that layer.  
+Let's consider an example of a classifier we might actually call a neural network: a network with one **hidden layer** consisting of four perceptron neurons, making this an MLP.  Our input layer $\mathbf{x}$ contains our feature values.  These feature values are sent to *all* of the hidden neurons, which independently produce activations, which we'll call $a_1,\ldots, a_4$.  Each of these hidden units send their output to the output layer, which we'll make a sigmoid function (implying this is a binary classifier).  The fact that unit sends its output to every unit on the next layer makes this network **fully-connected**, which is standard for feed-forward neural networks.  We take the dot product of the hidden layer features and weights -- all of them -- and send them through the sigmoid function to produce our final prediction.  A logistic regression or perceptron is just a function.  A neural network is a composite function, e.g., $y=f(g(x))$.
 
+![img](https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Neural_network_example.svg/220px-Neural_network_example.svg.png)
 
+Once a prediction $\hat{y}$ is made, just as in logistic regression or a single perceptron, we calculate the $y-\hat{y}$ and perform stochastic gradient descent. In logistic regression, we use the update rule for the weights
+$$
+w:=w+\eta\nabla\mathscr{L}\\
+w:=w+\eta(y-\hat{y})\mathbf{x}.
+$$
+But in a neural network, we need to *propagate* the error from the output layer through the hidden layer.  We still use the gradient, but we have to apply the chain rule for derivatives so that we update the weights for all of the nodes in the network.  The intuition is the same as that of logistic regression or perceptron.  The primary difference is that we have to update the weights for multiple neurons instead of only one.  We're still trying to find the optimum point on a surface.  However, unlike logistic regression, the loss function for neural networks is not convex; so, there is no guarantee that we will find the optimum with gradient descent.  Even so, given the complexity of the classifier function, the representational power of neural networks is significantly greater than that of linear models; so, they still often find superior solutions.
 
-For illustrative purposes, we limited ourselves to two neurons, but in most scenarios, we would not limit ourselves to one neuron per layer.  We usually have many neurons in both the hidden and output layers.  Traditionally, these are **fully-connected**, meaning that every hidden neuron's output is sent to the input of every neuron on the output layer: if we have 128 hidden nodes, each node on the output layer will have 128 inputs.  Assuming we're solving a binary classification problem, the output layer will have one output, just as a perceptron or logistic regression.
-
-```
-TODO fully-connected
-```
-
-
-
-It is not uncommon to have more than one hidden layer.  If we have two hidden layers, then the output of layer 1 becomes the input of layer 2, and the output of layer 2 becomes the input to the output layer.  At some point, when we add sufficient layers, we may call the network "deep."  Classifiers are just functions with some parameters that we must set, and in neural networks we have multiple layers of parameters.  Neural networks are composite functions with weights to set at each layer.
-
-
-
-## Setting the Parameters
-
-We learned about gradient descent in the chapter on logistic regression.  We can also use gradient descent with an MLP to set our weights, but because neural networks are composite functions, we must use the chain rule to derive the update rule.  There are numerous resources that explain the mathematics of this, but we will settle for intuition in this section.
-
-
-
-Recall that in the perceptron and logistic regression, we compute the change of our weights $\mathbf{w}$ based on a measurement of our error -- how far off our prediction was from the correct label.  We do the same in neural networks *on the output layer*.  In the simplest case, the output layer is just a single node; so, we can compute its loss in the same way we do for linear classifiers. But we must *propagate* this error back through the network, all the way to the first layer.  When we make a prediction, we modify the weights throughout the entire network according to this loss.  This process is baclled **backpropagation**.
-
+In order to learn interesting functions, neural networks must be initialized.  They can be initialized randomly or with various other clever initializations.  This is to force **symmetry breaking** of the network.  If the nodes all have the same initial values, they will all have the same gradient and learn the same weights, which would be pointless.

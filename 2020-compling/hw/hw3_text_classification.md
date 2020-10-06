@@ -1,14 +1,6 @@
 [Computational Linguistics, Fall 2020]()
 
-# Text Classification
-
-In this assignment, we'll take a simple approach to **sentiment analysis**.  Sentiment analysis atttempts to classify the "sentiment" of text.  For example, the sentence, "I'm happy today" has a positive sentiment, while the sentiment of "I hate this weather" is negative.  The sentiment of "The chance of rain today is 40%" would be neutral.  
-
-
-
-## Part 1: Bag of words classification
-
-Recall that a **bag of words** model does not consider the order of the words (or **tokens**).  Given the sentence, "the dog rode a bike up the waterfall with a cat", the words are {a, bike, the, cat, dog, rode, with, waterfall, words}.  Note that this is a set, not a list, since there is no sense of order.    This is one of the simplest representations of the data.  A more complex representation would take into account some sense of order.  
+# Text Classification (50pts)
 
 ### Linear Perceptron
 
@@ -92,6 +84,12 @@ How did it do?
 
 Now, let's use a simple neural network to tackle a language dataset, the dataset of IMDB reviews.  We have two possible sentiments for every sentence in the dataset, making this a binary classification problem.
 
+In this assignment, we'll take a simple approach to **sentiment analysis**.  Sentiment analysis attempts to classify the "sentiment" of text.  For example, the sentence, "I'm happy today" has a positive sentiment, while the sentiment of "I hate this weather" is negative.  The sentiment of "The chance of rain today is 40%" would be neutral.  
+
+## Bag of words classification
+
+Recall that a **bag of words** model does not consider the order of the words (or **tokens**).  Given the sentence, "the dog rode a bike up the waterfall with a cat", the words are {a, bike, the, cat, dog, rode, with, waterfall, words}.  Note that this is a set, not a list, since there is no sense of order.    This is one of the simplest representations of the data.  A more complex representation would take into account some sense of order.  
+
 You can read a description of this dataset here: https://keras.io/datasets/#imdb-movie-reviews-sentiment-classification.
 
 ```python
@@ -160,7 +158,7 @@ Here, we use `binary_crossentropy` loss because we only have two classes.  We co
 
 Try it and see how it does. Since we have two classes, random guesses will give us 50% accuracy.
 
-## Part 2: Sequence Classification
+## Sequence Classification
 
 Our previous model uses no order information.  Every word is isolated, and the neural network uses this bag of words representation to make predictions.  Thus far, we've used these kinds orderless representations for every task.  But we know that language has order.  What if we could encode this order information explicitly in the model?  Recurrent neural networks allow us to do this.
 
@@ -181,15 +179,24 @@ And with that, our model can use sequence information much more effectively.  LS
 
 Dropout is a kind of **regularization** for neural networks.  The purpose of the regularization is to reduce overfitting and increase generalizability.  Intuitively, if we randomly remove some percentage of the nodes in our network during training, these nodes  learn to depend less on the adjacent nodes, leading them to "evolve" to be stronger on their own.  We can add a `dropout=0.2` parameter to our GRU layer to use this.  There's also a `recurrent_dropout` option, which does the same for the recurrent unit itself.
 
-## Part 3: Assignment
+## : Assignment
 
-Write a report that addresses the following.  It should be written in complete, grammatical English, and it should be formatted correctly.  Otherwise, points will be deducted.
+Write a report in Markdown or LaTeX that addresses the following.  It should be written in complete, grammatical English, and it should be formatted correctly.  Otherwise, points will be deducted.  
 
 Tackle the sentiment analysis task with three kinds of recurrent units. 
 
-Analyze (1) the amount of time required to train, e.g., how well/stably/quickly it learns and converges (use graphs), and (2) the accuracy.  You should also include non-recurrent results as a baseline.  Also try changing the vocabulary size and using dropout.
+Analyze (1) the amount of time required to train, e.g., how well/stably/quickly it learns and converges (use graphs), and (2) the accuracy.  You should also include non-recurrent results as a baseline.  Also try changing the vocabulary size and using dropout.  The easiest way to do this for this assignment is to check the accuracy at checkpoints.
 
-You may, of course, add more layers and modify other aspects of the model for a more thorough analysis.  Detail whether your results are expected or not.
+You may, of course, add more layers and modify other aspects of the model for a more thorough analysis, but this is not required.  Detail whether your results are expected or not.
+
+To gain full credit, include the following in your analysis:
+
+* a linear perceptron baseline
+* an equivalent logistic regression baseline
+* a multi-layer perceptron (feed-forward neural network)
+  * Try changing the depth (number of layers) and breadth (number of neurons per layer).  Do you notice a trend in performance?
+* LSTM recurrent neural network
+  * Same as MLP.
 
 Extra Credit (+10pts): Figure out how to use a pre-trained GloVe embedding layer instead of learning one from scratch and add this to your performance analysis.
 
@@ -203,9 +210,10 @@ Clone it to your local machine by typing:
 
 This will copy the contents of this directory to your computer.  We're specifically interested a file called `imdb_lstm.py` in the `examples` subdirectory.
 
-Open this file in your favorite editor.  
+### Tips:
 
-
+1.  Be concise. 
+2. Graphs can often save you a lot of words. If you decide to include graphs, I recommend using the [seaborn](https://seaborn.pydata.org/) Python package.
 
 
 
