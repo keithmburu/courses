@@ -20,7 +20,7 @@ Now, we can use Gensim to create word2vec embeddings with the default parameters
 model = gensim.models.Word2Vec(corpus)
 ```
 
-We can change these defaults if we like.  Use the following documentation to complete the remainder of this lab: https://radimrehurek.com/gensim/models/keyedvectors.html#gensim.models.keyedvectors.WordEmbeddingsKeyedVectors.most_similar_cosmul
+We can change these defaults if we like.  Use the following documentation to complete the remainder of this lab: https://radimrehurek.com/gensim/models/keyedvectors.html
 
 1. Choose at least one other text to work with for the following questions.
 2. Before continuing, write down a hypothesis of relationships of some words of interest that you expect to see based on the texts you're using, and how you suspect your two (or more) texts will exemplify these differences.  At a minimum, use the cosine similarity function and at least one other function.
