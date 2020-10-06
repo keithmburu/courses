@@ -1,6 +1,6 @@
 # Lab 4 (5 points)
 
-For this lab, you will use word embeddings in a Python package called `gensim`.  This package is already installed on lab machines, but it is easy to install locally with `pip`.  For this assignment, you may use any text you like.  
+For this lab, you will use word embeddings in a Python package called `gensim`.  This package is already installed on lab machines, but it is easy to install locally with `pip`.  For this assignment, you may use any text that you prefer.  
 
 ```python
 import nltk
