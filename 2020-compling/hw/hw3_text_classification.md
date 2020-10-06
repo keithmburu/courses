@@ -2,6 +2,8 @@
 
 # Text Classification (50pts)
 
+Due:  October 16, 11:55pm
+
 ### Linear Perceptron
 
 Let's implement the linear perceptron in Keras.  First, we need to import some libraries.  Numpy is our numerical library.  The `Sequential` library allows us to build a neural network by stacking layers together.  We will come back to layers later
@@ -213,7 +215,10 @@ This will copy the contents of this directory to your computer.  We're specifica
 ### Tips:
 
 1.  Be concise. 
+
 2. Graphs can often save you a lot of words. If you decide to include graphs, I recommend using the [seaborn](https://seaborn.pydata.org/) Python package.
+
+   
 
 
 
