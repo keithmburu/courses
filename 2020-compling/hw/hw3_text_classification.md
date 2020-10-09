@@ -1,6 +1,6 @@
 [Computational Linguistics, Fall 2020]()
 
-# Text Classification (50pts)
+# Homework 3: Text Classification (50pts)
 
 Due:  October 16, 11:55pm
 
@@ -25,8 +25,6 @@ Recall that, in machine learning, the features of an example are usually called 
 MNIST images are grayscale, consisting of 28 x 28 = 784 pixel values in  [0,255], representing the shade of a given pixel.  We can normalize  these values to the range [0,1] by dividing the values by 255 if we  like, which will increase performance.
 
 ![mnist image](https://camo.githubusercontent.com/2d86395e8cb5f606d03cf4848d1a754b6c346668/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f322f32372f4d6e6973744578616d706c65732e706e67)
-
-MNIST images are grayscale, consisting of 28 x 28 = 784 pixel values  in [0,255], representing the shade of a given pixel.  We can normalize  these values to the range [0,1] by dividing the values by 255 if we  like.  (This is left up to you to try).
 
 Let's flatten them to a 1D vector of length 784.
 
@@ -54,7 +52,13 @@ The `Sequential` interface of Keras allows you to stack layers with simple funct
 model = Sequential()
 ```
 
-We want a basic linear perceptron that has one feature for every  pixel, with all of the features initialized to 0.  We want to find the  best weights for our model with stochastic gradient descent (SGD) with a learning rate of 0.01.  We have ten classes.  Our input dimension must be the same as the number of features --in this case, one per pixel. Our **loss function** is mean squared error (MSE), the standard for the perceptron.  This can be changed.  (See Keras's other loss functions here: https://keras.io/api/losses/).  The `linear` activation tells us that we're not using any kind of [activation function](https://keras.io/api/layers/activations/).
+We want a basic linear perceptron that has one feature for every  pixel, with all of the features initialized to 0.  We want to find the  best weights for our model with stochastic gradient descent (SGD) with a learning rate of 0.01.  We have ten classes.  Our input dimension must be the same as the number of features -- in this case, one per pixel. Our **loss function** is mean squared error (MSE), the standard for the perceptron.  For a single example, where $\hat{y}$ is our guess and $y$ is the correct answer, 
+$$
+MSE = \frac{1}{2}(y-\hat{y})^2
+$$
+It's just the difference between the correct answer and the guess, squared.  We multiply by 1/2 just to make the derivative cleaner, which we use for gradient descent.  The derivative is just $y-\hat{y}$. 
+
+This loss function can be changed.  (See Keras's other loss functions here: https://keras.io/api/losses/).   For now, we'll use the `linear` activation, which is equivalent to using no [activation function](https://keras.io/api/layers/activations/), giving us only the dot product of the weights and feature values.
 
 ```
 model.add(Dense(10, activation='linear', input_shape=(784,)))
@@ -62,6 +66,8 @@ model.add(Dense(10, activation='linear', input_shape=(784,)))
 model.compile(loss = "mse", optimizer = SGD(lr = 0.01),
 metrics=['accuracy'])
 ```
+
+To transform this into  a logistic regression, we could use the logistic (sigmoid) activation function and cross-entropy loss.
 
 #### Train the Model
 
@@ -118,7 +124,7 @@ x_test = sequence.pad_sequences(x_test, maxlen=maxlen)
 
 #### Embedding Layer
 
-We could represent every word or character in our input vector using a **one-hot-vector** representation, and our classifier would learn to make predictions with this data.  Despite its name, one-hot-vector representations are quite boring.  Given a vocabulary size $$|V|$$, each word is represented by a binary vector of length $$|V|$$.  For each word, a unique bit is flipped to 1.  So, for example, if we have a vocabulary of 3 words, {cat, dog, bike}, we our vector (and the corresponding input layer) must be of length 3.  One possible representation is:
+We could represent every word or character in our input vector using a **one-hot-vector** representation, and our classifier would learn to make predictions with this data.  Despite its name, one-hot-vector representations are quite boring.  Given a vocabulary size $$|V|$$, each word is represented by a binary vector of length $$|V|$$.  For each word, a unique bit is flipped to 1.  So, for example, if we have a vocabulary of 3 words, {cat, dog, bike}, our vector (and the corresponding input layer) must be of length 3.  One possible representation is:
 dog = [1 0 0], cat = [0 1 0], bike = [0 0 1].  Each "word" then, is just represented by a bit in a vector.   If both "dog" and "cat" occur in our example, the input is [1 1 0].  
 For an example of this, see [Intro to text classification with Keras: automatically tagging Stack Overflow posts](https://cloud.google.com/blog/products/gcp/intro-to-text-classification-with-keras-automatically-tagging-stack-overflow-posts).  But storing these words would need a large, sparse matrix, and they encode nothing about the relationships of words to each other.  Instead, we typically use **word embeddings** if we have sufficient data. 
 
@@ -141,7 +147,7 @@ It's possible to learn an embedding layer separately and even to use embedding l
 
 ````python
 model.compile(loss='binary_crossentropy',
-              optimizer='adam',
+               optimizer = SGD(lr = 0.01),
               metrics=['accuracy'])
 
 print('Train...')
@@ -164,7 +170,7 @@ Try it and see how it does. Since we have two classes, random guesses will give 
 
 Our previous model uses no order information.  Every word is isolated, and the neural network uses this bag of words representation to make predictions.  Thus far, we've used these kinds orderless representations for every task.  But we know that language has order.  What if we could encode this order information explicitly in the model?  Recurrent neural networks allow us to do this.
 
-A **recurrent neural network** (RNN), not to be confused with a recursive neural network, is a network with recursive units: this means that the output of the unit is passed back into itself.   Thus far, we have only looked at units which take an input vector **x**, combine it with some weights **W**, and then sent the result of the dot product through an activation function to produce the result.  These units have no **memory**.  But a recurrent unit preserves memory by passing its output back into itself.  With each recursive operation, this memory (weight) decays, meaning that the further "back in time" something is, the weaker its signal.  We'll study this in more detail soon.  The crux is that RNNs allow us to model sequence data, such as that found in language, much better than a standard perceptron. 
+A **recurrent neural network** (RNN), not to be confused with a recursive neural network, is a network with recursive units: this means that the output of the unit is passed back into itself.   Thus far, we have only looked at units which take an input vector **x**, combine it with some weights **W**, and then send the result of the dot product through an activation function to produce the result.  These units have no **memory**.  But a recurrent unit preserves memory by passing its output back into itself.  With each recursive operation, this memory (weight) decays, meaning that the further "back in time" something is, the weaker its signal.  We'll study this in more detail soon.  The crux is that RNNs allow us to model sequence data, such as that found in language, much better than a standard perceptron. 
 
 Two common recurrent nodes are **long short-term memory** (LSTM) units and **gated recurrent units** (GRUs).  LSTMs were introduced in 1997 by [Sepp Hochreiter and Shmidinhuber](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.676.4320&rep=rep1&type=pdf) but didn't see widespread use until the last several years.  GRUs were introduced in 2014 by [Cho et al.](https://arxiv.org/pdf/1406.1078.pdf) for neural machine translation.  In our code, we can delete the `Dense` and its requisite `Flatten` operation and replace it with an `LSTM` or `GRU` layer.
 
@@ -181,11 +187,9 @@ And with that, our model can use sequence information much more effectively.  LS
 
 Dropout is a kind of **regularization** for neural networks.  The purpose of the regularization is to reduce overfitting and increase generalizability.  Intuitively, if we randomly remove some percentage of the nodes in our network during training, these nodes  learn to depend less on the adjacent nodes, leading them to "evolve" to be stronger on their own.  We can add a `dropout=0.2` parameter to our GRU layer to use this.  There's also a `recurrent_dropout` option, which does the same for the recurrent unit itself.
 
-## : Assignment
+## Assignment
 
 Write a report in Markdown or LaTeX that addresses the following.  It should be written in complete, grammatical English, and it should be formatted correctly.  Otherwise, points will be deducted.  
-
-Tackle the sentiment analysis task with three kinds of recurrent units. 
 
 Analyze (1) the amount of time required to train, e.g., how well/stably/quickly it learns and converges (use graphs), and (2) the accuracy.  You should also include non-recurrent results as a baseline.  Also try changing the vocabulary size and using dropout.  The easiest way to do this for this assignment is to check the accuracy at checkpoints.
 
@@ -197,8 +201,8 @@ To gain full credit, include the following in your analysis:
 * an equivalent logistic regression baseline
 * a multi-layer perceptron (feed-forward neural network)
   * Try changing the depth (number of layers) and breadth (number of neurons per layer).  Do you notice a trend in performance?
-* LSTM recurrent neural network
-  * Same as MLP.
+* LSTM and/or GRU recurrent neural network
+  * Also try playing with the depth, etc.
 
 Extra Credit (+10pts): Figure out how to use a pre-trained GloVe embedding layer instead of learning one from scratch and add this to your performance analysis.
 

@@ -2,7 +2,7 @@ Computational Linguistics Primer (Draft)
 
 Alvin Grissom II
 
-# Multi-class Linear Classification and Neural Networks
+# Multi-class Linear Classification and Basic Neural Networks
 
 The perceptron and logistic regression are the foundation of what we call neural networks.  **Neural networks** are the result of stacking two or more layers perceptron or perceptron-like classifiers, sending the output of one layer to the inputs of the next layer, before finally making a prediction.  The term "neural network" once referred to stacked linear models, e.g., the multi-layer perceptron (MLP). But the term is now vague and refers to many very different classes of models.  What they have in common is that they stack simpler classifiers to produce a result and use stochastic gradient descent or some similar algorithm to learn to fit the training data.  
 
@@ -30,8 +30,6 @@ whose input $z_i=\mathbf{w_i}\cdot \mathbf{x}+b_i$, where $\mathbf{w_i}$ is the 
 
 ### Feed-forward Neural Networks
 
-
-
 We can think of logistic regression and linear perceptron both as extremely simple neural networks if we simply change the terminology.  Let's consider  logistic regression.  We have an three layers: an input layer, a hidden layer, and an output layer.  The **input layer**, typically represented by $\mathbf{x}$, refers to the feature values.  Recall that these inputs are then fed into the classifier, which assigns a weight to each feature, takes the dot product of the weights and features, and sends them through the sigmoid function.  The classifier consists of the weights $$\mathbf{w} + b$$ and a function, and a means of converting them into a prediction, i.e., by taking $\sigma({\mathbf{w\cdot x + b})}$ .  We'll call this classifier (logistic regression) a **neuron** (or node, or unit), which, in this case, comprise our **hidden layer**.   It produces an prediction, $\hat{y}$, which we hope is closer to the actual answer $y$ than not.  We'll now call this the **output layer**.   Based on the error, or difference, between the correct answer $y$ and the predicted answer $\hat{y}$,  we learn the weights via stochastic gradient descent, which we will now call **backpropagation**.
 
 We generally reserve neural networks and the associated terms above for multi-layered networks, not for single perceptrons and logistic regressions, but it's helpful to introduce these concepts in relation to concepts with which you're already familiar. 
@@ -49,4 +47,15 @@ w:=w+\eta(y-\hat{y})\mathbf{x}.
 $$
 But in a neural network, we need to *propagate* the error from the output layer through the hidden layer.  We still use the gradient, but we have to apply the chain rule for derivatives so that we update the weights for all of the nodes in the network.  The intuition is the same as that of logistic regression or perceptron.  The primary difference is that we have to update the weights for multiple neurons instead of only one.  We're still trying to find the optimum point on a surface.  However, unlike logistic regression, the loss function for neural networks is not convex; so, there is no guarantee that we will find the optimum with gradient descent.  Even so, given the complexity of the classifier function, the representational power of neural networks is significantly greater than that of linear models; so, they still often find superior solutions.
 
-In order to learn interesting functions, neural networks must be initialized.  They can be initialized randomly or with various other clever initializations.  This is to force **symmetry breaking** of the network.  If the nodes all have the same initial values, they will all have the same gradient and learn the same weights, which would be pointless.
+In order to learn interesting functions, neural networks must be initialized.  They can be initialized randomly or with various other clever initializations.  This is to force **symmetry breaking** of the network.  If the nodes all have the same initial values, they will all have the same gradient and learn the same weights, which would be pointless.  
+
+Our output layer can have multiple nodes, as well.  If, for example, we wanted to output a one-hot encoding, we could use this as a means of multi-class classification.  
+
+### Activation Functions
+
+We're not limited to logistic or even other sigmoid functions in our final layer.  The $\tanh$ (hyperbolic tangent, or "tanch") function is often used.  It is a sigmoid function with asymptotes at -1 and 1.  The ReLU function is also common in modern neural networks.  For multi-class problems, we can use softmax.
+
+### Breadth and Depth
+
+We say that a neural network is **deep** if is has many hidden layers.  The depth of a neural network is the number of hidden layers plus one.  We can, in principle, have as many hidden layers as we like.  But deep networks typically require more data to learn useful parameters.  The functions are complex.  Deep models can also be prone to overfitting, just as a perceptron with too many parameters.  The breadth of a layer is the number of neurons in the layer.  The hidden layer in the example above, for example, has a breadth of four.
+
