@@ -61,13 +61,13 @@ It's just the difference between the correct answer and the guess, squared.  We 
 This loss function can be changed.  (See Keras's other loss functions here: https://keras.io/api/losses/).   For now, we'll use the `linear` activation, which is equivalent to using no [activation function](https://keras.io/api/layers/activations/), giving us only the dot product of the weights and feature values.
 
 ```
-model.add(Dense(10, activation='linear', input_shape=(784,)))
+model.add(Dense(1, activation='linear', input_shape=(784,)))
 
 model.compile(loss = "mse", optimizer = SGD(lr = 0.01),
 metrics=['accuracy'])
 ```
 
-To transform this into  a logistic regression, we could use the logistic (sigmoid) activation function and cross-entropy loss.
+This gives us one linear perceptron neuron.  If we wanted ten of them to form a neural network layer, we could change the `1` to `10`. To transform this into  a logistic regression, we could use the logistic (sigmoid) activation function and cross-entropy loss.
 
 #### Train the Model
 
