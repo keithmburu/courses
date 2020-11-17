@@ -29,7 +29,7 @@ VP -> Verb NP
 VP -> Verb NP PP
 VP -> Verb PP
 VP -> VP PP
-PP -> Preposition N
+PP -> Preposition Noun
 Preposition -> 'from' | 'to' | 'on' | 'near' | 'through'
 Det -> 'that' | 'this' | 'the' | 'a'
 Proper-Noun -> 'Houston' | 'NWA'
@@ -43,6 +43,7 @@ s2 = """
 S -> NP VP
 S -> Aux NP VP 
 S -> VP
+NP -> NP Conj NP
 NP -> Pronoun
 NP -> Proper-Noun
 NP -> Det Nominal
@@ -62,6 +63,7 @@ Proper-Noun -> 'Houston' | 'NWA'
 Noun -> 'book' | 'flight' | 'meal' | 'money'
 Verb -> 'book' | 'include' | 'prefer'
 Pronoun -> 'I' | 'she' | 'me'
+Conj -> VP 'and' VP
 """
 
 
