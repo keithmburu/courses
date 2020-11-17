@@ -49,7 +49,6 @@ NP -> Proper-Noun
 NP -> Det Nominal
 Aux -> 'does'
 Nominal -> Noun 
-Nominal -> Nominal Noun 
 Nominal -> Nominal PP 
 VP -> Verb
 VP -> Verb NP 
