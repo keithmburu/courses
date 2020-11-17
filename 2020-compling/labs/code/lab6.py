@@ -30,7 +30,7 @@ VP -> Verb NP PP
 VP -> Verb PP
 VP -> VP PP
 PP -> Preposition N
-Preposition -> from | to | on | near | through
+Preposition -> 'from' | 'to' | 'on' | 'near' | 'through'
 Det -> 'that' | 'this' | 'the' | 'a'
 Proper-Noun -> 'Houston' | 'NWA'
 Noun -> 'book' | 'flight' | 'meal' | 'money'
@@ -56,7 +56,7 @@ VP -> Verb NP PP
 VP -> Verb PP
 VP -> VP PP
 PP -> Preposition N
-Preposition -> from | to | on | near | through
+Preposition -> 'from' | 'to' | 'on' | 'near' | 'through'
 Det -> 'that' | 'this' | 'the' | 'a'
 Proper-Noun -> 'Houston' | 'NWA'
 Noun -> 'book' | 'flight' | 'meal' | 'money'
