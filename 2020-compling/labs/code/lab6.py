@@ -21,7 +21,7 @@ S -> VP
 NP -> Pronoun
 NP -> Proper-Noun
 NP -> Det Nominal
-Aux -> does
+Aux -> 'does'
 Nominal -> Noun 
 Nominal -> Nominal PP 
 VP -> Verb
@@ -46,7 +46,7 @@ S -> VP
 NP -> Pronoun
 NP -> Proper-Noun
 NP -> Det Nominal
-Aux -> does
+Aux -> 'does'
 Nominal -> Noun 
 Nominal -> Nominal Noun 
 Nominal -> Nominal PP 
@@ -71,7 +71,7 @@ parser = nltk.ChartParser(g1)
 #print(g1)
 
 #generate valid sentences from grammar
-for sentence in generate(g1, n=50, depth = 20):
+for sentence in generate(g1, n=100, depth = 20):
     print(' '.join(sentence))
 
 sent = 'I book the flight'.split()
