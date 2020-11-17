@@ -23,7 +23,6 @@ NP -> Proper-Noun
 NP -> Det Nominal
 Aux -> does
 Nominal -> Noun 
-Nominal -> Nominal Noun 
 Nominal -> Nominal PP 
 VP -> Verb
 VP -> Verb NP 
@@ -71,14 +70,15 @@ parser = nltk.ChartParser(g1)
 #parser = nltk.RecursiveDescentParser(g1)
 #print(g1)
 
-#for sentence in generate(g1, n=10, depth = 20):
-#    print(' '.join(sentence))
+#generate valid sentences from grammar
+for sentence in generate(g1, n=50, depth = 20):
+    print(' '.join(sentence))
 
-sent = 'I book I'.split()
+sent = 'I book the flight'.split()
 #print all possible parses of sentence
 for tree in parser.parse(sent):
     print(tree)
     #tree.draw()
     #TreeView(tree)._cframe.print_to_file('output.ps')
-    save_tree(tree)
+    #save_tree(tree)
 
