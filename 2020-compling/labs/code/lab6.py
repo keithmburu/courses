@@ -62,7 +62,6 @@ Proper-Noun -> 'Houston' | 'NWA'
 Noun -> 'book' | 'flight' | 'meal' | 'money'
 Verb -> 'book' | 'include' | 'prefer'
 Pronoun -> 'I' | 'she' | 'me'
-Conj -> VP 'and' VP
 """
 
 
@@ -72,8 +71,8 @@ parser = nltk.ChartParser(g1)
 #print(g1)
 
 #generate valid sentences from grammar
-for sentence in generate(g1, n=100, depth = 20):
-    print(' '.join(sentence))
+#for sentence in generate(g1, n=200, depth = 4):
+#    print(' '.join(sentence))
 
 sent = 'I book the flight'.split()
 #print all possible parses of sentence
