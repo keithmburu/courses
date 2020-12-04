@@ -6,7 +6,7 @@ J&M 3rd Edition Book Draft: https://web.stanford.edu/~jurafsky/slp3/
 
 Python Tutorial: https://www.learnpython.org/
 
-# Revised Schedule of Topics (Preliminary, confirmed through 12/1)
+# Revised (Post-strike) Schedule of Topics (Preliminary, confirmed through 12/7)
 
 | Date  | Topic                                                        | Read/View Before Class                                       | Next Lab                                                     |      | Due                                                          |
 | ----- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ---- | ------------------------------------------------------------ |
