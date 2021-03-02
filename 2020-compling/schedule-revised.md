@@ -6,7 +6,7 @@ J&M 3rd Edition Book Draft: https://web.stanford.edu/~jurafsky/slp3/
 
 Python Tutorial: https://www.learnpython.org/
 
-# Revised (Post-strike) Schedule of Topics (Preliminary, confirmed through 12/7)
+# Revised (Post-strike) Schedule of Topics 
 
 | Date  | Topic                                                        | Read/View Before Class                                       | Next Lab                                                     |      | Due                                                          |
 | ----- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ---- | ------------------------------------------------------------ |
@@ -36,9 +36,6 @@ Python Tutorial: https://www.learnpython.org/
 | 12/4  | Information Theory                                           |       SLP 2.2                                                       |                                                              |      |                                                              |
 | 12/7  | Sequence-to-sequence Models, Machine Translation                                       |       J&M 10                                                          |                                                              |      |                                                              |
 | 12/11 | Large Pre-trained Models           |                                                     |                                                              |      |                                                              |
-| 12/14 | No Class                                                     |                                                              |                                                              |      | **Final Project Report**                                     |
-|       |                                                              |                                                              |                                                              |      |                                                              |
-|       |                                                              |                                                              |                                                              |      |                                                              |
-|       |                                                              |                                                              |                                                              |      |                                                              |
-|       |                                                              |                                                              |                                                              |      |                                                              |
+| 12/14 |                                                  |                                                              |                                                              |      | **Final Project Report**                                     |
+
 
