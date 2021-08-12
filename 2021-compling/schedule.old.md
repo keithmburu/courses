@@ -2,7 +2,7 @@ Computational Linguistics, Fall 2020
 
 Haverford College
 
-J&M 3rd Edition Book Draft: https://web.stanford.edu/~jurafsky/slp3/
+J&M 3rd Edition Book Draft: https://web.stanford.edu/~jurafsky/slp3
 
 Python Tutorial: https://www.learnpython.org/
 
