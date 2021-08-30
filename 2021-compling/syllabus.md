@@ -1,30 +1,28 @@
-CMSC325/LING325 Fall 2020
+CMSC325/LING325 Fall 2021
 
 Haverford College
 
 # Computational Linguistics
 
+**Professor:** Alvin Grissom II
 
+**TA**: Simon Babb
 
-Professor: Alvin Grissom II
+**Lectures**: Monday, Wednesday 2:30-4:00 p.m. in Sharpless 113
 
-TLI Consulatant: Ebony Graham
+**Labs:** Tuesday, 11:30 a.m.-12:30 p.m; 12:30-1:30 p.m. in Hilles 110
 
-Lectures: Tuesday, Friday 9:30-11:00 a.m.
+**Office Hours:** Monday, 4:30-5:30 p.m.;  Tuesday, 12:00-1:00 p.m. (online only); Wednesday, 4:30-5:00 p.m.; and by appointment.
 
-Labs: Tuesday, 1:00-2:00 p.m. and 2:30-3:30 p.m.
-
-Texts: [Race After Technology](https://www.wiley.com/en-us/Race+After+Technology:+Abolitionist+Tools+for+the+New+Jim+Code-p-9781509526437), by Ruha Benjamin; [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp3/), by Dan Jurafsky and James Martin
-
-Zoom URL: https://haverford.zoom.us/j/99742229426
+**Texts:** [Race After Technology](https://www.wiley.com/en-us/Race+After+Technology:+Abolitionist+Tools+for+the+New+Jim+Code-p-9781509526437), by Ruha Benjamin; [Speech and Language Processing 3rd Edition](https://web.stanford.edu/~jurafsky/slp3/), by Dan Jurafsky and James Martin
 
 ---
 
 ## Course Description
 
-This course provides a standard introduction to the fundamental concepts and techniques of modern computational linguistics theory and practice of computational linguistics research.  Linguistics is the study -- often the scientific study -- of language.  Computer science is the science of computing.  Computational linguistics is a broad, interdisciplinary field that overlaps significantly with cognitive science, artificial intelligence and machine learning, information theory, probability and statistics, computational social science, and other fields.  
+This course provides a standard introduction to the fundamental concepts and techniques of modern computational linguistics theory and the practice of computational linguistics research.  Linguistics is the study -- often the scientific study -- of language.  Computer science is the science of computing.  Computational linguistics is a broad, interdisciplinary field that overlaps significantly with cognitive science, artificial intelligence and machine learning, information theory, probability and statistics, computational social science, and other fields.  
 
-In this course, we will cover the fundamental mathematics of probability and linear algebra necessary for modern machine learning approaches to computational linguistics and natural processing, and the material is heavily weighted toward hands-on projects.  We will also cover some fundamentals of linguistic inquiry.  Topics include fundamentals of probability and statistics, linear algebra, and information theory; linear models, regular expressions; neural networks; recursive neural networks; latent variable and graphical models; topic models; parsing and tagging; machine translation; word embeddings; semantics fundamentals; ethics, fairness, societal, and social issues; information retrieval; machine translation; and research fundamentals.  
+In this course, we will cover the fundamental mathematics of probability and linear algebra necessary for modern machine learning approaches to computational linguistics and natural processing, and the material is heavily weighted toward hands-on projects.  We will also cover some fundamentals of linguistic inquiry.  Topics include fundamentals of probability and statistics, linear algebra, and information theory; linear models; regular expressions; neural networks; recursive neural networks; latent variable and graphical models; topic models; parsing and tagging; machine translation; word embeddings; semantics fundamentals; ethics, fairness, societal, and social issues; information retrieval; and research fundamentals, including scientific writing.  
 
 In addition to the these topics, a significant portion of the course involves a substantial project, which students will work on throughout the semester in groups, culminating in a short paper and presentation.
 
@@ -32,9 +30,9 @@ Throughout the semester, we will also read and discuss the book *Race After Tech
 
 ### Course Structure
 
-Due to the coronavirus pandemic, this course will be entirely online.  The course will also be somewhat (not entirely) "flipped."  This means that, prior to class time, students are expected to watch lectures and complete the required readings.  During the lecture time, then, students will come prepared with questions, which will be submitted beforehand.  Participation in the class discussion board will also be mandatory.  The course [schedule](schedule.md) is preliminary and subject to change as the semester progresses.  Some lectures may not be flipped (such as the first ones).
+The course [schedule](schedule.md) is preliminary and subject to change as the semester progresses.  
 
-If students cannot attend lectures due to circumstances beyond their control, they should notify the professor so that we can find an alternative arrangement.
+If students cannot regularly attend class due to circumstances beyond their control, they should notify the professor so that we can find an alternative arrangement.
 
 ### Assignment Submission
 
@@ -44,11 +42,11 @@ All written assignments and reports must be written in Markdown or LaTeX.  The f
 
 ### Late Policy
 
-All assignments are due on the day specified in Piazza.  Assignments submitted late may be subject to a late penalty of 10% off of the **maximum** possible grade per day.
+All assignments are due on the day specified in Moodle.  Assignments submitted late may be subject to a late penalty of 10% off of the **maximum** possible grade per day.
 
 ### Communication
 
-Students are free to e-mail me for any reason.  However, professors receive too much e-mail, and the best way to receive a fast response and jump to the front of the line is to contact me through [Piazza](http://www.piazza.com).  I will check Piazza for student mail at 4:30pm every weekday. In general, messages received after 5pm on Friday or during holidays will be checked the next business day.   Students may also schedule one-on-one time through audio/video chat or through text-based live chatting, based on their preference.  **Students are strongly encouraged to ask general questions on the message board instead of by e-mailing me directly.** This allows all students to benefit from the dialogue.
+Students are free to e-mail me for any reason.  However, professors receive too much e-mail, and the best way to receive a fast response and jump to the front of the line is to contact me through [Piazza](http://www.piazza.com).  I will check Piazza for student mail at 4:30pm every weekday. In general, messages received after 5pm on Friday or during holidays will be checked the next business day.   Students may also schedule one-on-one time through audio/video chat or through text-based live chatting, based on their preference.  **Students are strongly encouraged to ask questions on the Piazza message board instead of by e-mailing me directly.** This allows all students to benefit from the dialogue and reduces the amount of time I must answer the same questions.
 
 ### Academic Honesty
 
@@ -64,13 +62,12 @@ There are multiple categories for assignments, and certain assignments will be w
 | Midterm           | 15%        |
 | Participation     | 10%        |
 | Final Project     | 50%        |
-|                   |            |
 
-Participation includes participation in the online discussion board, participation during class lectures, and participation in in-class discussion.  
+Participation includes participation in the online discussion board, participation during class lectures, and participation in in-class discussion.  The midterm may be dropped and the homework weighting increased by 15% if the class is doing well.
 
 ### Final Project
 
-The final exam will be a substantial group research project on a topic of the student's choosing, in consultation with the professor, resulting in a short (~4 page) research paper.  These will be presented in short presentations on the final day of class.  The final project will be due at the end of the final exam period.
+The final exam will be a substantial group research project on a topic of the student's choosing, in consultation with the professor, resulting in a short (~4 page) research paper, which is more difficult than it sounds.  These will be presented in short presentations on the final day of class.  The final paper must be submitted by the end of the final exam period.
 
 ### Departmental Collaboration Policy
 
@@ -102,11 +99,24 @@ The Haverford traditions of student involvement and self-governance  go well bey
 
 ### Accommodations Statement
 
-Haverford College is committed to providing equal access  to students with a disability. If you have (or think you have) a  learning difference or disability – including mental health, medical, or physical impairment – please contact the Office of Access and  Disability Services (ADS) at [hc-ads@haverford.edu](mailto:hc-ads@haverford.edu). The Director will confidentially discuss the process to establish reasonable accommodations.
+I am committed to partnering with you on your academic and intellectual journey. I also recognize that your ability to thrive academically can be impacted by your personal well-being and that stressors may impact you over the course of the semester. If the stressors are academic, I welcome the opportunity to discuss and address those stressors with you in order to find solutions together. If you are experiencing challenges or questions related to emotional health, finances, physical health, relationships, learning strategies or differences, or other potential stressors, I hope you will consider reaching out to the many resources available on campus. These resources include CAPS (free and unlimited counseling is available), the Office of Academic Resources, Health Services, Professional Health Advocate, Religious and Spiritual Life, the Office of Multicultural Affairs, the GRASE Center, and the Dean’s Office. Additional information can be found at https://www.haverford.edu/deans-office-student-life/offices-resources.
 
-Students who have already been approved to receive academic  accommodations and want to use their accommodations in this course  should share their verification letter and make arrangements to meet  with me as soon as possible to discuss their accommodations. Please note that accommodations are not retroactive and require advance notice to  implement.
+Additionally, Haverford College is committed to creating a learning environment that meets the needs of its diverse student body and providing equal access to students with a disability. If you have (or think you have) a learning difference or disability – including mental health, medical, or physical impairment – please contact the Office of Access and Disability Services (ADS) at [hc-ads@haverford.edu](mailto:hc-ads@haverford.edu). The Director will confidentially discuss the process to establish reasonable accommodations. It is never too late to request accommodations – our bodies and circumstances are continuously changing. 
 
-It is a state law in Pennsylvania that individuals must be given  advance notice that they may be recorded. Therefore, any student who has a disability-related need to audio record this class must first be  approved for this accommodation from the Director of Access and  Disability Services and then must speak to me. Other class members need  to be aware that this class may be recorded.
+**Students who have already been approved to receive academic accommodations and want to use their accommodations in this course should share their accommodation letter and make arrangements to meet with me as soon as possible to discuss how their accommodations will be implemented in this course. Please note that accommodations are not retroactive and require advance notice in order to successfully implement.**
+
+If, at any point in the semester, a disability or personal circumstances affect your learning in this course or if there are ways in which the overall structure of the course and general classroom interactions could be adapted to facilitate full participation, please do not hesitate to reach out to me.
+
+ 
+
+*It is a state law in Pennsylvania that individuals must be given advance notice that they may be recorded. Therefore, any student who has a disability-related need to audio record this class must first be approved for this accommodation from the Director of Access and Disability Services and then must speak to me. Other class members need to be aware that this class may be recorded**.*
+
+### Title IX Statement
+
+Haverford College is committed to fostering a safe and inclusive  living and learning environment where all can feel secure and free from  harassment. All forms of sexual misconduct, including sexual assault,  sexual harassment, stalking, domestic violence, and dating violence are  violations of Haverford’s policies, whether they occur on or off  campus. Haverford faculty are committed to helping to create a safe  learning environment for all students and for the College community as  a whole. If you have experienced any form of gender or sex-based  discrimination, harassment, or violence, know that help and support  are available. Staff members are trained to support students in  navigating campus life, accessing health and counseling services,  providing academic and housing accommodations, and more.
+
+The College strongly encourages all students to report any incidents of  sexual misconduct. Please be aware that all Haverford employees (other  than those designated as confidential resources such as counselors,  clergy, and healthcare providers) are required to report information  about such discrimination and harassment to the Bi-College Title IX  Coordinator: https://www.haverford.edu/users/ktaylor4
 
 
+Information about the College’s Sexual Misconduct policy, reporting options, and a  list of campus and local resources can be found on the College’s  website: https://www.haverford.edu/sexual-misconduct
 
