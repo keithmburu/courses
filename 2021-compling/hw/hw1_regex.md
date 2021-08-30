@@ -1,4 +1,4 @@
-Computational Linguistics, Fall 2020
+Computational Linguistics, Fall 2021
 
 # Homework 1 (25 points)
 
@@ -10,10 +10,10 @@ Topics: Regular expressions (Lecture Notes, J&M 2.1), Levenshtein distance (J&M 
 
    
 
-   (15 points) In a PDF file, created in $\LaTeX$ or [Markdown](https://www.markdownguide.org/tools/typora/), concisely answer the following questions.  You are encouraged but not required to use outside sources for these questions, but if you do, cite them.
+   (15 points) In a PDF file, created in $\LaTeX$ or [Markdown](https://www.markdownguide.org/tools/typora/), concisely answer the following questions.  You are encouraged but not required to use outside sources for these questions, but **if you do, cite them.**
    
 2. 1. (5 points) What are some uses of edit distance outside of human language?  
-   2. (5 points) When might one prefer lemmatization over stemming and vice versa?
+   2. (5 points) What is the difference between lemmatization and stemming?When might one prefer lemmatization over stemming and vice versa?
    3. (5 points) Tokenization is easy for languages that use spaces.  How might it work for unsegmented languages, such as Chinese or Japanese?
 
    ## Deliverables
@@ -39,7 +39,7 @@ Topics: Regular expressions (Lecture Notes, J&M 2.1), Levenshtein distance (J&M 
 
    For part (2), include your PDF file.
 
-**Submit all of your files to Moodle in a `familyname_givenname_hw1.tar.gz` file containing a directory called familyname_givenname (except with your actual names)**.
+**Submit all of your files to Moodle in a `familyname_givenname_hw1.tar.gz` file containing a directory called familyname_givenname (except with your actual names)**.  Also submit the PDF file separately (outside of the zip file), as this makes it easier to grade them on Moodle.
 
 This means that if I run:
 
@@ -47,6 +47,6 @@ This means that if I run:
 tar xvf grissom_alvin_hw1.tar.gz
 ```
 
-a directory called `grissom_alvin` should be created, and it should contain the files for your submission.  To do this, your files need to place your files in the directory first and then compress the directory.  See this link for examples: https://www.educative.io/edpresso/how-to-gzip-a-directory-in-linux
+a directory called `grissom_alvin` should be extracted, and it should contain the files for your submission.  To do this, your files need to place your files in the directory first and then compress the directory.  See this link for examples: https://www.educative.io/edpresso/how-to-gzip-a-directory-in-linux
 
-Be sure to test this before you submit.
+Be sure to test this before you submit.  Don't put this part off until the last minute, as students often have trouble getting it right the first, second, or third time.
