@@ -4,7 +4,7 @@ theme: default
 class:
 - invert
 paginate: true
-footer: Computational Linguistics, Fall 2020\nAlvin Grissom II, Haverford College
+footer: Computational Linguistics, Fall 2021\nAlvin Grissom II, Haverford College
 ---
 # Computational Linguistics
 ## Day 1: Introduction
@@ -12,17 +12,22 @@ footer: Computational Linguistics, Fall 2020\nAlvin Grissom II, Haverford Colleg
 # Course Description
 - Standard introduction to computational linguistics and natural language processing
 - Project/experiment-focused
-- Remote
+
 ---
 # Course Description
 - By nature interdisciplinary.
 - Mathematics
     - Probability/Statistics, Linear Algebra, Information Theory
     - We'll introduce this gradually
+- Linguistics and Cognitive Science
+    - Parsing, Formalisms, Cognitive Modeling, Human Comparisons
+- Computer Science
+    - Algorithms, Theory, Machine Learning, "A.I."
+
 
 ---
 # Topics
- -Mathematical fundamentals, regular expressions, neural networks, latent variable and graphical models, topic models, parsing and tagging, machine translation, information retrieval, word embedings, semantics fundamental, ethics, fairness, and more
+ - Mathematical fundamentals, regular expressions, neural networks, latent variable and graphical models, topic models, parsing and tagging, machine translation, information retrieval, word embedings, semantics fundamental, ethics, fairness, and more
 
  ---
  #  Texts
@@ -32,9 +37,10 @@ footer: Computational Linguistics, Fall 2020\nAlvin Grissom II, Haverford Colleg
  ---
 
 # Course Structure
-- Largely, but not entirely, flipped.
 - Check schedule for required reading/watching for next class.
+    - Will be updated weekly, as class progresses.
 - Heavily project-focused
+    - Introduction to computational linguistics research
 - Discussion
 - Labs
 
@@ -45,21 +51,22 @@ footer: Computational Linguistics, Fall 2020\nAlvin Grissom II, Haverford Colleg
 - Create a GitHub Student account right now.
     - If you prefer not to, let me know.
 - Assignments due on specified day
-    - Assignments not conforming to guidelines will be returned ungraded
+    - Assignments not conforming to guidelines will be returned ungraded, and a late penalty will be applied.
 
 ---
 # Discussion Boards
  - In general, at least one comment per assignment.
  - You are **strongly encouraged** to ask and answer questions on discussion board.
- - Do not post code.
- - Ses syllabus for Honor Code details
+ - Do not post code without clearing it with me.
+ - See syllabus for Honor Code details
  - I'll occasionally post CL news articles
      - Optional unless otherwise specified.
 
 ---
 # Communication
- - I will generally check Piazza at ~4:30 every non-holiday weekday for questions.
- - You may email me, but you will be competing with hundreds of other emails.  Piazza will likely be faster.
+ - I will generally check Piazza at every non-holiday weekday for questions.
+ - You may email me, but you will be competing with hundreds of other emails. 
+  <u>Piazza will likely be faster.</u>
  - Post general questions to the discussion board instead of e-mailing me directly.
  - You may make a one-on-one appointment.
 
@@ -84,6 +91,7 @@ footer: Computational Linguistics, Fall 2020\nAlvin Grissom II, Haverford Colleg
 ---
 # Accommodations
  - See syllabus for details.
+ - Inform me immediately if you have approved accommodations.
 
 ---
  # Grading
@@ -94,12 +102,16 @@ footer: Computational Linguistics, Fall 2020\nAlvin Grissom II, Haverford Colleg
 | Midterm           | 15%        |
 | Participation     | 10%        |
 | Final Project     | 50%        |
-|                   |            |
+- Might drop midterm if class doing well.
 
 ---
 # People
 - Professor: Me
-- TLI Consultant (Ebony Graham)
+- TA: Simon Babb
+---
+# Office Hours
+- Monday, Wednesday: 4:30-5:30
+- Tuesday: 12:00-1:00 (virtual)
 
 
 
