@@ -79,7 +79,7 @@ english_stopwords = stopwords.words('english')
 filtered_tokens = [w for w in tokens if w not in english_stopwords]
 ```
 
-Line 3 uses a Python list comprehension to filter the stop words out.  A list comprehension in Python creates a new list that obeys the predicates inside the brackets--in this case, $\{w\vert w \in \text{tokens} \land \lnot(w \in \text{english_stopwords})\}$. The order is preserved because this is executing a for-loop linearly through the list.  However, this is **extremely** slow, due to each check requiring an iteration through 179 English stop words.  We can improve this by first copying the stop words list into a Python set, which is backed by a hash table, giving $O(1)$ lookup time.
+Line 3 uses a Python list comprehension to filter the stop words out.  A list comprehension in Python creates a new list that obeys the predicates inside the brackets--in this case, $\{w\vert w \in \text{tokens} \land \lnot(w \in \text{english\_stopwords})\}$​. The order is preserved because this is executing a for-loop linearly through the list.  However, this is **extremely** slow, due to each check requiring an iteration through 179 English stop words.  We can improve this by first copying the stop words list into a Python set, which is backed by a hash table, giving $O(1)$​ lookup time.
 
 ```python
 stopwords_set = set(english_stopwords)

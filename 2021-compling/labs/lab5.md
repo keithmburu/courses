@@ -27,5 +27,3 @@ Replace the default text file with one of more files of your choice -- you can j
 
 
 
-
-## 
