@@ -6,7 +6,7 @@ Haverford College
 
 This lab will not be graded.
 
-This purpose of this first lab is for students to set up their environments for remote work.  We will be working remotely, and future assignments will assume that students are working in a command line (terminal) environment. 
+This purpose of this optional first lab is for students to set up their environments for remote work.  We will be working remotely, and future assignments will assume that students are working in a command line (terminal) environment. 
 
 While all assignments in this course can in principle be completed on one's home computer if it uses a Unix-like system (Linux, macOS, Windows Subsystem for Linux), I will assume that students are using lab computers for assignments, and I will not serve as technical support for students' idiosyncratic personal computer problems.
 
@@ -39,7 +39,7 @@ While all assignments in this course can in principle be completed on one's home
 
    
 
-3. To connect to the lab machines, you will need to set up the Haverford VPN on your home computer(s) and log in.  Follow the instructions here: https://iitskb.sites.haverford.edu/knowledge-base/installing-the-vpn-client/
+3. To connect to the lab machines remotely, you will need to set up the Haverford VPN on your home computer(s) and log in.  Follow the instructions here: https://iitskb.sites.haverford.edu/knowledge-base/installing-the-vpn-client/
 
    I recommend only using the VPN when you are working remotely and disconnecting afterwards.  If you're using an operating system not listed here, let me know.  **Bryn Mawr students will have to apply for VPN access.**
 
@@ -56,7 +56,7 @@ ssh username@xxxx.haverford.edu
 For example, I might be:
 
 ```bash
-alvin@mobius.haverford.edu
+agrissom@mobius.haverford.edu
 ```
 
 If you are connected to the VPN, you should be prompted for your password.  When you type it, the characters won't show on the screen, but they are being read.  Press [ENTER] when you are finished.  If you're successful, you should see a welcome screen.  You can type `exit` to disconnect.
@@ -81,7 +81,7 @@ Unless you intend to do all of your written work on a service such as Overleaf, 
 
 ### macOS 
 
-The macOS operating system includes a Unix subsystem accessible from  the Terminal.  The vast majority of the work for this course will take  place in this environment.
+The macOS operating system includes a Unix subsystem accessible from the Terminal.  The vast majority of the work for this course will take  place in this environment.
 
 1. Use Homebrew to install Python 3 and wget.
 
@@ -115,9 +115,9 @@ The macOS operating system includes a Unix subsystem accessible from  the Termin
 First, install numpy, seaborn, and scikit-learn with pip.
 
 ```
-pip3 install numpy
-pip3 install scikit-learn
-pip3 install seaborn
+pip3 install numpy --user
+pip3 install scikit-learn --user
+pip3 install seaborn --user
 ```
 
 On some systems, you may have to use `pip` instead of `pip3`.
@@ -144,7 +144,7 @@ If your computer does **not** have an NVIDIA GPU or you want to keep things simp
 
 Otherwise, if you have an NVIDIA GPU and want to use GPU acceleration (potential time sink):
 
-1. Ensure that you are using the [proprietary NVIDIA drivers](https://www.nvidia.com/object/unix.html) for your system.  If you're using Pop!_OS, this is easy.
+1. Ensure that you are using the [proprietary NVIDIA drivers](https://www.nvidia.com/object/unix.html) for your system.  If you're using the Pop!_OS Linux distribution, this is easy.
 
 2. Install CUDA and CuDNN.
 
@@ -183,6 +183,3 @@ If you have an NVIDIA GPU and would like to use GPU acceleration (potential time
 
 If there are no problems, you should get a message about using the TensorFlow backend.  You can then type Ctrl+D to exit.
 
-## 
-
-## 
