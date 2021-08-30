@@ -16,6 +16,8 @@ Haverford College
 
 **Texts:** [Race After Technology](https://www.wiley.com/en-us/Race+After+Technology:+Abolitionist+Tools+for+the+New+Jim+Code-p-9781509526437), by Ruha Benjamin; [Speech and Language Processing 3rd Edition](https://web.stanford.edu/~jurafsky/slp3/), by Dan Jurafsky and James Martin
 
+**Schedule**: https://github.com/acgrissom/courses/blob/master/2021-compling/schedule.md
+
 ---
 
 ## Course Description
