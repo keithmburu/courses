@@ -12,7 +12,7 @@ Haverford College
 
 **Labs:** Wednesday, 11:30 a.m.-12:30 p.m; 12:30-1:30 p.m. in Hilles 110
 
-**Office Hours:** Monday, 4:30-5:30 p.m.;  Tuesday, 12:00-1:00 p.m. (online only); Wednesday, 4:30-5:00 p.m.; and by appointment.
+**Office Hours:** Monday, 4:30-5:30 p.m.;  Tuesday, 12:00-1:00 p.m. (online only); Wednesday, 4:30-5:30 p.m.; and by appointment.
 
 **Texts:** [Race After Technology](https://www.wiley.com/en-us/Race+After+Technology:+Abolitionist+Tools+for+the+New+Jim+Code-p-9781509526437), by Ruha Benjamin; [Speech and Language Processing 3rd Edition](https://web.stanford.edu/~jurafsky/slp3/), by Dan Jurafsky and James Martin
 
