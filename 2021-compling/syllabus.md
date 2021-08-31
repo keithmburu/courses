@@ -10,7 +10,7 @@ Haverford College
 
 **Lectures**: Monday, Wednesday 2:30-4:00 p.m. in Sharpless 113
 
-**Labs:** Tuesday, 11:30 a.m.-12:30 p.m; 12:30-1:30 p.m. in Hilles 110
+**Labs:** Wednesday, 11:30 a.m.-12:30 p.m; 12:30-1:30 p.m. in Hilles 110
 
 **Office Hours:** Monday, 4:30-5:30 p.m.;  Tuesday, 12:00-1:00 p.m. (online only); Wednesday, 4:30-5:00 p.m.; and by appointment.
 
