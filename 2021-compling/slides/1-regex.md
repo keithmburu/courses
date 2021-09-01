@@ -4,11 +4,11 @@ theme: default
 class:
 - invert
 paginate: true
-footer: Computational Linguistics, Fall 2020\nAlvin Grissom II, Haverford College
+footer: Computational Linguistics, Fall 2021\nAlvin Grissom II, Haverford College
 
 ---
 # Regular Expressions
-2020-9-11
+2021-9-1
 
 ---
 # Pattern Matching
