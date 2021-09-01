@@ -44,7 +44,7 @@ This prints the entire file to the terminal by default.  When we look at it, we 
 tr -s ' ' '\n'
 ```
 
-The first argument, `' '`, is the character being replaced; the second, `\n` is what it's being replaced with.  The `-s` (squeeze) does this with repeated characters -- in this case, spaces, as well.  Try it, and then output the result to a new file with I/O redirection.
+The first argument, `' '`, is the character being replaced; the second, `\n`, is what it's being replaced with.  The `-s` (squeeze) does this with repeated characters -- in this case, spaces, as well.  Try it, and then output the result to a new file with I/O redirection.
 
 Look at the file.  Do you see any problems?  We need to remove all of the non-alphanumeric characters in order to get only words; the punctuation shouldn't be considered part of the word.  Ideally, we would do this *before* we do the sorting. (Why?). We can do this with `tr`, as well:
 
@@ -70,7 +70,7 @@ Alternatively, we could have used `less` or `cat` and another pipe instead of in
 cat pg26.txt | tr -cd '[:alnum:][:space:]' | tr -s ' ' '\n'
 ```
 
-We can improve this by replacing the `' '` argument  of the `tr` command to `'[:space:]'`, which is more general.
+We can improve this by replacing the `' '` argument  of the `tr` command with`'[:space:]'`, which is more general.
 
 Next, we'll `sort` the output, which will give us the same words next to each other.  The `sort` command can also only output unique lines of a sorted file, with the appropriate flag.  There's still a problem involving capitalization.  (What is it?)   You can use an argument to the `sort` command to fix it.  
 
