@@ -8,7 +8,7 @@ Alvin Grissom II
 
 The purpose of this lab is to allow students to familiarize themselves with the command line and very basic Unix shell scripting.  Unix tools are commonly used in corpus linguistics. While we could write a Python program to perform the tasks in this lab, it's important to become comfortable with the command line.
 
-First, create a directory in your home directory (`/home/your_username`, but abbreviated as `~`) with the `mkdir` (make directory) command
+First, create a directory in your home directory (`/home/your_username`, but abbreviated as `~`) with the `mkdir` (make directory) command.
 
 ```bash
 mkdir lab1
