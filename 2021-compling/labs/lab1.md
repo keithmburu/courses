@@ -30,7 +30,7 @@ You can use `less` or `more` to glance at the file.  While `less` uses paginatio
 
 Use the `wc` command to note the number of lines in the file.  You can use the `-l` flag to only display the number of lines.  
 
-Now, we're going to count the total number of *unique* words in the file.  To do this, we'll use the `uniq` command, which counts the duplicates in a file that is sorted, looking for duplicates on adjacent lines.  But first we need to sort the file with `sort`.  (Remember the `man` pages if you're not sure how to use a command; often you can also add `--help` to the command to get information.)
+Now, we're going to count the total number of *unique* words in the file.  To do this, could use the `uniq` command, which counts the duplicates in a file that is sorted, looking for duplicates on adjacent lines.  But first we need to sort the file with `sort`, which we can also use instead of `uniq` to accomplish this.  (Remember the `man` pages if you're not sure how to use a command; often you can also add `--help` to the command to get information.)
 
 We can use either input redirection or pass the file as an argument to sort.  We'll use the former.
 
