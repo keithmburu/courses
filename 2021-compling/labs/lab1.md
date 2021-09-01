@@ -35,7 +35,7 @@ Now, we're going to count the total number of *unique* words in the file.  To do
 We can use either input redirection or pass the file as an argument to sort.  We'll use the former.
 
 ```bash
-sort < /pg26.txt
+sort < pg26.txt
 ```
 
 This prints the entire file to the terminal by default.  When we look at it, we see that it is sorting every line. But we want individual words on each line.  We can use the `tr` (translate) command.
