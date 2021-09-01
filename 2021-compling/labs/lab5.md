@@ -1,29 +1,30 @@
-# Lab 5: Playing with Neural Text Generation
+# Lab 5 (5 points)
 
-**Warning: This lab may be time consuming if you don't use Keras with GPU acceleration enabled.**
+For this lab, you will use word embeddings in a Python package called `gensim`.  This package is already installed on lab machines, but it is easy to install locally with `pip`.  For this assignment, you may use any text that you prefer.  
 
-You've used $n$-gram language models; now, we'll look at a simple neural language model for text generation.
+```python
+import nltk
+import gensim
+from gensim.models import Word2Vec 
+```
 
-Recently, there have been news stories about, for example, computers [writing Harry Potter chapters](http://www.bbc.co.uk/newsbeat/article/42348846/harry-potter-gets-a-weird-new-chapter-from-a-computer).  This can be accomplished with deep neural language models.  Recall that LSTMs are much better able to capture long-range dependencies than $n$-gram models, which can only use a history of $n-1$ words.
+You may use any corpus for this assignment, e.g., Project Gutenberg, but you may also use NLTK's built-in corpora.  I'll use Melville's *Moby Dick.*
 
-Recall that this predicts the next word by repeatedly sampling from the next-word distribution, conditioned on the previous text context $c$, $P(w | c)$. In this code, there's a `sample()` function for sampling, which has a `temperature` parameter.  A version of the softmax function can use a temperature variable $\tau$, becoming:
-$$
-P_t(a) = \frac{\exp(q_t(a)/\tau)}{\sum_{i=1}^n\exp(q_t(i)/\tau)} \text{,}
-$$
+```python
+corpus = nltk.corpus.gutenberg.sents('melville-moby_dick.txt') #read all sentences
+```
 
+Now, we can use Gensim to create word2vec embeddings with the default parameters.   Since this is a small corpus, it won't take long.  Be sure to lower-case everything with `lower()`.  Stripping punctuation is also recommended, but not required for this lab.
 
-As $\tau \rightarrow \infty$, the probabilities become more uniform, yielding a greater average diversity of samples.  The `diversity` variable is passed into `sample`  and becomes the temperature.  A higher temperature means we're more likely to sample different possible next words; a lower temperature means we're almost certain to predict the argmax.
+```python
+model = gensim.models.Word2Vec(corpus)
+```
 
-For this lab, we'll start with some Keras example code for generating text using a character-based neural language model.  See the code and an explanation here: https://keras.io/examples/generative/lstm_character_level_text_generation/  If you've cloned the Keras repository already, it's in the `examples` subdirectory.
+We can change these defaults if we like.  For example, the default value for `min_count` is `5`, which means the model will only use words that appear five or more times in the corpus (which is generally reasonable). Use the following documentation to complete the remainder of this lab: https://radimrehurek.com/gensim/models/keyedvectors.html
 
-## Assignment
+1. Choose at least one other text to work with for the following questions.
+2. Before continuing, write down a hypothesis of relationships of some words of interest that you expect to see based on the texts you're using, and how you suspect your two (or more) texts will exemplify these differences.  At a minimum, use the cosine similarity function and at least one other function.
+3. What did you find? Based on your exploring, does your hypothesis seem valid?  Why or why not?  Do you have a new hypothesis?
 
-Replace the default text file with one of more files of your choice -- you can just replace the URL with a corresponding one from Project Gutenberg -- and answer answer the following questions:
-
-1.  What do you observe about the intermediate output during learning?
-2. Try at least three different seeds at different temperatures.  What do you notice?
-3. Write a short, impressionistic description of what you think the model is learning.
-
-
-
+Submit a short explanation of what you found and how you approached the problem on Moodle.
 

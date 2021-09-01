@@ -1,57 +1,95 @@
-Computational Linguistics, Fall 2020
+Computational Linguistics, Fall 2021
 
-# Lab 1: Markov Text Generation
+Haverford College
 
-The purpose of this program is to (1) give students practice using Python and (2) give students practice working with conditional probabilities. 
+Alvin Grissom II
 
-Write the following Python program.  If you do not finish during the lab time, complete it as a homework assignment. This lab is worth 5 points.  You may find the code in [lab1.py](code/lab1.py) to be useful.
+# Lab 1: Command Line and I/O Redirection
 
-1. Draw the probabilistic finite state machine represented by the following probabilities.  For this lab, you may simply draw it and take a photo, but you may want to use this as an opportunity to learn to easily create graphs with [Mermaid](https://support.typora.io/Draw-Diagrams-With-Markdown/), which is integrated into Typora, or some other tool, to generate graphs, such as GraphViz.
+The purpose of this lab is to allow students to familiarize themselves with the command line and very basic Unix shell scripting.  Unix tools are commonly used in corpus linguistics. While we could write a Python program to perform the tasks in this lab, it's important to become comfortable with the command line.
 
-- The first letter is always "I".
+First, create a directory in your home directory (`/home/your_username`, but abbreviated as `~`) with the `mkdir` (make directory) command
 
-- The subsequent letters will be generated with the following probabilities:
+```bash
+mkdir lab1
+```
 
-  
+You can change to this directory with `cd`.
 
-- P(A | _) = 0.5
+```bash
+cd lab1
+```
 
-- P(L | _) = 0.5
+By typing `ls`, you'll see that the directory is empty.
 
-- P(M | A) = 0.4
+Download a plain text file from [Project Gutenberg](https://www.gutenberg.org).  You can retrieve Milton's Paradise Lost here: https://www.gutenberg.org/cache/epub/26/pg26.txt
 
-- P(_ | M) = 0.8
+Rather than using your web browser, you can use the `curl` or `wget` command to retrieve it directly, and use `ls` to confirm that it was downloaded successfully.
 
-- P(! | M) = 0.2
+You can use `less` or `more` to glance at the file.  While `less` uses pagination and scrolling, `more` does not.  You can paginate with [SPACE] quit `less` with `q`.
 
-- P(L | A) = 0.6
+Use the `wc` command to note the number of lines in the file.  You can use the `-l` flag to only display the number of lines.  
 
-- P(I | L) = 1
+Now, we're going to count the total number of *unique* words in the file.  To do this, we'll use the `uniq` command, which counts the duplicates in a file that is sorted, looking for duplicates on adjacent lines.  But first we need to sort the file with `sort`.  (Remember the `man` pages if you're not sure how to use a command; often you can also add `--help` to the command to get information.)
 
-- P(_ | I) = 0.2
+We can use either input redirection or pass the file as an argument to sort.  We'll use the former.
 
-- P(N | I) = 0.25
+```bash
+sort < /pg26.txt
+```
 
-- P(V | I) = 0.55
+This prints the entire file to the terminal by default.  When we look at it, we see that it is sorting every line. But we want individual words on each line.  We can use the `tr` (translate) command.
 
-- P(E | V) = 1
+```bash
+tr -s ' ' '\n'
+```
 
-- P(E | N) = 1
+The first argument, `' '`, is the character being replaced; the second, `\n` is what it's being replaced with.  The `-s` (squeeze) does this with repeated characters -- in this case, spaces, as well.  Try it, and then output the result to a new file with I/O redirection.
 
-- P(! | E) = 1
+Look at the file.  Do you see any problems?  We need to remove all of the non-alphanumeric characters in order to get only words; the punctuation shouldn't be considered part of the word.  Ideally, we would do this *before* we do the sorting. (Why?). We can do this with `tr`, as well:
 
-- P(_ | !) = 0.7
+```bash
+tr -cd '[:alnum:]' < pg26.txt 
+```
 
-- P(I | !) = 0.2
+What's wrong now? We got rid of the spaces, as well.
 
-- P(! | !) = 0.1
+```bash
+tr -cd '[:alnum:][:space:]' < pg26.txt
+```
 
-  
+We can use a **pipe** to combine these two steps:
 
-2. Write a Python program that outputs the result of this Markov model. The program will output 100 letters per line, on 10 lines.  It will output *nothing else*.  You can access `stdin` and `stdout` streams directly by importing from `sys`, which will allow you to print without newlines.  Alternatively, you can use `print` with an extra optional argument. 
+```bash
+tr -cd '[:alnum:][:space:]' < pg26.txt | tr -s ' ' '\n'
+```
 
-   ```python
-   print("a string", end = '')
-   ```
+Alternatively, we could have used `less` or `cat` and another pipe instead of input redirection:
 
-   
+```bash
+cat pg26.txt | tr -cd '[:alnum:][:space:]' | tr -s ' ' '\n'
+```
+
+We can improve this by replacing the `' '` argument  of the `tr` command to `'[:space:]'`, which is more general.
+
+Next, we'll `sort` the output, which will give us the same words next to each other.  The `sort` command can also only output unique lines of a sorted file, with the appropriate flag.  There's still a problem involving capitalization.  (What is it?)   You can use an argument to the `sort` command to fix it.  
+
+Combine all of these commands and flags with `wc` and the appropriate flag to output the total number of unique words in the file to a new text file, `total_words.txt`. 
+
+Now, make the appropriate changes to you command to instead print out the total count of *each* word in the file, case-insensitive.  You can use the `uniq` command.  Direct the output to `word_counts.txt`.
+
+A portion of the output should look like this:
+
+```
+      4 Zephon
+      2 Zephyr
+      1 Zephyrus
+      2 zodiack
+```
+
+Finally, use the `head` or `tail` commands, with the appropriate changes to your pipeline, to print out the counts of the twenty most common words, in the same format as above, to a file called `most_common.txt` 
+
+Put all of your commands in a file called `familyname_givenname.sh` (with your actual names) and upload it to Moodle, along with your final output.
+
+
+

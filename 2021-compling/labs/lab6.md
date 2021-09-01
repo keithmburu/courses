@@ -1,23 +1,29 @@
-# Lab 6 (10 pts)
+# Lab 6: Playing with Neural Text Generation
 
-You may find [Chapter 8](https://www.nltk.org/book/ch08.html) of the NLTK book useful.  I have also provided starter code.  While it is not necessary, note that if you are working in the Windows Subsystem for Linux or remotely via SSH, you may not be able to use `draw()` to render the tree parses on your screen.  For this, you'll have to run the native Windows version of Python. 
+**Warning: This lab may be time consuming if you don't use Keras with GPU acceleration enabled.**
 
-## Description
+You've used $n$-gram language models; now, we'll look at a simple neural language model for text generation.
 
-For this lab, you will modify a context-free grammar to increase its precision.  The provided **lexicalized** grammar is language $\mathscr{L}_1$ from [Chapter 13](https://web.stanford.edu/~jurafsky/slp3/13.pdf) of J&M.  
+Recently, there have been news stories about, for example, computers [writing Harry Potter chapters](http://www.bbc.co.uk/newsbeat/article/42348846/harry-potter-gets-a-weird-new-chapter-from-a-computer).  This can be accomplished with deep neural language models.  Recall that LSTMs are much better able to capture long-range dependencies than $n$-gram models, which can only use a history of $n-1$ words.
 
-* The [provided code](https://github.com/acgrissom/courses/blob/master/2020-compling/labs/code/lab6.py) will use `generate()` to generate up to $n$ possible sentences from the grammar specification with a given maximum recursive depth. 
-* The provided code uses `parse()` to produce a legal parse of a given string (a sentence or clause, in human language) and print the possible parses in parenthetical form.  If there is more than one parse, the string is **ambiguous.** 
+Recall that this predicts the next word by repeatedly sampling from the next-word distribution, conditioned on the previous text context $c$, $P(w | c)$. In this code, there's a `sample()` function for sampling, which has a `temperature` parameter.  A version of the softmax function can use a temperature variable $\tau$, becoming:
+$$
+P_t(a) = \frac{\exp(q_t(a)/\tau)}{\sum_{i=1}^n\exp(q_t(i)/\tau)} \text{,}
+$$
+
+
+As $\tau \rightarrow \infty$, the probabilities become more uniform, yielding a greater average diversity of samples.  The `diversity` variable is passed into `sample`  and becomes the temperature.  A higher temperature means we're more likely to sample different possible next words; a lower temperature means we're almost certain to predict the argmax.
+
+For this lab, we'll start with some Keras example code for generating text using a character-based neural language model.  See the code and an explanation here: https://keras.io/examples/generative/lstm_character_level_text_generation/  If you've cloned the Keras repository already, it's in the `examples` subdirectory.
 
 ## Assignment
 
-You will notice that several of the sentences allowed by the grammar are ungrammatical in English.  You will improve this grammar by implementing at least **one** of the following without breaking the functional parts of the grammar.
+Replace the default text file with one of more files of your choice -- you can just replace the URL with a corresponding one from Project Gutenberg -- and answer answer the following questions:
 
-A.
+1.  What do you observe about the intermediate output during learning?
+2. Try at least three different seeds at different temperatures.  What do you notice?
+3. Write a short, impressionistic description of what you think the model is learning.
 
-1. Distinguish between subject and object pronouns, disallowing sentences like "I book I" but allowing sentences like "I book me."
-2. Implement some version of "and" and "or."
-3. Implement any generative form of negation.
-4. Handle the prepositional phrase starting with "with", e.g., "with him."
 
-B.  Submit your revised code and a PDF which briefly (a few sentences) describes how you approached this problem and what your solution was.  
+
+
