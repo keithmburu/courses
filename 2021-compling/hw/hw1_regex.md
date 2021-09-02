@@ -2,7 +2,7 @@ Computational Linguistics, Fall 2021
 
 # Homework 1 (25 points)
 
-Due Friday, September 18
+Due Friday, September 10
 
 Topics: Regular expressions (Lecture Notes, J&M 2.1), Levenshtein distance (J&M 2.5), Lemmatization and Stemming (J&M 2.4), Tokenization (2.4.1), I/O redirection
 
@@ -13,7 +13,7 @@ Topics: Regular expressions (Lecture Notes, J&M 2.1), Levenshtein distance (J&M 
    (15 points) In a PDF file, created in $\LaTeX$ or [Markdown](https://www.markdownguide.org/tools/typora/), concisely answer the following questions.  You are encouraged but not required to use outside sources for these questions, but **if you do, cite them.**
    
 2. 1. (5 points) What are some uses of edit distance outside of human language?  
-   2. (5 points) What is the difference between lemmatization and stemming?When might one prefer lemmatization over stemming and vice versa?
+   2. (5 points) What is the difference between lemmatization and stemming? When might one prefer lemmatization over stemming and vice versa?
    3. (5 points) Tokenization is easy for languages that use spaces.  How might it work for unsegmented languages, such as Chinese or Japanese?
 
    ## Deliverables
@@ -32,7 +32,7 @@ Topics: Regular expressions (Lecture Notes, J&M 2.1), Levenshtein distance (J&M 
    If you use Python, read the input from `stdin`.  If I run your code, I should be able to to run, for example:
 
    ```bash
-   python3 hw1.py < cases.text
+   python3 hw1.py < cases.txt
    ```
 
    to see the results.
