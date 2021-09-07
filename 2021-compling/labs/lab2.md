@@ -1,4 +1,4 @@
-Computational Linguistics, Fall 2020
+Computational Linguistics, Fall 2021
 
 # Lab 2: Markov Text Generation
 
@@ -6,7 +6,7 @@ The purpose of this program is to (1) give students practice using Python and (2
 
 Write the following Python program.  If you do not finish during the lab time, complete it as a homework assignment. This lab is worth 5 points.  You may find the code in [lab1.py](code/lab1.py) to be useful.
 
-1. Draw the probabilistic finite state machine represented by the following probabilities.  For this lab, you may simply draw it and take a photo, but you may want to use this as an opportunity to learn to easily create graphs with [Mermaid](https://support.typora.io/Draw-Diagrams-With-Markdown/), which is integrated into Typora, or some other tool, to generate graphs, such as GraphViz.
+1. Draw the probabilistic finite state machine represented by the following probabilities.  For this lab, you may simply draw it and take a photo, but you may want to use this as an opportunity to learn to easily create finite state graphs with [Mermaid](https://support.typora.io/Draw-Diagrams-With-Markdown/), which is integrated into Typora, or some other tool, such as [GraphViz](https://graphviz.org/Gallery/directed/fsm.html), which is installed on lab machines.
 
 - The first letter is always "I".
 
@@ -48,7 +48,7 @@ Write the following Python program.  If you do not finish during the lab time, c
 
   
 
-2. Write a Python program that outputs the result of this Markov model. The program will output 100 letters per line, on 10 lines.  It will output *nothing else*.  You can access `stdin` and `stdout` streams directly by importing from `sys`, which will allow you to print without newlines.  Alternatively, you can use `print` with an extra optional argument. 
+2. Write a Python program that outputs the result of this Markov model. The program will output 100 letters per line, on 10 lines.  It will output *nothing else*.  You can access `stdin` and `stdout` streams [directly](https://www.geeksforgeeks.org/difference-between-input-and-sys-stdin-readline/) by importing from `sys`, which will allow you to print without newlines.  Alternatively, you can use `print` with an extra optional argument. 
 
    ```python
    print("a string", end = '')

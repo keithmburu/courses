@@ -12,7 +12,7 @@ Write the following Python program.  If you do not finish during the lab time, c
 
 - The subsequent letters will be generated with the following probabilities:
 
-  
+- You may use spaces instead of underscores; it doesn't matter.
 
 - P(A | _) = 0.5
 
