@@ -4,11 +4,11 @@ theme: default
 class:
 - invert
 paginate: true
-footer: Computational Linguistics, Fall 2020\nAlvin Grissom II, Haverford College
+footer: Computational Linguistics, Fall 2010\nAlvin Grissom II, Haverford College
 
 ---
 # Language Modeling and Probability
-2020-9-18
+2021-9-8
 
 ---
 # Probability
@@ -298,7 +298,8 @@ $$
 ---
 # n-gram Probability
 
-Be sure to distinguish between the probability of "computer science" and the probability of "science" given "computer."  This is called a **bigram** probability, because we're using a sequence of two words in our calculation. 
+- Be sure to distinguish between the probability of "computer science" and the probability of "science" given "computer."  This is called a **bigram** probability, because we're using a sequence of two words in our calculation. 
+    - Often, these are both called "bigram probability," but the first is the probability of a bigram while the second is bigram-based conditional probability.
 
 ---
 # n-gram Probability
@@ -376,6 +377,16 @@ $$
 P(\textrm{<s> colorless kumquat ideas sleep furiously</s>})$$ 
 is estimated by 
 $$P(\textrm{colorless}\vert \textrm{<s>})P(\textrm{kumquat} \vert \textrm{colorless})P(\textrm{ideas}\vert \textrm{kumquat})P(\textrm{sleep}\vert \textrm{ideas})P(\textrm{furiously} \vert \textrm{sleep})P(\textrm{</s>}\vert\textrm{sleep}).$$
+
+---
+# Probability of a Sentence
+With a bigram model,
+$$
+P(\textrm{<s> colorless kumquat ideas sleep furiously</s>})$$ 
+is estimated by 
+$$P(\textrm{colorless}\vert \textrm{<s>})P(\textrm{kumquat} \vert \textrm{colorless})P(\textrm{ideas}\vert \textrm{kumquat})P(\textrm{sleep}\vert \textrm{ideas})P(\textrm{furiously} \vert \textrm{sleep})P(\textrm{</s>}\vert\textrm{sleep}).$$
+- What would be the *bag of words* probability of this sentence?
+
 
 ---
 # Smoothing
