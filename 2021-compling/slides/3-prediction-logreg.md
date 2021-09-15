@@ -4,11 +4,11 @@ theme: default
 class:
 - invert
 paginate: true
-footer: Computational Linguistics, Fall 2020\nAlvin Grissom II, Haverford College
+footer: Computational Linguistics, Fall 2021\nAlvin Grissom II, Haverford College
 
 ---
 # Prediction and Logistic Regression
-2020-9-25
+2021-9-15
 
 ---
 # Prediction
@@ -172,7 +172,7 @@ $$
 * Hinge loss
 
 <p align="center">
-<img src ="images/hinge_vs_01_loss.svg" style="width:500px" align="center">
+<img src ="images/hinge_vs_01_loss.svg" style="width:450px" align="center">
 <!-- Image source: wikipedia. https://en.wikipedia.org/wiki/Hinge_loss-->
 <p align="center">
 <sub>Plot: hinge vs. 0-1 loss</sub>
