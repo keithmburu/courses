@@ -1,8 +1,8 @@
 Computational Linguistics, Fall 2021
 
-# Lab 3: Basic NLTK Text Processing
+# Lab 3: Exploring a Corpus with NLTK Text Processing
 
-The purpose of this lab is to give students more practice with Python, and, specifically, practice using the NLTK library for text processing, which will be useful for Homework 2.  Students may find Chapter 3 of [Natural Language Processing with Python](https://www.nltk.org/book/) useful as a reference.
+The first purpose of this lab is to give students more practice with Python, and, specifically, practice using the NLTK library for text processing, which will be useful for Homework 2.  Students may find Chapter 3 of [Natural Language Processing with Python](https://www.nltk.org/book/) useful as a reference.  The second purpose is that students will begin thinking about corpus exploration and what they can learn by examining corpus statistics.  In computational linguistics, understanding the data under examination is of paramount importance.
 
 First, download a text from [Project Gutenberg](http://www.gutenberg.org) in plain-text (UTF-8) format.  You can do this with Python or with `curl` or `wget`.  The following will download Heroditus's *The History of Heroditus* into a file called `text.txt`.
 
@@ -93,7 +93,7 @@ In your submission to Moodle, answer:
 
 1.  After removing punctuation and stop words, how many words **types** and **tokens** are in the lower cased version of your corpus?  
 
-2. Modify the code to examine the top *n* bigrams and trigrams.  (The number is up to you.)  Can you garner any insights by observing the most frequent unigrams and bigrams?   You can either use `nltk.util.bigrams` and `nltk.util.trigrams` or write the code for extracting bigrams and trigrams manually.  How do the results change when lemmatizing all of the tokens with the [WordNet](https://wordnet.princeton.edu/) lemmatizer?  You can do this in one line with a Python list comprehension or use a for-loop.
+2. Modify the code to examine the top *n* bigrams and trigrams.  (The number is up to you.)  Can you garner any insights by observing the most frequent unigrams and bigrams?   You can either use `nltk.util.bigrams` and `nltk.util.trigrams`or write the code for extracting bigrams and trigrams manually.  How do the results change when lemmatizing all of the tokens with the [WordNet](https://wordnet.princeton.edu/) lemmatizer?  You can do this in one line with a Python list comprehension or use a for-loop.
 
    ```python
    from nltk.stem import WordNetLemmatizer
