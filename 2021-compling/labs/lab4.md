@@ -1,4 +1,4 @@
-Computational Linguistics, Fall 2020
+Computational Linguistics, Fall 2021
 
 # Lab 4: Simple Text Classification Pipeline
 

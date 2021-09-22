@@ -228,7 +228,7 @@ Given sentence: "the quick brown fox jumped over the lazy dog"
 
 If $e_1$ and $e_2$ are independent, then 
 $$
-P(e_2 | e_1) = P(e_2, e_1) \\
+P(e_1)(e_2 | e_1) = P(e_2, e_1) \\
 = P(e_2 \cap e_1) \\
 = P(e_1)P(e_2)\\
 
@@ -242,7 +242,7 @@ $$
 
 If $e_1$ and $e_2$ are independent, then 
 $$
-P(e_2 | e_1) = P(e_2, e_1) \\
+P(e_1)P(e_2 | e_1) = P(e_2, e_1) \\
 = P(e_2 \cap e_1) \\
 = P(e_1)P(e_2)\\
 

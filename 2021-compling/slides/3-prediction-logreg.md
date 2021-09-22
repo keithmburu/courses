@@ -163,7 +163,7 @@ $$
 \mathscr{L}(h_\mathbf{w}(\mathbf{x}),y) = 
 \mathscr{L}(p,y) &= 
 \begin{cases}
-y-p & \text{if }  yp > 0 \\
+y-p & \text{if }  yp < 0 \\
 0 & \text{otherwise} 
 \end{cases}\\
   &= \text{max}(0, 1-yp)
