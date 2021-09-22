@@ -2,7 +2,7 @@ Computational Linguistics, Fall 2020
 
 # Lab 4: Simple Text Classification Pipeline
 
-For this lab, you will follow [Chapter 6](https://www.nltk.org/book/ch06.html), Sections 1.1-1.3 of the NLTK book to gain practice working with classifiers.   
+For this lab, you will follow [Chapter 6](https://www.nltk.org/book/ch06.html), Sections 1.1-1.3 of the NLTK book to gain practice working with classifiers.   Students who choose to use their personal computers instead of the lab machines are responsible for making sure that their assignments run on lab computers.
 
 In addition to your code (no need to compress it), turn in a *short* report describing the results of the following.
 
