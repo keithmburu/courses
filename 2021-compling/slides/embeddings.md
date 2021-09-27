@@ -66,9 +66,8 @@ function build_cooccurrence_matrix(corpus):
 	1. Set every element in |V| x |V| matrix to 0.
     2. for each span in corpus:
 	      for each word1 in span:
-              for each word2 in span:
+                for each word2 in span:
                    matrix[word1][word2] += 1
-                   matrix[word2][word1] += 1    
 ```
 
 ---
