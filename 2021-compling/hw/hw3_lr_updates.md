@@ -23,7 +23,7 @@ As stated in the syllabus, all written work must be submitted in Markdown (with 
 2. (5 points) Starting with the same weights defined in Problem 1, perform update (i) with L2 regularization, with the regularizaton parameter $\lambda=0.001$.   (Different sources may use different variable names, such as $\alpha$ or $\mu$.) 
    
 
-3.  (30 points) For the following, answer `true` or `false`.  If `false`, explain why. (25 points)
+3.  (30 points) For the following, answer `true` or `false`.  If `false`, explain why. 
 
    i. Stochastic gradient descent achieves lower accuracy than gradient descent because it only modifies the weights based on one example at a time.
 
