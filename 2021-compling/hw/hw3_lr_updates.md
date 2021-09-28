@@ -8,15 +8,15 @@ As stated in the syllabus, all written work must be submitted in Markdown (with 
 
 1. (15 points) Suppose you have a logistic regression model with the following feature weights, where the learning rate $\eta=0.01$ and the classes $Y=\{1,0\}$, where 1 represents $\texttt{fiction}$ and 0 is $\texttt{nonfiction}$, and the current state of the model is
 
-$\mathbf{w}=[0, -3.5, 5.0, -3.1, 1.0]$, and $b=0$ for features $[\texttt{quick},\texttt{jump},\texttt{lazy},\texttt{dog},\texttt{fox}]$.
+   $\mathbf{w}=[0, -3.5, 5.0, -3.1, 1.0]$, and $b=0$ for features $[\texttt{quick},\texttt{jump},\texttt{lazy},\texttt{dog},\texttt{fox}]$.
 
-Continue training the model on the following examples.  Show all work, including the calculations for the prediction step and updating the weights. Use log probabilities.  The following training examples have the class to the left of the pipe and the text to the right.
+   Continue training the model on the following examples.  Show all work, including the calculations for the prediction step and updating the weights. Use log probabilities.  The following training examples have the class to the left of the pipe and the text to the right.
 
-i. `fiction| the quick brown fox jumped`
+   i. `fiction| the quick brown fox jumped`
 
-ii. `nonfiction | the computer is quick`
+   ii. `nonfiction | the computer is quick`
 
-iii. `nonfiction | cheating is unacceptable`
+   iii. `nonfiction | cheating is unacceptable`
 
 
 
