@@ -1,8 +1,4 @@
-[Computational Linguistics, Fall 2020]()
-
-# Homework 3: Text Classification (50pts)
-
-Due:  October 16, 11:55pm
+Computational Linguistics, Fall 2021
 
 ### Linear Perceptron
 
@@ -28,18 +24,18 @@ MNIST images are grayscale, consisting of 28 x 28 = 784 pixel values in  [0,255]
 
 Let's flatten them to a 1D vector of length 784.
 
-```
+```python
 x_train = x_train.reshape(60000, 784)
 x_test = x_test.reshape(10000, 784)
 x_train = x_train.astype('float32')
 x_test = x_test.astype('float32')
 ```
 
-We can then have one feature for each pixel.  This is our *x* feature vector.  Our Y = {0, 1, 2, ..., 9}, representing the digit.  We can use a **one hot vector** encoding for this, where 0 = [0 0 0 0 0 0 0 0 0 0], 1 = [ 0 1 0 0 0 0 0 0 0 0], 2 = [0 0 1 0 0 0 0 0 0 0], etc. 
+We can then have one feature for each pixel.  This is our *x* feature vector.  Our classes Y = {0, 1, 2, ..., 9}, representing the digit we want to classify.  We can use a **one hot vector** encoding for this, where 0 = [0 0 0 0 0 0 0 0 0 0], 1 = [ 0 1 0 0 0 0 0 0 0 0], 2 = [0 0 1 0 0 0 0 0 0 0], etc. 
 
- Keras does this for us.  We want to represent each of these classes as a *category* (or class label), not as a numeric value.
+Keras does this for us.  We want to represent each of these classes as a *category* (or class label), not as a numeric value.
 
-```
+```python
 y_train = keras.utils.to_categorical(y_train, num_classes)
 y_test = keras.utils.to_categorical(y_test, num_classes)
 ```
@@ -58,16 +54,16 @@ MSE = \frac{1}{2}(y-\hat{y})^2
 $$
 It's just the difference between the correct answer and the guess, squared.  We multiply by 1/2 just to make the derivative cleaner, which we use for gradient descent.  The derivative is just $y-\hat{y}$. 
 
-This loss function can be changed.  (See Keras's other loss functions here: https://keras.io/api/losses/).   For now, we'll use the `linear` activation, which is equivalent to using no [activation function](https://keras.io/api/layers/activations/), giving us only the dot product of the weights and feature values.
+This loss function can be changed.  (See Keras's other loss functions here: https://keras.io/api/losses/).   For now, we'll use the `linear` activation, which is equivalent to using no [activation function](https://keras.io/api/layers/activations/), giving us only the dot product of the weights and feature values, $\mathbf{w}^T\mathbf{x}+b$.
 
-```
+```python
 model.add(Dense(1, activation='linear', input_shape=(784,)))
 
 model.compile(loss = "mse", optimizer = SGD(lr = 0.01),
 metrics=['accuracy'])
 ```
 
-This gives us one linear perceptron neuron.  If we wanted ten of them to form a neural network layer, we could change the `1` to `10`. To transform this into  a logistic regression, we could use the logistic (sigmoid) activation function and cross-entropy loss.
+This gives us one linear perceptron neuron.  If we wanted ten of them to form a neural network layer, we could change the `1` to `10`. To transform this into  a logistic regression, we could use the logistic activation function and cross-entropy loss.
 
 #### Train the Model
 
@@ -111,7 +107,7 @@ maxlen=50
 (X_train, y_train), (X_test, y_test) = imdb.load_data(num_words=max_features)
 ```
 
-In this code, `max_features` refers to the maximum number of words we can use for features in all of the data.  These data are already sorted by frequency, so, as is, the code will use the 100 most frequent words the entire dataset.  The `maxlen` variable refers to the maximum length, in words, of a given example.  
+In this code, `max_features` refers to the maximum number of words we can use for features in all of the data.  These data are already sorted by frequency, so, as is, the code will use the 100 most frequent words in the entire dataset.  The `maxlen` variable refers to the maximum length, in words, of a given example.  
 
 #### Zero Padding
 
@@ -125,14 +121,13 @@ x_test = sequence.pad_sequences(x_test, maxlen=maxlen)
 #### Embedding Layer
 
 We could represent every word or character in our input vector using a **one-hot-vector** representation, and our classifier would learn to make predictions with this data.  Despite its name, one-hot-vector representations are quite boring.  Given a vocabulary size $$|V|$$, each word is represented by a binary vector of length $$|V|$$.  For each word, a unique bit is flipped to 1.  So, for example, if we have a vocabulary of 3 words, {cat, dog, bike}, our vector (and the corresponding input layer) must be of length 3.  One possible representation is:
-dog = [1 0 0], cat = [0 1 0], bike = [0 0 1].  Each "word" then, is just represented by a bit in a vector.   If both "dog" and "cat" occur in our example, the input is [1 1 0].  
-For an example of this, see [Intro to text classification with Keras: automatically tagging Stack Overflow posts](https://cloud.google.com/blog/products/gcp/intro-to-text-classification-with-keras-automatically-tagging-stack-overflow-posts).  But storing these words would need a large, sparse matrix, and they encode nothing about the relationships of words to each other.  Instead, we typically use **word embeddings** if we have sufficient data. 
+dog = [1 0 0], cat = [0 1 0], bike = [0 0 1].  Each "word," then, is just represented by a bit in a vector.   If both "dog" and "cat" occur in our example, the input is [1 1 0].  For an example of this, see [Intro to text classification with Keras: automatically tagging Stack Overflow posts](https://cloud.google.com/blog/products/gcp/intro-to-text-classification-with-keras-automatically-tagging-stack-overflow-posts).  But storing these words would need a large, sparse matrix, and they encode nothing about the relationships of words to each other.  Instead, we typically use **word embeddings** if we have sufficient data. 
 
 Word embeddings are a relatively new innovation. The first implementation was released as a program called word2vec [(Mikilov, 2013)](https://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf), though there are now competing versions, e.g., GloVe [(Pennington et al. 2014)](https://nlp.stanford.edu/pubs/glove.pdf)
 
 As we've discussed in class, the idea is that we want to map our word vectors into a high dimensional space where similar words are close to each other and dissimilar words are farther away.  See [GloVe: Global Vectors for Word Representation](https://nlp.stanford.edu/projects/glove/). Further, words should ideally be closer to each other *along the dimensions that make sense*.   For example, ideally, the word *king* should be close to the word *queen* along some implicit "status" dimension but far away along some implicit *gender* dimension. Word embedding algorithms do this by observing which words tend to **co-occur**, yielding a compact representation that encodes semantic relationships between words.  
 
-We can use these in an **embedding layer**.  The embedding layer encodes the words in a dense matrix of real numbers that implicitly represents the relationships between words.  Our neural network can then use these dense representations as a rich source of information about what the words mean -- much richer than a matrix of mostly zeroes and a few ones.  Recall that an embedding layer is learned by learning to predict which words with a logistic regression and using the learned weights matrix as a dense representation of the words.  We can add an [embedding layer](https://keras.io/api/layers/core_layers/embedding/) in Keras easily.
+We can use these in an **embedding layer**.  The embedding layer encodes the words in a dense matrix of real numbers that implicitly represents the relationships between words.  Our neural network can then use these dense representations as a rich source of information about what the words mean -- much richer than a sparse matrix of mostly zeroes and a few ones.  Recall that an embedding layer is learned by learning to predict words with a logistic regression and using the learned weights matrix as a dense representation of the words.  We can add an [embedding layer](https://keras.io/api/layers/core_layers/embedding/) in Keras easily.
 
 ````python
 model.add(Embedding(max_features, 128, input_length=maxlen))
@@ -141,9 +136,9 @@ model.add(Dense(128))
 model.add(Dense(1, activation='sigmoid'))
 ````
 
-In the above code, our `Embedding`] layer takes in `max_features` words and creates a 128-dimensions embedding space.
+In the above code, our `Embedding` layer takes in `max_features` words and creates a 128-dimensional embedding space.
 
-It's possible to learn an embedding layer separately and even to use embedding layers that someone else has trained. In this code, we train the embedding layer with backpropagation as part of the overall training process.  Here, we have a word embedding matrix of 128 dimensions.  We need to specify the `input_length` parameter when passing to a `Dense` layer.  Dense layers take one-dimensional inputs, so we flatten before passing the `Embedding`'s output to a dense layer with 128 nodes.  Finally, we send the result through a sigmoid activation layer.  
+It's possible to learn an embedding layer separately and even to use embedding layers that someone else has already trained. In this code, we train the embedding layer with backpropagation as part of the overall training process.  Here, we have a word embedding matrix of 128 dimensions.  We need to specify the `input_length` parameter when passing to a `Dense` layer.  Dense layers take one-dimensional inputs, so we flatten before passing the `Embedding`'s output to a dense layer with 128 nodes.  Finally, we send the result through a "sigmoid" (logistic) activation layer.  
 
 ````python
 model.compile(loss='binary_crossentropy',
@@ -162,7 +157,7 @@ print('Test accuracy:', acc)
 
 ````
 
-Here, we use `binary_crossentropy` loss because we only have two classes.  We could also use `categorical_crossentropy`, which reduces to binary cross-entropy for two classes.
+Here, we use `binary_crossentropy` loss because we only have two classes. For more than two classes, we would use `categorical_crossentropy` loss.
 
 Try it and see how it does. Since we have two classes, random guesses will give us 50% accuracy.
 
@@ -185,11 +180,11 @@ And with that, our model can use sequence information much more effectively.  LS
 
 ### Dropout 
 
-Dropout is a kind of **regularization** for neural networks.  The purpose of the regularization is to reduce overfitting and increase generalizability.  Intuitively, if we randomly remove some percentage of the nodes in our network during training, these nodes  learn to depend less on the adjacent nodes, leading them to "evolve" to be stronger on their own.  We can add a `dropout=0.2` parameter to our GRU layer to use this.  There's also a `recurrent_dropout` option, which does the same for the recurrent unit itself.
+Dropout is a kind of **regularization** for neural networks.  The purpose of the regularization is to reduce overfitting and increase generalizability.  Intuitively, if we randomly remove some percentage of the nodes in our network during training, these nodes  learn to depend less on the adjacent nodes, leading them to learn to be stronger on their own.  We can add a `dropout=0.2` parameter to our GRU layer to randomly remove 20% of the nodes during training  There's also a `recurrent_dropout` option, which does the same for the recurrent unit itself.
 
 ## Assignment
 
-Write a report in Markdown or LaTeX that addresses the following.  It should be written in complete, grammatical English, and it should be formatted correctly.  Otherwise, points will be deducted.  
+Write a report in Markdown or LaTeX which addresses the following.  It should be written in complete, reasonably grammatical English, and it should be formatted correctly.  Otherwise, points will be deducted.  
 
 Analyze (1) the amount of time required to train, e.g., how well/stably/quickly it learns and converges (use graphs), and (2) the accuracy.  You should also include non-recurrent results as a baseline.  Also try changing the vocabulary size and using dropout.  The easiest way to do this for this assignment is to check the accuracy at checkpoints.
 
@@ -203,8 +198,9 @@ To gain full credit, include the following in your analysis:
   * Try changing the depth (number of layers) and breadth (number of neurons per layer).  Do you notice a trend in performance?
 * LSTM and/or GRU recurrent neural network
   * Also try playing with the depth, etc.
+* *At least* two plots to support your analysis.  You may use seaborn or ggplot2 for this. You may not use Excel or other unapproved tools for your plots.  If you have another scientific visualization library in mind, have it approved by me first.
 
-Extra Credit (+10pts): Figure out how to use a pre-trained GloVe embedding layer instead of learning one from scratch and add this to your performance analysis.
+Extra Credit (+10pts): Figure out (on your own, by consulting outside sources) how to use a pre-trained GloVe embedding layer instead of learning one from scratch and add this to your performance analysis.
 
 For this assignment, you may use some Keras example code, on which some of the code in this document is based, to begin.   If you do this,  use Git to clone the Keras repository into a directory.  You can see this repository here: https://github.com/keras-team/keras.
 
@@ -218,12 +214,11 @@ This will copy the contents of this directory to your computer.  We're specifica
 
 ### Tips:
 
-1.  Be concise. 
+1.  Be concise but not shallow.
 
-2. Graphs can often save you a lot of words. If you decide to include graphs, I recommend using the [seaborn](https://seaborn.pydata.org/) Python package.
+2. Plots can often save you a lot of words. Include captions for your plots.
 
    
-
 
 
 
