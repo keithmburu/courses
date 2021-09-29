@@ -20,7 +20,7 @@ Now, we can use Gensim to create word2vec embeddings with the default parameters
 model = gensim.models.Word2Vec(corpus)
 ```
 
-We can change these defaults if we like.  For example, the default value for `min_count` is `5`, which means the model will only use words that appear five or more times in the corpus (which is generally reasonable). Use the following documentation to complete the remainder of this lab: https://radimrehurek.com/gensim/models/keyedvectors.html. The following code will print the most similar words.
+We can change these defaults if we like.  For example, the default value for `min_count` is `5`, which means the model will only use words that appear five or more times in the corpus (which is generally reasonable). Use the following documentation to complete the remainder of this lab: https://radimrehurek.com/gensim/models/keyedvectors.html. As ane example, the following code will print the most similar words.
 
 ```python
 import nltk
