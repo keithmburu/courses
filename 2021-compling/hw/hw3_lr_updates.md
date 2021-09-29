@@ -27,11 +27,11 @@ The following tables are provided to make providing the answers easier, but you 
 | update (ii)  |             |            |            |           |           |      |
 | update (iii) |             |            |            |           |           |      |
 
-| Features      | $x_1$:quick | $x_2$:jump | $x_3$:lazy | $x_4$:dog | $x_5$:fox | $b$  |
-| ------------- | ----------- | ---------- | ---------- | --------- | --------- | ---- |
-| Eample (i)    |             |            |            | -         |           |      |
-| Example (ii)  |             |            |            |           |           |      |
-| Example (iii) |             |            |            |           |           |      |
+| Features      | $x_1$:quick | $x_2$:jump | $x_3$:lazy | $x_4$:dog | $x_5$:fox |
+| ------------- | ----------- | ---------- | ---------- | --------- | --------- |
+| Eample (i)    |             |            |            | -         |           |
+| Example (ii)  |             |            |            |           |           |
+| Example (iii) |             |            |            |           |           |
 
 2. (5 points) Starting with the same weights defined in Problem 1, perform update (i) with L2 regularization, with the regularizaton parameter $\lambda=0.001$.   (Different sources may use different variable names, such as $\alpha$ or $\mu$.). The regularized objective function adds $\lambda\sum_i w_i^2$ to the original objective function, pushing the weights closer to 0 and counteracting overfitting.  Taking its derivative, its update rule merely adds $2\lambda w_i$ to the original update rule.
 
