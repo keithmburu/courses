@@ -10,7 +10,7 @@ As stated in the syllabus, all written work must be submitted in Markdown (with 
 
    $\mathbf{w}=[0, -3.5, 5.0, -3.1, 1.0]$, and $b=0$ for features $[\texttt{quick},\texttt{jumped},\texttt{lazy},\texttt{dog},\texttt{fox}]$.
 
-   Continue training the model on the following examples.  Show all work, including the calculations for the prediction step and updating the weights. Use log probabilities.  The following training examples have the class to the left of the pipe and the text to the right.
+   Continue training the model on the following examples, in this order.  Show all work, including the calculations for the prediction step and updating the weights. Use log probabilities.  The following training examples have the class to the left of the pipe and the text to the right.
 
    i. `fiction| the quick brown fox jumped`
 
