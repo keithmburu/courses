@@ -43,7 +43,7 @@ The following tables are provided to make providing the answers easier, but you 
 
    iii. Minibatching updates the weights of a model changing the weights based on the median loss of the training examples in the batch.
 
-   iv. A positive bias term in a perceptron or logistic regression ensures that if none of the model's features are present in the model, the model will predict the positive class.  
+   iv. A positive bias term in a perceptron or logistic regression ensures that if none of the example's features are represented by weights in the model, the model will predict the positive class.  
 
    v. Regularization helps to prevent overfitting by ensuring that only a handful of features become very large.
 
