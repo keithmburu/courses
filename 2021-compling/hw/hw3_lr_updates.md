@@ -49,5 +49,5 @@ The following tables are provided to make providing the answers easier, but you 
 
    vi. Discriminative classifiers model how the data are generated, while generative clssifiers calculate the probability of a class given the data.
 
-4. (5 points).  Suppose we have two linear perceptrons, with randomly initialized weights $\mathbf{w_1}=[0.25, 0.1, -2.5]$ and $\mathbf{w_2}=[0.2, -1, 3.0]$, and we send our features $\mathbf{x}=[1,0,1]$ into all of them simultaneously. The output $a_i$ of perceptron $i$ is then used as the input of a logistic regression with weights $\mathbf{k}=[0.25, -1$], one for each $a_i$ to be used as a feature.  Calculate the output $\hat{y}$ of this logistic regression.
+4. (5 points).  Suppose we have two linear perceptrons, with  weights $\mathbf{w_1}=[0.25, 0.1, -2.5]$ and $\mathbf{w_2}=[0.2, -1, 3.0]$, and we send our features $\mathbf{x}=[1,0,1]$ into both of them simultaneously. The output $a_i$ of perceptron $i$ is then used as the input of a logistic regression with weights $\mathbf{k}=[0.25, -1$], one for each $a_i$ to be used as a feature.  Calculate the output $\hat{y}$ of this logistic regression.
 
