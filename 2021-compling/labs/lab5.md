@@ -1,4 +1,6 @@
-# Lab 5: Word Embeddings Exploration (5 points)
+# Lab 5: Word Embeddings Exploration 
+
+# (5 points)
 
 For this lab, you will use word embeddings in a Python package called `gensim`.  This package is already installed on lab machines. For this assignment, you may use any text that you prefer.  
 
