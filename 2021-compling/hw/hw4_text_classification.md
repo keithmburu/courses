@@ -6,10 +6,10 @@ Let's implement the linear perceptron in Keras.  First, we need to import some l
 
 ```python
 import numpy as np
-from keras.datasets import mnist
-from keras.models import Sequential
-from keras.optimizers import SGD
-from keras.layers import Dense
+from tensorflow.keras.datasets import mnist
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.optimizers import SGD
+from tensorflow.keras.layers import Dense
 ```
 
 Recall that, in machine learning, the features of an example are usually called **x** and a label is $y$.  We have four Python variables here for the set of all examples and labels of our training and test data, respectively.  We're interested in language in this class, but just for practice, let's try classifying handwritten digits in MNIST, the data for which is included with Keras.
@@ -54,10 +54,10 @@ MSE = \frac{1}{2}(y-\hat{y})^2
 $$
 It's just the difference between the correct answer and the guess, squared.  We multiply by 1/2 just to make the derivative cleaner, which we use for gradient descent.  The derivative is just $y-\hat{y}$. 
 
-This loss function can be changed.  (See Keras's other loss functions here: https://keras.io/api/losses/).   For now, we'll use the `linear` activation, which is equivalent to using no [activation function](https://keras.io/api/layers/activations/), giving us only the dot product of the weights and feature values, $\mathbf{w}^T\mathbf{x}+b$.
+This loss function can be changed.  (See Keras's other loss functions here: https://keras.io/api/losses/).   We'll use the `softmax`  [activation function](https://keras.io/api/layers/activations/), which produces probabilities for each of the ten possibly classes.
 
 ```python
-model.add(Dense(1, activation='linear', input_shape=(784,)))
+model.add(Dense(10, activation='softmax', input_shape=(784,)))
 
 model.compile(loss = "mse", optimizer = SGD(lr = 0.01),
 metrics=['accuracy'])
@@ -97,17 +97,17 @@ Recall that a **bag of words** model does not consider the order of the words (o
 You can read a description of this dataset here: https://keras.io/datasets/#imdb-movie-reviews-sentiment-classification.
 
 ```python
-from keras.preprocessing import sequence
-from keras.models import Sequential
-from keras.layers import Dense, Embedding, Flatten, Dropout, LSTM
-from keras.datasets import imdb
+from tensorflow.keras.preprocessing import sequence
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Embedding, Flatten, Dropout, LSTM
+from tensorflow.keras.datasets import imdb
 
 max_features = 500
 maxlen=50
 (X_train, y_train), (X_test, y_test) = imdb.load_data(num_words=max_features)
 ```
 
-In this code, `max_features` refers to the maximum number of words we can use for features in all of the data.  These data are already sorted by frequency, so, as is, the code will use the 100 most frequent words in the entire dataset.  The `maxlen` variable refers to the maximum length, in words, of a given example.  
+In this code, `max_features` refers to the maximum number of words we can use for features in all of the data.  These data are already sorted by frequency, so, as is, the code will use the 500 most frequent words in the entire dataset.  The `maxlen` variable refers to the maximum length, in words, of a given example.  
 
 #### Zero Padding
 
@@ -121,11 +121,9 @@ x_test = sequence.pad_sequences(x_test, maxlen=maxlen)
 #### Embedding Layer
 
 We could represent every word or character in our input vector using a **one-hot-vector** representation, and our classifier would learn to make predictions with this data.  Despite its name, one-hot-vector representations are quite boring.  Given a vocabulary size $$|V|$$, each word is represented by a binary vector of length $$|V|$$.  For each word, a unique bit is flipped to 1.  So, for example, if we have a vocabulary of 3 words, {cat, dog, bike}, our vector (and the corresponding input layer) must be of length 3.  One possible representation is:
-dog = [1 0 0], cat = [0 1 0], bike = [0 0 1].  Each "word," then, is just represented by a bit in a vector.   If both "dog" and "cat" occur in our example, the input is [1 1 0].  For an example of this, see [Intro to text classification with Keras: automatically tagging Stack Overflow posts](https://cloud.google.com/blog/products/gcp/intro-to-text-classification-with-keras-automatically-tagging-stack-overflow-posts).  But storing these words would need a large, sparse matrix, and they encode nothing about the relationships of words to each other.  Instead, we typically use **word embeddings** if we have sufficient data. 
+dog = [1 0 0], cat = [0 1 0], bike = [0 0 1].  Each "word," then, is just represented by a bit in a vector.   If both "dog" and "cat" occur in our example, the input is [1 1 0].  For an example of this, see [Intro to text classification with Keras: automatically tagging Stack Overflow posts](https://cloud.google.com/blog/products/gcp/intro-to-text-classification-with-keras-automatically-tagging-stack-overflow-posts).  But storing these words would need a large, sparse matrix, and they encode nothing about the relationships of words to each other.  Instead, we typically use **word embeddings** [(Mikilov, 2013;](https://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf) [Pennington et al. 2014)](https://nlp.stanford.edu/pubs/glove.pdf) if we have sufficient data. , though there are now competing versions.
 
-Word embeddings are a relatively new innovation. The first implementation was released as a program called word2vec [(Mikilov, 2013)](https://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf), though there are now competing versions, e.g., GloVe [(Pennington et al. 2014)](https://nlp.stanford.edu/pubs/glove.pdf)
-
-As we've discussed in class, the idea is that we want to map our word vectors into a high dimensional space where similar words are close to each other and dissimilar words are farther away.  See [GloVe: Global Vectors for Word Representation](https://nlp.stanford.edu/projects/glove/). Further, words should ideally be closer to each other *along the dimensions that make sense*.   For example, ideally, the word *king* should be close to the word *queen* along some implicit "status" dimension but far away along some implicit *gender* dimension. Word embedding algorithms do this by observing which words tend to **co-occur**, yielding a compact representation that encodes semantic relationships between words.  
+As we've discussed in class, the idea is that we want to map our word vectors into a high dimensional space where similar words are close to each other and dissimilar words are farther away.  See [GloVe: Global Vectors for Word Representation](https://nlp.stanford.edu/projects/glove/). Further, words should ideally be closer to each other *along the dimensions that make sense*.   For example, ideally, the word *king* should be close to the word *queen* along some implicit "status" dimension but far away along some implicit *gender* dimension (though this does not always occur). Word embedding algorithms do this by observing which words tend to **co-occur**, yielding a compact representation that encodes semantic relationships between words.  
 
 We can use these in an **embedding layer**.  The embedding layer encodes the words in a dense matrix of real numbers that implicitly represents the relationships between words.  Our neural network can then use these dense representations as a rich source of information about what the words mean -- much richer than a sparse matrix of mostly zeroes and a few ones.  Recall that an embedding layer is learned by learning to predict words with a logistic regression and using the learned weights matrix as a dense representation of the words.  We can add an [embedding layer](https://keras.io/api/layers/core_layers/embedding/) in Keras easily.
 
@@ -136,7 +134,7 @@ model.add(Dense(128))
 model.add(Dense(1, activation='sigmoid'))
 ````
 
-In the above code, our `Embedding` layer takes in `max_features` words and creates a 128-dimensional embedding space.
+In the above code, our `Embedding` layer takes in `max_features` words and creates a 128-dimensional embedding space.  We use the `sigmoid` (logistic), since we only have two classes.
 
 It's possible to learn an embedding layer separately and even to use embedding layers that someone else has already trained. In this code, we train the embedding layer with backpropagation as part of the overall training process.  Here, we have a word embedding matrix of 128 dimensions.  We need to specify the `input_length` parameter when passing to a `Dense` layer.  Dense layers take one-dimensional inputs, so we flatten before passing the `Embedding`'s output to a dense layer with 128 nodes.  Finally, we send the result through a "sigmoid" (logistic) activation layer.  
 
@@ -198,7 +196,9 @@ To gain full credit, include the following in your analysis:
   * Try changing the depth (number of layers) and breadth (number of neurons per layer).  Do you notice a trend in performance?
 * LSTM and/or GRU recurrent neural network
   * Also try playing with the depth, etc.
-* *At least* two plots to support your analysis.  You may use seaborn or ggplot2 for this. You may not use Excel or other unapproved tools for your plots.  If you have another scientific visualization library in mind, have it approved by me first.
+* *At least* two plots to support your analysis.  You may use seaborn, matplotlib, or ggplot2 for this. You may not use Excel or other unapproved tools for your plots.  If you have another scientific visualization library in mind, have it approved by me first.
+* See the provided example code for the MLP.
+* Describe in detail the parameters and architecture of the models you created. 
 
 Extra Credit (+10pts): Figure out (on your own, by consulting outside sources) how to use a pre-trained GloVe embedding layer instead of learning one from scratch and add this to your performance analysis.
 
@@ -207,7 +207,7 @@ For this assignment, you may use some Keras example code, on which some of the c
 Clone it to your local machine by typing:
 
 ````shell
- git clone https://github.com/keras-team/keras
+git clone https://github.com/keras-team/keras
 ````
 
 This will copy the contents of this directory to your computer.  We're specifically interested a file called `imdb_lstm.py` in the `examples` subdirectory.
