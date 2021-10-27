@@ -1,11 +1,18 @@
 Computational Linguistics, Fall 2021
 
-### Linear Perceptron
+Due October 29
 
-Let's implement the linear perceptron in Keras.  First, we need to import some libraries.  Numpy is our numerical library.  The `Sequential` library allows us to build a neural network by stacking layers together.  We will come back to layers later
+# Homework 4: Text Sequence Classification
+
+This assignment requires a working installation of Tensorflow.  It is recommended that you use lab computers with GPUs.  They can be accessed via `ssh`  (See Lab 0)
+
+### Perceptron
+
+Let's implement the linear perceptron in Keras.  First, we need to import some libraries.  Numpy is our numerical library.  The `Sequential` library allows us to build a neural network by stacking layers together.  We will come back to layers later.
 
 ```python
 import numpy as np
+import tensorflow
 from tensorflow.keras.datasets import mnist
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.optimizers import SGD
@@ -36,8 +43,8 @@ We can then have one feature for each pixel.  This is our *x* feature vector.  O
 Keras does this for us.  We want to represent each of these classes as a *category* (or class label), not as a numeric value.
 
 ```python
-y_train = keras.utils.to_categorical(y_train, num_classes)
-y_test = keras.utils.to_categorical(y_test, num_classes)
+y_train = tensorflow.keras.utils.to_categorical(y_train, num_classes)
+y_test = tensorflow.keras.utils.to_categorical(y_test, num_classes)
 ```
 
 #### Build the Model
@@ -81,6 +88,8 @@ score = model.evaluate(x_test, y_test, verbose=0)
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
 ```
+
+You can see some example code for here: https://github.com/acgrissom/courses/blob/master/2021-compling/hw/code/hw4_mnist_example.py.
 
 How did it do?
 
@@ -174,7 +183,7 @@ model.add(GRU(128))
 model.add(Dense(1, activation='sigmoid'))
 ````
 
-And with that, our model can use sequence information much more effectively.  LSTMs are extremely popular in natural language processing because of their effectiveness in modeling sequences.  Recently, GRUs have gained more popularity, because they have been shown to have comparable performance to LSTMs on many tasks, but they take less time to train.  We will cover recurrent units in much more detail soon.
+And with that, our model can use sequence information much more effectively.  LSTMs are extremely popular in natural language processing because of their effectiveness in modeling sequences.  GRUs have also gained more popularity, because they have been shown to have comparable performance to LSTMs on many tasks, but they take less time to train.  We will cover recurrent units in much more detail soon.
 
 ### Dropout 
 
@@ -190,35 +199,27 @@ You may, of course, add more layers and modify other aspects of the model for a 
 
 To gain full credit, include the following in your analysis:
 
-* a linear perceptron baseline
-* an equivalent logistic regression baseline
+* a linear perceptron baseline (single layer with one output unit, `mse` loss, and `linear` activation)
+* an equivalent logistic regression baseline (single layer with one output unit, `binary_crossentropy` loss, and `sigmoid` activation)
 * a multi-layer perceptron (feed-forward neural network)
   * Try changing the depth (number of layers) and breadth (number of neurons per layer).  Do you notice a trend in performance?
 * LSTM and/or GRU recurrent neural network
-  * Also try playing with the depth, etc.
-* *At least* two plots to support your analysis.  You may use seaborn, matplotlib, or ggplot2 for this. You may not use Excel or other unapproved tools for your plots.  If you have another scientific visualization library in mind, have it approved by me first.
-* See the provided example code for the MLP.
+  * Also explore the effect of the width and depth of the network.
+* Plots to support your analysis.  You may use seaborn, matplotlib, or ggplot2 for this. You may not use Excel or other unapproved tools for your plots.  If you have another scientific visualization library in mind, have it approved by me first.  See the provided 
+* See the provided [example code](https://github.com/acgrissom/courses/blob/master/2021-compling/hw/code/hw4_mnist_example.py).
 * Describe in detail the parameters and architecture of the models you created. 
 
 Extra Credit (+10pts): Figure out (on your own, by consulting outside sources) how to use a pre-trained GloVe embedding layer instead of learning one from scratch and add this to your performance analysis.
 
-For this assignment, you may use some Keras example code, on which some of the code in this document is based, to begin.   If you do this,  use Git to clone the Keras repository into a directory.  You can see this repository here: https://github.com/keras-team/keras.
+### Deliverables
 
-Clone it to your local machine by typing:
-
-````shell
-git clone https://github.com/keras-team/keras
-````
-
-This will copy the contents of this directory to your computer.  We're specifically interested a file called `imdb_lstm.py` in the `examples` subdirectory.
+* Report, as PDF, not zipped.
+* Your Python code (`.py` files)
+* A shell script (`.sh` file) to run your code.  By running your `.sh` file, I should be able to re-run all of your experiments without doing anything else.
 
 ### Tips:
 
 1.  Be concise but not shallow.
 
 2. Plots can often save you a lot of words. Include captions for your plots.
-
-   
-
-
 
