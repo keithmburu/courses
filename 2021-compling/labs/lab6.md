@@ -43,7 +43,7 @@ cd ~/
 emacs chargen.py
 ```
 
-Note that when running this code, it is **highly recommended** that you use a ssh into a GPU machine; otherwise, it will be very slow.
+Note that when running this code, it is **highly recommended** that you ssh into a GPU machine; otherwise, it will be very slow.
 
 ```bash
 ssh your_username@computername.cs.haverford.edu
