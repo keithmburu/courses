@@ -49,6 +49,18 @@ Note that when running this code, it is **highly recommended** that you ssh into
 ssh your_username@computername.cs.haverford.edu
 ```
 
+Training these models can take some time, even with a GPU.  By using the `tmux` program, you can keep your program running even when you log out.
+
+To do this, once you `ssh` into a remote machine, type `tmux`.
+
+Tmux is a powerful [terminal multiplexer](https://opensource.com/article/21/5/linux-terminal-multiplexer), with features like running multiple terminal windows on the same screen, copying and pasting, and more.  If you’re disconnected from your machine, simply log back in with `ssh` and type the following on the remote machine:
+
+```bash
+tmux attach
+```
+
+As if by magic, your previous session will be restored, still running.  To exit a tmux session, type `exit`.
+
 
 
 ## Assignment
