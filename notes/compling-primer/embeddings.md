@@ -12,6 +12,18 @@ One method of defining the meaning of words is through logical form, such as fir
 
 Perhaps the simplest way of representing this is with a **co-occurrence matrix**. Given a vocabulary size of $|V|$, we build a $|V|\times|V|$ matrix, where the rows and the columns represent the each word in the vocabulary (i.e., the rows and the columns represent the same words).  We can examine a corpus and count the number of times each word occurs in close proximity to every other word, incrementing the count in each cell each time we observe a co-occurrence.  The result is our co-occurrence matrix.  What counts as "close proximity" is something that must be decided beforehand.  We might define it as window of +/- four words, or we might define it as an entire document.
 
+In the following co-occurrence matrix, we see that words like cat and dog tend to occur together.  Such a matrix is symmetric.  Every word, then, has a corresponding row and column vector.
+
+
+
+|           | cat  | dog  | car  | boat | river |
+| --------- | ---- | ---- | ---- | ---- | ----- |
+| **cat**   | 1    | 10   | 1    | 0    | 0     |
+| **dog**   | 10   | 1    | 1    | 1    | 0     |
+| **car**   | 1    | 1    | 1    | 4    | 0     |
+| **boat**  | 0    | 1    | 4    | 1    | 9     |
+| **river** | 0    | 0    | 0    | 9    | 1     |
+
 The algorithm looks something like this:
 
 ```python
@@ -32,7 +44,7 @@ $$
 $$
 which is just the dot product of the two vectors normalized by their length.  The dot product serves as a similarity metric, and the denominator compensates for the length of the vectors, ensuring two vectors aren't considered similar just because they're longer.  Given two arbitrary words from our co-occurrence matrix, we can take the dot product of the row for word $\mathbf{u}$ and the column for row $\mathbf{v}$ -- or vice versa, since the matrix is symmetric -- and calculate the cosine similarity to determine how similar the terms are.  These matrices are typically extremely **sparse**, containing mostly 0 entries, and obviously quite large.
 
-Co-occurrence matrices were also the basis of other techniques, such as latent semantic analysis (LSA), also called latent semantic indexing (LSI).  In LSA's co-occurrence matrix, however, the rows are words and the columns are documents.  LSA uses a linear algebra technique known as singular value decomposition (SVD) to reduce the size of the matrix while maintaining the similarity information.  There is a probabilistic version known as probabilistic LSA (PLSA, PLSI) based on Bayesian statistics, which is the basis of topic models.  
+Co-occurrence matrices were also the basis of other techniques, such as latent semantic analysis (LSA), also called latent semantic indexing (LSI).  In LSA's co-occurrence matrix, however, the rows are words and the columns are documents.  LSA uses a linear algebra technique known as singular value decomposition (SVD) to reduce the size of the matrix while maintaining the similarity information.  There is a probabilistic version known as probabilistic LSA (PLSA, PLSI) based on Bayesian statistics, which is a precursor of topic models.  
 
 ## word2Vec
 
@@ -64,7 +76,7 @@ The classifier can't learn anything without negative examples, however; it'll ju
 
 
 
-I mentioned a dot product above, but I didn't specify what we're taking the dot product of.  We're taking the dot product of the context word $c$ and the target word $t$.  These exist in two different matrices. Let's call them $C$ and $T$ for our context embeddings and target/word embeddings, respectively.  In the beginning, they are initialized randomly.  But with each prediction, we modify these vectors to increase the probability that the classifier will make the correct prediction next time.  We want to maximize $P(\text{true}|t, c)$ for all of the positive examples and minimize $P(\text{false}|t,c)$ for all of the negative examples, making our objective function
+I mentioned a dot product above, but I didn't specify what we're taking the dot product of.  We're taking the dot product of the context word $c$ and the target word $t$.  These exist in two different matrices. Let's call them $C$ and $T$ for our context embeddings and target/word embeddings, respectively.  In the beginning, they are initialized randomly.  But with each prediction, we modify these vectors to increase the probability that the classifier will make the correct prediction next time.  We want to maximize $P(\text{true}|t, c)$ for all of the positive examples and maximize $P(\text{false}|t,c)$ for all of the negative examples, making our objective function
 $$
 \sum_{+\in D} \log P(\text{true}|t,c) + \sum_{-\in D} \log P(\text{false}|t, c)
 $$
