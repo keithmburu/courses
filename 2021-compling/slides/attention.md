@@ -71,7 +71,7 @@ $$
 \text{score}(\mathbf{h}^d_{i-1},\mathbf{h}^e_{j})=\mathbf{h}^d_{i-1}\mathbf{W}_s \mathbf{h}^e_{j}
 $$
 - New set of weights $\mathbf{W}_s$ parameterize hidden states.
-    - Determins which *parts* of each hidden state vector are relevant at the moment.
+    - Determines which *parts* of each hidden state vector are relevant at the moment.
     - Trained along with everything else.
 ---
 
