@@ -191,7 +191,7 @@ Dropout is a kind of **regularization** for neural networks.  The purpose of the
 
 ## Assignment
 
-Write a report in Markdown or LaTeX which addresses the following.  It should be written in complete, reasonably grammatical English, and it should be formatted correctly.  Otherwise, points will be deducted.  
+Write a report in Markdown or LaTeX which addresses the following.  It should be written in complete, reasonably grammatical English, and it should be formatted correctly.  Otherwise, points will be deducted.Use the IMDB dataset.  
 
 Analyze (1) the amount of time required to train, e.g., how well/stably/quickly it learns and converges (use graphs), and (2) the accuracy.  You should also include non-recurrent results as a baseline.  Also try changing the vocabulary size and using dropout.  The easiest way to do this for this assignment is to check the accuracy at checkpoints.
 
