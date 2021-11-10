@@ -43,7 +43,7 @@ for each encoder state $j$.
 # Attention Mechanism
 - Simplest version: dot product attention.
     - Relevance as similarity: how similar encoder state is to decoder state, as measured by dot product
-![](images/attention/jm_dot_attention.png)
+    ![](images/attention/jm_dot_attention.png)
 
 ---
 # Attention Mechanism
@@ -66,7 +66,7 @@ $$
 ---
 # Attention Mechanism
 - It's possible to create more complex attention mechanisms.
-- One example: computer relevance of each encoder hidden state to each decoder hidden state by sets of weights to individual *scores* themselves.
+- One example: compute relevance of each encoder hidden state to each decoder hidden state by sets of weights to individual *scores* themselves.
 $$
 \text{score}(\mathbf{h}^d_{i-1},\mathbf{h}^e_{j})=\mathbf{h}^d_{i-1}\mathbf{W}_s \mathbf{h}^e_{j}
 $$
@@ -103,7 +103,7 @@ $$
 # Transformers: Self-attention
 - We can *compare* an item $x_i$ to any word before $x_i$ in the input to generate output.
     - Usually dot product attention: larger means more similar.
-![](images/attention/selfattention_flow.png)
+    ![](images/attention/selfattention_flow.png)
 
 ---
 # Transformers: Self-attention
@@ -141,7 +141,6 @@ $$
 And
 $$
  \mathbf{y}_i=\sum_{j\le i} \alpha_{ij}\mathbf{v}_j.
-
 $$
 ---
 
@@ -172,10 +171,10 @@ $$
  - Each head has its own $W^K_i, W^Q_i, W^V_i$.
  - The outputs are combined and and reduced to dimension $d$.
 
- ---
+---
  ![](images/attention/multihead.png)
 
- ---
+---
   ![](images/attention/figure3.png)
 
 ---
