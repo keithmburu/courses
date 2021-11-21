@@ -235,6 +235,7 @@ X \rightarrow C\;D
 
 ---
 # Constituency Grammars
+**Constituency grammars** are also known as **phrase structure grammars**.
 - Let's consider a few basic categories.
  Noun (N): cat
  Determiner: the, a, an
@@ -269,7 +270,7 @@ $$
 S\rightarrow Wh-NP\ Aux\;NP\;VP
 $$
  Long-distance dependencies.
-![invert ](images/cfg/longdistance.jpg)
+![invert bg right 99%](images/cfg/longdistance.jpg)
 
 --- 
 # Constituency Grammars
@@ -279,12 +280,76 @@ $$
 ![](images/cfg/sanjose-pp.png)
 
 ---
+![bg 100%](images/cfg/sanjose-pp.png) 
 
-![invert](images/cfg/sanjose-pp2.jpg) ![](images/cfg/sanjose-pp.png) 
+![bg 90% invert](images/cfg/sanjose-pp2.jpg) 
 
+
+---
+# Constituency Grammars
+Ambiguity 
+How many possible parses?
+"old men and women" 
+
+---
+# Constituency Grammars
+Ambiguity 
+How many possible parses?
+"old men and women" 
+![bg left 90% invert](images/cfg/oldmenandwomen2.png)
+![bg right 90% invert](images/cfg/oldmenandwomen.png)
+
+
+---
+# Constituency Grammars
+Ambiguity
+
+"the dog saw a man in the park"
+
+---
+
+
+![invert bg 80%](images/cfg/dogmanpark.png)
+
+![invert bg 80%](images/cfg/dogmanpark2.png)
+
+---
+# Constituency Grammars
+Ambiguity
+How many possible parses?
+
+"The man saw the woman in the garden with a telescope."
+"The man with the telescape saw the woman in the garden."
+
+
+---
+# Constituency Grammars
+Ambiguity
+How many possible parses?
+
+"The man saw the woman in the garden with a telescope."
+"The man with the telescape saw the woman in the garden."
+- Note that you can move around **constituents**, but you can't move across constituent **boundaries.**
+    - Changes number of possible parses.
 ---
 # Constituency Grammars
 Agreement
 - This flight vs. These flights
 - The man walked his dog.
- 
+
+---
+# Subcategorization
+- Words, usually verbs, have **subcategorization frames.**
+- A verb can take certain arguments.
+    - "Luke worked."  `work [NP _]`. 
+    One argument, "Luke" (NP)
+    - "She ate a hamburger."
+    `eat [NP _ (NP)`  Takes an NP and an optional NP
+    - "I waited for her."
+    `wait [NP _ (for NP)]`
+
+---
+# Treebanks
+---
+![invert bg ri 100%](images/cfg/treebank2.png)
+![invert bg 100%](images/cfg/treebank1.png)
