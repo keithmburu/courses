@@ -8,6 +8,8 @@ footer: Computational Linguistics, Fall 2021\nAlvin Grissom II, Haverford Colleg
 
 ---
 # Context-free Grammars
+<span style="float:right; font-size:50%">Some content based on Introduction to Theory of Computation by Sipser and Speech and Language Processing by Jurafsky and Martin</span> 
+
 ---
 # Context Free Grammars
 
@@ -353,3 +355,144 @@ Agreement
 ---
 ![invert bg ri 100%](images/cfg/treebank2.png)
 ![invert bg 100%](images/cfg/treebank1.png)
+
+---
+# Probabilistic Context Free Grammars
+- We can augment production rules with probabilities.
+- Production rules are now of the form:
+$$
+A\rightarrow \beta[p]
+$$
+where $p$ is the probability of a given expansion of the nonterminal $A$.
+- Also written as:
+$$
+P(A\rightarrow \beta)
+$$
+- As usual, all expansions must sum to 1.
+$$
+\sum_\beta P(A\rightarrow \beta) = 1
+$$
+
+---
+# Probabilistic Context Free Grammars
+
+- PCFGs assign a probability to a parse tree (derivation) $T$ of a sentence $S$.
+    - Useful for diambiguation.
+- More likely sentences will have higher probabilities.
+- Grammars often **lexicalized**.
+
+---
+
+![invert](images/cfg/pcfg_lexicon.jpg)
+
+---
+![invert bg height:650](images/cfg/pcfg_parses.png)
+
+---
+# Probabilistic Context Free Grammars
+- Can be used for language modeling.
+- Instead of conditioning just on previous words, condition on grammatical structure.
+
+---
+# Probabilistic Context Free Grammars
+
+- CFGs parsed with CKY algorithm.
+- PCFGs parsed with probabilistic CKY algorithm.
+
+---
+# Probabilistic Context Free Grammars
+- How are rules learned?
+    - Treebank
+- Compute the probability of the expansion of each nonterminal expansion by counting and normalizing.
+$$
+P(\alpha\rightarrow \beta|\alpha)=\frac{\text{Count}(\alpha\rightarrow\beta)}{\sum_\gamma \text{Count}(\alpha\rightarrow \gamma)}=\frac{\text{Count}(\alpha\rightarrow\beta)}{\text{Count}(\alpha)}
+$$
+- Similar to $n$-gram formula.
+
+---
+# Probabilistic Context Free Grammars
+- What if we don't have a treebank?
+    - If we have a non-probabilistic parser, we can parse a corpus with that parser and then use the parsed corpus to calculate thre probabilities.
+
+---
+# Probabilistic Context Free Grammars
+There are some problems:
+- First, independence assumptions:
+    - Expansion of nonterminal is independent of context (other nearby terminals).
+    -  Probability of specific rule, e.g. $NP\rightarrow \textit{Det}~N$ also independent of other pars of tree.
+ 
+---
+# Probabilistic Context Free Grammars
+There are some problems:
+- First, independence assumptions:
+    - Expansion of nonterminal is independent of context (other nearby terminals).
+    -  Probability of specific rule, e.g. $NP\rightarrow \textit{Det}~N$ also independent of other pars of tree.
+- Poor probability estimates.
+- For example, $NP$s that are subjects are more likely to be pronouns, while object $NP$s are more likely to be non-pronominal (proper noun or determiner-noun).
+
+---
+# Probabilistic Context Free Grammars
+- Second problem: Lexical dependency insensitivity
+- PCFGs do include the probability of a word given a POS.
+    - e.g., $V\rightarrow\textit{sleep}$
+- It would be useful to use lexical information in other places.
+    - e.g., resolving PP attachment ambiguity.
+    - English PPs can modify a VP or NP.
+
+---
+# Probabilistic Context Free Grammars 
+
+- PCFG doesn't deal with PP attachment ambiguity.
+- Depending on the corpus on which it is trained, PCFG will *always* prefer either NP attachment or VP attachment.
+- In following parses, only difference is left tree has:
+$$
+VP \rightarrow VBD~NP~PP
+$$
+while the right tree has:
+$$
+VP\rightarrow VBD~NP~PP
+$$
+$$
+NP\rightarrow NP~PP
+$$
+
+---
+![invert](images/cfg/pcfg_pp1.png)
+
+---
+![invert](images/cfg/pcfg_pp2.png)
+
+---
+# Probabilistic Context Free Grammars
+- What information do we use to resolve PP attachment ambiguity?
+    - Identities of verbs, nouns, and perpositions.
+    - e.g., affinity between *dumped* and *into* is greater than that of *sacks* and *into*
+- Correct parse requuires **lexical dependency** statistics
+- Also applies to coordination ambiguities.
+    "dogs in houses and cats"
+    - semantic issue
+    $[\text{dogs in}[_{NP}\text{houses and cats}]]$
+    is obviously unnatural and unintuitive.
+- One solution: split nodes, creating $NP_{\text{subject}}$ and $NP_{\text{object}}$.
+
+---
+![invert](images/cfg/pcfg_splitnodes.png)
+
+---
+# Probabilistic Lexicalized Context Free Grammars
+- Use **Lexicalized** rules.
+- PCFG rule:
+$$
+VP\rightarrow VBD~NP~PN~
+$$
+becomes
+$$
+VP(\textit{dumped})\rightarrow VBD(\textit{dumped})~NP(\textit{sacks})~PP(\textit{into}).
+$$
+- We usually associate a **Head tag** (POS tag of headwords) with non-terminal, as well:
+$$
+VP(\textit{dumped, VBD})\rightarrow VBD(\textit{dumped, VBD})~NP(\textit{sacks, NNS})~PP(\textit{into, P}).
+$$
+
+---
+![invert height:600](images/cfg/pcfg_lexicalized.png)
