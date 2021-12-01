@@ -1,6 +1,6 @@
 # Lab 10: Context-free Grammar (10 pts)
 
-You may find [Chapter 8](https://www.nltk.org/book/ch08.html) of the NLTK book useful.  I have also provided starter code.  While it is not necessary, note that if you are working in the Windows Subsystem for Linux or remotely via SSH, you may not be able to use `draw()` to render the tree parses on your screen.  For this, you'll have to run the native Windows version of Python. 
+You may find [Chapter 8](https://www.nltk.org/book/ch08.html) of the NLTK book useful.  I have also provided starter code.  While it is not necessary, note that if you are working in the Windows Subsystem for Linux prior to version 2 or remotely via SSH, you may not be able to use `draw()` to render the tree parses on your screen.  For this, you'll have to run the native version of Python. 
 
 ## Description
 
