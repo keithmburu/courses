@@ -5,7 +5,7 @@
 The purpose of this lab is to give you practice writing and structuring a C++ program.
 
 
-Hyptertext markup language (HTML) is the original language or web pages.  It was grown more complex over the decades, but the basic idea is simple.  An HTML file is a text file with *tags* that determine how the various text and images will be displayed on the page.  The web browser _parses_ the .html file (just as the Java and C++ compilers parse the .java and .cpp files) and displays interprets it to display rich text.
+Hyptertext markup language (HTML) is the original language of web pages.  It was grown more complex over the decades, but the basic idea is simple.  An HTML file is a text file with *tags* that determine how the various text and images will be displayed on the page.  The web browser _parses_ the .html file (just as the Java and C++ compilers parse the .java and .cpp files) and displays interprets it to display rich text.
 
 For example, to display the title of a web page, which would appear in the title bar, you would type the following:
 
