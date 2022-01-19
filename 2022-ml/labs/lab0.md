@@ -16,7 +16,6 @@ While all assignments in this course can in principle be completed on one's home
 
 1. **Windows** users should first install the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install)  Once this is complete, they should install the [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab) from the Microsoft Store. 
 
-
 Once both Ubuntu and Windows Terminal have been installed, open Windows Terminal.  There should be an option to open an Ubuntu tab (which can be set as the default).  Open it.
 
 Type the following and press [ENTER] to update the packages to the latest version.
@@ -116,8 +115,6 @@ The macOS operating system includes a Unix subsystem accessible from the Termina
 
 You can also install LaTeX locally by following the instructions here: [Get LaTeX - Mac OS, Windows, Linux](https://www.latex-project.org/get/).  Alternatively, you can use an online LaTeX editor, such as Overleaf.
 
-
-
 ## Part 2: Install TensorFlow and other Programs
 
 First, install numpy, seaborn, and scikit-learn with pip.
@@ -150,9 +147,6 @@ If your computer does **not** have an NVIDIA GPU or you want to keep things simp
 pip3 install tensorflow
 ```
 
-
-
-
 Otherwise, if you have an NVIDIA GPU and want to use GPU acceleration (potential time sink):
 
 1. Ensure that you are using the [proprietary NVIDIA drivers](https://www.nvidia.com/object/unix.html) for your system.  If you're using the Pop!_OS Linux distribution, this is easy.
@@ -165,28 +159,17 @@ Otherwise, if you have an NVIDIA GPU and want to use GPU acceleration (potential
 
 ### Windows 10
 
-If you have an NVIDIA GPU and would like to use GPU acceleration (potential time sink)
+If you have an NVIDIA GPU and would like to use GPU acceleration (potential time sink), follow these instructions: [GPU support | TensorFlow](https://www.tensorflow.org/install/gpu)
 
-1. Install the appropriate CUDA and CuDNN drivers.
+Otherwise, you can just install TensorFlow for CPUs with pip:
 
-2. Use pip to install GPU-accelerated TensorFlow.
-   
-   ```
-   pip install tensorflow-gpu
-   pip install keras
-   ```
-   
-   Otherwise, you can just run
-   
-   ```
-   pip install keras
-   ```
+```bash
+pip3 install tensorflow
+```
 
-## Part 3: Make sure TensorFlow loads.
+1. ## Part 3: Make sure TensorFlow loads.
 
 1. Run `python3`.
 2. Type `import tensorflow`.
 
 If there are no problems, you shouldn't see any output.  You can then type Ctrl+D to exit.
-
-
