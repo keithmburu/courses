@@ -1,6 +1,9 @@
-Computational Linguistics, Fall 2021
+Machine Learning, Spring 2022
 
 Haverford College
+
+Alvin Grissom II
+
 
 Python Tutorial: https://www.learnpython.org/
 
