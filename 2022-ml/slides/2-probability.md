@@ -168,7 +168,7 @@ Probability space of two independent events, A and B
 
 If $e_1$ and $e_2$ are independent, then 
 $$
-P(e_1)(e_2 | e_1) = P(e_2, e_1) \\
+P(e_1)P(e_2 | e_1) = P(e_2, e_1) \\
 = P(e_2 \cap e_1) \\
 = P(e_1)P(e_2)\\
 
@@ -283,15 +283,7 @@ $P(X)?$
 # Marginal Probability Distributions
 Given a discrete joint probability distribution function $P(X,Y),$ how would we find
 $P(X)?$
-- "Marginalize out" (fix) the $Y$.
+- "Marginalize out" the $Y$ (sum over all all $y\in Y$).
+- Fix the $X$.
 - Discrete Case: $p(x)=\sum\limits_{y\in Y} P(x,y)$
 - Continuous Case: $p(x)=\int p(x,y)dy$
-
----
-# Marginal Probability Distributions
-Given a discrete joint probability distribution function $P(X,Y),$ how would we find
-$P(X)?$
-- "Marginalize out" (fix) the $Y$.
-<p align="center">
-<img src="images/probability/marginal.png" width="630" class="center">
-</p>
