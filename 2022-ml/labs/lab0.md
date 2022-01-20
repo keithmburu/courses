@@ -66,7 +66,7 @@ If you do not already have one, request a [GitHub Student Developer Pack](https:
 
 If you'd like to create an environment more amenable to working on your personal computer, you can do the following on your local machine, but it is not required.
 
-Unless you intend to do all of your written work on a service such as Overleaf, I highly recommend installing LaTeX and a LaTeX-enabled Markdown editor, such  [Typora](http://typora.io) (paid) or [Mark Text](https://marktext.app/) (free).
+Unless you intend to do all of your written work on a service such as Overleaf, I highly recommend installing LaTeX and a LaTeX-enabled Markdown editor, such as  [Typora](http://typora.io) (paid) or [Mark Text](https://marktext.app/) (free).
 
 ### macOS
 
