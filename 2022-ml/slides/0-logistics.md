@@ -17,7 +17,7 @@ footer: Machine Learning, Spring 2022\nAlvin Grissom II, Haverford College
 
 By next time:
 - Read Ch. 1 of Géron
-- Read Ch. 1 and 2 of Think Bayes
+- Read Ch. 1 of Think Bayes
 
 ---
 # Lectures and Labs
