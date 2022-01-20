@@ -48,7 +48,7 @@ For example, I might be:
 agrissom@mobius.cs.haverford.edu
 ```
 
-If you on Haverford's campus or are connected to the VPN, you should be prompted for your password.  When you type it, the characters won't show on the screen, but they are being read.  Press [ENTER] when you are finished.  If you're successful, you should see a welcome screen.  You can type `exit` to disconnect.
+If you're on Haverford's campus or are connected to the VPN, you should be prompted for your password.  When you type it, the characters won't show on the screen, but they are being read.  Press [ENTER] when you are finished.  If you're successful, you should see a welcome screen.  You can type `exit` to disconnect.
 
 On your local computer, I recommend that Window susers update Ubuntu packages to the latest versions with:
 
