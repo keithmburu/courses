@@ -318,7 +318,7 @@ Output
 ```python
 import numpy as np
 X = np.zeros((4,4))
-Y = np.ones((4m4))
+Y = np.ones((4,4))
 print(X + Y)
 ```
 Output
