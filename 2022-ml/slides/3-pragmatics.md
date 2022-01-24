@@ -11,7 +11,7 @@ style: |
     gap: 1rem;
   }
 ---
-# Introduction to Machine Learning: Background
+# Introduction to Machine Learning: Background and Pragmatics
 
 ---
 # More Probability Review
@@ -385,7 +385,7 @@ Output
 ---
 # Basic NumPy
 - If you find yourself writing for-loops over lists of numbers, you should probably be using NumPy instead.
-- See the ![NumPy Tutorial](https://numpy.org/doc/stable/user/quickstart.html) and documentation for more examples.
+- See the [NumPy Tutorial](https://numpy.org/doc/stable/user/quickstart.html) and documentation for more examples.
 
 ---
 # Basic Pandas
@@ -415,7 +415,7 @@ alyssa,45,134
 # Basic Pandas
 - Key data structure is `DataFrame`.
 - Can load and write CSVs with one function call and query columns directly.
-- See ![10 Minutes to Pandas](https://pandas.pydata.org/docs/user_guide/10min.html) for more examples.
+- See [10 Minutes to Pandas](https://pandas.pydata.org/docs/user_guide/10min.html) for more examples.
 
 ---
 # Scikit-Learn Basics
