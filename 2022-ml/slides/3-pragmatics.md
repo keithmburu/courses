@@ -50,7 +50,7 @@ $$
 # More Probability Review
 - **Expectation** or Expected Value:
     - Average result based on some probability distribution
-- Suppose we have an  unfair, six-sided die, with sides labeled 1-6, with $P(x=1)=1/2$ and $P(2 \leq x \leq 6) = \frac{1}{10}$
+- Suppose we have an  unfair, six-sided die, with sides labeled 1-6, with $P(x=1)=\frac{1}{2}$ and $P(2 \leq x \leq 6) = \frac{1}{10}$
 
 $$
 = \frac{1}{2} \left( 1 \right) + \frac{1}{10} \left(2 + 3 + 4 + 5 + 6 \right) = 1.9
@@ -456,10 +456,10 @@ alyssa,45,134
  # Categorical Varibles
 
   - Every position in the feature vector represents a single feature.
- Suppose we have features for three words in an e-mail: *promise* and *thank*, and the following ham e-mail:
+ Suppose we have features for two words in an e-mail: *promise* and *thank*, and the following ham e-mail:
 
 >I've been searching for the right words to thank you for this breather.
- I promise i wont take your help for granted and will fulfil my promise. 
+ i wont take your help for granted and will fulfil my obligation. 
  You have been wonderful and a blessing at all times.
 
 | promise  | thank |
@@ -506,11 +506,6 @@ If we have slightly more features, our training data might look like this, where
 
 - This is a **sparse matrix**, i.e., it has a lot of 0's.
 
----
-# The Idea of Learning
-While the ML algorithm is **learning**, it is attempting to reduce the **error** or **loss** on its training examples.
-    - This is a measure of how wrong the guess is.
-- Given a training example $x$ with a correct class (or **concept class**) $c\in \mathcal{C}$, the model generates a **hypothesis** based on the feature vector, $h(x)$ from the set of possible hypotheses $\mathcal{H}$
 
 ---
 # The Idea of Learning
@@ -526,12 +521,12 @@ While the ML algorithm is **learning**, it is attempting to reduce the **error**
     - There are many ways of measuring this.
     - One important example: Mean Squared Error
 $$
-MSE = \frac{1}{2n}[y - h(x)]^2,
+MSE = \frac{1}{2n}[y_i - h(x_i)]^2,
 $$
-where $n$ is the number or examples,  $y$ is the true answer, and $h(x)$ is the model's guess (hypothesis).
+where $n$ is the number or examples,  $y_i$ is the true answer, and $h(x_i)$ is the model's guess (hypothesis).
 - If the hypothesis matches the true answer exactly, $MSE=0$.
 - Sometimes, $h(x)$ is written as $\hat{y}$, the estimate of $y$.
 $$
-MSE = \frac{1}{2n}[y - \hat{y}]^2.
+MSE = \frac{1}{2n}[Y - \hat{Y}]^2.
 $$
 
