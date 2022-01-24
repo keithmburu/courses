@@ -495,7 +495,7 @@ $$\mathbf{x}=[0,1]$$
 
 ---
  # Categorical Varialbes
-If we have slightly more features, our training data might look like this, where our classes $Y\in\{1, 0\}$, and SPAM is $y = 1$ and HAM is $y = 0$.
+If we have slightly more features, our training data might look like this, where our classes $y\in\{1, 0\}$, and SPAM is $y = 1$ and HAM is $y = 0$.
 
 | y | $x_1$ | $x_2$ | $x_3$ | $x_4$ | $x_5$ |
 |-------| ------| ------|-------|-------|-------|
