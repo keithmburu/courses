@@ -521,12 +521,12 @@ While the ML algorithm is **learning**, it is attempting to reduce the **error**
     - There are many ways of measuring this.
     - One important example: Mean Squared Error
 $$
-MSE = \frac{1}{2n}[y_i - h(x_i)]^2,
+MSE = \frac{1}{2n}\sum_{i=i}^n[y_i - h(x_i)]^2,
 $$
 where $n$ is the number or examples,  $y_i$ is the true answer, and $h(x_i)$ is the model's guess (hypothesis).
 - If the hypothesis matches the true answer exactly, $MSE=0$.
 - Sometimes, $h(x)$ is written as $\hat{y}$, the estimate of $y$.
 $$
-MSE = \frac{1}{2n}[Y - \hat{Y}]^2.
+MSE = \frac{1}{2n}\sum_{i=i}^n[y_i - \hat{y_i}]^2.
 $$
 
