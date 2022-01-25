@@ -442,7 +442,7 @@ alyssa,45,134
     - Also called **attributes** or **independent variables** in other fields.
 - In a spam vs. ham classificaton task, the features might be the *words*, or some subset thereof.
  - We split our data into a **training data**, **development data**, and **test data**.
- - We don't look at the training data.  We train on the training data try to *learn* a model that generalizes will to unseen (test data).
+ - We don't look at the test data.  We train on the training data try to *learn* a model that generalizes will to unseen (test) data.
 
  ---
  # Machine Learning Basics
