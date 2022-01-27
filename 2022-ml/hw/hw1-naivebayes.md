@@ -2,7 +2,7 @@ CSCI H360 Machine Learning, Spring 2020
 
 Prof. Alvin Grissom II
 
-Due 2/2
+Due 2/4
 
 # Homework 1 (50 points)
 
