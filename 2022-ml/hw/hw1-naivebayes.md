@@ -6,7 +6,7 @@ Due 2/2
 
 # Homework 1 (50 points)
 
-This assignment is to be done in LaTeX.  You may use Markdown + LaTeX, but you should turn in a PDF.  If you use pure LaTeX, use an assignment template, not an article template.  Please ensure that your submissions are readable.  If you do not know how to accomplish something in LaTeX, ask on Piazza.   Numbered exercises are from [Bayesian Reasoning and Machine Learning](http://web4.cs.ucl.ac.uk/staff/D.Barber/pmwiki/pmwiki.php?n=Brml.HomePage) by David Barber.
+This assignment is to be done in LaTeX.  You may use Markdown + LaTeX, but you should turn in a PDF.  If you use pure LaTeX, use an [assignment template](https://www.overleaf.com/latex/templates/elec-340-assignment-3/rtdvnfppgfft), not an article template.  Please ensure that your submissions are readable.  If you do not know how to accomplish something in LaTeX, ask on Piazza.   Numbered exercises are from [Bayesian Reasoning and Machine Learning](http://web4.cs.ucl.ac.uk/staff/D.Barber/pmwiki/pmwiki.php?n=Brml.HomePage) by David Barber.
 
 - **Problem 1 (10 pts):** Exercise 10.1 (Hint: See Example 10.2)
 - **Problem 2 (10 pts):** 
