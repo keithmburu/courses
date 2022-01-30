@@ -106,7 +106,3 @@ In general, in research settings, we want to save as an SVG file and convert to 
 Matplotlib and will automatically save to the correct file type.
 
 To download the data, you can just use `curl` on the command line.
-
-```bash
-curl "https://raw.githubusercontent.com/ageron/handson-ml2/master/datasets/housing/housing.tgz"
-```
