@@ -315,7 +315,7 @@ $$
     $$
  *  Or, more compactly,
     $$
-    p^y(1-p)^{1-y}=y\sigma(\mathbf{w}\cdot\mathbf{x}+b)^y(1-\sigma(\mathbf{w}\cdot\mathbf{x}+b))^{1-y}.
+    p^y(1-p)^{1-y}=\sigma(\mathbf{w}\cdot\mathbf{x}+b)^y(1-\sigma(\mathbf{w}\cdot\mathbf{x}+b))^{1-y}.
     $$
   * Taking the log, we have:
     $$
@@ -340,7 +340,28 @@ $$
 
 ---
 
-# Side note:
+
+# Logistic Regression Loss Function
+
+ - Also called **cross-entropy loss**.
+ - Cross-entropy between true probability distribution given by $y$ and the model's estimate, $p$.
+
+- Recall, that **cross-entropy** is defined as 
+$$
+H(p,q) = -\sum_{x\in X} p(x) \log q(x).
+$$
+Given $m$ training examples, 
+$$
+\begin{align}
+\mathscr{L(x)}&=\frac{1}{m}\sum_{i=1}^m H(p_i,q_i) 
+\\&=-\frac{1}{m}\sum_{i=1}^m
+[y\log p + (1-y)\log(1-p)]\
+\end{align}
+$$
+
+---
+
+# Relationship to log odds
 $$
 \begin{align}
 \text{Assume }\ln\frac{p}{1-p}&=\mathbf{w}\cdot\mathbf{x}+b.\\
@@ -352,7 +373,7 @@ pe^{\mathbf{w}\cdot\mathbf{x}+b}\\
 p(1+e^{\mathbf{w}\cdot\mathbf{x}+b}) &= e^{\mathbf{w}\cdot\mathbf{x}+b}\\
  p&=\frac{e^{\mathbf{w}\cdot\mathbf{x}+b}}{1+e^{\mathbf{w}\cdot\mathbf{x}+b}}\\ 
 p&= \frac{1}{1+e^{-(\mathbf{w}\cdot\mathbf{x}+b)}}
-🤯
+
  \end{align}
  $$
 
@@ -564,7 +585,8 @@ $$
 ---
 # Optimization
 ## Gradient Descent
-<p>    
+<p> 
+
 <img src ="images/logistic_regression/Gradient_ascent_(surface).png" style="width:650px" align="right">
 <!-- Image source: wikipedia. https://en.wikipedia.org/wiki/Gradient_descent -->
 
