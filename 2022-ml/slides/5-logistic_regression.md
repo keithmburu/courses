@@ -137,7 +137,7 @@ $$
         if not sign(y) == sign(prediction):
             for each w in weights:
                 w = w + y * x
-                b = b + y * x
+             b = b + y * x
 ```
 * Error-based learning
 * If algorithm predicts wrong class, update weights
