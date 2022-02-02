@@ -84,14 +84,15 @@ def save_fig(fig_id, tight_layout=True, fig_extension="png", resolution=300):
         plt.tight_layout()
     plt.savefig(path, format=fig_extension, dpi=resolution)
 
-num_training_examples = [60000]
-classifiers = []
-lr = LogisticRegression(solver="saga", tol=0.1)
-gnb = GaussianNB()
-classifiers.append(lr)
-classifiers.append(gnb)
 
 if __name__ == "__main__":
+    num_training_examples = [60000]
+    classifiers = []
+    lr = LogisticRegression(solver="saga", tol=0.1)
+    gnb = GaussianNB()
+    classifiers.append(lr)
+    classifiers.append(gnb)
+
     run_experiments(X, y, classifiers, num_training_examples)
     plt.show()
     plot_confusion_matrix(y_test, y_pred)
