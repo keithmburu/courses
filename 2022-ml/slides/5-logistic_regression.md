@@ -9,7 +9,7 @@ footer: Machine Learning, Fall 2022\nAlvin Grissom II, Haverford College
 
 ---
 # Prediction and Logistic Regression
-2021-9-15
+2022-2-2
 
 ---
 # Prediction
