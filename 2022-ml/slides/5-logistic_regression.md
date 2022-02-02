@@ -227,7 +227,7 @@ p &= \sigma(\mathbf{w}\cdot\mathbf{x}+b) \\
 \end{align}
 $$
 <p align="center">
-<img src ="images/logistic_curve.svg" style="width:500px" align="center">
+<img src ="images/logistic_regression/logistic_curve.svg" style="width:500px" align="center">
 <!-- Image source: wikipedia. https://en.wikipedia.org/wiki/Activation_function-->
 
 ---
@@ -396,7 +396,7 @@ if $m=\frac{\Delta y}{\Delta x}=3/4$, this is the slope.
     * For $f(x, y)$, when differentiating along $x$ axis, treat *y* as a constant
     * Written as $\frac{\partial f}{\partial{x}}$, $\frac{\partial f}{\partial{y}}$, etc.
 <p>    
-<img src ="images/3d-gradient-cos.svg" style="width:350px" align="right">
+<img src ="images/logistic_regression/3d-gradient-cos.svg" style="width:350px" align="right">
 <!-- Image source: wikipedia. https://en.wikipedia.org/wiki/Gradient -->
 
 ---
@@ -413,7 +413,7 @@ $$
 \end{bmatrix}.
 $$
 <p>    
-<img src ="images/3d-gradient-cos.svg" style="width:270px" align="right">
+<img src ="images/logistic_regression/3d-gradient-cos.svg" style="width:270px" align="right">
 <!-- Image source: wikipedia. https://en.wikipedia.org/wiki/Gradient -->
 
 
@@ -436,7 +436,7 @@ $$
     * What is the maximum rate at which one can walk up a hill at a given point?
         * What about along a single dimension?
 <p>    
-<img src ="images/3d-gradient-cos.svg" style="width:400px" align="right">
+<img src ="images/logistic_regression/3d-gradient-cos.svg" style="width:400px" align="right">
 <!-- Image source: wikipedia. https://en.wikipedia.org/wiki/Gradient -->
 
 ---
@@ -447,7 +447,7 @@ $$
         * What about along a single dimension?
     * The magnitude gradient is just the aggregate of all of the slopes in every direction.
 <p>    
-<img src ="images/Gradient2.svg" style="width:650px" align="right">
+<img src ="images/logistic_regression/Gradient2.svg" style="width:650px" align="right">
 <!-- Image source: wikipedia. https://en.wikipedia.org/wiki/Gradient -->
 
 
