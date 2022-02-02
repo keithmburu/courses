@@ -500,14 +500,13 @@ $$
 $$
 
 ---
-# Optimization
-## Gradient Descent
+# Optimization: Gradient Descent
 * Goal:  Minimize loss/maximize log likelihood or correct answers
-* Loss function is **convex**
-* If we can walk down the loss function, we can minimize the error on the training data
-    * This is what traning is
+* Loss function is **convex** 
+* If we can walk down the loss surface, we can minimize the error on the training data
 * Use the negative gradient $-|\nabla f|$ to minimize loss
     * Same as taking the negative partial derivative of every element in gradient vector
+
 
 ---
 # Optimization
@@ -585,9 +584,10 @@ $$
 ---
 # Optimization
 ## Gradient Descent
-<p> 
+ 
+![bg right 99%](images/logistic_regression/convex.png)
 
-<img src ="images/logistic_regression/Gradient_ascent_(surface).png" style="width:650px" align="right">
+
 <!-- Image source: wikipedia. https://en.wikipedia.org/wiki/Gradient_descent -->
 
 ---
