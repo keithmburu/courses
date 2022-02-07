@@ -601,5 +601,13 @@ $$
 # Optimization
 ## Stochastic Gradient Descent
 * Full gradient descent requires going over all training data for one update
-* Instead, we use **stochastic** gradient descent (SGD), which uses a single example from training data to update all parameters on one iteration
+* Instead, we use **stochastic** gradient descent (SGD), which uses a single example (or sample) from training data to update all parameters on one iteration
 * Understanding logistic regression and SGD is crucial for understanding more complex algorithms
+
+---
+# Optimization
+## Stochastic Gradient Descent
+* Stochastic gradient descent converges to the same result as full gradient descent.
+    - SGD is an **online** optimization algorithm, but full gradient descent is not.
+    - **Minibatch gradient descent** uses **minibatches** instead of a single example.
+
