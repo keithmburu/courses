@@ -8,7 +8,7 @@ paginate: true
 footer: Machine Learning, Fall 2022\nAlvin Grissom II, Haverford College
 
 ---
-# Prediction and Logistic Regression
+# Regularization
 2022-2-6
 
 ---
@@ -48,7 +48,7 @@ Bayesian interpretation:
 ---
 # Lipschitness
  - A Lipschitz function has a slope that is bounded; it can't chnge too fast.
-- A $\rho$-Lipschitz-smooth function has a slope bounded
+- A $\rho$-Lipschitz-smooth function has a slope bounded by
 $$
 \|f(\mathbf{w_1})-f(\mathbf{w_2})\|\leq \rho \| \mathbf{w_1} - \mathbf{w_2} \|
 $$
@@ -201,7 +201,7 @@ w_j &:= w_j - 2\eta\mu w_j\\
 \end{align}
 $$
 - Likelihood update:
-If $x_j\neq0$, $w_j :=w_j + \eta(y-p)w_j$
+If $x_j\neq0$, $w_j :=w_j + \eta(y-p)x_j$
 
 ---
 # Lazy Regularized Logistic Regression with SGD
@@ -216,3 +216,18 @@ w_j := w_j^*(1-2\lambda\mu)^m
 $$
 - Finally catch up one more time before stopping.
 - See [Cohen (2012)](https://www.cs.cmu.edu/~wcohen/10-605/notes/sgd-notes.pdf).
+
+---
+
+# L1 (Lasso) Regularization
+- More compicated to implement than L2
+- Non-differentiable/non-continuous at 0.
+- Leads to sparse feature values.
+    - Small feature values become 0.
+- Corresponds to Laplace prior on weights [(Tibshirani, 1996)](https://www.cs.princeton.edu/~bee/courses/read/tibshirani-jrssb-1996.pdf).
+
+
+---
+
+# Laplace Distribution
+<img src="images/regularization/laplace_distribution.svg">
