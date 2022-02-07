@@ -220,8 +220,12 @@ $$
 ---
 
 # L1 (Lasso) Regularization
+$$
+R(\mathbf{w}) = \|w\|_1
+$$
 - More compicated to implement than L2
 - Non-differentiable/non-continuous at 0.
+    - Can use subgradients.
 - Leads to sparse feature values.
     - Small feature values become 0.
 - Corresponds to Laplace prior on weights [(Tibshirani, 1996)](https://www.cs.princeton.edu/~bee/courses/read/tibshirani-jrssb-1996.pdf).
