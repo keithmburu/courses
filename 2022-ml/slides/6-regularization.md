@@ -20,7 +20,7 @@ Our regularized loss then becomes
 $$
 \mathcal{L}(\mathbf{w}) + R(\mathbf{w}).
 $$
-- The regularization termm favors simpler hypotheses.
+- The regularization term favors simpler hypotheses.
 ---
 # Reminder: Convex Function
 <img src ="images/regularization/convex_function.svg" style="width:800px" align="center">
@@ -120,7 +120,7 @@ $$
 $$
 For a convex-Lipschitz-bounded learning problem with parameters $\rho, B$, stochastic gradient descent satisfies this when the number of iterations $T \geq \frac{B^2\rho^2}{\epsilon^2}$ and $\eta=\sqrt{\frac{B^2}{\rho^2 T}}$.
 
-- See Understanding Machine Learninga by Shalev-Shwartz and Ben-David for more detail.
+- See Understanding Machine Learning by Shalev-Shwartz and Ben-David for more detail.
 ---
 
 # Regularized Logistic Regression with SGD
