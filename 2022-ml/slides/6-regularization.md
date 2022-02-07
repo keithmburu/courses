@@ -188,11 +188,10 @@ $$
 $$
 \begin{align}
 w_j &:= w_j + \eta((y - p)x_j - \color{green}2\mu w_j)\\
-           &:= w_j + \eta(y - p)x_j - \color{green}2\eta\mu w_j\\
 \end{align}
 $$
 - Reduces overfitting, but requires updating every weight on every iteration, since regularization term doesn't depend on $\mathbf{x}$.
-- Efficiency Trick: Skip regularization updates until the weight is udpated; then catch up.
+- Efficiency Trick: Skip regularization updates until weight is udpated; then catch up.
     - Split update into regularization and log likelihood updates terms.
 - Regularization update:
 $$
@@ -202,12 +201,12 @@ w_j &:= w_j - 2\eta\mu w_j\\
 \end{align}
 $$
 - Likelihood update:
-If $x_j=0$, $w_j :=w_j + \eta(y-p)w_j$
+If $x_j\neq0$, $w_j :=w_j + \eta(y-p)w_j$
 
 ---
 # Lazy Regularized Logistic Regression with SGD
 Regularization update: $w_j :=  w_j(1-2\eta\mu)$
-Likelihood update: if $x_j=0$, $w_j :=w_j + \eta(y-p)w_j$
+Likelihood update: if $x_j\neq0$, $w_j :=w_j + \eta(y-p)w_j$
 
 - Trick: Skip regularization updates with $x_i=0$.
 - Track (in a hash table) how many updates have passed since last regularization update for each weight $w_j$
