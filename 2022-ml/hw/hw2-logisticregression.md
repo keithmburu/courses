@@ -1,7 +1,5 @@
 # Logistic Regression
-
-
-
+Due 2/16
 
 Overview
 --------
