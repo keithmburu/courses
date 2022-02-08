@@ -1,5 +1,7 @@
 # Logistic Regression
+
 50 points
+
 Due 2/16
 
 Overview
