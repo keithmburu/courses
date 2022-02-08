@@ -30,7 +30,7 @@ The data are available [here](data/).
 2. (Optional) Store necessary data in the constructor so you can do classification later.  
 3. Write some code to get the best/worst features (see below). (10 pts)
 3. Modify the `sg_update()` function to perform non-regularized updates. (15 pts)
-4. Modify the `sg update()` function so that it finds regularized updates. (10 pts)
+4. Modify the `sg update()` function so that it finds regularized updates with lazy updates. (10 pts)
 
 Analysis (15 points):
 
@@ -49,7 +49,7 @@ Extra credit:
     - Modify the Example to store the df vector
     - With the appropriate flag, use the *df* vector rather than *x* in the update
     - Show the effect in your analysis document
-3.  (10 pts) Implement lazy updating
+
 
 Caution: When implementing extra credit, make sure your implementation of the
 regular algorithms doesn't change.  
