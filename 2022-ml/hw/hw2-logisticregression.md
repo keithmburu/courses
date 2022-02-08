@@ -1,4 +1,5 @@
 # Logistic Regression
+50 points
 Due 2/16
 
 Overview
@@ -11,7 +12,7 @@ whether documents are talking about hockey or baseball.
 This will be slightly more difficult than the last homework (the
 difficulty will slowly ramp upward).  You should not use any libraries
 that implement any of the functionality of logistic regression for
-this assignment. As you know, Logistic regression is implemented in
+this assignment. As you know, logistic regression is implemented in
 scikit learn, but you should do everything by hand for this assignmetn.
 
 You'll turn in your code on Moodle.  This assignment is worth 50
