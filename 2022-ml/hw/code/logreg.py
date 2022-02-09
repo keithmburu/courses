@@ -102,10 +102,10 @@ class LogReg:
     Hint: The index of words in vocab aligns with the corresponding index in beta.
     """
 
-    def worst_words(self, vocab : list,num_best=20) -> list:
+    def worst_words(self, vocab : list,num_worst=20) -> list:
         return []
     
-    def best_words(self, vocab : list,num_worst=20) -> list:
+    def best_words(self, vocab : list,num_best=20) -> list:
         return []
 
     
