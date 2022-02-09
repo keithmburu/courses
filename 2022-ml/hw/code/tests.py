@@ -1,6 +1,6 @@
 import unittest
 
-from logreg_regularized import LogReg, Example
+from logreg import LogReg, Example
 
 kTOY_VOCAB = "BIAS_CONSTANT A B C D".split()
 kPOS = Example(1, "A:4 B:3 C:1".split(), kTOY_VOCAB, None)
