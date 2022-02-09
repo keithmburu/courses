@@ -46,7 +46,7 @@ Bayesian interpretation:
 ![](images/probability/normal_distribution_standard_deviation.png)
 
 ---
-# Lipschitness
+# Lipschitzness
  - A Lipschitz function has a slope that is bounded; it can't chnge too fast.
 - A $\rho$-Lipschitz-smooth function has a slope bounded by
 $$
@@ -212,7 +212,7 @@ Likelihood update: if $x_j\neq0$, $w_j :=w_j + \eta(y-p)w_j$
 - Track (in a hash table) how many updates have passed since last regularization update for each weight $w_j$
 - When $w_j$ is finally updated with a likelihood updated $(x_j \neq 0)$, perform $m$ regularization updates all at once to catch up and reset counter for $w_j$ to 1.
 $$
-w_j := w_j^*(1-2\lambda\mu)^m
+w_j := w_j^*(1-2\eta\mu)^m
 $$
 - Finally catch up one more time before stopping.
 - See [Cohen (2012)](https://www.cs.cmu.edu/~wcohen/10-605/notes/sgd-notes.pdf).
