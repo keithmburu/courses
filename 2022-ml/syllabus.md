@@ -46,7 +46,7 @@ All assignments are due on the day specified in Moodle.  If the assignment is no
 
 ### Communication
 
-For course-related communication, please contact  use [Piazza](http://www.piazza.com).  I will check Piazza for student mail every weekday. In general, messages received after 5pm on Friday or during holidays will be checked the next business day.   Students may also schedule one-on-one time through audio/video chat or through text-based live chatting, based on their preference.  **Students are strongly encouraged to ask questions publicly on the Piazza message board instead of by e-mailing me directly.** This allows all students to benefit from the dialogue and reduces the amount of time I must answer the same questions.
+For course-related communication, please contact me using [Piazza](http://www.piazza.com).  I will check Piazza for student mail every weekday. In general, messages received after 5pm on Friday or during holidays will be checked the next business day.   Students may also schedule one-on-one time through audio/video chat or through text-based live chatting, based on their preference.  **Students are strongly encouraged to ask questions publicly on the Piazza message board instead of by e-mailing me directly.** This allows all students to benefit from the dialogue and reduces the amount of time I must answer the same questions.
 
 ### Academic Honesty
 
