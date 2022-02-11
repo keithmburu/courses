@@ -6,7 +6,7 @@ Prof. Alvin Grissom II
 
 This provided code 
 
-lab will use some material and [code](https://github.com/ageron/handson-ml2/blob/master/03_classification.ipynb) from Chapter 3.  For this lab, you will use several Naive Bayes classifiers and logistic regression on MNIST.  We will use scikit-learn's [Bernoulli Naive Bayes](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.BernoulliNB.html), [Gaussian Naive Bayes](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html), [logistic regression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html), and [ultinomial Naive Bayes](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html) classifiers and compare their performance.
+lab will use some material and [code](https://github.com/ageron/handson-ml2/blob/master/03_classification.ipynb) from Chapter 3.  For this lab, you will use several Naive Bayes classifiers and logistic regression on MNIST.  We will use scikit-learn's [Bernoulli Naive Bayes](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.BernoulliNB.html), [Gaussian Naive Bayes](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html), [logistic regression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html), and [multinomial Naive Bayes](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html) classifiers and compare their performance.
 
 Based on the descriptions below, hypothesize which classifiers will work best.
 
