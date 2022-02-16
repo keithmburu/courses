@@ -8,7 +8,7 @@ paginate: true
 footer: Machine Learning, Fall 2022\nAlvin Grissom II, Haverford College
 
 ---
-# Computational Learning Theory
+# Introduction to Statistical Learning Theory
 2022-2-9
 
 - These slides are based mostly on Ch. 2 of [Understanding Machine Learning](https://www.cs.huji.ac.il/w~shais/UnderstandingMachineLearning/index.html) by Shalev-Schwartz and Ben-David.
@@ -57,7 +57,7 @@ $$
 - Goal of algorithm is to find $h_S:\mathcal{X}\rightarrow\mathcal{Y}$ that minimizes generalization error w.r.t. $\mathcal{D}$ and $f$.
 - Learner only has access to **empirical (training) error**, also known as  (**empirical risk**) based on training sample $S$.
 $$
-    L_S(h)\triangleq \frac{\{i\in[m: h(x_i)\neq y_i]\}}{m}
+    L_S(h)\triangleq \frac{|\{i\in[m: h(x_i)\neq y_i]\}|}{m}
 $$
 where $[m] = [1, \ldots, m]$.
     - This is the average number of incorrectly labeled examples on the training set.
@@ -138,7 +138,7 @@ With probability 1 over $S$, where $s\in S$ are sampled according to $\mathcal{D
 
 When $L_{(D,f)}(h_S)\leq\epsilon$, the model is an **approximately correct** predictor.
 
-Let $\mathcal{H}_B$ be a set of bad hypotheses, i.e., guesses that lead to high error:
+Let $\mathcal{H}_B$ be a set of bad hypotheses, i.e., prediction rules that lead to high error:
 $$
 \mathcal{H}_B=\{h\in\mathcal{H}: L_{(\mathcal{D},f)}(h) > \epsilon\} .
 $$
@@ -206,10 +206,10 @@ $$
 \mathcal{D}(\{x_i : h(x_i)=y_i\}) = 1 - L_{(\mathcal{D},f)}(h) \leq 1 - \epsilon.
 $$
 
-Now, let $\mathcal{H}$ be a finite hypothesis class. Let $\delta\in (0,1)$ and $\epsilon > 0$.  Let $m$ be an integer that satisfies
-$$
-m \geq \frac{\log(|\mathcal{H}|/\delta)}{\epsilon}.
-$$
+Now, let $\mathcal{H}$ be a finite hypothesis class. Let $\delta\in (0,1)$ and $\epsilon > 0$.  Let $m$ be an integer that satisfies $m \geq \frac{\log(|\mathcal{H}|/\delta)}{\epsilon}.$
 
 - Then for any labeling function $f$ and distribution $\mathcal{D}$ for which the realizability assumption holds ($\exists h\in \mathcal{H} : L_{(\mathcal{D}, f)})(h)=0$), with probability $\geq 1 - \delta$ over the choice of an i.i.d sample $S$ of size $m$, for every ERM hypothesis: $L_{(\mathcal{D},f)}(h_S) \leq \epsilon$
-T- hat is, for sufficiently large $m$, the $\text{ERM}_\mathcal{H}$ rule will be **probabilit**y (confidence $1-\delta$) **approximately** (error $\leq \epsilon$) **correct** (PAC).
+That is, for sufficiently large $m$, the $\text{ERM}_\mathcal{H}$ rule will be **probably** (confidence $1-\delta$) **approximately** (error $\leq \epsilon$) **correct** (PAC).
+$$
+    \mathbb{P}[L_{(\mathcal{D},f)}(h_S) \leq \epsilon] \geq 1-\delta.
+$$
