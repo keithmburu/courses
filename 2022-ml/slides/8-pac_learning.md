@@ -157,13 +157,16 @@ Furthermore, if $\mathcal{A}$ runs in $poly (\frac{1}{\epsilon}, \frac{1}{\delta
  # PAC Learnability: Intervals Example
 <img src = "images/learnability/intervals3.svg">
 
-- We want to bound the probability that we don't see training examples in this "gap" region $G$: for any $x$, $\underset{x\sim \mathbb{D}^m}{\mathbb{P}}[h(x) \notin G ] \le \epsilon$, which implies $\underset{x\sim \mathbb{D}^m}{\mathbb{P}}[h(x)\in G] \le 1 - \epsilon.$
+- We want to bound the probability that $h$ is consistent with error $\ge\epsilon$
+    - means we don't see training data  in $\epsilon$ region but do see test examples there.
+- We want to bound the probability that we don't see training examples in this "gap" region $G$: for any $x$, $\underset{x\sim S}{\mathbb{P}}[h(x) \notin G ] \le \epsilon$.
+- The probability that $h$ is consistent with this high error is: $\underset{x\sim \mathcal{D}^m}{\mathbb{P}}[\hat{R}(h_s)=0\land\hat{R}(h)>\epsilon] \le 1 - \epsilon.$
 
  ---
  # PAC Learnability: Intervals Example
 <img src = "images/learnability/intervals3.svg">
 
-- We want to bound the probability that we don't see training examples in this "gap" region $G$: for any $x$, $\underset{x\sim \mathbb{D}^m}{\mathbb{P}}[h(x) \notin G ] \le \epsilon$, which implies $\underset{x\sim \mathbb{D}^m}{\mathbb{P}}[h(x)\in G] \le 1 - \epsilon.$
+- We want to bound the probability that we don't see training examples in this "gap" region $G$: for any $x$, $\underset{x\sim \mathbb{D}^m}{\mathbb{P}}[h(x) \notin G ] \le \epsilon$, which implies $\underset{x\sim \mathcal{D}^m}{\mathcal{P}}[h(x)\in G] \le 1 - \epsilon.$
 Since each $x$ is sampled i.i.d., over all of our $m$ examples, we have:
 $$
 \begin{align}
@@ -243,3 +246,50 @@ Interpretation:
 - $|H|$: more complex hypothesis spaces need more training data
 
 - Thinking question:  What is $|H|$ for perceptron or logistic regression?
+
+---
+# Bayes Error and Noise
+
+- Deterministic case: there exists a function with no generalization error.
+- Stochastic case: there must be nonzero generalization error.
+
+Given a distribution $\mathcal{D}$ over $\mathcal{X}\times\mathcal{Y}$, the **Bayes error** $R^*$ is defined as the infimum of the errors achieved by measurable functions $h:\mathcal{X}\rightarrow\mathcal{Y}$.
+$$
+R(h)= \underset{h}{\inf} R(h)
+$$
+
+A hypothesis with $R(h)=R^*$ is a **Bayes hypothesis** or **Bayes classifier**.
+
+$$
+h_{\text{Bayes}}(x)=\underset{y\in\{0,1\}}{\text{argmax }}\mathbb{P}[y|x]
+$$
+Thus, the average error made by $h_{\text{Bayes}}$ on $x\in\mathcal{X}$ is $\min\{\mathbb{P}[1|x],\mathbb{P}[0|x]\}$.
+
+
+---
+# Bayes Error and Noise
+
+- Deterministic case: there exists a function with no generalization error.
+- Stochastic case: there must be nonzero generalization error.
+
+Given a distribution $\mathcal{D}$ over $\mathcal{X}\times\mathcal{Y}$, the **Bayes error** $R^*$ is defined as the infimum of the errors achieved by measurable functions $h:\mathcal{X}\rightarrow\mathcal{Y}$.
+$$
+R(h)= \underset{h}{\inf} R(h)
+$$
+
+A hypothesis with $R(h)=R^*$ is a **Bayes hypothesis** or **Bayes classifier**.
+
+$$
+h_{\text{Bayes}}(x)=\underset{y\in\{0,1\}}{\text{argmax }}\mathbb{P}[y|x]
+$$
+Thus, the average (minimum possible) error made by $h_{\text{Bayes}}$ on $x\in\mathcal{X}$ is $\min\{\mathbb{P}[1|x],\mathbb{P}[0|x]\}$, i.e. if you get probability 1 on the correct answer, your error is 0.
+
+---
+# Bayes Error and Noise
+- The noise is this remaining probability mass after allocating probability ot the correct answer.
+- The **noise** at any point $x$ is defined as
+$$
+\text{noise}(x)=\min\{\mathbb{P}[1|x],\mathbb{P}[0|x]\}.
+$$
+
+- Average noise is $\mathbb{E}[\text{noise(x)}] = R^*$, which is the Bayes error.

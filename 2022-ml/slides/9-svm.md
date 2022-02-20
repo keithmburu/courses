@@ -11,6 +11,8 @@ footer: Machine Learning, Fall 2022\nAlvin Grissom II, Haverford College
 # Support Vector Machines
 2022-2-15
 
+ Slides have some content from Foundations of Machine Learning (Mohri) and slides by Jordan Boyd-Graber's slides. 
+
 ---
 
 - So far, we've talked about two linear classifiers
@@ -190,3 +192,100 @@ For each $i\in[m]$, $\exists\xi_i \ge 0$, such that
 $$
 y_i[\mathbf{w}\cdot\mathbf{x}+b] \ge 1 - \xi_i
 $$
+
+---
+# Soft-margin SVMs
+- In practical settings, often training data are not linearly separable.
+- This makes the QP problem impossible to solve, i.e., there's an $\mathbf{x}_i\in[m]$, such that
+$$
+y_i[\mathbf{w}\cdot\mathbf{x}+b] \ngeq 1
+$$
+- We can introduce a relaxation: 
+For each $i\in[m]$, $\exists\xi_i \ge 0$, such that 
+$$
+y_i[\mathbf{w}\cdot\mathbf{x}+b] \ge 1 - \xi_i
+$$
+The $\xi_i$ variables are called **slack variables**.
+
+---
+$$
+y_i[\mathbf{w}\cdot\mathbf{x}+b] \ge 1 - \xi_i
+$$
+- Slack variables measure distance by which a vector $\mathbf{x}$_i violated original inequality constraints.
+- An $\mathbf{x}$_i with $\xi_i > 0$ can be called an *outlier*.
+- To not be considered an outlier, the $\mathbf{x}_i$ must be on the correct side of the hyperplane.
+    - A point within the margin but on the correct side of the hyperplane is still an outlier.
+---
+# Slack SVMs
+![bg right 99%](images/svm/slack_margin.png)
+- Slack variables allow us to tolerate some outliers.
+- We need to change the objective function.
+$$
+	\begin{equation}
+		\min_{w, b, \xi} {\frac{1}{2}||w||^2} + {C} \sum_{i=1} {\xi_i}^{{p}}
+	\end{equation}
+$$
+subject to $y_i(w\cdot x_i + b) \geq 1 - \xi_i$ and $\xi_i \geq 0, i \in [1, m]$
+Image from Mohri et al.
+
+---
+# Slack SVMs
+![bg right 99%](images/svm/slack_margin.png)
+
+$$
+	\begin{equation}
+		\min_{w, b, \xi} {\frac{1}{2}||w||^2} + {C} \sum_{i=1} {\xi_i}^{{p}}
+	\end{equation}
+$$
+subject to $y_i(w\cdot x_i + b) \geq 1 - \xi_i$ and $\xi_i \geq 0, i \in [1, m]$
+- The larger $\xi_i$, the higher the penalty.
+- The constant $C$ determinnes how much weight we give to this penalty.
+
+---
+# Slack SVMs
+![bg right 99%](images/svm/slack_margin.png)
+
+$$
+	\begin{equation}
+		\min_{w, b, \xi} {\frac{1}{2}||w||^2} + {C} \sum_{i=1} {\xi_i}^{{p}}
+	\end{equation}
+$$
+subject to $y_i(w\cdot x_i + b) \geq 1 - \xi_i$ and $\xi_i \geq 0, i \in [1, m]$
+- The larger $\xi_i$, the higher the penalty.
+- The constant $C$ determinnes how much weight we give to this penalty.
+- We can use a *loss function*.
+
+---
+# Slack SVMs
+## Loss Functions
+- Logistic regression used cross-entropy loss.
+- 0-1 loss gives a loss of 1 for every incorrect example an 0 for every correct example.
+- **Hinge loss** gives a loss of 0 for every correct example, with the loss increasing linearly afterwards.
+![bg right](images/logistic_regression/hinge_vs_01_loss.svg)
+
+---
+# Slack SVMs
+## Constrained Optimization
+- We can't just use SGD now because we have additional constraints to consider when minimizing the loss function.
+- In constrained optimization, we have a method of Lagrange multipliers
+  Theorem: Given functions $f(x_1, \dots x_n)$ and $g(x_1, \dots x_n)$, the critical points of $f$ restricted to the set $g=0$ are solutions to equations:
+$$
+  \begin{align*}
+    \frac{\partial{f}}{\partial x_i}(x_1,  \dots x_n) = & \lambda \frac{\partial{g}}{\partial x_i} (x_1, \dots x_n) \hphantom{\dots} \forall i \\
+    g(x_1, \dots x_n) = 0 &
+  \end{align*}
+  $$
+  This is $n+1$ equations in the $n+1$ variables $x_1, \dots x_n, \lambda$.
+
+---
+# Slack SVMs: Constrained Optimization
+Given functions $f(x_1, \dots x_n)$ and $g(x_1, \dots x_n)$, the critical points of $f$ restricted to the set $g=0$ are solutions to equations:
+$$
+  \begin{align*}
+    \frac{\partial{f}}{\partial x_i}(x_1,  \dots x_n) = & \lambda \frac{\partial{g}}{\partial x_i} (x_1, \dots x_n) \hphantom{\dots} \forall i \\
+    g(x_1, \dots x_n) = 0 &
+  \end{align*}
+  $$
+
+  Idea: Given original objective function $f$ with constraints $g$, introduce new variables $\lambda$ that enforce $g$'s constraints.
+  - Do this by taking partial derivative of both $f$ and $f$ to create system of equations for each of the variables to optimize.
