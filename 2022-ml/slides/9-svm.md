@@ -288,4 +288,113 @@ $$
   $$
 
   Idea: Given original objective function $f$ with constraints $g$, introduce new variables $\lambda$ that enforce $g$'s constraints.
-  - Do this by taking partial derivative of both $f$ and $f$ to create system of equations for each of the variables to optimize.
+  - Do this by taking partial derivative of both $f$ and $gb$ to create system of equations for each of the variables to optimize.
+
+  ---
+  # Constrained Optimization Example
+  - Suppose you want to maximize  $f(x,y) = \sqrt{xy}$ subject to the constraint $20x + 10y = 200$.
+
+---
+### Constrained Optimization Example
+
+- Suppose you want to maximize  $f(x,y) = \sqrt{xy}$ subject to the constraint $20x + 10y = 200$.
+
+- Compute derivatives
+$$
+    \begin{align*}
+      \frac{\partial f}{\partial x} = \frac{1}{2} \sqrt{\frac{y}{x}} & \hphantom{\dots} \frac{\partial g}{\partial x} = 20 \\
+      \frac{\partial f}{\partial y} = \frac{1}{2} \sqrt{\frac{x}{y}} & \hphantom{\dots} \frac{\partial g}{\partial y} = 10
+    \end{align*}
+$$
+- Create new system of equations.
+$$
+    \begin{align*}
+      \frac{1}{2} \sqrt{\frac{y}{x}} & = 20 \lambda \\
+      \frac{1}{2} \sqrt{\frac{x}{y}} & = 10 \lambda \\
+      20x + 10y = 200
+    \end{align*}
+$$
+
+---
+- Dividing the first equation by the second gives us
+$$
+      \begin{equation}
+        \frac{y}{x} = 2
+      \end{equation}
+$$
+which means $y=2x$, plugging this into the constraint equation gives:
+$$
+      \begin{align*}
+        20x + 10(2x) = 200 & \\
+        x = 5 & \Rightarrow y = 10
+      \end{align*}
+      $$
+- This gives us the solution to optimizing $f(x,y) = \sqrt{xy}$ subject to the constraint $20x + 10y = 200$.
+
+---
+# New Lagangian Objective Function
+
+$$
+\begin{align}
+	\mathscr{L}(\vec w, b, \vec \xi, \vec \alpha, \vec \beta) = & \frac{1}{2} ||w||^2 + C \sum_{i=1}^m \xi_i \\
+	 & - \sum_{i=1}^m \alpha_i \left[y_i(w \cdot x_i + b) - 1 + \xi_i \right] \\
+	 & - \sum_{i=1}^m \beta_i \xi_i
+\end{align}
+$$
+- Constraint: classifications must be correct, except when they have slack variables (line 2), which must be non-negative (line 3).
+
+---
+$$
+\begin{align}
+	\mathscr{L}(\vec w, b, \vec \xi, \vec \alpha, \vec \beta) = & \frac{1}{2} ||w||^2 + C \sum_{i=1}^m \xi_i \\
+	 & - \sum_{i=1}^m \alpha_i \left[y_i(w \cdot x_i + b) - 1 + \xi_i \right] \\
+	 & - \sum_{i=1}^m \beta_i \xi_i
+\end{align}
+$$
+Taking the gradients $(\nabla_w \mathscr{L}, {\nabla_b
+  \mathscr{L}}, {\nabla_{\xi_i} \mathscr{L}}$) and solving for zero gives us
+$$
+\begin{equation}
+{\sum_{i=1}^m \alpha_i y_i = 0}
+\end{equation}
+$$
+$$
+\begin{equation}
+{\vec w = \sum_{i=1}^m \alpha_i y_i x_i}
+\end{equation}
+$$
+$$
+\begin{equation}
+{\alpha_i + \beta_i = C}
+\end{equation}
+$$
+
+---
+# Simplifying Dual Objective
+Now, we can simplify the objective function by replacing variables with our new ones.
+
+$$
+\begin{equation*}
+\textcolor{red}{\sum_{i=1}^m \alpha_i y_i = 0}
+\end{equation*}
+$$
+
+$$
+\begin{equation*}
+\textcolor{blue}{\vec w = \sum_{i=1}^m \alpha_i y_i x_i}
+\end{equation*}
+$$
+
+$$
+\begin{equation*}
+\textcolor{green}{\alpha_i + \beta_i = C}
+\end{equation*}
+$$
+
+$$
+\begin{equation}
+	\mathscr{L}= \left\lVert{\textcolor{red}{\frac{1}{2} \|{{\vec w_i} {{\sum_{i=1}^m \alpha_i y_i \vec x_i}}}}}\right\rVert^2  -  \sum_i^m { \textcolor{}{\sum_j^m \alpha_i \alpha_j y_i y_j (\vec x_j}} \cdot \vec x_i{)} {{- \sum_i^m \alpha_i y_i b}} {- \sum_{i=1}^m \beta_i \xi_i} {{+ \sum_i^m \alpha_i} }
+\end{equation}
+$$
+- First two terms are the same!
+- Just like separable case, except that we add the constraint that $\alpha_i \leq C$.
