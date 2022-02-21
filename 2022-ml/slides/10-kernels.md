@@ -72,7 +72,7 @@ $$
 
 ---
 # Kernel Methods
-- Idea: we want to find a **nonlinear decision boundary** with a linear classifier by mapping data $\mathbf{x}$ into a higher dimensional space with a function $K$.
+- Idea: we want to find a **nonlinear decision boundary** with a linear classifier by mapping data $\mathbf{x}$ into a higher dimensional space with a function $K$, giving us a new feature map $\varphi$.
 ![bg right 99%](images/kernels/polynomial_kernel.jpg)
 
 ---
@@ -120,6 +120,14 @@ $$
 - We've replaced $\mathbf{x_i}\cdot\mathbf{x_j}$ with $\Phi(\mathbf{x_i)}\cdot\Phi(\mathbf{x_j})$.
 - So we have a dot product of the transformed features, as well.
 
+
+--- 
+# Kernel Methods
+Consider the simple kernel $\Phi(\mathbf{x,x'})= \mathbf{x\cdot x' + \|x\|^2 + \|x'\|^2},$
+yielding feature map $\varphi(a,b)=(a, b, a^2 + b^2)$ in $\mathbb{R}^3.$
+![](images/kernels/kernel3d.svg)
+
+
 --- 
 # Kernel Methods
 ### Polynomial Kernel
@@ -128,7 +136,6 @@ $$
 \forall \mathbf{x, x'}\in\mathbb{R}^n, K(\mathbf{x},\mathbf{x'}) = (\mathbf{x}\cdot\mathbf{x'} + c) ^d 
 $$
 
-Consider the polynomial kernel of degree $2$ (quadratic kernel).
 
 --- 
 # Kernel Methods
@@ -163,7 +170,39 @@ K(\mathbf{x,x'}) = \left(\sum_{i=1}^n x_i {x'}_i + c\right)^2 =
 $$
 giving us the feature map $\Phi(\mathbf{x}) = \langle x_n^2, \ldots, x_1^2, \sqrt{2} x_n x_{n-1}, \ldots, \sqrt{2} x_n x_1, \sqrt{2} x_{n-1} x_{n-2}, \ldots, \sqrt{2} x_{n-1} x_{1}, \ldots,c \rangle$
 
- - Isn't this the same problem we had before?
+---
+
+### Polynomial Kernel
+- The polynomial kernel is defined as
+$$
+\forall \mathbf{x, x'}\in\mathbb{R}^n, K(\mathbf{x},\mathbf{x'}) = (\mathbf{x}\cdot\mathbf{x'} + c) ^d 
+$$
+
+For example, for $d = 2, n=2$,
+$$
+\begin{align}
+K(x,y) &= (x_1 y_1 + x_2 y_2 +  c)^2
+       \\&= 
+       \left[
+       \begin{matrix}
+       x_1^2\\ x_2^2 \\\sqrt{2}x_1 x_2 \\\sqrt{2c}x_1 \\\sqrt{2c}x_1 \\ c
+       \end{matrix}
+       \right]
+       \cdot
+       \left[
+       \begin{matrix}
+       y_1^2\\ y_2^2 \\\sqrt{2}y_1 y_2 \\\sqrt{2c}y_1 \\\sqrt{2c}y_1 \\ c
+       \end{matrix}
+       \right]
+       \cdot
+\end{align}
+$$
+
+---
+
+![](images/kernels/xor_mohri.png)
+<sub><sup>Image from <a href = "https://cs.nyu.edu/~mohri/mls/ml_kernel_methods.pdf">Mohri.</a></sup></sub>
+
 
 --- 
 # Kernel Methods
@@ -270,3 +309,9 @@ $$
 \end{alignat}
 $$
 - But we don't have to compute any of this.
+
+---
+# Kernel Methods
+![bg right 99%](images/kernels/svc_kernels.png)
+
+<sub><sup>Image from <a href = "https://scikit-learn.org/stable/auto_examples/svm/plot_iris_svc.html#sphx-glr-auto-examples-svm-plot-iris-svc-py">scikt-learn documentation.</a></sup></sub>
