@@ -199,9 +199,8 @@ K(x,y) &= (x_1 y_1 + x_2 y_2 +  c)^2
 $$
 
 ---
-
-![](images/kernels/xor_mohri.png)
-<sub><sup>Image from <a href = "https://cs.nyu.edu/~mohri/mls/ml_kernel_methods.pdf">Mohri.</a></sup></sub>
+<!--- <sub><sup>Image from <a href = "https://cs.nyu.edu/~mohri/mls/ml_kernel_methods.pdf">Mohri.</a></sup></sub> --->
+![bg 90%](images/kernels/xor_mohri.png)
 
 
 --- 
