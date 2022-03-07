@@ -45,7 +45,7 @@ def find_slack(x, y, w, b):
     slack vectors
     """
 
-    #    TODO: Check for case where it's within the margin.
+    #    TODO: Check for case where it's within the margin and outside of the margin.
     return slack
 
 
