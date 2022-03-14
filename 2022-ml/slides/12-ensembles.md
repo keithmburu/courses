@@ -18,6 +18,7 @@ style: |
 # Emsemble Learning
 2022-3-14
 
+
 ---
 # Ensemble Learning
 
@@ -64,6 +65,15 @@ After 1,000 trials, ~75% chance of majority heads.
     - Sampling only features is called the Random Subspaces method.
 
 ---
+# Stacking
+- Simple idea: instead of using a simple (e.g. voting) to combine classifiers, what else could we do?
+
+
+---
+# Stacking
+- Simple idea: instead of using a simple (e.g. voting) to combine classifiers, what else could we do?
+- Learn a classifier (blender) that takes predictions of classifiers and uses them as feature to make final predictions.
+---
 # Random Forests
 - A **random forest** is an ensemble of decision trees.
     - Vanilla decision trees use purity or entropy to create splitting nodes based on the most informative features.
@@ -80,6 +90,7 @@ After 1,000 trials, ~75% chance of majority heads.
 
 ---
 # Boosting
+<sub><sup>Portions of these slides based on slides by Jordan Boyd-Graber.</sup></sub>
 
 ---
 # Boosting
@@ -140,7 +151,7 @@ where $h_S$ is the hypothesis returned by $\mathcal{A}$ when trained on sample $
 - $-y_i h_t(x_i)$ will be bigger with more wrong answers.
 
 ---
-# AdaBoost: Example:
+# AdaBoost: Example
 - Construct distribution $\mathcal{D}_t$ on $(1,\ldots,m)$.
     - Initially, set $\mathcal{D}_t(i) = \frac{1}{m}$
     - Then, $\mathcal{D}_{t+1}(i)\propto \mathcal{D}_t(i)\cdot -\alpha_t y_i h_t(x_i)$, where $\alpha_t=\frac{1}{2}\log \frac{1-\epsilon_t}{\epsilon_t} > 0$.
@@ -203,12 +214,35 @@ where $h_S$ is the hypothesis returned by $\mathcal{A}$ when trained on sample $
 
 ---
 # AdaBoost
+### Overfitting?
+![bg right 100%](images/ensembles/test_error_guess.png)
+- We mighty expect overfitting with too many iterations.
+
+---
+# AdaBoost
+### Overfitting?
+![bg right 100%](images/ensembles/test_error_experiment.png)
+- We might expect overfitting with too many iterations.
+- Empirically, test error stabilizes.
+---
+# AdaBoost
 ### Learning Guarantees
-- The empirical error $\hat{R}_S(f)$ decreases exponentially fast with the number of rouns of boosting:
+- The empirical error $\hat{R}_S(f)$ decreases exponentially fast with the number of rounds of boosting:
 $$
 \hat{R}_S(f) \leq \exp\left[-2 \sum_{t=1}^T\left(\frac{1}{2} - \epsilon_t \right)^2  \right]
 $$
 
+---
+# AdaBoost
+
+$$
+\text{VCDim(AdaBoost)}\leq 2(d+1)(T+1)\log[(T+1)e]
+$$
+- VC dimension related to number of rounds $T$.
+- Generalization error should go up
+- In practice, this doesn't seem to happen...
+### Margin Maximization
+- AdaBoost solves a linear program which maximizes an $L_1$ margin (vs. SVM's $L_2$ margin)
 ---
 # AdaBoost
 ### Equivalence with Coordinate Descent
@@ -219,7 +253,22 @@ $$
 F(\mathbf{\bar{\alpha}})=\frac{1}{m}\sum_{i=1}^m e^{-y_i f(x_i)} = \frac{1}{m}\sum_{i=1}^m e^{-y_i \sum_{j=1}^N \bar{\alpha}_j h_j(x_i)$}.
 $$
 - $F$ is a sum of convex functions and therefore convex.
-- Since $\mathbb{1}_{u\le 0} \leq \exp[-u]$ upper founds the 0-1 loss, $F$ upperbounds $\hat{R}_S(f)$:
+- Since $\mathbb{1}_{u\le 0} \leq \exp[-u]$ upper bounds the 0-1 loss, $F$ upperbounds $\hat{R}_S(f)$:
 $$
 \hat{R_S}(f) = \frac{1}{m}\sum_{i=1}^m \mathbb{1}[y_i f(x_i) \geq 0] \leq \frac{1}{m}\sum_{i=1}^m e^{-y_i f(x_i)}
 $$
+---
+# AdaBoost
+- There have been critiques of the statistical optimization approaach to AdaBoost and the claim that it needs especially weak learners ([Wyner et al., 2017](https://www.jmlr.org/papers/volume18/15-240/15-240.pdf)).
+    - [Wyner et al. (2017)](https://www.jmlr.org/papers/volume18/15-240/15-240.pdf) argue that AdaBoost and random forests perform training data interpolation and averaging, which stabilizes learning.
+    - i.e., smooths out effects of noise.
+
+---
+# AdaBoost
+- Basic algorithm is fast and easy to program.
+- Only parameter to tune is $T$.
+- No prior knowledge required for weak learners.
+- Provably effective if you can find weak learners.
+    - Now you only need to do slightly better than random!
+- Can be used for many different tasks.
+- Sequential, so not easily parallelizable.
