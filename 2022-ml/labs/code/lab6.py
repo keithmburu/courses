@@ -6,8 +6,8 @@ from sklearn.metrics import accuracy_score
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import LogisticRegression
 from collections import defaultdict
-
-
+from sklearn.datasets import fetch_openml
+from sklearn import datasets
 """
 # code for generating artificial data
 X, y = make_gaussian_quantiles(
@@ -19,15 +19,18 @@ n_split = 3000
 X_train, X_test = X[:n_split], X[n_split:]
 y_train, y_test = y[:n_split], y[n_split:]
 """
-from sklearn import datasets
-from sklearn.model_selection import train_test_split
+#from sklearn import datasets
+#from sklearn.model_selection import train_test_split
 digits = datasets.load_digits()
 n_samples = len(digits.images)
-data = digits.images.reshape((n_samples, -1)) #flatten
-X_train, X_test, y_train, y_test = train_test_split(
-    data, digits.target, test_size=0.1, shuffle=True
-)
+# data = digits.images.reshape((n_samples, -1)) #flatten
+# X_train, X_test, y_train, y_test = train_test_split(
+#     data, digits.target, test_size=0.1, shuffle=True
+# )
 
+mnist = fetch_openml('mnist_784', version=1, as_frame=False)
+X, y = mnist["data"], mnist["target"]
+X_train, X_test, y_train, y_test = X[:60000], X[60000:], y[:60000], y[60000:]
 depths = [1]
 estimators = [x for x in range(1,11) if x % 10 == 0]
 accuracies = []
