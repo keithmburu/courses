@@ -8,7 +8,8 @@ from sklearn.linear_model import LogisticRegression
 from collections import defaultdict
 
 
-
+"""
+# code for generating artificial data
 X, y = make_gaussian_quantiles(
     n_samples=13000, n_features=10, n_classes=3, random_state=1
 )
@@ -17,7 +18,7 @@ n_split = 3000
 
 X_train, X_test = X[:n_split], X[n_split:]
 y_train, y_test = y[:n_split], y[n_split:]
-
+"""
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
 digits = datasets.load_digits()
