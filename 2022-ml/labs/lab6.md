@@ -12,4 +12,4 @@ Hints:
 2. Be careful about confusing the maximum number of base learners with the actual number of base learners. 
 3. Put your results in a LaTeX table or, better, in plots.  
 4. While not required for this lab, the number of training examples may make a difference.  You can use cross-validation.
-
+5. For up to 5 points extra credit. **After** fulfilling the baic requirements, you can try using some other base classifier.
