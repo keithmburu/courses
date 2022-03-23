@@ -1,6 +1,6 @@
 # Lab 5: Finding Support Vectors (15 points)
 
-For this lab, given a primal support vector instance, you will find the support vectors, weight vector, and the slack vectors.  Use the provided skeleton and test [code](../code/lab5).
+For this lab, given a primal support vector instance, you will find the support vectors, weight vector, and the slack vectors.  Use the provided skeleton and test [code](https://github.com/acgrissom/courses/tree/master/2022-ml/labs/code).
 
 1. In the `weight_vector()` function, compute and return $\mathbf{w}$.
    Recall that
@@ -13,4 +13,4 @@ For this lab, given a primal support vector instance, you will find the support 
 
 3. Find the slack vectors. In `find_slack()` return a set of indices of all slack vectors.  There are two cases: when instances are on the wrong side of the margin and when instances are within the margin.  Implement the case for an instance within the margin.  The first case is already implemented.
 
-This lab will be graded based on passing the unit tests.  Place your name in the first comment line of your code.
+This lab will be graded based on passing the unit tests and correctness.  Place your name in the first comment line of your code.
