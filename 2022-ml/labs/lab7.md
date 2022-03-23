@@ -2,13 +2,21 @@
 
 Note: if you want to try to use scikit-learn for this lab, you may.
 
-In this lab, we will use Vowpal Wabbit, a highly optimized suite of machine learning tools.  It is already installed on lab machines.  The purpose of this lab is to give students practice transforming data and trying out features for the classifier, both of which are what machine learning engineers spend much of their time doing.
+In this lab, we will use Vowpal Wabbit, a highly optimized suite of machine learning tools.  **It is already installed on lab machines.**  The purpose of this lab is to give students practice transforming data and trying out features for the classifier, both of which are what machine learning engineers spend much of their time doing.
 
 To install it on Debian-based Linux distributions, run:
 
-```
+```bash
 sudo apt install vowpal-wabbit
 ```
+
+On macOS:
+
+```
+brew install vowpal-wabbit
+```
+
+
 
 ## Data Munging
 
@@ -89,7 +97,7 @@ vw --testonly -i sentiment.model --predictions predictions.txt --binary  < test.
 
 This will feed our test data into our model and generate predictions.  We have to write our own program to calculate accuracy.  This loads our model `sentiment.model` from the previous step and outputs the predictions to `predictions.txt`.  
 
-The option `link=logistic` tells us to use a [logistic link function](https://en.wikipedia.org/wiki/Generalized_linear_model#Logit_link_function) to generate probabilities for our linear classifier.  Otherwise, we just get the dot product.  To get just the classes (1, -1), we can add `--binary`.
+The option `link=logistic` tells us to use a [logistic link function](https://en.wikipedia.org/wiki/Generalized_linear_model#Logit_link_function) to generate probabilities for our linear classifier.  Otherwise, we just get the dot product.  To get just the classes {1, -1}, we can add `--binary`.
 
 ## Feature Engineering
 
